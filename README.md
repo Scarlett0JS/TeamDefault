@@ -23,6 +23,13 @@ Vscode 테마 추천 서비스 제공 웹사이트 구성
 >> - TestLoginFrom.java 실행 -> id, password 입력후 -> 입력한 값이 출력되는 화면까지 넘어가는지 체크
 > - DB 관련 추가 예정
 > - python requirement 생성 예정
+>    - ```pip install -r requirements.txt```
+>    - anaconda setting temp templete
+>       - conda update conda
+>       - conda update -all
+>       - conda install -c conda-forge pyautogui
+>       - conda install -c conda-forge opencv
+>       - conda install -c anaconda pillow
 --------------
 ### Eclipse Setting
 > - gitignore 설정
