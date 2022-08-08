@@ -10,6 +10,8 @@ Vscode 테마 추천 서비스 제공 웹사이트 구성
 --------------
 ### Java web project import
 > 1. 새로운 워크스페이스 에서 clone한 repository import
+>> - file -> import -> general -> existing projects into workspace -> Browse 
+>> - First_Project 폴더 선택 후 projects에 SoulTheme, Servers가 체크되어 있는지 확인 후 finish
 > 2. Server 
 >> - window -> preference -> Server -> Server Runtime Environments -> 기존 서버 삭제
 >> - Add -> 전자정부프레임워크 내부 bin 폴더에서 Apache tomcat import (v8.5)
