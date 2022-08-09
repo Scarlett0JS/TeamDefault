@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div id="window1"></div>
+        <div id="window2"></div>
+    </section>
+    <script>
+        var scrollEvent = false
+        var count = 0
+        $("html,body").on('mousewheel', function(c){
+            c.preventDefault();
+            var m = c.originalEvent.wheelDelta
+            var sb = $("#window1").height()
+
+            if(m > 1 && scrollEvent == false && count >= 1){
+                console.log(count)
+                scrollEvent = true
+                count --
+                $("html,body").stop().animate({scrollTop:sb*count},
+                {duration : 300, complete: function(){
+                    scrollEvent = false}
+                })
+            } else if (m < 1 && scrollEvent == false && count < 3) {
+                console.log(count)
+                scrollEvent = true
+                count++
+                $("html,body").stop().animate({scrollTop:sb*count},
+                {duration : 300, complete: function(){
+                    scrollEvent = false}
+                })
+            }
+        })
+    </script>
+    
+</body>
+</html>
