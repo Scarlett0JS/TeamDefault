@@ -1,3 +1,4 @@
+Alabaster
 An Old Hope Light
 Atom One Light
 Bearded Theme Coffee Cream
@@ -6,8 +7,10 @@ Bearded Theme Solarized Light
 Bearded Theme Vivid Light
 Bluloco Light
 Bluloco Light Italic
+Chinolor Light
 Community Material Theme Lighter
 Community Material Theme Lighter High Contrast
+Django
 Doki Theme : BunnySenpai: Mai
 Doki Theme : Charlotte: Nao
 Doki Theme : CodeGeass: C.C.
@@ -17,7 +20,8 @@ Doki Theme : DDLC: Sayori
 Doki Theme : DDLC: Yuri
 Doki Theme : DM: Tohru
 Doki Theme : DR: Ibuki
-Doki Theme : Franxx: Zero Two
+Doki Theme : Franxx: Zero Two Light Lily
+Doki Theme : Franxx: Zero Two Light Sakura
 Doki Theme : GuiltyCrown : Inori
 Doki Theme : KillLaKill: Ryuko
 Doki Theme : KillLaKill: Satsuki
@@ -34,7 +38,9 @@ Doki Theme : TypeMoon: Ishtar
 Eva Light
 Eva Light Bold
 Eva Light Italic
+Firefox Light
 Github
+Github Clasic
 GitHub Light
 GitHub Light Colorblind (Beta)
 GitHub Light Default
@@ -44,9 +50,12 @@ GitHub Plus
 Gruvbox Light Hard
 Gruvbox Light Medium
 Gruvbox Light Soft
+Jupyter
+Kay Light
+Laravel
 Learn with Sumit - Simple as light
-Light (Visual Stuido - C/C++)
-Light (Visual Stuido)
+Light (Visual Studio - C/C++)
+Light (Visual Studio)
 Light+ (default light)
 MacOS Modern Light - Big Sur Xcode
 MacOS Modern Light - Big Sur Xcode Default
@@ -62,6 +71,12 @@ Material Theme Lighter High Contrast
 Min Light
 NetBeans Light Theme
 NotepadPlusPlus Remixed Theme
+Office Theme (Access)
+Office Theme (Excel)
+Office Theme (OneNote)
+Office Theme (PowerPoint)
+Office Theme (Publisher)
+Office Theme (Word)
 Quiet Light
 Slack Theme Aubergine
 Slack Theme Hoth
@@ -72,8 +87,9 @@ Tinacious Design (Light)
 Tinacious Design (Light) (legacy,2017)
 Tomorrow
 Verdandi
-Winter is Comming (Light - No Italics)
-Winter is Comming (Light)
+Winter is Coming (Light - No Italics)
+Winter is Coming (Light)
+Xcode Classic Light
 Xcode Default (Light)
 Xcode Partial (Light)
 Ysgrifennwr
@@ -86,6 +102,7 @@ An Old Hope Italic
 Atom Material Theme
 Atom One Dark
 Atom One Dark
+Atomize
 Aura Dark
 Aura Dark (Soft Text)
 Aura Soft Dark
@@ -95,7 +112,7 @@ Bear Theme
 Bearded Theme Altica
 Bearded Theme Anthracite
 Bearded Theme Arc
-Bearded Theme Arc blueberry
+Bearded Theme Arc Blueberry
 Bearded Theme Arc Eggplant
 Bearded Theme Arc EolStorm
 Bearded Theme Arc Reversed
@@ -128,12 +145,16 @@ Bearded Theme Will
 beautiful
 Blackboard
 Blakai Theme
+Blueberry dark theme
 Bluloco Dark
 Bluloco Dark Italic
 Brogrammer
+Chinolor
 Chromodynamics
 City Lights
-Cobalt2
+CodeSandbox Black
+CodeSandbox Black 2021
+CodeSandbox Legacy
 codeSTACKr Theme
 codeSTACKr Theme (Muted)
 Community Material Theme
@@ -141,9 +162,9 @@ Community Material Theme Darker
 Community Material Theme Darker High Contrast
 Community Material Theme High Contrast
 Community Material Theme Ocean
-Community Material Theme Ocean HIgh Contrast
+Community Material Theme Ocean High Contrast
 Community Material Theme Palenight
-Community Material Theme Palenight HIgh Contrast
+Community Material Theme Palenight High Contrast
 Copilot Theme
 Darcula
 Darcula Pycharm with Dark GUI
@@ -173,7 +194,10 @@ Doki Theme: DxD: Rias
 Doki Theme: EroManga: Sagiri
 Doki Theme: EVA: Misato
 Doki Theme: EVA: Rei
-Doki Theme: Franxx: Zero Two
+Doki Theme: Franxx: Hiro
+Doki Theme: Franxx: Hiro x Zero Two
+Doki Theme: Franxx: Zero Two Dark Obsidian
+Doki Theme: Franxx: Zero Two Dark Rose
 Doki Theme: FutureDiary: Yuno
 Doki Theme: Gate: Rory
 Doki Theme: Haikyu: Shoyo
@@ -204,7 +228,7 @@ Doki Theme: Railgun: Mikoto
 Doki Theme: Re:Zero: Echidna
 Doki Theme: Re:Zero: Emilia
 Doki Theme: Re:Zero: Ram
-Doki Theme: Re:Zero: rem
+Doki Theme: Re:Zero: Rem
 Doki Theme: SAO: Asuna
 Doki Theme: ShieldHero: Raphtalia
 Doki Theme: Shokugeki: Soma
@@ -226,18 +250,23 @@ Eva Dark Italic
 Field Lights
 Firefox Dark
 Flatland Monokai
+freeCodeCamp Dark Theme
 Gatito Theme
 GitHub Dark
 GitHub Dark Colorblind (Beta)
 GitHub Dark Default
 GitHub Dark Dimmed
+Green
 Gruvbox Dark Hard
 Gruvbox Dark Medium
 Gruvbox Dark Soft
-Hacker Haze
+Hackers Haze
 Halcyon
+Henna
+Hipster
 Hyper Term Black
 JellyFish
+Kay Dark
 Kimbie Dark
 Launchbase Theme
 Learn with Sumit - Blue Velvet
@@ -257,6 +286,8 @@ MacOS Modern Dark - Xcode Civic
 MacOS Modern Dark - Xcode Default
 Markdown Editor Dark
 Material
+Material Neutral
+Material Neutral - Classic
 Material Night Eighties
 Material Theme
 Material Theme Darker
@@ -266,6 +297,7 @@ Material Theme Ocean
 Material Theme Ocean HIgh Contrast
 Material Theme Palenight
 Material Theme Palenight High Contrast
+Matrix
 Mayukai Alucard
 Mayukai Dark
 Mayukai Midnight
@@ -285,10 +317,13 @@ Nebula - Console
 New Moon
 Oceanic Next
 Oceanic Next (dimmed bg)
+Office Black Theme (Word)
 Omni
 One Dark Pro Monokai Darker
 One Dark Theme
 One Monokai
+One Monokai 80s
+Origamid
 Palenight (Mild Contrast)
 Palenight Italic
 Palenight Operator
@@ -303,10 +338,16 @@ Popping and Locking
 Predawn
 Predawn GF Markdown
 Predawn Markdown
+PyCharm Dark Theme
+PyCharm Dark+ Theme
+PyCharm Night Theme
+PyCharm Original Theme
+React Theme
 Red
 Sapphire
 Sapphire (Bright)
 Sapphire (Dim)
+Sea Green Theme
 Seti Monokai: Dark Forest
 Seti Monokai: Original
 Seti Monokai: Pale Night
@@ -322,10 +363,15 @@ Slack Theme Tritanopia
 Slack Theme Work Hard
 Slime
 Solarized Dark
+Son of Obsidian
 Spirited Away
+Spotify Theme
+Spotify Theme Soft
 Sublime Material Theme - Dark
-sublime Monokai
+Sublime Monokai
+Sublime VSCode Theme
 Super One Dark
+Theme
 Theme
 Theme (Italic)
 Theme + Dark Blue Theme
@@ -346,7 +392,10 @@ Winter is Coming (Dark Black - No Italics)
 Winter is Coming (Dark Black)
 Winter is Coming (Dark Blue - No Italics)
 Winter is Coming (Dark Blue)
+Xcode Classic Dark
 Xcode Default (Dark)
+Xcode Default Dark
+Xcode Default Dark Customized Version
 Xcode Partial (Dark)
 Bearded Theme HC Brewing Storm
 Bearded Theme HC Ebony
@@ -356,4 +405,4 @@ Bearded Theme HC Wonderland Wood
 Dark High Contrast
 GitHub Dark High Contrast
 GitHub Light High Contrast
-LIght High Contrast
+Light High Contrast
