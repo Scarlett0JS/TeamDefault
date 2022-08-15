@@ -124,4 +124,5 @@ $RECYCLE.BIN/
 # folder
 ThemeImg/
 ThemeImg_tmp/
-*Server/
+ThemeImg_Prepro/
+Server/
