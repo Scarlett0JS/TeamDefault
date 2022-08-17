@@ -12,7 +12,7 @@ html.fp-enabled,
     overflow:hidden;
 
     /*Avoid flicker on slides transitions for mobile phones #336 */
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(143, 32, 216, 0);
 }
 .fp-section {
     position: relative;
@@ -153,6 +153,7 @@ html.fp-enabled,
     margin: -6px 0 0 -6px;
     border-radius: 100%;
  }
+ /* 스크롤 동그라미 */
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
     border-radius: 50%;
@@ -161,7 +162,7 @@ html.fp-enabled,
     height: 4px;
     width: 4px;
     border: 0;
-    background: #333;
+    background: rgb(255, 255, 255);
     left: 50%;
     top: 50%;
     margin: -2px 0 0 -2px;
