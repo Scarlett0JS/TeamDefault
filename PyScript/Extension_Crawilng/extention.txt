@@ -1,0 +1,183 @@
+Todo Highlight
+Psioniq File Header
+Auto Comment Blocks
+Php Docblocker
+Sassdoc
+Document This
+Apache Syntax Support
+Auto Close Tag
+Bracket Pair Colorizer
+ESLint
+Code Spell Checker
+Setting Sync
+Prettier
+Material Icon Theme
+Path Intellisense
+Browser Preview
+Debugger for Chrome
+JavaScript (ES6) code snippets
+Live Server
+Quokka.js
+Live Share
+GitHub
+GitLens
+NPM
+Beautify
+Live Sass Compiler
+Mithril Emmet
+vscode-icons
+Color Picker
+ES7 React/Redux/GraphQL/React-Native snippets
+REST Client
+Prettier - Code formatter
+indent-rainbow
+WakaTime
+Auto Rename Tag
+Lorem ipsum
+Color Highlight
+stylelint
+Active File In StatusBar
+Project Manager
+Bookmarks
+Power Mode
+Bracket Pair Colorizer
+indent-rainbow
+Git History
+Settings Sync
+Auto Close Tag
+CSS Peek
+Prettier
+Auto Rename Tag
+Code Spell Checker
+Debugger for Chrome
+YAML
+Tabnine
+Beautify
+TODO Highlight
+JavaScript Debugger
+Regex Previewer
+Task Explorer
+Markdownlint
+Excel Viewer
+Stackoverflow Instant Search
+Turbo Consolelog
+Code Time
+Code Runner
+TabOut
+ESLint
+Path Intellisense
+Browser Preview
+Emmet
+Color Picker
+Active File In StatusBar
+CodeMetrics
+open in browser
+Auto Rename Tag
+HTML to CSS autocompletion
+HTML CSS Support
+CSS Peek
+Vue Peek
+Prettier - Code Formatter
+Auto Close Tag
+Bracket Pair Colorizer
+JavaScript(ES6) Code Snippets
+ESLint
+Browser Preview
+Active File In StatusBar
+Bracket Pair Colorizer
+CodeMetrics
+Color Highlight
+Git History
+IntelliSense for CSS class names in HTML
+TODO Highlight
+Beautify
+Code Spell Checker
+Better Comments
+Highlight Matching Tag
+indent-rainbow
+Path Intellisense
+Debugger for Chrome
+Live Share
+GitLens
+Mithril Emmet
+vscode-icons
+Stackoverflow Instant Search
+Turbo Consolelog
+Excel Viewer
+Markdown All in One & Markdown Preview
+Material Icon Theme
+Vetur
+Vue VSCode Snippets
+vscode-styled-components
+TabOut
+Bookmarks
+Settings Sync
+Surround
+Import Cost
+GraphQL
+Tabnine
+YAML
+Remote – SSH
+Settings Sync
+Auto Rename Tag
+CSS Peek
+Code Runner
+Material Icon Theme
+Bracket Pair Colorizer
+Peacock
+Colorize
+vscode-icons
+Icon Fonts
+Live SASS Compiler
+Live Server
+GitLens
+Git History
+Code Time
+Polacode
+Docker Explorer
+Remote Development
+Prettier
+Beautify
+TODO Highlight
+Better Comments
+Excel Viewer
+Markdownlint
+ESLint
+Code Spell Checker
+JavaScript Debugger
+Turbo Console Log
+Regex Previewer
+Import Cost
+Task Explorer
+Git Graph
+IntelliCode
+Excel Viewer
+Color Highlight
+Markdown All in One
+Markdown Preview Enhanced
+Profile Switcher
+SonarLint
+ESLint
+CSS Peek
+GitLens
+Better Comments
+Output Colorizer
+DotENV
+Rainbow CSV
+Better Shell Syntax
+Inline SQL Syntax
+Highlight
+Project Manager
+Live Server
+Tabnine AI
+IntelliCode
+Code Runner
+Error Lens
+Auto Rename Tag
+Auto Close Tag
+GitLens
+Git History
+Bracket Pair Colorizer
+Browser Preview
+Code Spell Checker
+ESLint
