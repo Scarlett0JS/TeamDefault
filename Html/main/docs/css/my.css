@@ -1,0 +1,11 @@
+.logo {
+    position: absolute;
+    background-color: yellow;
+    z-index: 100;
+    top: 25px;
+    left: 50px;
+}
+
+.anc-left {
+    left: 150px !important;
+  }
