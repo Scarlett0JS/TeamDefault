@@ -1,12 +1,19 @@
 .logo {
     position: absolute;
-    background-color: yellow;
+    background-color: rgb(98, 185, 255);
     z-index: 100;
-    top: 25px;
+    top: 23px;
     left: 50px;
 }
 
 .anc-left {
-    left: 150px !important;
+    padding-top: 4px;
+    right: 240px !important;
+    font-size: large;
+  }
+
+  #page-1 .text, #page-1-clone .text {
+      background-image: url('img/bg.png');
+      background-size: cover;
   }
 
