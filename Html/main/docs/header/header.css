@@ -1,0 +1,42 @@
+.anchors {
+    position: fixed;
+    top: 25px;
+    right: 50px;
+    z-index: 100;
+  }
+  .anchors ul {
+    margin: 0;
+    padding: 0;
+  }
+  .anchors ul li {
+    float: left;
+    list-style: none;
+  }
+  .anchors ul li a {
+    padding: 12px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+  }
+  .anchors ul li a.active::after {
+    position: absolute;
+    bottom: 0px;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+    content: "";
+  }
+  .logo {
+    position: absolute;
+    background-color: rgb(98, 185, 255);
+    z-index: 100;
+    top: 23px;
+    left: 50px;
+}
+
+.anc-left {
+    padding-top: 4px;
+    right: 240px !important;
+    font-size: large;
+  }
