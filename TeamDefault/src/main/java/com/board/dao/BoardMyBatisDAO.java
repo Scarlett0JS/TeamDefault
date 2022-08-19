@@ -1,0 +1,70 @@
+package com.board.dao;
+
+import java.io.InputStream;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import com.board.entity.Board;
+
+public class BoardMyBatisDAO {
+	private static SqlSessionFactory sqlSessionFactory;
+	static {
+		try {
+			String resource = "com/board/dao/mybatis-config.xml";
+			InputStream inputStream = Resources.getResourceAsStream(resource);
+			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public List<Board> allList(){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Board> boardList =  session.selectList("allList");
+		session.close();
+		return boardList;
+	}
+	
+	public int boardWrite(Board vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int flag = session.insert("boardWrite", vo);
+		session.commit();
+		session.close();
+		return flag;
+	}
+	
+	public int boardDelete(int num) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int flag = session.delete("boardDelete", num);
+		session.commit();
+		session.close();
+		return flag;
+	}
+	
+	public Board boardView(int num) {
+		SqlSession session = sqlSessionFactory.openSession();
+		Board vo = session.selectOne("boardView", num);
+		session.close();
+		return vo;
+	}
+	
+	public void countUpdate(int num) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("countUpdate", num);
+		session.commit();
+		session.close();
+	}
+	
+	public int boardUpdate(Board vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int flag = session.update("boardUpdate", vo);
+		session.commit();
+		session.close();
+		return flag;
+	}
+	
+}
