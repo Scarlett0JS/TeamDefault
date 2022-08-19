@@ -1,102 +1,76 @@
 <!DOCTYPE html>
-<html >
-	<head>
-		<meta charset="UTF-8">
-		<title>Pageable</title>
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-<main>
-	<section data-anchor="Page 1">
-		<div class="text">
-			<h4>Simple markup</h4>
-			<pre class="language-markup">
-			<code>
-&lt;!-- Radial version --&gt;
-&lt;div class="radial-progress"&gt;
-    &lt;svg class="radial-svg" width="50" height="50" transform="rotate(-90 0 0)"&gt;
-        &lt;circle class="radial-fill" stroke-width="5" r="14" cx="20" cy="20"&gt;&lt;/circle&gt;
-    &lt;/svg&gt;
-&lt;/div&gt;
+<html>
 
-&lt;!-- Linear version --&gt;
-&lt;div class="linear-progress"&gt;
-    &lt;div class="bar"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code>
-</pre>
-		</div>
-	</section>
-	<section data-anchor="Page 2">
-		<div class="text">
-			<h4>Create a callback to update the bars</h4>
-<pre class="language-js">
-<code>
-const bar = document.querySelector(".bar");
-const svg = document.querySelector("svg");
-const circle = svg.querySelector("circle");
-const r = circle.getAttribute("r");
-const circ = 2 * Math.PI * r;	
+<head>
+	<meta charset="UTF-8">
+	<title>Pageable</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
 
-// callback to update the progress bars
-function update(data) {
-    const pos = 1 - ((data.max - data.scrolled) / data.max);
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg bg-light">
+			<div class="container-fluid">
+			  <a class="navbar-brand" href="#">Navbar</a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+				  <a class="nav-link active" aria-current="page" href="#">Home</a>
+				  <a class="nav-link" href="#">Features</a>
+				  <a class="nav-link" href="#">Pricing</a>
+				  <a class="nav-link disabled">Disabled</a>
+				</div>
+			  </div>
+			</div>
+		  </nav>
+	</header>
+	<main>
+		<section data-anchor="Page 1">
+			<div class="text">
+				<h4>메인페이지</h4>
+			</div>
+		</section>
+		<section data-anchor="Page 2">
+			<div class="text">
+				<h4>두번째 페이지</h4>
+			</div>
+		</section>
+		<section data-anchor="Page 3">
+			<div class="text">
+				<h4>세번째 페이지</h4>
+			</div>
+		</section>
+		<section data-anchor="Page 4">
+			<div class="text">
+				<h4>네번째 페이지</h4>
+			</div>
+		</section>
+		<section data-anchor="Page 5">
+			<div class="text">
+				<h4>다섯번째 페이지</h4>
+			</div>
+		</section>
+	</main>
 
-    // update radial progress bar
-    circle.style.strokeDashoffset = circ - (circ * pos);
-    
-    // update linear progress bar
-    bar.style.transform = `scale(${pos}, 1)`;	
-}
-</code>
-</pre>
-		</div>
-	</section>
-	<section data-anchor="Page 3">
-		<div class="text">
-			<h4>Use the callback in the config...</h4>
-<pre class="language-js">
-<code>
-const pages = new Pageable("main", {
-    onScroll: update,
-});
-</code>
-</pre>
-		</div>
-	</section>
-	<section data-anchor="Page 4">
-		<div class="text">
-			<h4>...or use the built-in event emitter</h4>
-<pre class="language-js">
-<code>
-const pages = new Pageable("main");
+	<div class="page-progress" style="display: none">
+		<svg class="radial-svg" width="50" height="50" transform="rotate(-90 0 0)">
+			<circle class="radial-fill" stroke-width="5" r="14" cx="20" cy="20"></circle>
+		</svg>
+	</div>
 
-pages.on("scroll", update);
-</code>
-</pre>
-		</div>
-	</section>
-	<section data-anchor="Page 5">
-		<div class="text">
+	<div class="progress">
+		<div class="bar" style="transform: scale(0, 1); display : none"></div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+		crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+	<script src="https://unpkg.com/pageable@latest/dist/pageable.min.js"></script>
+	<script src="js/progress.js"></script>
+</body>
 
-		</div>
-	</section>
-	<section data-anchor="Page 6">
-		<div class="text">
-
-		</div>
-	</section>
-</main>
-
-<div class="page-progress">
-	<svg class="radial-svg" width="50" height="50" transform="rotate(-90 0 0)">
-		<circle class="radial-fill" stroke-width="5" r="14" cx="20" cy="20"></circle>
-	</svg>
-</div>
-
-<div class="progress"><div class="bar" style="transform: scale(0, 1);"></div></div>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
-		<script src="https://unpkg.com/pageable@latest/dist/pageable.min.js"></script>
-		<script src="js/progress.js"></script>
-	</body>
 </html>
