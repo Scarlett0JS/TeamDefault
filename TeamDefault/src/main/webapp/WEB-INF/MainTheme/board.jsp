@@ -10,8 +10,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             Load_BoardList();
@@ -142,7 +142,7 @@
             $("#list").css("display", "none")
             $("#view").css("display", "none")
             $("#write").css("display", "block")
-            $("input[name=num").attr('value', BoradDetailData.nums)
+            $("input[name=num]").attr('value', BoradDetailData.nums)
             $("input[name=title]").attr('value', BoradDetailData.titles)
             $("textarea[name=content]").text(BoradDetailData.contents)
             $("input[name=writer]").attr('value', BoradDetailData.writers)
@@ -168,13 +168,13 @@
 </head>
 
 <body>
+	<jsp:include page="../header/header.jsp" />
     <div class="container">
-        <jsp:include page="../header/header.jsp" />
         <h2>MVC05</h2>
         <div class="panel panel-default">
             <div class="panel-heading">Board</div>
-            <div class="panel-body" id="list"></div>
-            <div class="panel-body" id="view"></div>
+            <div class="panel-body" id="list" style="display: none"></div>
+            <div class="panel-body" id="view" style="display: none"></div>
             <div class="panel-body" id="write" style="display: none">
                 <form id="Frm_BoardWrite">
                     <input type="hidden" name="num" id="num" value=""/>

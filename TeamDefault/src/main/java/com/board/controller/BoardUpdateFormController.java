@@ -6,8 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.board.dao.BoardMyBatisDAO;
 import com.board.entity.Board;
+import com.main.controller.Controller;
+import com.theme.dao.ThemeMyBatisDAO;
 
 public class BoardUpdateFormController implements Controller {
     public BoardUpdateFormController() {
@@ -19,7 +20,7 @@ public class BoardUpdateFormController implements Controller {
 			throws ServletException, IOException {
 		int num = Integer.parseInt(request.getParameter("num"));
 		
-		BoardMyBatisDAO dao = new BoardMyBatisDAO();
+		ThemeMyBatisDAO dao = new ThemeMyBatisDAO();
 		Board vo = dao.boardView(num);
 		
 		request.setAttribute("vo", vo);

@@ -6,8 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.board.dao.BoardMyBatisDAO;
 import com.board.entity.Board;
+import com.main.controller.Controller;
+import com.theme.dao.ThemeMyBatisDAO;
 
 public class BoardWriteController implements Controller{
 
@@ -23,10 +24,8 @@ public class BoardWriteController implements Controller{
 		String content = request.getParameter("content");
 		String writer = request.getParameter("writer");
 		
-		System.out.println(content);
-		
 		Board vo = new Board(title, content, writer);
-		BoardMyBatisDAO dao = new BoardMyBatisDAO();
+		ThemeMyBatisDAO dao = new ThemeMyBatisDAO();
 		
 		dao.boardWrite(vo);
 		

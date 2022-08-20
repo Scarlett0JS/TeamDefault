@@ -6,13 +6,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class IndexController implements Controller{
+import com.main.controller.Controller;
+
+public class BoardMainController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		return "main";
+		return "board";
 	}
 
 }

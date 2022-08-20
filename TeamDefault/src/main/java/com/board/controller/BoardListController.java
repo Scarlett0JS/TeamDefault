@@ -8,9 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.board.dao.BoardMyBatisDAO;
 import com.board.entity.Board;
 import com.google.gson.Gson;
+import com.main.controller.Controller;
+import com.theme.dao.ThemeMyBatisDAO;
 
 public class BoardListController implements Controller{
     public BoardListController() {
@@ -19,7 +20,7 @@ public class BoardListController implements Controller{
 
     public String requestProcessor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		BoardMyBatisDAO dao = new BoardMyBatisDAO();
+		ThemeMyBatisDAO dao = new ThemeMyBatisDAO();
 		
 		List<Board> board_list = dao.allList();
 		

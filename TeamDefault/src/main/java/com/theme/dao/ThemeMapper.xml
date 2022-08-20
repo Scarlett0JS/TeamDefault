@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.board.dao.BoardMapper">
+<mapper namespace="com.theme.dao.ThemeMapper">
 
 	<select id="allList" resultType="com.board.entity.Board">
 		select * from board order by num
@@ -10,8 +10,7 @@
 
 	<insert id="boardWrite" parameterType="com.board.entity.Board">
 		Insert into board (num, title, content, writer)
-		values (board_num.nextval, #{title},
-		#{content}, #{writer})
+		values (board_num.nextval, #{title}, #{content}, #{writer})
 	</insert>
 
 	<delete id="boardDelete" parameterType="int">
@@ -29,5 +28,13 @@
 	<update id="boardUpdate" parameterType="com.board.entity.Board">
 		update board set title = #{title}, content = #{content} where num = #{num}
 	</update>
-
+	
+	<insert id="MemberSignUp" parameterType="com.member.entity.Member">
+		Insert into MEMBER (memId, memName, memPwd)
+		values (#{memId}, #{memName}, #{memPwd})
+	</insert>
+	
+	<select id="MemberLogin" parameterType="com.member.entity.Member" resultType="com.member.entity.Member">
+		select * from member where memId = #{memId} and memPwd = #{memPwd}
+	</select>
 </mapper>

@@ -1,4 +1,4 @@
-package com.board.dao;
+package com.theme.dao;
 
 import java.io.InputStream;
 import java.util.List;
@@ -9,12 +9,13 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.board.entity.Board;
+import com.member.entity.Member;
 
-public class BoardMyBatisDAO {
+public class ThemeMyBatisDAO {
 	private static SqlSessionFactory sqlSessionFactory;
 	static {
 		try {
-			String resource = "com/board/dao/mybatis-config.xml";
+			String resource = "com/theme/dao/mybatis-config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);			
 		} catch (Exception e) {
@@ -65,6 +66,21 @@ public class BoardMyBatisDAO {
 		session.commit();
 		session.close();
 		return flag;
+	}
+	
+	public int MemberSignUp(Member vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int flag = session.insert("MemberSignUp", vo);
+		session.commit();
+		session.close();
+		return flag;
+	}
+
+	public Member MemberLogin(Member vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		Member member = session.selectOne("MemberLogin", vo);
+		session.close();
+		return member;
 	}
 	
 }

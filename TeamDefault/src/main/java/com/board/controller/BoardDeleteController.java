@@ -5,7 +5,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.board.dao.BoardMyBatisDAO;
+import com.main.controller.Controller;
+import com.theme.dao.ThemeMyBatisDAO;
 
 public class BoardDeleteController implements Controller {
   
@@ -18,7 +19,7 @@ public class BoardDeleteController implements Controller {
 			throws ServletException, IOException {
 		int num = Integer.parseInt(request.getParameter("num"));
 		
-		BoardMyBatisDAO dao = new BoardMyBatisDAO();
+		ThemeMyBatisDAO dao = new ThemeMyBatisDAO();
 		dao.boardDelete(num);
 		
 		return null;
