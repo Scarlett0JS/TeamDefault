@@ -3044,7 +3044,7 @@ hr {
 
 .slider-area .hero__caption {
     overflow: hidden;
-    position: relative
+    position: relative;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -3061,7 +3061,7 @@ hr {
 
 @media (max-width: 575px) {
     .slider-area .hero__caption {
-        padding-top: 40px
+        padding-top: 43px
     }
 }
 
