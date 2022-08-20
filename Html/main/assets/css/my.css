@@ -1,0 +1,12 @@
+.slider-bg {
+    /* background-image: url('../img/my_img/bg.png') !important; */
+    background: rgb(98, 154, 221) !important;
+    background: linear-gradient(114deg, rgba(98, 154, 221, 1) 0%, rgba(141, 27, 190, 1) 63%) !important;
+}
+
+.slider-area .hero__img img {
+    position: relative;
+    width: 500px;
+    height: 1100px;
+}
+
