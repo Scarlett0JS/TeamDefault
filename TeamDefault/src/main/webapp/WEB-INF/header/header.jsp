@@ -16,10 +16,11 @@
   <script type="text/javascript" src="./js/Login.js"></script>
   <script type="text/javascript">
   	function Load_LoginForm() {
-	    if ($("#MemberLogin").css("display") == "none") {
-	        $("#MemberLogIn").css("display", "block")
+	    if ($('#MemberLogIn').css("display") == "none") {
+	    	$('#MemberLogIn').css("display", "block")
+	        $('#login-form-link').trigger("click")
 	    } else {
-	        $("#MemberLogin").css("display", "none")
+	    	$('#MemberLogIn').css("display", "none")
 	    }
 	}
 
@@ -88,13 +89,12 @@
     </ul>
     <c:if test="${empty sessionScope.memberDTO}">
 	    <ul class="nav navbar-nav navbar-right">
-	      <li><a href="javascript:Load_SignUpForm()"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-	      <li><a href="javascript:Load_LoginForm()"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+	      <li><a href="javascript:Load_SignUpForm()"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	      <li><a href="javascript:Load_LoginForm()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	    </ul>
     </c:if>
     <c:if test="${!empty sessionScope.memberDTO}">
 	    <ul class="nav navbar-nav navbar-right">
-		  <li><span class="glyphicon glyphicon-user"></span>Hello!! ${memberDTO.memName} </li>
 	      <li><a href="javascript:LogOut()"><span class="glyphicon glyphicon-user"></span>LogOut</a></li>
 	    </ul>
     </c:if>
@@ -108,7 +108,7 @@
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col-xs-6">
-							<a href="#" class="active" id="login-form-link">Login</a>
+							<a href="#" id="login-form-link">Login</a>
 						</div>
 						<div class="col-xs-6">
 							<a href="#" id="register-form-link">Register</a>
@@ -120,7 +120,7 @@
 					<div class="row">
 						<div class="col-lg-12">
 						
-							<form id="login-form" action = "${cpath}/login.do">
+							<form id="login-form" action = "${cpath}/MemberLogin.do">
 								<div class="form-group">
 									<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 								</div>

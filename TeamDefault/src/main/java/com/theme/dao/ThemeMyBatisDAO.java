@@ -78,9 +78,9 @@ public class ThemeMyBatisDAO {
 
 	public Member MemberLogin(Member vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		Member member = session.selectOne("MemberLogin", vo);
+		Member memberDTO = session.selectOne("MemberLogin", vo);
 		session.close();
-		return member;
+		return memberDTO;
 	}
 	
 }

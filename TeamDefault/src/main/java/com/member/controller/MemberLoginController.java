@@ -16,14 +16,13 @@ public class MemberLoginController implements Controller {
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		String memId = request.getParameter("username");
 		String memPwd = request.getParameter("password");
 		
 		Member vo = new Member(memId, memPwd);
 		ThemeMyBatisDAO dao = new ThemeMyBatisDAO();
-		
 		Member memberDTO = dao.MemberLogin(vo);
+		System.out.println(memberDTO.getMemId());
 		
 		if (memberDTO != null) {
 			HttpSession session = request.getSession();
