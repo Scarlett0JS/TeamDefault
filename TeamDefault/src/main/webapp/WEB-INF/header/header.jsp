@@ -32,7 +32,20 @@
 	        $('#MemberLogIn').css("display", "none")
 	    }
 	}
-
+	
+/* 	function MemberSignUpCheck(){
+		let userPwd = $("input[name='SignUpPwd']").val()
+		let userPwdConfirm = $("input[name='SignUpPwd-cofirm']").val()
+		if (userPwd != userPwdConfirm) {
+			alert("Check Password")
+			userPwd.value = ""
+			userPwdConfirm.value = ""
+			userPwd.focus()
+		}else{
+			MemberSignUp()
+		}
+	} */
+	
 	function MemberSignUp() {
 	    let fData = $("#register-form").serialize()
 	    $.ajax({
