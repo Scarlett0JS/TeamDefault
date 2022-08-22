@@ -170,7 +170,7 @@
 <body>
 	<jsp:include page="../header/header.jsp" />
     <div class="container">
-        <h2>MVC05</h2>
+        <h2>Default</h2>
         <div class="panel panel-default">
             <div class="panel-heading">Board</div>
             <div class="panel-body" id="list" style="display: none"></div>
