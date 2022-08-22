@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.main.controller.Controller;
-import com.member.entity.Member;
 import com.theme.dao.ThemeMyBatisDAO;
+import com.theme.entity.Member;
 
 public class MemberLoginController implements Controller {
 

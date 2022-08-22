@@ -1,4 +1,4 @@
-package com.member.entity;
+package com.theme.entity;
 
 public class Member {
 	private String memId;

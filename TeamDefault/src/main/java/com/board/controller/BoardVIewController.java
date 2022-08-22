@@ -7,10 +7,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.board.entity.Board;
 import com.google.gson.Gson;
 import com.main.controller.Controller;
 import com.theme.dao.ThemeMyBatisDAO;
+import com.theme.entity.Board;
 
 public class BoardVIewController implements Controller{
     public BoardVIewController() {

@@ -1,4 +1,4 @@
-package com.board.entity;
+package com.theme.entity;
 
 public class Board{
 	private int num;

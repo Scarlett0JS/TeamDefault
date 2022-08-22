@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.main.controller.Controller;
-import com.member.entity.Member;
 import com.theme.dao.ThemeMyBatisDAO;
+import com.theme.entity.Member;
 
 public class MemBerSignUpController implements Controller {
 

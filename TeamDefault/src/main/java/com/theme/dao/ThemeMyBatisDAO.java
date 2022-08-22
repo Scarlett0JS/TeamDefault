@@ -8,8 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.board.entity.Board;
-import com.member.entity.Member;
+import com.theme.entity.Board;
+import com.theme.entity.Member;
 
 public class ThemeMyBatisDAO {
 	private static SqlSessionFactory sqlSessionFactory;
