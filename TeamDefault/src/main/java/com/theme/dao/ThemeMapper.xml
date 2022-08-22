@@ -37,4 +37,8 @@
 	<select id="MemberLogin" parameterType="com.theme.entity.Member" resultType="com.theme.entity.Member">
 		select * from member where memId = #{memId} and memPwd = #{memPwd}
 	</select>
+	
+	<select id="allColor" resultType="com.theme.entity.Color">
+		select * from ColorMap order by col
+	</select>
 </mapper>
