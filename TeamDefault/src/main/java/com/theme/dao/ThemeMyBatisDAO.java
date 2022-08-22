@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.theme.entity.Board;
+import com.theme.entity.Color;
 import com.theme.entity.Member;
 
 public class ThemeMyBatisDAO {
@@ -81,6 +82,13 @@ public class ThemeMyBatisDAO {
 		Member memberDTO = session.selectOne("MemberLogin", vo);
 		session.close();
 		return memberDTO;
+	}
+	
+	public List<Color> allColor(){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Color> ColorList = session.selectList("allColor");
+		session.close();
+		return ColorList;
 	}
 	
 }
