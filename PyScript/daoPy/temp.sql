@@ -41,7 +41,9 @@ CREATE TABLE Extension(
 	ExtensionProducer varchar2(30) NOT NULL,
 	ExtensionDetail varchar2(500) NOT NULL,
 	ExtensionUrl varchar2(200) NOT NULL,
-	Category varchar2(30) NOT NULL
+	Category varchar2(30) NOT NULL,
+	ExtensionLike number DEFAULT 0
+	primary key(ExtensionNum)
 );
 
 CREATE FUNCTION get_colorSeq RETURN NUMBER IS

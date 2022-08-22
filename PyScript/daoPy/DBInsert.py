@@ -47,9 +47,8 @@ def InsertExtension():
     
     for idx in range(1, len(util_Extention)+1):
         if util_Extention[str(idx)]['exName'].find("[Deprecated]") == -1:
-            insertLi.append("into Extension values (" + 'get_extensionSeq,' +
-                            ",".join(["\'" + i.replace("\'", "") + "\'" for i in util_Extention[str(idx)].values()]) +
-                            ",'Util')")
+            insertLi.append("into Extension (ExtensionNum, ExtensionName, ExtensionProducer, ExtensionDetail, ExtensionUrl) values ( get_extensionSeq," +
+                            ",".join(["\'" + i.replace("\'", "") + "\'" for i in util_Extention[str(idx)].values()]) + ",'Util')")
     
     cursor, connection = dbConnection()
     
@@ -69,9 +68,8 @@ def InsertExtension():
     insertLi = []
     
     for idx, val in df.iterrows():
-        insertLi.append("into Extension values (" + 'get_extensionSeq,' +
-                        ",".join(["\'" + i.replace("\'", "") + "\'" for i in val.values[1:]]) +
-                        ",'Popular')")
+        insertLi.append("into Extension (ExtensionNum, ExtensionName, ExtensionProducer, ExtensionDetail, ExtensionUrl) values ( get_extensionSeq," + 
+                        ",".join(["\'" + i.replace("\'", "") + "\'" for i in val.values[1:]]) + ",'Popular')")
     
     cursor, connection = dbConnection()
     
