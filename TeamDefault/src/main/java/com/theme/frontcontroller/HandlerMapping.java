@@ -2,6 +2,9 @@ package com.theme.frontcontroller;
 
 import java.util.HashMap;
 
+import com.admin.controller.AdminMainController;
+import com.admin.controller.MemberDeleteController;
+import com.admin.controller.MemberListController;
 import com.board.controller.BoardDeleteController;
 import com.board.controller.BoardListController;
 import com.board.controller.BoardMainController;
@@ -29,6 +32,9 @@ public class HandlerMapping {
 		mappings.put("/MemberLogin.do", new MemberLoginController());
 		mappings.put("/MemberLogOut.do", new MemberLogoutController());
 		mappings.put("/index.do", new IndexController());
+		mappings.put("/adminMain.do", new AdminMainController());
+		mappings.put("/memberList.do", new MemberListController());
+		mappings.put("/memberDelete.do", new MemberDeleteController());
 	}
 	
 	public Controller getController(String command) {

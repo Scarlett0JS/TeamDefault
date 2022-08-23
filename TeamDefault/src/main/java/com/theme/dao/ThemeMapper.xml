@@ -37,4 +37,12 @@
 	<select id="MemberLogin" parameterType="com.theme.entity.Member" resultType="com.theme.entity.Member">
 		select * from member where memId = #{memId} and memPwd = #{memPwd}
 	</select>
+	
+	<select id="memberList" resultType="com.theme.entity.Member">
+		select * from member 
+	</select>
+	
+	<delete id="memberDelete" parameterType="String">
+		delete from member where MEMID = #{memId}
+	</delete>
 </mapper>

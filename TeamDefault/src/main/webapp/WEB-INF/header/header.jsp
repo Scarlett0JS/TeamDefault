@@ -81,6 +81,10 @@
 			}
 		})
 	}
+	
+	function Load_MemberInfo(){
+		location.href = "${cpath}/adminMain.do"
+	}
   </script>
 </head>
 <body>
@@ -99,6 +103,7 @@
         </ul>
       </li>
       <li><a href="javascript:Load_Board()">Board</a></li>
+      <li><a href="javascript:Load_MemberInfo()">Member</a></li>
     </ul>
     <c:if test="${empty sessionScope.memberDTO}">
 	    <ul class="nav navbar-nav navbar-right">

@@ -83,4 +83,19 @@ public class ThemeMyBatisDAO {
 		return memberDTO;
 	}
 	
+	public List<Member> memberList(){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Member> memberList = session.selectList("memberList");
+		session.close();
+		return memberList;
+	}
+	
+	public int memberDelete(String memId) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int flag = session.delete("memberDelete", memId);
+		session.commit();
+		session.close();
+		return flag;
+	}
+	
 }
