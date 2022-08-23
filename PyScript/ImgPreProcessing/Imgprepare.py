@@ -44,7 +44,6 @@ def shutilImg(dest_path, folderName):
             Preimg = Preimg.crop((0,105,1200,990))
             Preimg.save(os.path.join(themeName_path, img))
     
-
 if __name__ == "__main__":    
     cur_path = os.path.join(os.getcwd(), 'ThemeImg')
     if not os.path.exists(cur_path):
