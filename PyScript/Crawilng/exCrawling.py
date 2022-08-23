@@ -63,4 +63,4 @@ if __name__ == "__main__":
     
     dataLi = [i[0] for i in Counter(data).most_common(21)]
     crawlApp = exApp()
-    crawlApp.startApp(dataLi[1:], os.path.join(os.getcwd(), 'popularImg'))
+    crawlApp.startApp(dataLi[1:], os.path.join(os.getcwd(), 'popImg'))

@@ -38,6 +38,7 @@
 		select * from member where memId = #{memId} and memPwd = #{memPwd}
 	</select>
 	
+<<<<<<< HEAD
 	<select id="memberList" resultType="com.theme.entity.Member">
 		select * from member 
 	</select>
@@ -45,4 +46,9 @@
 	<delete id="memberDelete" parameterType="String">
 		delete from member where MEMID = #{memId}
 	</delete>
+=======
+	<select id="allColor" resultType="com.theme.entity.Color">
+		select * from ColorMap order by col
+	</select>
+>>>>>>> e7f861c29fdf78e0ad3fdf6e613fd0e0a4939f09
 </mapper>

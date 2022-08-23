@@ -400,7 +400,7 @@ hr {
 .btn {
     font-family: "Poppins", sans-serif;
     text-transform: capitalize;
-    padding: 20px 30px !important;
+    padding: 27px 44px !important;
     color: #fff;
     cursor: pointer;
     font-size: 15px;
@@ -3099,7 +3099,7 @@ hr {
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     .slider-area .hero__caption h1 {
         font-size: 29px
-    }
+    }image.png
 }
 
 @media (max-width: 575px) {
@@ -3641,7 +3641,7 @@ form.search-box .input-form .world-form i {
 }
 
 .about-area1 .about-img img {
-    width: 100%
+    width: 100%;
 }
 
 .about-area1 ul li {
@@ -3711,7 +3711,7 @@ form.search-box .input-form .world-form i {
     position: absolute;
     top: 53%;
     content: "";
-    border-top: 120px solid #2D0A31;
+    border-top: 120px solid #ffffff;
     border-left: 2000px solid transparent;
     left: 0px;
     z-index: -11;
@@ -3753,7 +3753,7 @@ form.search-box .input-form .world-form i {
 }
 
 .pricing-card-area .single-card .card-mid h4 {
-    color: #4C1E51;
+    color: #321e51;
     font-size: 32px;
     font-weight: 600
 }
