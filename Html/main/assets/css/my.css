@@ -171,7 +171,7 @@
     font-size: small;
 }
 
-.ss{
+.padding-30{
     padding: 30px;
 }
 
@@ -300,6 +300,7 @@ h6 {
 }
 
 /* detail.html */
+/* class이름 이따구로 지어서 당황스러우시져 바꿔야됩니다.. 작명 실패! */
 
 .header-color {
     background-color: #282C34;
@@ -319,15 +320,167 @@ h6 {
 }
 
 .detail-main-img{
-    width: 650px;
-    height: 400px;
+    width: 100%;
+    height: 360px;
     border-radius: 10px;
     text-align: left;
+    border-radius: 10px;
 }
-
+/* 사이 공간 더 좁게 하고싶음 */
 .detail-img{
-    width: 150px;
+    width: 100%;
     height: 100px;
     border-radius: 10px;
     text-align: center;
+}
+
+#theme-name{
+    font-size: 40px !important;
+    text-align: left;
+    font-weight: 500;
+}
+
+#theme-by{
+    font-size: 15px !important;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.btn-D1 {
+    display: inline-block;
+    font-weight: 200;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 5px solid transparent;
+    padding: .375rem .75rem;
+    padding-left: 5px;
+    font-size: 25px;
+    line-height: 1;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin-right: 15px;
+}
+
+
+.btn-D2 {
+    display: inline-block;
+    font-weight: 200;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 2px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 30px;
+    line-height: 1;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.btn-D1,
+.border-btn::before,
+.main-header .main-menu ul ul.submenu,
+form.search-box .input-form .search-form button,
+.pricing-card-area .single-card .card-bottom .borders-btn:hover,
+.pricing-card-area .single-card:hover .card-bottom .borders-btn,
+.footer-area .footer-form form .form-icon button {
+    color: #282C34;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.btn-D1::before {
+    background-color: transparent;
+}
+.btn-D2,
+.border-btn::before,
+.main-header .main-menu ul ul.submenu,
+form.search-box .input-form .search-form button,
+.pricing-card-area .single-card .card-bottom .borders-btn:hover,
+.pricing-card-area .single-card:hover .card-bottom .borders-btn,
+.footer-area .footer-form form .form-icon button {
+    color: #282C34;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.btn-D2::before {
+    background-color: transparent;
+}
+
+.dropdown-icon img{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+
+}
+
+.dropdown-icon2 img{
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 1rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+    font-size: 15px;
+    margin: 3px;
+}
+
+#community-c{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.community-h1 h1{
+    padding-bottom: 5px;
+}
+
+.community-a a{
+    color: #000000;
+}
+
+.black-background {
+    background-color: #212529;
+}
+
+.font-white{
+    color: white;
+}
+
+.font-white p{
+    color: white;
+}
+
+.margin-b-20 {
+    margin-bottom: 20px;
+}
+
+.section-padding40 {
+    padding-top: 140px;
+    padding-bottom: 100px
 }
