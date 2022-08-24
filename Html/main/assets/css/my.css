@@ -291,14 +291,43 @@ h6 {
     text-transform: normal
 }
 
-.padding{
-    padding: 20px;
-}
-
 .container {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto
+}
+
+/* detail.html */
+
+.header-color {
+    background-color: #282C34;
+}
+
+.main-img{
+    width: 40px;
+    height: 40px;
+}
+
+.rounded {
+    border-radius: 1.25rem !important
+}
+
+.padding-20{
+    padding: 20px;
+}
+
+.detail-main-img{
+    width: 650px;
+    height: 400px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.detail-img{
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+    text-align: center;
 }
