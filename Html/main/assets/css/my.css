@@ -11,6 +11,24 @@
     right: -63px;
 }
 
+.header-sticky.sticky-bar {
+    background: #282C34;
+}
+.main-header .main-menu ul li a {
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    padding: 39px 2px;
+    display: block;
+    font-size: 14px;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    position: relative
+}
+
 .section-tittle h2 {
     font-size: 44px;
     display: block;
@@ -94,7 +112,7 @@
     position: absolute;
     top: 53%;
     content: "";
-    border-top: 120px solid #ffffff;
+    border-top: 120px solid transparent;
     border-left: 2000px solid transparent;
     left: 0px;
     z-index: -11;
@@ -164,4 +182,40 @@
 #ddddd{
     float: none; 
     margin: 0 auto
+}
+
+.bg-light {
+    background-color: #ffffff !important
+}
+
+a.bg-light:focus,
+a.bg-light:hover,
+button.bg-light:focus,
+button.bg-light:hover {
+    background-color: #d6d4d4 !important
+}
+
+.p-3 {
+    padding: 5rem !important
+}
+
+.my-bg1{
+    background-color: #ffffff;
+}
+
+/* .my-bg2{
+    background-color: #eee;
+} */
+
+.footer-wrappr{
+    background-color: #282C34;
+}
+
+.footer-padding{
+    padding: 20px;
+}
+
+.img-size{
+    width: 40px;
+    height: 40px;
 }
