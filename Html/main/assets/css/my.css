@@ -14,6 +14,7 @@
 .header-sticky.sticky-bar {
     background: #282C34;
 }
+
 .main-header .main-menu ul li a {
     color: rgb(255, 255, 255);
     font-weight: 400;
@@ -151,36 +152,37 @@
     width: 30%;
 }
 
-#f_icon{
+#f_icon {
     width: 40px;
     height: 40px;
     float: center;
 }
+
 /* .col-4{
     margin-right: 5px;
 
 } */
 
-#f_themeName{
+#f_themeName {
     font-size: 40px;
     font-weight: 600;
     text-align: left;
 }
 
-#f_creator{
+#f_creator {
     font-size: small;
 }
 
-.padding-30{
+.padding-30 {
     padding: 30px;
 }
 
-#dd{
+#dd {
     text-align: center;
 }
 
-#ddddd{
-    float: none; 
+#ddddd {
+    float: none;
     margin: 0 auto
 }
 
@@ -199,7 +201,7 @@ button.bg-light:hover {
     padding: 5rem !important
 }
 
-.my-bg1{
+.my-bg1 {
     background-color: #ffffff;
 }
 
@@ -207,11 +209,11 @@ button.bg-light:hover {
     background-color: #eee;
 } */
 
-.footer-wrappr{
+.footer-wrappr {
     background-color: #282C34;
 }
 
-.footer-padding{
+.footer-padding {
     padding: 20px;
 }
 
@@ -219,61 +221,63 @@ button.bg-light:hover {
     background-color: rgb(185, 116, 250);
 } */
 
-.font-10px{
+.font-10px {
     font-size: 10px;
 }
 
-.font-15px{
+.font-15px {
     font-size: 15px;
 }
 
-.font-20px{
+.font-20px {
     font-size: 20px;
 }
 
-.font-25px{
+.font-25px {
     font-size: 25px;
 }
 
-.font-30px{
+.font-30px {
     font-size: 30px;
 }
 
-.font-40px{
+.font-40px {
     font-size: 40px;
 }
 
-.icon1{
+.icon1 {
     width: 80px;
     height: 90px;
 }
+
 /* ???????????????????????????? */
-.icon2{
+.icon2 {
     width: 90px;
     height: 70px;
     text-align: center;
 }
 
-.icon3{
+.icon3 {
     width: 90px;
     height: 90px;
 }
 
-.icon4{
+.icon4 {
     width: 90px;
     height: 90px;
 }
 
-.icon5{
-    width: 90px;
-    height: 90px;
-}
-.icon6{
+.icon5 {
     width: 90px;
     height: 90px;
 }
 
-.center{
+.icon6 {
+    width: 90px;
+    height: 90px;
+}
+
+.center {
     text-align: center;
 }
 
@@ -306,7 +310,7 @@ h6 {
     background-color: #282C34;
 }
 
-.main-img{
+.main-img {
     width: 40px;
     height: 40px;
 }
@@ -315,32 +319,33 @@ h6 {
     border-radius: 1.25rem !important
 }
 
-.padding-20{
+.padding-20 {
     padding: 20px;
 }
 
-.detail-main-img{
+.detail-main-img {
     width: 100%;
     height: 360px;
     border-radius: 10px;
     text-align: left;
     border-radius: 10px;
 }
+
 /* 사이 공간 더 좁게 하고싶음 */
-.detail-img{
+.detail-img {
     width: 100%;
     height: 100px;
     border-radius: 10px;
     text-align: center;
 }
 
-#theme-name{
+#theme-name {
     font-size: 40px !important;
     text-align: left;
     font-weight: 500;
 }
 
-#theme-by{
+#theme-by {
     font-size: 15px !important;
     text-align: left;
     font-weight: lighter;
@@ -400,6 +405,7 @@ form.search-box .input-form .search-form button,
 .btn-D1::before {
     background-color: transparent;
 }
+
 .btn-D2,
 .border-btn::before,
 .main-header .main-menu ul ul.submenu,
@@ -416,14 +422,13 @@ form.search-box .input-form .search-form button,
     background-color: transparent;
 }
 
-.dropdown-icon img{
+.dropdown-icon img {
     width: 40px;
     height: 40px;
     margin: 5px;
-
 }
 
-.dropdown-icon2 img{
+.dropdown-icon2 img {
     width: 35px;
     height: 35px;
     margin: 5px;
@@ -451,16 +456,16 @@ form.search-box .input-form .search-form button,
     margin: 3px;
 }
 
-#community-c{
+#community-con {
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.community-h1 h1{
+.community-h1 h1 {
     padding-bottom: 5px;
 }
 
-.community-a a{
+.community-a a {
     color: #000000;
 }
 
@@ -468,11 +473,11 @@ form.search-box .input-form .search-form button,
     background-color: #212529;
 }
 
-.font-white{
+.font-white {
     color: white;
 }
 
-.font-white p{
+.font-white p {
     color: white;
 }
 

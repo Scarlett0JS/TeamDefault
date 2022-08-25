@@ -1,0 +1,35 @@
+/* 
+.filter_box {
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-bottom: 10px;
+} */
+
+.single-district {
+  border: 1px solid black;
+  display: block;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+}
+
+.single-district h3 {
+  font-weight: 700;
+
+}
+
+.single-district p {
+  font-size: 15px;
+  margin: 8px;
+
+}
+
+.single-district a {
+  color: #000;
+  display: block;
+  padding: 15px;
+}
+
+.m-align{
+  margin-left : 100px
+}
