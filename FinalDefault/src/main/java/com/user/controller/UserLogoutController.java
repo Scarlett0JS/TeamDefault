@@ -1,19 +1,24 @@
-package com.user.frontcontroller;
+package com.user.controller;
 
 import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.main.controller.Controller;
 
-public class UserLoginFormController implements Controller {
+public class UserLogoutController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "login";
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		return "main";
 	}
 
 }

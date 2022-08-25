@@ -109,6 +109,8 @@
     }
     mainSlider();
 
+
+
     
 /* 4. Testimonial Active*/
   var testimonial = $('.h1-testimonial-active');
@@ -154,6 +156,8 @@
       ]
     });
   }
+
+
 
 /* 6. Nice Selectorp  */
   var nice_Select = $('select');
@@ -219,7 +223,6 @@
 /* 10. WOW active */
     new WOW().init();
 
-
 // 12 Pop Up Img
     var popUp = $('.single_gallery_part, .img-pop-up');
       if(popUp.length){
@@ -230,7 +233,25 @@
           }
         });
       }
+// 12 Pop Up Video
+    var popUp = $('.popup-video');
+    if(popUp.length){
+      popUp.magnificPopup({
+        type: 'iframe'
+      });
+    }
 
+/* 13. counterUp*/
+    $('.counter').counterUp({
+      delay: 10,
+      time: 3000
+    });
+
+/* 14. Datepicker */
+  $('#datepicker1').datepicker();
+
+// 15. Time Picker
+  $('#timepicker').timepicker();
 
 //16. Overlay
   $(".snake").snakeify({

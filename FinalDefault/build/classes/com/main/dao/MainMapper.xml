@@ -7,4 +7,23 @@
 	<select id="UserLogin" parameterType="com.theme.entity.User" resultType="com.theme.entity.User">
 		select * from D_USER where user_id = #{user_id} and user_pw = #{user_pw}
 	</select>
+	
+	<insert id="UserRegister" parameterType="com.theme.entity.User">
+		Insert into D_USER (user_id, user_pw, user_nick)
+		values (#{user_id}, #{user_pw}, #{user_nick})
+	</insert>
+	
+	<!-- Board -->
+	<select id="allBoardList" resultType="com.theme.entity.Board">
+		select * from D_BOARD order by D_SEQ
+	</select>
+	
+	<update id="BoardCntUpdate" parameterType="int">
+		update D_BOARD set d_cnt = d_cnt+1 where d_seq = #{num}
+	</update>
+	
+	<select id="BoardView" parameterType="int" resultType="com.theme.entity.Board">
+		select * from D_BOARD where d_seq = #{num}
+	</select>
+	
 </mapper>

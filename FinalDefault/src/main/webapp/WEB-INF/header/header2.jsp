@@ -46,7 +46,7 @@
         </div>
     </div>
     <header>
-        <div class="header-area header-transparent">
+        <div class="header-area header-color">
             <div class="main-header ">
                 <div class="header-bottom  header-sticky">
                     <div class="container-fluid">

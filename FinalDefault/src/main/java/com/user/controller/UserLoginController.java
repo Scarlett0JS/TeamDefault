@@ -1,6 +1,7 @@
-package com.user.frontcontroller;
+package com.user.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,17 +23,18 @@ public class UserLoginController implements Controller {
 		
 		User user = new User(user_id, user_pw);
 		MainMyBatisDAO dao = new MainMyBatisDAO();
-		
 		User userVo = dao.UserLogin(user);
 		
 		if (userVo != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("userVo", userVo);
-			return "1";
+			return "main";
 		}else {
-			return "0";			
+			HashMap<String, String> errMap = new HashMap<String, String>();
+			errMap.put("loginError", "checkInput");
+			request.setAttribute("loginError", errMap);
+			return "login";
 		}
-		
 	}
 
 }

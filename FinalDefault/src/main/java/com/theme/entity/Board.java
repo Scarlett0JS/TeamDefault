@@ -1,72 +1,73 @@
 package com.theme.entity;
 
 public class Board {
-	private int b_seq;
-	private String b_title;
-	private String b_content;
-	private String b_file;
-	private String b_date;
+	private int d_seq;
+	private String d_title;
+	private String d_content;
+	private String d_file;
+	private String d_date;
 	private String user_id;
-	private int b_cnt;
-	private String b_category;
-	private int b_like;
+	private int d_cnt;
+	private String d_category;
+	private int d_like;
 	
 	public Board() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public Board(int b_seq, String b_title, String b_content, String b_file, String b_date, String user_id, int b_cnt,
-			String b_category, int b_like) {
+	public Board(int d_seq, String d_title, String d_content, String d_file, String d_date, String user_id, int d_cnt,
+			String d_category, int d_like) {
 		super();
-		this.b_seq = b_seq;
-		this.b_title = b_title;
-		this.b_content = b_content;
-		this.b_file = b_file;
-		this.b_date = b_date;
+		this.d_seq = d_seq;
+		this.d_title = d_title;
+		this.d_content = d_content;
+		this.d_file = d_file;
+		this.d_date = d_date;
 		this.user_id = user_id;
-		this.b_cnt = b_cnt;
-		this.b_category = b_category;
-		this.b_like = b_like;
+		this.d_cnt = d_cnt;
+		this.d_category = d_category;
+		this.d_like = d_like;
 	}
 
-	public int getB_seq() {
-		return b_seq;
+	public int getD_seq() {
+		return d_seq;
 	}
 
-	public void setB_seq(int b_seq) {
-		this.b_seq = b_seq;
+	public void setD_seq(int d_seq) {
+		this.d_seq = d_seq;
 	}
 
-	public String getB_title() {
-		return b_title;
+	public String getD_title() {
+		return d_title;
 	}
 
-	public void setB_title(String b_title) {
-		this.b_title = b_title;
+	public void setD_title(String d_title) {
+		this.d_title = d_title;
 	}
 
-	public String getB_content() {
-		return b_content;
+	public String getD_content() {
+		return d_content;
 	}
 
-	public void setB_content(String b_content) {
-		this.b_content = b_content;
+	public void setD_content(String d_content) {
+		this.d_content = d_content;
 	}
 
-	public String getB_file() {
-		return b_file;
+	public String getD_file() {
+		return d_file;
 	}
 
-	public void setB_file(String b_file) {
-		this.b_file = b_file;
+	public void setD_file(String d_file) {
+		this.d_file = d_file;
 	}
 
-	public String getB_date() {
-		return b_date;
+	public String getD_date() {
+		return d_date;
 	}
 
-	public void setB_date(String b_date) {
-		this.b_date = b_date;
+	public void setD_date(String d_date) {
+		this.d_date = d_date;
 	}
 
 	public String getUser_id() {
@@ -77,36 +78,38 @@ public class Board {
 		this.user_id = user_id;
 	}
 
-	public int getB_cnt() {
-		return b_cnt;
+	public int getD_cnt() {
+		return d_cnt;
 	}
 
-	public void setB_cnt(int b_cnt) {
-		this.b_cnt = b_cnt;
+	public void setD_cnt(int d_cnt) {
+		this.d_cnt = d_cnt;
 	}
 
-	public String getB_category() {
-		return b_category;
+	public String getD_category() {
+		return d_category;
 	}
 
-	public void setB_category(String b_category) {
-		this.b_category = b_category;
+	public void setD_category(String d_category) {
+		this.d_category = d_category;
 	}
 
-	public int getB_like() {
-		return b_like;
+	public int getD_like() {
+		return d_like;
 	}
 
-	public void setB_like(int b_like) {
-		this.b_like = b_like;
+	public void setD_like(int d_like) {
+		this.d_like = d_like;
 	}
 
 	@Override
 	public String toString() {
-		return "Board [b_seq=" + b_seq + ", b_title=" + b_title + ", b_content=" + b_content + ", b_file=" + b_file
-				+ ", b_date=" + b_date + ", user_id=" + user_id + ", b_cnt=" + b_cnt + ", b_category=" + b_category
-				+ ", b_like=" + b_like + "]";
+		return "Board [d_seq=" + d_seq + ", d_title=" + d_title + ", d_content=" + d_content + ", d_file=" + d_file
+				+ ", d_date=" + d_date + ", user_id=" + user_id + ", d_cnt=" + d_cnt + ", d_category=" + d_category
+				+ ", d_like=" + d_like + "]";
 	}
+	
+	
 	
 	
 }

@@ -26,6 +26,10 @@ public class User {
 	public User(String user_id, String user_pw) {
 		this(user_id, user_pw, null, null, null, null);
 	}
+	
+	public User(String user_id, String user_pw, String user_nick) {
+		this(user_id, user_pw, user_nick, null, null, null);
+	}
 
 	public String getUser_id() {
 		return user_id;

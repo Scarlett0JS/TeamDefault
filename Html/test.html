@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title> App landing</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community</title>
 
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/slicknav.css">
@@ -15,38 +14,92 @@
     <link rel="stylesheet" href="./assets/css/slick.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/my.css">
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            loadBoardList()
+        })
+
+        function loadBoardList() {
+            $.ajax({
+                url: "${cpath}/UserBoardList.do",
+                type: "get",
+                dataType: "json",
+                success: BoardHtml,
+                error: function () {
+                    alert("error")
+                }
+            })
+        }
+
+        function BoardHtml(data) {
+            let html = "<table class='table'>"
+            html += "<thead>"
+            html += "<tr calss='community-a'>"
+            html += "<th> Writer </th>"
+            html += "<th> Tilte </th>"
+            html += "<th> Date </th>"
+            html += "<th> hits </th>"
+            html += "</tr>"
+            html += "</thead>"
+            html += "<tbody>"
+            $.each(data, function (idx, obj) {
+                html += "<tr class='community-a'>"
+                html += "<td>" + obj.user_id + "</td>"
+                html += "<td>" + obj.d_title + "</td>"
+                html += "<td>" + obj.d_date + "</td>"
+                html += "<td>" + obj.d_cnt + "</td>"
+                html += "</tr>"
+            })
+            html += "</tbody>"
+            html += "</table>"
+            $("#allBoardList").html(html)
+            $("#allBoardList").css("display", "block")
+        }
+
+    </script>
 </head>
 
 <body>
-
-    <main class="login-body" data-vide-bg="assets/img/login-bg.mp4">
-
-        <div class="login-form">
-            <div class="logo-login">
-                <a href="index.html"><img src="assets/img/logo/loder.png" alt=""></a>
+    <jsp:include page="../header/header2.jsp" />
+    <main>
+        <div class="container" id="community-c">
+            <div class="row">
+                <div class="col-md-12 center">
+                    <h1>Community</h1>
+                    <br>
+                    <br>
+                    <div id="allBoardList" style="display:none"></div>
+                    <div class="center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-            <form class="form-default" action="login-bg.mp4" method="POST">
-                <h2>Login Here</h2>
-                <div class="form-input">
-                    <label for="name">Email</label>
-                    <input type="email" name="email" placeholder="Email">
-                </div>
-                <div class="form-input">
-                    <label for="name">Password</label>
-                    <input type="password" name="password" placeholder="Password">
-                </div>
-                <div class="form-input pt-30">
-                    <input type="submit" name="submit" value="login">
-                </div>
-            </form>
-            <!-- social api button -->
-            <div class="">
-            </div>
-            <!-- Forget Password -->
-            <!-- <a href="#" class="forget">Forget Password</a> -->
-            <a href="register.html" class="registration">Registration</a>
         </div>
+
     </main>
+
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
@@ -57,6 +110,8 @@
     <script src="./assets/js/hover-direction-snake.min.js"></script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+
+
 </body>
 
 </html>
