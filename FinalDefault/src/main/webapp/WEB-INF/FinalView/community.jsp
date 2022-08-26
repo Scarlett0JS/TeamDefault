@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/boardstyles.css">
     <link rel="stylesheet" href="./assets/css/my.css">
+   	<link rel="stylesheet" href="./assets/css/header.css">
 
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -53,8 +54,8 @@
 	        $.each(data, function (idx, obj) {
 	            html += "<tr class='community-a'>"
 	            html += "<td>" + obj.user_id + "</td>"
-	            html += "<td><a href = 'javascript:LoadBoardView(" + obj.d_seq + ")'>" + obj.d_title + "</a></td>"
-	            html += "<td>" + obj.d_date + "</td>"
+	            html += "<td><a href = '${cpath}/UserBoardView.do?num="+ obj.d_seq + "'>" + obj.d_title + "</a></td>"
+	            html += "<td>" + obj.d_date.split(" ")[0] + "</td>"
 	            html += "<td>" + obj.d_cnt + "</td>"
 	            html += "</tr>"
 	        })
@@ -64,60 +65,15 @@
 	        $("#allBoardListMain").css("display", "block")
 	        $("#allBoardList").css("display", "block")
 	    }
-	
-	    function LoadBoardView(num) {
-	        $.ajax({
-	            url: "${cpath}/UserBoardView.do",
-	            type: "get",
-	            data: { "num": num },
-	            success: (BoardViewData) => {
- 	                let html = "<div class='row'>"
-	
-	                /* Content */
-	                html += "<article>"
-	                html += "<br class='mb-4'>"
-	                html += "<h1 class='fw-bolder mb-1'>" + BoardViewData.d_title + "</h1><br>"
-	                html += "<div class='text-muted fst-italic mb-2'>" + BoardViewData.user_id + "</div><br>"
-	                html += "<section class='mb-5'>"
-	                html += "<p class='fs-5 mb-4'>" + BoardViewData.d_content.replace(/\r\n/ig, '</br>') + "</p>"
-	                html += "</section>"
-	                html += "</article>"
-	
-	                /* Comment */
-	                html += "<section class='mb-5'>"
-	                html += "<div class='card bg-light'>"
-	                html += "</div>"
-	                html += "<form class='mb-4'>"
-	                html += "<textarea class='form-control' rows='3' placeholder='Join the discussion and leave a comment!''></textarea>"
-	                html += "</form>"
-	                html += "<div class='d-flex'>"
-	                html += "<div class='flex-shrink-0'>"
-	                html += "<img class='rounded-circle' src='https://dummyimage.com/50x50/ced4da/6c757d.jpg' alt='...'/>"
-	                html += "</div>"
-	                html += "<div class='ms-3'>"
-	                html += "<div class='fw-bold'>Commenter Name</div>"
-	                html += "When I look at the universe and all the ways the universe wants to kill us"
-	                html += "</div>"
-	                html += "</div>"
-	                html += "</div>"
-	                html += "</div>"
-	                html += "</section>"
-	
-	                /* End */
-	                html += "</div>"
-	                html += "</div>"
-	                html += "</div>"
-	             	$("#BoardView").html(html)
-	        	    $("#allBoardListMain").css("display", "none")
-	        	    $("#allBoardList").css("display", "none")
-	        	    $("#BoardView").css("display", "block")
-	            },
-	            error: function () {
-	                alert("Error")
-	            }
-	        })
+	    
+	    function Load_Write(){
+	    	if ("${!empty sessionScope.userVo }" == "true") {
+		    	location.href = "${cpath}/UserBoardWriteForm.do?lang=all"				
+			} else {
+				alert("Please Login")
+				location.href = "${cpath}/UserLoginForm.do"
+			}
 	    }
-        
     </script>
 </head>
 
@@ -132,12 +88,12 @@
                     <br>
                     <div id="allBoardList" style="display:none"></div>
                     <div class="center">
+	                    <button class='btn' onclick="javascript:Load_Write()">Write</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <div class="container mt-5" id="BoardView" style="display:none"></div>
     
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
@@ -148,7 +104,6 @@
     <script src="./assets/js/hover-direction-snake.min.js"></script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
-
 
 </body>
 

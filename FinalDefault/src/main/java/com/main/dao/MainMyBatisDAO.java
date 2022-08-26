@@ -9,6 +9,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.theme.entity.Board;
+import com.theme.entity.Comment;
+import com.theme.entity.Comment_nick;
 import com.theme.entity.User;
 
 public class MainMyBatisDAO {
@@ -52,11 +54,54 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+	
 	public Board BoardView(int num) {
 		SqlSession session = sqlSessionFactory.openSession();
 		Board bvo = session.selectOne("BoardView", num);
 		session.close();
 		return bvo;
+	}
+	
+	public List<Board> LangBoardList(String lang) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Board> boardList = session.selectList("LangBoardList", lang);
+		session.close();
+		return boardList;
+	}
+	
+	public void BoardDelete(int num) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("BoardDelete", num);
+		session.commit();
+		session.close();
+	}
+	
+	public void BoardInsert(Board vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("BoardInsert", vo);
+		session.commit();
+		session.close();
+	}
+	
+	// Comment
+	public List<Comment_nick> allCommentList(int board_num) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Comment_nick> commentList = session.selectList("allCommentList", board_num);
+		session.close();
+		return commentList;
+	}
+	
+	public void CommentWrite(Comment vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("CommentWrite", vo);
+		session.commit();
+		session.close();
+	}
+	public void CommentDelete(Comment vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("CommentDelete", vo);
+		session.commit();
+		session.close();
 	}
 	
 }

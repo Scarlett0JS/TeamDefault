@@ -10,23 +10,18 @@ import com.main.controller.Controller;
 import com.main.dao.MainMyBatisDAO;
 import com.theme.entity.Board;
 
-public class UserBoardViewController implements Controller {
+public class UserBoardUpdateFormController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		int num = Integer.parseInt(request.getParameter("num"));
+		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
-		dao.BoardCntUpdate(num);
+		dao
 		
-		Board vo = dao.BoardView(num);
-		
-		request.setAttribute("vo", vo);
-		
-		/* System.out.println(request.getSession().getAttribute("userVo")); */
-		
-		return "commuView";
+		return "commuUpdate";
 	}
 
 }
