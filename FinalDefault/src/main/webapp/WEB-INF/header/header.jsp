@@ -33,6 +33,10 @@
         function LogOut(){
         	location.href = "${cpath}/UserLogout.do"
         }
+        
+        function Load_MyPage(){
+        	alert("Not")
+        }
     </script>
 </head>
     <div id="preloader-active">
@@ -71,9 +75,10 @@
 	                                                <li class="button-header"><a href="javascript:Load_LoginForm()" class="btn">Log In</a></li>
                                                 </c:if>
    												<c:if test="${!empty sessionScope.userVo}">
-	                                                <li class="button-header margin-left ">
-	                                                <a href="javascript:LogOut()" class="btn">Log Out</a>
+   													<li class="button-header margin-left ">
+	                                                	<a href="javascript:Load_MyPage()" class="btn">My Page</a>
 	                                                </li>
+	                                                <li class="button-header"><a href="javascript:LogOut()" class="btn">Log Out</a></li>
                                                 </c:if>
                                             </ul>
                                         </nav>

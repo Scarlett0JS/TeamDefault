@@ -29,7 +29,11 @@ public class Board {
 		this.d_category = d_category;
 		this.d_like = d_like;
 	}
-
+	
+	public Board(String title, String content, String writer, String lang) {
+		this(0, title, content, null, null, writer, 0, lang, 0);
+	}
+	
 	public int getD_seq() {
 		return d_seq;
 	}

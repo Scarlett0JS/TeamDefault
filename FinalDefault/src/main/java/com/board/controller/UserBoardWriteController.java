@@ -10,23 +10,22 @@ import com.main.controller.Controller;
 import com.main.dao.MainMyBatisDAO;
 import com.theme.entity.Board;
 
-public class UserBoardViewController implements Controller {
+public class UserBoardWriteController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		int num = Integer.parseInt(request.getParameter("num"));
+		String title = request.getParameter("summerTitle");
+		String content = request.getParameter("summernote");
+		String writer = request.getParameter("Writer");
+		String lang = request.getParameter("Lang");
+		
+		Board vo = new Board(title, content, writer, lang);
 		MainMyBatisDAO dao = new MainMyBatisDAO();
-		dao.BoardCntUpdate(num);
+		dao.BoardInsert(vo);
 		
-		Board vo = dao.BoardView(num);
-		
-		request.setAttribute("vo", vo);
-		
-		/* System.out.println(request.getSession().getAttribute("userVo")); */
-		
-		return "commuView";
+		return "community";
 	}
 
 }
