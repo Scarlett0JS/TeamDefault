@@ -1,0 +1,76 @@
+h1 {
+  font-size: 50px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.service-box {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+.service-icon-five {
+  width: 165px;
+  height: 165px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 100%;
+  border: 10px solid rgb(236, 234, 230);
+}
+
+.emp-btn {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sel-btn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.service-box-colors {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#coc{
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.pallet {
+  width: 295px;
+  height: 250px;
+}
+
+.active {
+  outline: 5px solid red;
+}
+
+.cocircle {
+  width: 80px;
+  height: 80px;
+  padding: 40px;
+  border-radius: 100%;
+  /* border: 5px solid transparent; */
+  margin: 10px 10px 10px 10px;
+  cursor: pointer;
+}
