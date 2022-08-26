@@ -17,9 +17,12 @@ public class UserBoardUpdateFormController implements Controller {
 			throws ServletException, IOException {
 		
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
-		
+
 		MainMyBatisDAO dao = new MainMyBatisDAO();
-		dao
+		Board board = dao.BoardSelect(board_num);
+		
+		
+		request.setAttribute("board", board);
 		
 		return "commuUpdate";
 	}

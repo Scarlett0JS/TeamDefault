@@ -47,7 +47,7 @@
         }
         
         function updatePost(num){
-        	location.href = "${cpath}/UserBoardUpdateForm.do?board_num" + num 
+        	location.href = "${cpath}/UserBoardUpdateForm.do?board_num=" + num 
         }
 
         function Load_Comment(board_num) {
@@ -147,7 +147,7 @@
                 <div>
                     <c:if test="${!empty sessionScope.userVo }">
                         <c:if test="${ sessionScope.userVo.user_id.equals(vo.user_id)}">
-                            <button class='btn' onclick="javascript:updatePost('${vo.d_seq}')")></button>
+                            <button class='btn' onclick="javascript:updatePost('${vo.d_seq}')")>Update</button>
                             <button class='btn' onclick="javascript:deletePost('${vo.d_seq}')">Delete</button>
                         </c:if>
                     </c:if>

@@ -39,6 +39,10 @@
 		VALUES (D_BOARD_seq.nextval, #{d_title}, #{d_content}, #{user_id}, #{d_category})
 	</insert>
 	
+	<select id="BoardSelect" parameterType="int" resultType="com.theme.entity.Board">
+		select * from D_BOARD where D_SEQ = #{num}
+	</select>
+	
 	<!-- Comment -->
 	<select id="allCommentList" parameterType="int" resultType="com.theme.entity.Comment_nick">
 		SELECT dc.CMT_SEQ , dc.P_SEQ , dc.CMT_CONTENT , dc.CMT_DATE , du.USER_NICK , du.USER_ID 

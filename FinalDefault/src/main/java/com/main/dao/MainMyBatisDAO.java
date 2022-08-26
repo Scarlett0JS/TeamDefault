@@ -83,6 +83,13 @@ public class MainMyBatisDAO {
 		session.close();
 	}
 	
+	public Board BoardSelect(int board_num) {
+		SqlSession session = sqlSessionFactory.openSession();
+		Board vo = session.selectOne("BoardSelect", board_num);
+		session.close();
+		return vo;
+	}
+	
 	// Comment
 	public List<Comment_nick> allCommentList(int board_num) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -103,5 +110,7 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+	
+
 	
 }

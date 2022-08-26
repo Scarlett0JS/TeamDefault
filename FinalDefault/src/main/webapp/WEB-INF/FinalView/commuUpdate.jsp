@@ -47,11 +47,11 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Title</span>
                     </div>
-                    <input type="hidden" id="board_num" name="board_num" value=${ board_num }>
+                    <input type="hidden" id="board_num" name="board_num" value=${ board.d_seq }>
                     <input type="hidden" id="Writer" name="Writer" value= ${ sessionScope.userVo.user_id }>
-                    <input type="text" class="form-control" id="summerTitle" name="summerTitle">
+                    <input type="text" class="form-control" id="summerTitle" name="summerTitle" value= ${ board.d_title } >
                 </div>
-                <textarea id="summernote" name="summernote"></textarea>
+                <textarea id="summernote" name="summernote"> ${ board.d_content } </textarea>
                 <br>
                 <button type="reset" class="btn btn-warning">Cancel</button>
                 <button type="submit" class="btn btn-success">Submit</button>
