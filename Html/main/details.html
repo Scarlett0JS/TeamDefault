@@ -7,15 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
+  <!-- CSS here -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/flaticon.css">
-  <link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
-  <link rel="stylesheet" href="assets/css/gijgo.css">
+  <link rel="stylesheet" href="assets/css/slicknav.css">
   <link rel="stylesheet" href="assets/css/animate.min.css">
   <link rel="stylesheet" href="assets/css/animated-headline.css">
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <!-- 아이콘 -->
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+  <!-- 검색바 아이콘 -->
+  <link rel="stylesheet" href="assets/css/themify-icons.css">
   <link rel="stylesheet" href="assets/css/slick.css">
-  <link rel="stylesheet" href="assets/css/nice-select.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/my.css">
 </head>
@@ -67,84 +69,68 @@
         <div class="row justify-content-around">
           <!-- pt-100 pb-30 -->
           <div class="col-sm-6 pt-80 pb-50">
-            <img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt="" class="mb-0 center rounded detail-main-img">
-
-            <div class="row pt-5">
-              <div class="col col-sm-3"><img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
-                  class="detail-img">
-              </div>
-              <div class="col col-sm-3"><img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
-                  class="detail-img">
-              </div>
-              <div class="col col-sm-3"><img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
-                  class="detail-img">
-              </div>
-              <div class="col col-sm-3"><img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
-                  class="detail-img">
-              </div>
-            </div>
+            <img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
+              class="mb-0 center rounded detail-main-img img-main">
           </div>
           <div class="col-sm-6 pt-80 pb-50 pl-130">
-            <div class="pt-5">
-              <div class="pt-5">
-                <h1 id="theme-name">ThemeName</h1>
-                <h3 id="theme-by">by Someone</h3>
-              </div>
+            <div class="pt-3">
+              <h1 id="theme-name">
+                <img src="assets/img/my_img/One Monokai Theme.png" alt="One Monokai Theme" class="theme-icon"> ThemeName
+              </h1>
+              <p id="theme-by">by Someone | <img src="assets/img/icon/download_icon.png" alt="download_icon"
+                  class="download-icon"> 1,422,047 installs | <img src="assets/img/icon/heart.png" alt="empty_heart"
+                  class="empty_heart"> 1,333 likes </p>
+              <p class="detail-install-bnt"><button type="button" class="btn-D1"><a>Install</a></button>
+                <!-- <button type="button" class="btn-D1"><a></a></a></button> -->
+              </p>
             </div>
-            <div class="pt-5">
               <div class="pt-5">
                 <div class="pt-5">
                   <div class="pt-5">
-                    <div>
-                      <button type="button" class="btn-D1"><a></a>Primary</a></button>
-                      <button type="button" class="btn-D1"><a></a>Primary</a></button>
+                  <div class="pt-5">
+                    <div class="btn-group">
+                      <button type="button" class="btn-D2 dropdown-icon">.</button>
+                      <button type="button" class="btn-D2 dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item dropdown-icon" href="#"><img src="assets/img/my_img/logo/java_logo.png"
+                            alt="java_logo">JAVA</a>
+                        <a class="dropdown-item dropdown-icon2" href="#"><img
+                            src="assets/img/my_img/logo/python_logo.png" alt="python_logo">PYTHON</a>
+                        <a class="dropdown-item dropdown-icon3" href="#"><img src="assets/img/my_img/logo/html_logo.png"
+                            alt="">HTML</a>
+                        <a class="dropdown-item dropdown-icon4" href="#"><img src="assets/img/my_img/logo/js_logo.png"
+                            alt="">JAVASCRIPT</a>
+                      </div>
+                      <div class="pt-5">
+                        <div class="btn-group">
+                          <button type="button" class="btn-D2">Fonts</button>
+                          <button type="button" class="btn-D2 dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu">
+                            <!-- 폰트별로 폰트 적용 하고싶음 -->
+                            <a class="dropdown-item dropdown-icon" href="#"> JetBrains Mono </a>
+                            <a class="dropdown-item dropdown-icon" href="#"> D2coding </a>
+                            <a class="dropdown-item dropdown-icon" href="#"> Noto Sans </a>
+                            <a class="dropdown-item dropdown-icon" href="#"> Consolas </a>
+                            <a class="dropdown-item dropdown-icon" href="#"> Hack
+                            </a>
+                            <a class="dropdown-item dropdown-icon" href="#"> ProFontWindows </a>
+                            <a class="dropdown-item dropdown-icon" href="#"> SourceCodePro
+                            </a>
+                            <a class="dropdown-item dropdown-icon" href="#"> Monaco
+                            </a>
+                            <a class="dropdown-item dropdown-icon" href="#"> IBM Plex Mono </a>
+                            <a class="dropdown-item dropdown-icon" href="#"> Fira code
+                            </a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-5">
-                <div class="btn-group">
-                  <button type="button" class="btn-D2">언어선택</button>
-                  <button type="button" class="btn-D2 dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item dropdown-icon" href="#"><img
-                        src="assets/img/my_img/Popimg/Extension Pack for Java.png" alt="">JAVA</a>
-                    <a class="dropdown-item dropdown-icon2" href="#"><img src="assets/img/my_img/Popimg/C^C++.png"
-                        alt="">C/C++</a>
-                    <a class="dropdown-item dropdown-icon" href="#"><img
-                        src="assets/img/my_img/Popimg/Extension Pack for Java.png" alt="">JAVA</a>
-                    <a class="dropdown-item dropdown-icon2" href="#"><img src="assets/img/my_img/Popimg/C^C++.png"
-                        alt="">C/C++</a>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-5">
-                <div class="btn-group">
-                  <button type="button" class="btn-D2">폰트선택</button>
-                  <button type="button" class="btn-D2 dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item dropdown-icon" href="#"> Roboto </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Noto Sans Korean </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Alumni Sans Pinstripe </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Aboreto </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Nanum Gothic
-                    </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Alumni Sans Collegiate One </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Silkscreen
-                    </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Roboto Condensed
-                    </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> DynaPuff </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Nanum Myeongjo
-                    </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Anek Telugu
-                    </a>
                   </div>
                 </div>
               </div>
@@ -152,10 +138,10 @@
           </div>
         </div>
       </div>
-    </div>
-    </div>
   </main>
+
   <!-- JS here -->
+
   <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
   <!-- Jquery, Popper, Bootstrap -->
   <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -165,37 +151,9 @@
   <script src="./assets/js/jquery.slicknav.min.js"></script>
 
   <!-- Jquery Slick , Owl-Carousel Plugins -->
-  <script src="./assets/js/owl.carousel.min.js"></script>
   <script src="./assets/js/slick.min.js"></script>
   <!-- One Page, Animated-HeadLin -->
-  <script src="./assets/js/wow.min.js"></script>
   <script src="./assets/js/animated.headline.js"></script>
-  <script src="./assets/js/jquery.magnific-popup.js"></script>
-
-  <!-- Date Picker -->
-  <script src="./assets/js/gijgo.min.js"></script>
-
-  <!-- Video bg -->
-  <script src="./assets/js/jquery.vide.js"></script>
-
-  <!-- Nice-select, sticky -->
-  <script src="./assets/js/jquery.nice-select.min.js"></script>
-  <script src="./assets/js/jquery.sticky.js"></script>
-  <!-- Progress -->
-  <script src="./assets/js/jquery.barfiller.js"></script>
-
-  <!-- counter , waypoint,Hover Direction -->
-  <script src="./assets/js/jquery.counterup.min.js"></script>
-  <script src="./assets/js/waypoints.min.js"></script>
-  <script src="./assets/js/jquery.countdown.min.js"></script>
-  <script src="./assets/js/hover-direction-snake.min.js"></script>
-
-  <!-- contact js -->
-  <script src="./assets/js/contact.js"></script>
-  <script src="./assets/js/jquery.form.js"></script>
-  <script src="./assets/js/jquery.validate.min.js"></script>
-  <script src="./assets/js/mail-script.js"></script>
-  <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
 
   <!-- Jquery Plugins, main Jquery -->
   <script src="./assets/js/plugins.js"></script>
