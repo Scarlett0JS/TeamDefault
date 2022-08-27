@@ -40,6 +40,27 @@ public class MainMyBatisDAO {
 		return flag;		
 	}
 	
+	public void UserDelete(String user_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("UserDelete", user_id);
+		session.commit();
+		session.close();
+	}
+	
+	public User UserSelect(String user_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		User uvo = session.selectOne("UserSelect", user_id);
+		session.close();
+		return uvo;
+	}
+	
+	public void UserNickUpdate(User user) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("UserNickUpdate", user);
+		session.commit();
+		session.close();
+	}
+	
 	// Board
 	public List<Board> allBoardList() {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -90,6 +111,13 @@ public class MainMyBatisDAO {
 		return vo;
 	}
 	
+	public void BoardUpdate(Board vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("BoardUpdate", vo);
+		session.commit();
+		session.close();
+	}
+
 	// Comment
 	public List<Comment_nick> allCommentList(int board_num) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -110,6 +138,7 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+
 	
 
 	

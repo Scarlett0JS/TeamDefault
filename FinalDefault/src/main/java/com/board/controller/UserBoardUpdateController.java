@@ -1,4 +1,4 @@
-package com.comment.controller;
+package com.board.controller;
 
 import java.io.IOException;
 
@@ -8,27 +8,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.main.controller.Controller;
 import com.main.dao.MainMyBatisDAO;
-import com.theme.entity.Comment;
+import com.theme.entity.Board;
 
-public class CommentInsertController implements Controller {
+public class UserBoardUpdateController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String comment = request.getParameter("comment");
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
-		String user_id = request.getParameter("user_id");
-		
-		Comment vo = new Comment(comment, board_num, user_id);
-		
-		System.out.println(vo.getCmt_content());
+		String writer = request.getParameter("Writer");
+		String title = request.getParameter("summerTitle");
+		String content = request.getParameter("summernote");
+		Board vo = new Board(board_num , title, content, writer);
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
+		dao.BoardUpdate(vo);
 		
-		dao.CommentWrite(vo);
-		
-		return null;
+		return "redirect:/UserBoardView.do?num=" + board_num;
 	}
 
 }

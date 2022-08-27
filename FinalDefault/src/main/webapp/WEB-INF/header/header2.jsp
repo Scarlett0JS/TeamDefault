@@ -35,7 +35,7 @@
         }
 
         function Load_MyPage() {
-            alert("Not")
+            location.href = "${cpath}/UserMypageForm.do?user_id=" + "${sessionScope.userVo.user_id}"
         }
 
         function Load_Community() {

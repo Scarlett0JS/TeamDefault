@@ -5,6 +5,7 @@ import java.util.HashMap;
 import com.board.controller.UserBoardDeleteController;
 import com.board.controller.UserBoardFormController;
 import com.board.controller.UserBoardListController;
+import com.board.controller.UserBoardUpdateController;
 import com.board.controller.UserBoardUpdateFormController;
 import com.board.controller.UserBoardViewController;
 import com.board.controller.UserBoardWriteController;
@@ -15,9 +16,13 @@ import com.comment.controller.CommentInsertController;
 import com.comment.controller.CommentListController;
 import com.main.controller.Controller;
 import com.main.controller.IndexController;
+import com.user.controller.UserDeleteController;
+import com.user.controller.UserDetailController;
 import com.user.controller.UserLoginController;
 import com.user.controller.UserLoginFormController;
 import com.user.controller.UserLogoutController;
+import com.user.controller.UserMypageFormController;
+import com.user.controller.UserNickUpdateController;
 import com.user.controller.UserRegisterController;
 import com.user.controller.UserRegisterFormController;
 
@@ -34,6 +39,10 @@ public class HandlerMapping {
 		mappings.put("/UserLogin.do", new UserLoginController());
 		mappings.put("/UserRegister.do", new UserRegisterController());
 		mappings.put("/UserLogout.do", new UserLogoutController());
+		mappings.put("/UserMypageForm.do", new UserMypageFormController());
+		mappings.put("/UserDelete.do", new UserDeleteController());
+		mappings.put("/UserDetailList.do", new UserDetailController());
+		mappings.put("/UserNickUpdate.do", new UserNickUpdateController());
 		
 		// Board
 		mappings.put("/UserBoardForm.do", new UserBoardFormController());
@@ -44,6 +53,7 @@ public class HandlerMapping {
 		mappings.put("/UserBoardWriteForm.do", new UserBoardWriteFormController());
 		mappings.put("/UserBoradWrite.do", new UserBoardWriteController());
 		mappings.put("/UserBoardUpdateForm.do", new UserBoardUpdateFormController());
+		mappings.put("/UserBoardUpdate.do", new UserBoardUpdateController());
 		
 		// Comment
 		mappings.put("/CommentList.do", new CommentListController());
