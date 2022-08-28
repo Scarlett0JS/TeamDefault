@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html class="no-js">
@@ -210,131 +212,47 @@
                 <div class="row">
                     <div class="col-6 center">
                         <div class="my-3 p-3 bg-white rounded">
-                            <h2 class="mb-0 font-40px center font-weight-bold padding">Extension</h2>
+                            <h2 class="mb-0 font-35px center font-weight-bold padding">Most Popular Extension</h2>
                             <div class="media text-muted pt-3">
                                 <img data-src="" alt="" class="mr-2 rounded">
                             </div>
                             <div>
-                                <div class="media text-muted pt-3 ">
-                                    <p>
-                                        <img src="./assets/img/my_img/Popimg/CMake.png" alt="" class="icon1">
-                                    </p>
-                                    <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                        <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                        CreatorName :
-                                    </p>
-                                </div>
-                                <div class="media text-muted pt-3">
-                                    <p>
-                                        <img src="./assets/img/my_img/Popimg/Code Runner.png" alt="" class="icon2">
-                                    </p>
-                                    <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                        <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                        CreatorName :
-                                    </p>
-                                </div>
-                                <div class="media text-muted pt-3">
-                                    <p>
-                                        <img src="./assets/img/my_img/Popimg/Docker.png" alt="" class="icon3">
-                                    </p>
-                                    <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                        <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                        CreatorName :
-                                    </p>
-                                </div>
-                                <div class="media text-muted pt-3">
-                                    <p>
-                                        <img src="./assets/img/my_img/Popimg/ESLint.png" alt="" class="icon4">
-                                    </p>
-                                    <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                        <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                        CreatorName :
-                                    </p>
-                                </div>
-                                <div class="media text-muted pt-3">
-                                    <p>
-                                        <img src="./assets/img/my_img/Popimg/Extension Pack for Java.png" alt=""
-                                            class="icon5">
-                                    </p>
-                                    <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                        <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                        CreatorName :
-                                    </p>
-                                </div>
-                                <div class="media text-muted pt-3">
-                                    <p>
-                                        <img src="./assets/img/my_img/Popimg/HTML CSS Support.png" alt="" class="icon6">
-                                    </p>
-                                    <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                        <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                        CreatorName :
-                                    </p>
-                                </div>
-                                <!--🥕-->
-
+                            	<c:forEach var="allEx" items="${allExList}">
+	                                <div class="media text-muted pt-3 ">
+	                                    <p>
+	                                        <a href="${ allEx.ex_url }"><img src="./assets/img/all/${allEx.ex_filepath}" class="icon1"></a>
+	                                    </p>
+	                                    <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
+	                                        <strong class="d-block text-gray-dark font-20px">${ allEx.ex_name }</strong>
+	                                        CreatorName : ${ allEx.ex_producer }
+	                                        <br>
+	                                        ${ allEx.ex_detail }
+	                                    </p>
+	                                </div>
+                               	</c:forEach>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 center">
                         <div class="my-3 p-3 bg-white rounded">
-                            <h2 class="mb-0 font-40px center font-weight-bold padding">Extension</h2>
+                            <h2 class="mb-0 font-35px center font-weight-bold padding">Most Util Extension</h2>
                             <div class="media text-muted pt-3">
                                 <img data-src="" alt="" class="mr-2 rounded">
                             </div>
-                            <div class="media text-muted pt-3 ">
-                                <p>
-                                    <img src="./assets/img/my_img/Popimg/CMake.png" alt="" class="icon1">
-                                </p>
-                                <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                    <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                    CreatorName :
-                                </p>
-                            </div>
-                            <div class="media text-muted pt-3">
-                                <p>
-                                    <img src="./assets/img/my_img/Popimg/Code Runner.png" alt="" class="icon2">
-                                </p>
-                                <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                    <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                    CreatorName :
-                                </p>
-                            </div>
-                            <div class="media text-muted pt-3">
-                                <p>
-                                    <img src="./assets/img/my_img/Popimg/Docker.png" alt="" class="icon3">
-                                </p>
-                                <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                    <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                    CreatorName :
-                                </p>
-                            </div>
-                            <div class="media text-muted pt-3">
-                                <p>
-                                    <img src="./assets/img/my_img/Popimg/ESLint.png" alt="" class="icon4">
-                                </p>
-                                <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                    <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                    CreatorName :
-                                </p>
-                            </div>
-                            <div class="media text-muted pt-3">
-                                <p>
-                                    <img src="./assets/img/my_img/Popimg/Extension Pack for Java.png" alt=""
-                                        class="icon5">
-                                </p>
-                                <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                    <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                    CreatorName :
-                                </p>
-                            </div>
-                            <div class="media text-muted pt-3">
-                                <p>
-                                    <img src="./assets/img/my_img/Popimg/HTML CSS Support.png" alt="" class="icon6">
-                                </p>
-                                <p class="media-body pb-3 mb-0 small lh-125 font-20px px-4">
-                                    <strong class="d-block text-gray-dark font-30px">ExtensionName</strong>
-                                    CreatorName :
-                                </p>
+                            <div>
+                            	<c:forEach var="otherEx" items="${otherExList}">
+	                                <div class="media text-muted pt-3 ">
+	                                    <p>
+	                                        <a href="${ otherEx.ex_url }"><img src="./assets/img/all/${otherEx.ex_filepath}" class="icon1"></a>
+	                                    </p>
+	                                    <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
+	                                        <strong class="d-block text-gray-dark font-20px">${ otherEx.ex_name }</strong>
+	                                        CreatorName : ${ otherEx.ex_producer }
+	                                        <br>
+	                                        ${ otherEx.ex_detail }
+	                                    </p>
+	                                </div>
+                               	</c:forEach>
                             </div>
                         </div>
                     </div>

@@ -11,6 +11,7 @@ import com.board.controller.UserBoardViewController;
 import com.board.controller.UserBoardWriteController;
 import com.board.controller.UserBoardWriteFormController;
 import com.board.controller.UserLangBoardListController;
+import com.color.controller.ColerListController;
 import com.comment.controller.CommentDeleteController;
 import com.comment.controller.CommentInsertController;
 import com.comment.controller.CommentListController;
@@ -23,6 +24,7 @@ import com.user.controller.UserLoginFormController;
 import com.user.controller.UserLogoutController;
 import com.user.controller.UserMypageFormController;
 import com.user.controller.UserNickUpdateController;
+import com.user.controller.UserPwUpdateController;
 import com.user.controller.UserRegisterController;
 import com.user.controller.UserRegisterFormController;
 
@@ -43,6 +45,7 @@ public class HandlerMapping {
 		mappings.put("/UserDelete.do", new UserDeleteController());
 		mappings.put("/UserDetailList.do", new UserDetailController());
 		mappings.put("/UserNickUpdate.do", new UserNickUpdateController());
+		mappings.put("/UserPwUpdate.do", new UserPwUpdateController());
 		
 		// Board
 		mappings.put("/UserBoardForm.do", new UserBoardFormController());
@@ -59,6 +62,9 @@ public class HandlerMapping {
 		mappings.put("/CommentList.do", new CommentListController());
 		mappings.put("/CommentInsert.do", new CommentInsertController());
 		mappings.put("/CommentDelete.do", new CommentDeleteController());
+		
+		// Color
+		mappings.put("/ColorAllList.do", new ColerListController());
 		
 	}
 	

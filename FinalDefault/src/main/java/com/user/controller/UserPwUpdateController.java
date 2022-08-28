@@ -10,21 +10,22 @@ import com.main.controller.Controller;
 import com.main.dao.MainMyBatisDAO;
 import com.theme.entity.User;
 
-public class UserNickUpdateController implements Controller {
+public class UserPwUpdateController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		String user_id = request.getParameter("user_id");
-		String user_nick = request.getParameter("user_nick");
+		String user_pw = request.getParameter("user_pw");
 		
 		User user = new User();
 		user.setUser_id(user_id);
-		user.setUser_nick(user_nick);
+		user.setUser_pw(user_pw);
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
-		dao.UserNickUpdate(user);
+		dao.UserPwUpdate(user);
+		
 		return null;
 	}
 

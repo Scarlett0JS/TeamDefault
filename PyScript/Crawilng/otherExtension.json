@@ -1,0 +1,50 @@
+{
+    "1": {
+        "ExtentionName": "Live Server",
+        "ExtentionProducer": "Live Server",
+        "ExtentionDetail": "Launch a development local Server with live reload feature for static & dynamic pages",
+        "ExtentionInstallCnt": "24.9M",
+        "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer",
+        "ExtentionFile": "Live Server.png"
+    },
+    "2": {
+        "ExtentionName": "IntelliCode",
+        "ExtentionProducer": "IntelliCode",
+        "ExtentionDetail": "AI-assisted development",
+        "ExtentionInstallCnt": "21.3M",
+        "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode",
+        "ExtentionFile": "IntelliCode.png"
+    },
+    "3": {
+        "ExtentionName": "Remote - WSL",
+        "ExtentionProducer": "Remote - WSL",
+        "ExtentionDetail": "Open any folder in the Windows Subsystem for Linux (WSL) and take advantage of Visual Studio Code's full feature set.",
+        "ExtentionInstallCnt": "15.8M",
+        "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl",
+        "ExtentionFile": "Remote - WSL.png"
+    },
+    "4": {
+        "ExtentionName": "Remote - Containers",
+        "ExtentionProducer": "Remote - Containers",
+        "ExtentionDetail": "Open any folder or repository inside a Docker container and take advantage of Visual Studio Code's full feature set.",
+        "ExtentionInstallCnt": "14.4M",
+        "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers",
+        "ExtentionFile": "Remote - Containers.png"
+    },
+    "5": {
+        "ExtentionName": "Project Manager for Java",
+        "ExtentionProducer": "Project Manager for Java",
+        "ExtentionDetail": "Manage Java projects in Visual Studio Code",
+        "ExtentionInstallCnt": "14.2M",
+        "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency",
+        "ExtentionFile": "Project Manager for Java.png"
+    },
+    "6": {
+        "ExtentionName": "Remote - SSH",
+        "ExtentionProducer": "Remote - SSH",
+        "ExtentionDetail": "Open any folder on a remote machine using SSH and take advantage of VS Code's full feature set.",
+        "ExtentionInstallCnt": "12.4M",
+        "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh",
+        "ExtentionFile": "Remote - SSH.png"
+    }
+}

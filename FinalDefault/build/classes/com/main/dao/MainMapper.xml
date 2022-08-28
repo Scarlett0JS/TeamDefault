@@ -21,9 +21,17 @@
 		SELECT * FROM D_USER du WHERE USER_ID = #{user_id}
 	</select>
 	
+	<update id="UserNickUpdate" parameterType="com.theme.entity.User">
+		UPDATE D_USER SET USER_NICK = #{user_nick} WHERE USER_ID = #{user_id}
+	</update>
+	
+	<update id="UserPwUpdate" parameterType="com.theme.entity.User">
+		UPDATE D_USER SET USER_PW = #{user_pw} WHERE USER_ID = #{user_id}
+	</update>
+	
 	<!-- Board -->
 	<select id="allBoardList" resultType="com.theme.entity.Board">
-		select * from D_BOARD order by D_SEQ
+		SELECT * FROM D_BOARD db ORDER BY D_CNT DESC 
 	</select>
 	
 	<update id="BoardCntUpdate" parameterType="int">
@@ -35,7 +43,7 @@
 	</select>
 	
 	<select id="LangBoardList" parameterType="String" resultType="com.theme.entity.Board">
-		select * from D_BOARD where D_CATEGORY = #{lang}
+		select * from D_BOARD where D_CATEGORY = #{lang} ORDER BY D_CNT DESC 
 	</select>
 	
 	<delete id="BoardDelete" parameterType="int">
@@ -72,4 +80,18 @@
 		DELETE FROM D_COMMENT dc WHERE CMT_SEQ = #{cmt_seq}
 	</delete>
 
+	<!-- Extension -->
+	<select id="allExtension" resultType="com.theme.entity.Extension">
+		SELECT * FROM D_EXTENSION de WHERE EX_CATEGORY = 'A' ORDER BY EX_SEQ
+	</select>
+	
+	<select id="otherExtension" resultType="com.theme.entity.Extension">
+		SELECT * FROM D_EXTENSION de WHERE EX_CATEGORY = 'O' ORDER BY EX_SEQ
+	</select>
+	
+	<!-- Color -->
+	<select id="allColor" resultType="com.theme.entity.Color">
+		SELECT * FROM D_COLOR dc ORDER BY COLOR_SEQ 
+	</select>
+	
 </mapper>

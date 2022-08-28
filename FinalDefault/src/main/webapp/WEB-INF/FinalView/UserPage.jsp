@@ -31,12 +31,13 @@
                 dataType: "json",
                 success: UserDetailHtml,
                 error: function () {
-                    alert("Error")
+                    location.href = "${cpath}/index.do"
                 }
             })
         }
 
         function UserDetailHtml(data) {
+        	let star = "*".repeat(data.user_pw.length)
          	let html = "<li class='about-items'><i class='mdi mdi-account icon-sm'></i>"
         		html += "<span class='about-item-name'>Name:</span>"
                 html += "<span class='about-item-detail' id='userNickArea'>" + data.user_nick +"</span>"
@@ -46,12 +47,11 @@
                 html += "<span class='about-item-detail' id='userIdArea'>" + data.user_id +"</span>"
                 html += "<li class='about-items'><i class='mdi mdi-lock-outline icon-sm'></i>"
                 html += "<span class='about-item-name'>Password:</span>"
-                html += "<span class='about-item-detail' id='userPwArea'>" + data.user_pw + "</span>"
+                html += "<span class='about-item-detail' id='userPwArea'>" + star + "</span>"
                 html += "<a href='javascript:EditUserPwForm()' class='about-item-edit' id='userPwHref'>Edit</a></li>"
             $("#UserDetailArea").html(html)
             $("#UserDetailArea").css("display", "block")
         }
-        
         
         function EditUserNickForm(){
         	let userNickAreaInput = "<input id='UserNickInput' type='text' class='form-control'>"
@@ -78,7 +78,30 @@
         	})
         }
         
-
+        function EditUserPwForm(){
+        	let userPwAreaInput = "<input id='UserPwInput' type='text' class='from-control'>"
+        	$("#userPwArea").html(userPwAreaInput)
+        	
+        	let updateBtn = "<a href='javascript:UpdateUserPw()' class='about-item-edit'>Edit</a>"
+        	$("#userPwHref").html(updateBtn)
+        }
+        
+        function UpdateUserPw(){
+        	let pwdata = $("#UserPwInput").val()
+        	let user_id = "${ user_id }"
+        	$.ajax({
+        		url: "${cpath}/UserPwUpdate.do",
+				type: "get",
+				data: {"user_id" : user_id, "user_pw" : pwdata},
+				success: function(){
+					location.href = "${cpath}/UserMypageForm.do?user_id=" + user_id
+				},
+				error: function(){
+					alert("Error")
+				}
+        	})
+        }
+        
         function DeleteFromUser() {
             $.ajax({
                 url: "${cpath}/UserDelete.do",
@@ -90,6 +113,10 @@
                     alert("Error")
                 }
             })
+        }
+        
+        function Load_Mypage(){
+        	location.href = "${cpath}/UserMypageForm.do?user_id=" + "${sessionScope.userVo.user_id}"
         }
 
     </script>
@@ -113,11 +140,11 @@
                                 </div>
                             </div>
                             <div class="profile-content">
-                                <div class="profile-name" style="display: none">${ sessionScope.userVo.user_id }</div>
+                                <div class="profile-name">${ sessionScope.userVo.user_id }</div>
                                 <br>
                                 <ul class="profile-info-list ">
-                                    <a href="" class="profile-info-list-item rounded-30"><i
-                                            class="mdi mdi-eye"></i>Profile Settings</a>
+                                	<li>
+                                    <a href="javascript:Load_Mypage()" class="profile-info-list-item rounded-30"><i class="mdi mdi-eye"></i>Profile Settings</a>
                                     <a href="" class="profile-info-list-item rounded-30"><i
                                             class="mdi mdi-bookmark-check"></i>My Theme</a>
                                     <a href="" class="profile-info-list-item rounded-30"><i

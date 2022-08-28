@@ -20,68 +20,54 @@ def InsertColorMap():
         colordata = json.load(f)
         f.close()
     
-    insertLi = []  
-    for idx in range(1, len(colordata)+1):
-        insertLi.append("into Colormap values (" + 'get_colorSeq,' +
-                        ",".join(["\'" + i[1].replace("\'", "") + "\'" for i in colordata[str(idx)].items() if i[0] != "HSV"]) +
-                        ")") 
+    sql = "Insert into D_COLOR values(D_COLOR_SEQ.nextval ,:1, :2, :3, :4)"
+    insertLi = [(colordata[str(i)]['Color'], colordata[str(i)]['RGB'], colordata[str(i)]['Hexadecimal'], 'admin@gjaischool.com') for i in range(1, len(colordata)+1)]
     
     cursor, connection = dbConnection()
     
-    sql = "Insert All " + " ".join(insertLi) + " select * from dual"
-        
-    cursor.execute(sql)
+    cursor.executemany(sql, insertLi)
     connection.commit()
     
     cursor.close()
     connection.close()
     print("Insert Complete")
 
-def InsertExtension():
-    #================mostUtil
-    with open("Extension_Crawilng/popluar_Extention.json", 'r', encoding="utf-8") as f:
-        util_Extention = json.load(f)
-        f.close()
+def allExtension(JsonName):
+    with open(JsonName, 'r', encoding="utf-8") as f:
+        allExtensionData = json.load(f)
+        f.close() 
     
-    insertLi = []
-    
-    for idx in range(1, len(util_Extention)+1):
-        if util_Extention[str(idx)]['exName'].find("[Deprecated]") == -1:
-            insertLi.append("into Extension (ExtensionNum, ExtensionName, ExtensionProducer, ExtensionDetail, ExtensionUrl) values ( get_extensionSeq," +
-                            ",".join(["\'" + i.replace("\'", "") + "\'" for i in util_Extention[str(idx)].values()]) + ",'Util')")
+    sql = "Insert into D_EXTENSION values(D_EXTENSION_SEQ.nextval, :1, :2, :3, :4, :5, :6, :7, :8)"
+    insertLi = [(allExtensionData[str(i)]['ExtentionName'], allExtensionData[str(i)]['ExtentionProducer'], allExtensionData[str(i)]['ExtentionDetail'], 'admin@gjaischool.com', 
+                 allExtensionData[str(i)]['ExtentionInstallCnt'], allExtensionData[str(i)]['ExtentionFile'],allExtensionData[str(i)]['ExtentionUrl'], 'A') for i in range(1, len(allExtensionData)+1)]
     
     cursor, connection = dbConnection()
     
-    sql = "Insert All " + " ".join(insertLi) + " select * from dual"
-    
-    cursor.execute(sql)
+    cursor.executemany(sql, insertLi)
     connection.commit()
     
     cursor.close()
     connection.close()
-    
-    print("Insert util complete")
-    #================mostPopluar
+    print("Insert Complete")
 
-    df = pd.read_excel("Extension_Crawilng/extensions.xlsx")
+def otherExtension(JsonName):
+    with open(JsonName, 'r', encoding="utf-8") as f:
+        allExtensionData = json.load(f)
+        f.close() 
     
-    insertLi = []
-    
-    for idx, val in df.iterrows():
-        insertLi.append("into Extension (ExtensionNum, ExtensionName, ExtensionProducer, ExtensionDetail, ExtensionUrl) values ( get_extensionSeq," + 
-                        ",".join(["\'" + i.replace("\'", "") + "\'" for i in val.values[1:]]) + ",'Popular')")
+    sql = "Insert into D_EXTENSION values(D_EXTENSION_SEQ.nextval, :1, :2, :3, :4, :5, :6, :7, :8)"
+    insertLi = [(allExtensionData[str(i)]['ExtentionName'], allExtensionData[str(i)]['ExtentionProducer'], allExtensionData[str(i)]['ExtentionDetail'], 'admin@gjaischool.com', 
+                 allExtensionData[str(i)]['ExtentionInstallCnt'], allExtensionData[str(i)]['ExtentionFile'], allExtensionData[str(i)]['ExtentionUrl'], 'O') for i in range(1, len(allExtensionData)+1)]
     
     cursor, connection = dbConnection()
     
-    sql = "Insert All " + " ".join(insertLi) + " select * from dual"
-    
-    cursor.execute(sql)
+    cursor.executemany(sql, insertLi)
     connection.commit()
     
     cursor.close()
     connection.close()
-    
-    print("Insert Popular complete")
+    print("Insert Complete")
     
 if __name__ == "__main__":
-    InsertExtension()
+    allExtension("../Crawilng/allExtension.json")
+    otherExtension("../Crawilng/otherExtension.json")

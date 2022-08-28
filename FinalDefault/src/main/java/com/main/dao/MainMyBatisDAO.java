@@ -9,8 +9,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.theme.entity.Board;
+import com.theme.entity.Color;
 import com.theme.entity.Comment;
 import com.theme.entity.Comment_nick;
+import com.theme.entity.Extension;
 import com.theme.entity.User;
 
 public class MainMyBatisDAO {
@@ -57,6 +59,13 @@ public class MainMyBatisDAO {
 	public void UserNickUpdate(User user) {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.update("UserNickUpdate", user);
+		session.commit();
+		session.close();
+	}
+	
+	public void UserPwUpdate(User user) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("UserPwUpdate", user);
 		session.commit();
 		session.close();
 	}
@@ -138,8 +147,29 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
-
 	
+	// Extension
+	public List<Extension> allExtension() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Extension> exVo = session.selectList("allExtension");
+		session.close();
+		return exVo;
+	}
+	
+	public List<Extension> otherExtension() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Extension> exVo = session.selectList("otherExtension");
+		session.close();
+		return exVo;
+	}
+	
+	// Color
+	public List<Color> allColor() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Color> colVo = session.selectList("allColor");
+		session.close();
+		return colVo;
+	}
 
 	
 }

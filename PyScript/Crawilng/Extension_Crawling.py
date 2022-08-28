@@ -1,9 +1,9 @@
+from fileinput import filename
 from selenium import webdriver as wb
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from urllib.request import urlretrieve
-from collections import Counter
 import time
 import json
 import os
@@ -85,25 +85,29 @@ class exApp:
     def CrawlExtension(self, JsonPath, FolderPath, destUrl):
         url = destUrl
         destJson = {}
-        self.browser(url)
+        self.browser.get(url)
         time.sleep(3)
         
         for idx in range(1, 7):
             ExtentionName = self.browser.find_element(By.XPATH, f'//*[@id="row-1"]/div[{idx}]/a/div/div[1]/div[2]/div[1]/span[1]')
-            ExtentionProducer = self.browser.find_element(By.XPATH, f'//*[@id="row-1"]/div[{idx}]/a/div/div[1]/div[2]/div[1]/span[1]')
-            ExtentionDetail = self.browser.find_element(By.XPATH, f'//*[@id="row-1"]/div[{idx}]/a/div/div[2]/div')
-            ExtentionInstallCnt = self.browser.find_element(By.XPATH, f'//*[@id="row-1"]/div[{idx}]/a/div/div[1]/div[2]/div[2]/span/span')
+            ExtentionNametext = ExtentionName.text.strip()
+            ExtentionProducer = self.browser.find_element(By.XPATH, f'//*[@id="row-1"]/div[{idx}]/a/div/div[1]/div[2]/div[1]/span[1]').text.strip()
+            ExtentionDetail = self.browser.find_element(By.XPATH, f'//*[@id="row-1"]/div[{idx}]/a/div/div[2]/div').text.strip()
+            ExtentionInstallCnt = self.browser.find_element(By.XPATH, f'//*[@id="row-1"]/div[{idx}]/a/div/div[1]/div[2]/div[2]/span/span').text.strip()
             ExtentionImg = self.browser.find_element(By.XPATH, f'//*[@id="vss_{idx+6}"]/img').get_attribute('src')
             
-            urlretrieve(ExtentionImg, os.path.join(FolderPath, f"{ExtentionName}.png"))
+            exfilname = ExtentionNametext.replace("/", "") + ".png"
+            urlretrieve(ExtentionImg, os.path.join(FolderPath, exfilname))
             
             ExtentionName.click()
             time.sleep(2)
             
             ExtentionUrl = self.browser.current_url
-            destJson[idx] = {"ExtentionName" : ExtentionName, "ExtentionProducer" : ExtentionProducer, 
+            destJson[idx] = {"ExtentionName" : ExtentionNametext, "ExtentionProducer" : ExtentionProducer, 
                              "ExtentionDetail" : ExtentionDetail, "ExtentionInstallCnt" : ExtentionInstallCnt,
-                             "ExtentionUrl" : ExtentionUrl}
+                             "ExtentionUrl" : ExtentionUrl, "ExtentionFile" : exfilname}
+            
+            print(ExtentionNametext)
             
             self.browser.back()
             time.sleep(2)
@@ -126,15 +130,20 @@ if __name__ == "__main__":
     
     # crawlApp.CrawlInstallCnt("./macro/test.txt" "./macro/Final.json")
     
-    # needsLi = ["all", "other"]
-    # for folder in needsLi:
-    #     folderPath = os.path.join("./Crawilng", folder)
-    #     if os.path.exists(folderPath):
-    #         os.mkdir(folderPath)
+    needsLi = ["all", "otheres"]
+    folderLi = []
+    for folder in needsLi:
+        folderPath = os.path.join(os.getcwd(), folder)
+        if not os.path.exists(folderPath):
+            os.mkdir(folderPath)
+        folderLi.append(folderPath)
     
-    # urlLi = ["https://marketplace.visualstudio.com/search?target=VSCode&category=All%20categories&sortBy=Installs",
-    #          "https://marketplace.visualstudio.com/search?target=VSCode&category=Other&sortBy=Installs"]
+    urlLi = ["https://marketplace.visualstudio.com/search?target=VSCode&category=All%20categories&sortBy=Installs",
+             "https://marketplace.visualstudio.com/search?target=VSCode&category=Other&sortBy=Installs"]
     
-    # crawlApp.CrawlExtension("./macro/Final.json", "./Crawilng/all", urlLi[0])
-    # crawlApp.CrawlExtension("./macro/Final.json", "./Crawilng/other", urlLi[1])
+    jsonNameLi = ["allExtension.json", "otherExtension.json"]
+    
+    for url, folder, jsonName in zip(urlLi, folderLi, jsonNameLi):
+        crawlApp.CrawlExtension(jsonName, folder, url)
+    
         
