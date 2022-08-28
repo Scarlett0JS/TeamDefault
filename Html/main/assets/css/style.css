@@ -3099,7 +3099,9 @@ hr {
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     .slider-area .hero__caption h1 {
         font-size: 29px
-    }image.png
+    }
+
+    image.png
 }
 
 @media (max-width: 575px) {
@@ -3242,7 +3244,8 @@ hr {
 }
 
 .slider-bg {
-    background: #2D0A31
+    background: rgb(98, 154, 221) !important;
+    background: linear-gradient(114deg, rgba(98, 154, 221, 1) 0%, rgba(141, 27, 190, 1) 63%) !important;
 }
 
 .dot-style .slick-dots {
@@ -7121,5 +7124,5 @@ del {
 }
 
 .switch-wrap {
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
