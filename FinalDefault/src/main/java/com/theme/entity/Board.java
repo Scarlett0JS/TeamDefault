@@ -34,6 +34,10 @@ public class Board {
 		this(0, title, content, null, null, writer, 0, lang, 0);
 	}
 	
+	public Board(int d_seq, String title, String content, String writer) {
+		this(d_seq, title, content, null, null, writer, 0, null, 0);
+	}
+	
 	public int getD_seq() {
 		return d_seq;
 	}

@@ -79,8 +79,8 @@
 .btn {
     font-family: "Poppins", sans-serif;
     text-transform: capitalize;
-    padding: 27px 44px !important;
-    color: #fff;
+    padding: 15px 30px !important;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     font-size: 15px;
     font-weight: 600;
@@ -96,7 +96,7 @@
     border: 0;
     overflow: hidden;
     margin: 0;
-    border-radius: 30px !important;
+    /* border-radius: 30px !important; */
     display: inline-block !important
 }
 
@@ -272,6 +272,10 @@ button.bg-light:hover {
     text-align: center;
 }
 
+.right {
+    text-align: right;
+}
+
 h1,
 h2,
 h3,
@@ -288,6 +292,7 @@ h6 {
 
 .container {
     width: 100%;
+    padding-top: 100px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -316,7 +321,7 @@ h6 {
 
 .detail-main-img {
     width: 100%;
-    height: 360px;
+    height: 400px;
     border-radius: 10px;
     text-align: left;
     border-radius: 10px;
@@ -333,11 +338,30 @@ h6 {
 #theme-name {
     font-size: 40px !important;
     text-align: left;
-    font-weight: 500;
+    font-weight: 700;
+    text-decoration-line: none;
+    text-decoration-color: black;
+
+}
+
+a:link {
+    color: rgb(0, 0, 0);
+}
+
+a:visited {
+    color: rgb(0, 0, 0);
+}
+
+a:hover {
+    color: rgb(157, 219, 255);
+}
+
+a:active {
+    color: green
 }
 
 #theme-by {
-    font-size: 15px !important;
+    font-size: 18px !important;
     text-align: left;
     font-weight: lighter;
 }
@@ -345,7 +369,7 @@ h6 {
 .btn-D1 {
     display: inline-block;
     font-weight: 200;
-    text-align: center;
+    text-align: right;
     white-space: nowrap;
     vertical-align: middle;
     -webkit-user-select: none;
@@ -353,17 +377,18 @@ h6 {
     -ms-user-select: none;
     user-select: none;
     border: 5px solid transparent;
-    padding: .375rem .75rem;
+    padding: .1rem .3rem;
     padding-left: 5px;
     font-size: 25px;
     line-height: 1;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border-radius: 1rem;
     margin-right: 15px;
 }
 
 
-.btn-D2 {
+.btn-D2 {}
+
+/* .btn-D2 {
     display: inline-block;
     font-weight: 200;
     text-align: center;
@@ -375,29 +400,36 @@ h6 {
     user-select: none;
     border: 2px solid transparent;
     padding: .375rem .75rem;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 1;
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
+} */
 
-.btn-D1,
 .border-btn::before,
 .main-header .main-menu ul ul.submenu,
 form.search-box .input-form .search-form button,
 .pricing-card-area .single-card .card-bottom .borders-btn:hover,
 .pricing-card-area .single-card:hover .card-bottom .borders-btn,
 .footer-area .footer-form form .form-icon button {
-    color: #282C34;
-    background-color: transparent;
+    background-color: rgb(165, 126, 255);
+    
+}
+
+.btn-dropdown1{
+    font-size: 18px;
     border: 1px solid black;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
 .btn-D1::before {
     background-color: transparent;
 }
 
-.btn-D2,
 .border-btn::before,
 .main-header .main-menu ul ul.submenu,
 form.search-box .input-form .search-form button,
@@ -405,8 +437,18 @@ form.search-box .input-form .search-form button,
 .pricing-card-area .single-card:hover .card-bottom .borders-btn,
 .footer-area .footer-form form .form-icon button {
     color: #282C34;
-    background-color: transparent;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid black;
+    border-radius: 1rem;
+}
+
+.btn-dropdown2{
+    font-size: 18px;
     border: 1px solid black;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-color: rgb(0, 0, 0);
+    border-radius: 5px;
 }
 
 .btn-D2::before {
@@ -425,6 +467,18 @@ form.search-box .input-form .search-form button,
     margin: 5px;
 }
 
+.dropdown-icon3 img {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+}
+
+.dropdown-icon4 img {
+    width: 27px;
+    height: 35px;
+    margin: 9px;
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -436,14 +490,13 @@ form.search-box .input-form .search-form button,
     padding: 1rem 0;
     margin: .125rem 0 0;
     font-size: 1rem;
-    color: #212529;
+    color: #000000;
     text-align: left;
     list-style: none;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: .25rem;
-    font-size: 15px;
+    font-size: 20px;
     margin: 3px;
 }
 
@@ -479,4 +532,149 @@ form.search-box .input-form .search-form button,
 .section-padding40 {
     padding-top: 140px;
     padding-bottom: 100px
+}
+
+.download-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.empty_heart {
+    width: 20px;
+    height: 20px;
+}
+
+.theme-icon {
+    width: 60px;
+    width: 60px;
+}
+
+.btn-group button {
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
+.background {
+    background-color: #e1aeff;
+}
+
+.pt-5 {
+    padding-top: 3rem !important
+}
+
+.pl-90 {
+    padding-left: 90px
+}
+
+.pl-10 {
+    padding-left: 10px
+}
+
+.categories{
+    font-size: 15px;
+    font-weight: 500;
+    /* width: 150px;
+    height: 95px;
+    background-color: rgb(187, 187, 187);
+    border-radius: 5px; */
+}
+
+.btn-categories {
+    display: inline-block;
+    font-weight: 200;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid black;
+    font-size: 15px;
+    line-height: 1;
+    border-radius: 0.3rem;
+    /* margin-top: 13px;
+    margin-right: 5px;
+    margin-left: 10px; */
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+/* .categories-background{
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #dddddd9d;
+} */
+
+.btn-install {
+    display: inline-block;
+    font-weight: 200;
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid black;
+    padding: 5px;
+    /* padding-left: 5px; */
+    font-size: 20px;
+    line-height: 1;
+    border-radius: 0.5rem;
+    margin-right: 15px;
+    background-color: green;
+}
+
+.btn-install a {
+    margin: 18px;
+    color: white;
+    font-weight: 400;
+}
+
+.install-icon {
+    width: 18px;
+    height: 19px;
+    margin: 5px;
+    margin-top: 2px;
+    margin-left: 7px;
+}
+
+.about-theme {
+    font-size: 15px;
+    /* margin-left: 10px; */
+}
+
+.pt-10{
+    padding-top: 6rem;
+}
+
+.theme-list-title h1 {
+    font-size: 30px;
+}
+
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: .25rem;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+.login-body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.bg{
+    background: rgb(98, 154, 221) !important;
+    background: linear-gradient(114deg, rgba(98, 154, 221, 1) 0%, rgba(141, 27, 190, 1) 63%) !important;
 }

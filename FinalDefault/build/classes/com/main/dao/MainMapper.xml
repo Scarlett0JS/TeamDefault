@@ -13,6 +13,14 @@
 		values (#{user_id}, #{user_pw}, #{user_nick})
 	</insert>
 	
+	<delete id="UserDelete" parameterType="String">
+		DELETE FROM D_USER du WHERE USER_ID = #{user_id}
+	</delete>
+	
+	<select id="UserSelect" parameterType="String" resultType="com.theme.entity.User">
+		SELECT * FROM D_USER du WHERE USER_ID = #{user_id}
+	</select>
+	
 	<!-- Board -->
 	<select id="allBoardList" resultType="com.theme.entity.Board">
 		select * from D_BOARD order by D_SEQ
@@ -42,6 +50,10 @@
 	<select id="BoardSelect" parameterType="int" resultType="com.theme.entity.Board">
 		select * from D_BOARD where D_SEQ = #{num}
 	</select>
+	
+	<update id="BoardUpdate" parameterType="com.theme.entity.Board">
+		UPDATE D_BOARD SET D_TITLE = #{d_title}, D_CONTENT = #{d_content} WHERE D_SEQ = #{d_seq}
+	</update>
 	
 	<!-- Comment -->
 	<select id="allCommentList" parameterType="int" resultType="com.theme.entity.Comment_nick">

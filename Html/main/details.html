@@ -7,16 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
+  <!-- CSS here -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/flaticon.css">
-  <link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
-  <link rel="stylesheet" href="assets/css/gijgo.css">
+  <link rel="stylesheet" href="assets/css/slicknav.css">
   <link rel="stylesheet" href="assets/css/animate.min.css">
   <link rel="stylesheet" href="assets/css/animated-headline.css">
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <!-- 아이콘 -->
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+  <!-- 검색바 아이콘 -->
+  <link rel="stylesheet" href="assets/css/themify-icons.css">
   <link rel="stylesheet" href="assets/css/slick.css">
-  <link rel="stylesheet" href="assets/css/nice-select.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/my.css">
 </head>
 
@@ -24,30 +26,32 @@
   <!-- 나중에 navbar 상단고정 넣던가 메인페이지에 있는 맨 위로 가는 버튼 넣을거임 -->
   <!-- navbar -->
   <header>
-    <div class="header-area header-color">
-      <div class="main-header">
-        <div class="header-bottom  header-sticky">
-          <div class="container-fluid">
-            <div class="row align-items-center">
+    <div class="header-area-my header-color-my">
+      <div class="main-header-my">
+        <div class="header-bottom-my  header-sticky-my">
+          <div class="container-fluid-my">
+            <div class="row-my align-items-center-my">
               <!-- Logo -->
-              <div class="col-xl-2 col-lg-2">
-                <div class="logo">
+              <div class="col-xl-2-my col-lg-2-my">
+                <div class="logo-my">
                   <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
                 </div>
               </div>
-              <div class="col-xl-10 col-lg-10">
-                <div class="menu-wrapper d-flex align-items-center justify-content-end">
+              <div class="col-xl-10-my col-lg-10-my">
+                <div class="menu-wrapper-my d-flex-my align-items-center-my justify-content-end-my">
                   <!-- Main-menu -->
-                  <div class="main-menu d-none d-lg-block">
+                  <div class="main-menu-my d-none-my d-lg-block-my">
                     <nav>
-                      <ul id="navigation">
+                      <ul id="navigation-my">
                         <li><a href="index.html">Home</a></li>
                         <!-- 게시판 -->
                         <li><a href="community.html">Community</a></li>
                         <li><a href="theme.html">Theme</a></li>
                         <!-- Button -->
-                        <li class="button-header margin-left "><a href="register.html" class="btn">Register</a></li>
-                        <li class="button-header"><a href="login.html" class="btn">Sign In</a>
+                        <li class="button-header-my margin-left-my"><a href="register.html" class="btn-my">Register</a>
+                        </li>
+                        <li class="button-header-my "><a href="login.html" class="btn-my">Sign
+                            In</a>
                         </li>
                       </ul>
                     </nav>
@@ -62,89 +66,106 @@
   </header>
   <!-- navbar end -->
   <main>
-    <div class="bg-light">
+    <div>
       <div role="main" class="container">
         <div class="row justify-content-around">
           <!-- pt-100 pb-30 -->
           <div class="col-sm-6 pt-80 pb-50">
-            <img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt="" class="mb-0 center rounded detail-main-img">
-
-            <div class="row pt-5">
-              <div class="col col-sm-3"><img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
-                  class="detail-img">
-              </div>
-              <div class="col col-sm-3"><img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
-                  class="detail-img">
-              </div>
-              <div class="col col-sm-3"><img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
-                  class="detail-img">
-              </div>
-              <div class="col col-sm-3"><img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
-                  class="detail-img">
-              </div>
-            </div>
+            <img src="assets/img/my_img/1337_HTML_Fira code_e.png" alt=""
+              class="mb-0 center rounded detail-main-img img-main">
           </div>
-          <div class="col-sm-6 pt-80 pb-50 pl-130">
+          <div class="col-sm-6 pl-90">
             <div class="pt-5">
-              <div class="pt-5">
-                <h1 id="theme-name">ThemeName</h1>
-                <h3 id="theme-by">by Someone</h3>
+              <h1 id="theme-name">
+                <img src="assets/img/my_img/One Monokai Theme.png" alt="One Monokai Theme" class="theme-icon">
+                One Monokai Theme
+              </h1>
+              <p id="theme-by"> <a href="https://marketplace.visualstudio.com/publishers/azemoh">Joshua Azemoh</a> |
+                <img src="assets/img/icon/download_icon.png" alt="download_icon" class="download-icon">
+                1,422,047 installs | <img src="assets/img/icon/heart.png" alt="empty_heart" class="empty_heart"> 1,333
+                likes
+              </p>
+            </div>
+              <div class="about-theme">
+                <p>• A cross between Monokai and One Dark theme</p>
+              </div>
+            <div class="btn-group">
+              <button type="button" class="btn-dropdown1 dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">언어선택
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item dropdown-icon" href="#"><img src="assets/img/my_img/logo/java_logo.png"
+                    alt="java_logo">JAVA</a>
+                <a class="dropdown-item dropdown-icon2" href="#"><img src="assets/img/my_img/logo/python_logo.png"
+                    alt="python_logo">PYTHON</a>
+                <a class="dropdown-item dropdown-icon3" href="#"><img src="assets/img/my_img/logo/html_logo.png"
+                    alt="">HTML</a>
+                <a class="dropdown-item dropdown-icon4" href="#"><img src="assets/img/my_img/logo/js_logo.png"
+                    alt="">JAVASCRIPT</a>
               </div>
             </div>
-            <div class="pt-5">
-              <div class="pt-5">
-                <div class="pt-5">
-                  <div class="pt-5">
-                    <div>
-                      <button type="button" class="btn-D1"><a></a>Primary</a></button>
-                      <button type="button" class="btn-D1"><a></a>Primary</a></button>
-                    </div>
-                  </div>
+            <div class="btn-group pl-10">
+              <button type="button" class="btn-dropdown2 dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Fonts
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item dropdown-icon" href="#"> JetBrains Mono </a>
+                <a class="dropdown-item dropdown-icon" href="#"> D2coding </a>
+                <a class="dropdown-item dropdown-icon" href="#"> Noto Sans </a>
+                <a class="dropdown-item dropdown-icon" href="#"> Consolas </a>
+                <a class="dropdown-item dropdown-icon" href="#"> Hack
+                </a>
+                <a class="dropdown-item dropdown-icon" href="#"> ProFontWindows </a>
+                <a class="dropdown-item dropdown-icon" href="#"> SourceCodePro
+                </a>
+                <a class="dropdown-item dropdown-icon" href="#"> Monaco
+                </a>
+                <a class="dropdown-item dropdown-icon" href="#"> IBM Plex Mono </a>
+                <a class="dropdown-item dropdown-icon" href="#"> Fira code
+                </a>
+              </div>
+            </div>
+            <div class="row pt-3">
+              <div class="col-6 pt-3">
+                <div class="categories">
+                  <p>Categories</p>
+                  <p class="categories-background">
+                    <button type="" class="btn-categories">
+                      <a href="">#Orange</a>
+                    </button>
+                    <button type="" class="btn-categories">
+                      <a href="">#Lemon</a>
+                    </button>
+                    <button type="" class="btn-categories">
+                      <a href="">#Apple</a>
+                    </button>
+                  </p>
+                </div>
+                <div class="pt-3">
+                  <p class="">
+                    <button type="button" class="btn-install">
+                      <a href="https://marketplace.visualstudio.com/items?itemName=azemoh.one-monokai">Install Theme<img
+                          src="assets/img/icon/download_icon.png" alt="install_icon" class="install-icon"></a>
+                    </button>
+                  </p>
                 </div>
               </div>
-              <div class="pt-5">
-                <div class="btn-group">
-                  <button type="button" class="btn-D2">언어선택</button>
-                  <button type="button" class="btn-D2 dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item dropdown-icon" href="#"><img
-                        src="assets/img/my_img/Popimg/Extension Pack for Java.png" alt="">JAVA</a>
-                    <a class="dropdown-item dropdown-icon2" href="#"><img src="assets/img/my_img/Popimg/C^C++.png"
-                        alt="">C/C++</a>
-                    <a class="dropdown-item dropdown-icon" href="#"><img
-                        src="assets/img/my_img/Popimg/Extension Pack for Java.png" alt="">JAVA</a>
-                    <a class="dropdown-item dropdown-icon2" href="#"><img src="assets/img/my_img/Popimg/C^C++.png"
-                        alt="">C/C++</a>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-5">
-                <div class="btn-group">
-                  <button type="button" class="btn-D2">폰트선택</button>
-                  <button type="button" class="btn-D2 dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item dropdown-icon" href="#"> Roboto </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Noto Sans Korean </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Alumni Sans Pinstripe </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Aboreto </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Nanum Gothic
-                    </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Alumni Sans Collegiate One </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Silkscreen
-                    </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Roboto Condensed
-                    </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> DynaPuff </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Nanum Myeongjo
-                    </a>
-                    <a class="dropdown-item dropdown-icon" href="#"> Anek Telugu
-                    </a>
+              <div class="col-6 pt-3">
+                <div>
+                  <div class="categories">
+                    <p>Categories</p>
+                    <p class="categories-background">
+                      <button type="" class="btn-categories">
+                        <a href="">#Orange</a>
+                      </button>
+                      <button type="" class="btn-categories">
+                        <a href="">#Lemon</a>
+                      </button>
+                      <button type="" class="btn-categories">
+                        <a href="">#Apple</a>
+                      </button>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -153,54 +174,19 @@
         </div>
       </div>
     </div>
-    </div>
   </main>
+  <!-- footer추가 -->
+
   <!-- JS here -->
   <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-  <!-- Jquery, Popper, Bootstrap -->
   <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
   <script src="./assets/js/popper.min.js"></script>
   <script src="./assets/js/bootstrap.min.js"></script>
-  <!-- Jquery Mobile Menu -->
   <script src="./assets/js/jquery.slicknav.min.js"></script>
-
-  <!-- Jquery Slick , Owl-Carousel Plugins -->
-  <script src="./assets/js/owl.carousel.min.js"></script>
   <script src="./assets/js/slick.min.js"></script>
-  <!-- One Page, Animated-HeadLin -->
-  <script src="./assets/js/wow.min.js"></script>
   <script src="./assets/js/animated.headline.js"></script>
-  <script src="./assets/js/jquery.magnific-popup.js"></script>
-
-  <!-- Date Picker -->
-  <script src="./assets/js/gijgo.min.js"></script>
-
-  <!-- Video bg -->
-  <script src="./assets/js/jquery.vide.js"></script>
-
-  <!-- Nice-select, sticky -->
-  <script src="./assets/js/jquery.nice-select.min.js"></script>
-  <script src="./assets/js/jquery.sticky.js"></script>
-  <!-- Progress -->
-  <script src="./assets/js/jquery.barfiller.js"></script>
-
-  <!-- counter , waypoint,Hover Direction -->
-  <script src="./assets/js/jquery.counterup.min.js"></script>
-  <script src="./assets/js/waypoints.min.js"></script>
-  <script src="./assets/js/jquery.countdown.min.js"></script>
-  <script src="./assets/js/hover-direction-snake.min.js"></script>
-
-  <!-- contact js -->
-  <script src="./assets/js/contact.js"></script>
-  <script src="./assets/js/jquery.form.js"></script>
-  <script src="./assets/js/jquery.validate.min.js"></script>
-  <script src="./assets/js/mail-script.js"></script>
-  <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
-
-  <!-- Jquery Plugins, main Jquery -->
   <script src="./assets/js/plugins.js"></script>
   <script src="./assets/js/main.js"></script>
-
 </body>
 
 </html>

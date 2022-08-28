@@ -1,4 +1,4 @@
-package com.comment.controller;
+package com.user.controller;
 
 import java.io.IOException;
 
@@ -8,25 +8,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.main.controller.Controller;
 import com.main.dao.MainMyBatisDAO;
-import com.theme.entity.Comment;
+import com.theme.entity.User;
 
-public class CommentInsertController implements Controller {
+public class UserDeleteController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String comment = request.getParameter("comment");
-		int board_num = Integer.parseInt(request.getParameter("board_num"));
-		String user_id = request.getParameter("user_id");
-		
-		Comment vo = new Comment(comment, board_num, user_id);
-		
-		System.out.println(vo.getCmt_content());
+		User user = (User)request.getSession().getAttribute("userVo");
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
-		
-		dao.CommentWrite(vo);
+		dao.UserDelete(user.getUser_id());
 		
 		return null;
 	}
