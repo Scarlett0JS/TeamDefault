@@ -1,7 +1,5 @@
 var beforeColor;
-//이전에 선택된 컬러 저장 할 변수
 
-//HTML 로딩이 끝난 후
 window.onload = function () {
    init();
 }
@@ -18,16 +16,14 @@ var pallete = [["#FFBB00", "#FFE400", "#ABF200", "#1DDB16", "#00D8FF", "#0054FF"
 var tag = "";
 
 function init() {
-   //2차원 배열 파레트 데이터
    for (i = 0; i < pallete.length; i++) {
       for (j = 0; j < pallete[i].length; j++) {
          tag += "<div id=" + pallete[i][j] + " class='cocircle' onclick='colorSet(this)'></div>";
       }
    }
-   //파레트 파싱
+
    document.getElementById("cocorow").innerHTML = tag;
 
-   //색상 입히기
    var colorBox = document.getElementsByClassName("cocircle");
    for (i = 0; i < colorBox.length; i++) {
       colorBox[i].style.background = colorBox[i].id;
@@ -42,29 +38,8 @@ let num3 = document.querySelector('body > div:nth-child(4) > div > div:nth-child
 let num4 = document.querySelector('body > div:nth-child(4) > div > div:nth-child(4) > div > div');
 let num5 = document.querySelector('body > div:nth-child(4) > div > div:nth-child(5) > div > div');
 
-// $('.service-icon-five').click(function(){
-//    $('.service-icon-five').each(function(){
-//       $(this).attr("id","");
-//    });
-//    $(this).attr("id","tt");
-// });
 let num = 0;
 function colorSet(target) {
-
-   // $('#tt').css("background", target.id); // 아이디가 'tt'인 곳에 색상 넣기
-
-   // $($('.service-icon-five').get()[num]).attr("id", "");
-   // num++;
-
-   // if (beforeColor != undefined && beforeColor != null) { // 다중선택 안 되게 해주는 조건
-   //    document.getElementById(beforeColor).className = document.getElementById(beforeColor).className.replace(" active", "");
-   // }
-
-   // //선택한 색상 표시 기능
-   // document.getElementById(target.id).className += " active";
-   // beforeColor = target.id;
-   // 선택한 색상 클릭 금지 기능(위에 선택한 색상 비활성화...)
-
 
    if (num == 5) {
       $('.service-icon-five').attr("id", "");

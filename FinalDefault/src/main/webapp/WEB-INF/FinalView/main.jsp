@@ -24,6 +24,13 @@
     
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    
+    <script type="text/javascript">
+    	function Load_ColorSelect(){
+    		location.href = "${cpath}/ColorSelect.do"
+    	}
+    </script>
+    
 </head>
 
 <body>
@@ -100,6 +107,7 @@
                             <div class="cat-cap">
                                 <h5><a href="#">d</a></h5>
                                 <p>내용</p>
+                                <button class='btn' onclick="javascript:Load_ColorSelect()">Color Select</button>
                             </div>
                         </div>
                     </div>
@@ -220,7 +228,7 @@
                             	<c:forEach var="allEx" items="${allExList}">
 	                                <div class="media text-muted pt-3 ">
 	                                    <p>
-	                                        <a href="${ allEx.ex_url }"><img src="./assets/img/all/${allEx.ex_filepath}" class="icon1"></a>
+	                                        <a href="${ allEx.ex_url }"><img src="${allEx.ex_filepath}" class="icon1"></a>
 	                                    </p>
 	                                    <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
 	                                        <strong class="d-block text-gray-dark font-20px">${ allEx.ex_name }</strong>
@@ -243,7 +251,7 @@
                             	<c:forEach var="otherEx" items="${otherExList}">
 	                                <div class="media text-muted pt-3 ">
 	                                    <p>
-	                                        <a href="${ otherEx.ex_url }"><img src="./assets/img/all/${otherEx.ex_filepath}" class="icon1"></a>
+	                                        <a href="${ otherEx.ex_url }"><img src="${otherEx.ex_filepath}" class="icon1"></a>
 	                                    </p>
 	                                    <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
 	                                        <strong class="d-block text-gray-dark font-20px">${ otherEx.ex_name }</strong>

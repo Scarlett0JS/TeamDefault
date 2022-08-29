@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<% pageContext.setAttribute("newLineChar", "\n"); %>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
+<c:set var="sessionV" value="${session.userVo}" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,22 +40,10 @@
         }
 
         function loadColor(data) {
-            let pallete = []
-
-            for (i = 0; i < parseInt(data.length / 15); i++) {
-                let tmp = []
-                for (j = i * 15; j < i * 15 + 15; j++) {
-                    tmp.push(data[j].html_code)
-                }
-                pallete.push(tmp)
-            }
-
-            var tag = "";
-            for (i = 0; i < pallete.length; i++) {
-                for (j = 0; j < pallete[i].length; j++) {
-                    tag += "<div id=" + pallete[i][j] + " class='cocircle' onclick='colorSet(this)'></div>";
-                }
-            }
+            var tag = ""
+            $.each(data, function(idx, obj){
+            	tag += "<div id=" + obj.html_code + " class='cocircle' onclick='colorSet(this)'></div>";
+            })
 
             document.getElementById("cocorow").innerHTML = tag;
 
@@ -58,10 +54,8 @@
         }
 
         //onclick event
-
-        let num1 = document.querySelector('body > div:nth-child(4) > div > div:nth-child(1) > div > div');
-
         let num = 0;
+        
         function colorSet(target) {
             var beforeColor;
             if (num == 5) {
@@ -84,20 +78,29 @@
             }
         }
 
-        let selection = new Array();
 
         function emp() {
             location.href = "${cpath}/ColorSelect.do"
         }
 
-
-
         function colorsubmit() {
+            let selection = {};
             for (i = 0; i <= 4; i++) {
-                selection += $($('.service-icon-five')[i]).css('background-color');
-                console.log(selection);
-            }
-        }
+            	selection[String(i)] = $($('.service-icon-five')[i]).css('background-color').slice(4,-1)
+            	}
+            $.ajax({
+                url: "${cpath}/ColorSelectedFromUser.do",
+                type: "post",
+                data: selection,
+                success: function(){
+                    console.log("Success")
+                },
+                error: function(){
+                    console.log("Error")
+                }
+            })
+      }
+            
 
     </script>
 </head>
@@ -144,7 +147,7 @@
             </div>
             <div class="col-md-2 col-sm-6 ">
                 <button type="button" class="emp-btn" onclick="javascript:emp()">EMPTY</button>
-                <button type="button" class="sel-btn">COLOR SELECTION</button>
+                <button type="button" class="sel-btn" onclick="javascript:colorsubmit()">COLOR SELECTION</button>
             </div>
 
         </div>

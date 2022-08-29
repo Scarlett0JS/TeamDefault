@@ -96,16 +96,13 @@ class exApp:
             ExtentionInstallCnt = self.browser.find_element(By.XPATH, f'//*[@id="row-1"]/div[{idx}]/a/div/div[1]/div[2]/div[2]/span/span').text.strip()
             ExtentionImg = self.browser.find_element(By.XPATH, f'//*[@id="vss_{idx+6}"]/img').get_attribute('src')
             
-            exfilname = ExtentionNametext.replace("/", "") + ".png"
-            urlretrieve(ExtentionImg, os.path.join(FolderPath, exfilname))
-            
             ExtentionName.click()
             time.sleep(2)
             
             ExtentionUrl = self.browser.current_url
             destJson[idx] = {"ExtentionName" : ExtentionNametext, "ExtentionProducer" : ExtentionProducer, 
                              "ExtentionDetail" : ExtentionDetail, "ExtentionInstallCnt" : ExtentionInstallCnt,
-                             "ExtentionUrl" : ExtentionUrl, "ExtentionFile" : exfilname}
+                             "ExtentionUrl" : ExtentionUrl, "ExtentionFile" : ExtentionImg}
             
             print(ExtentionNametext)
             
