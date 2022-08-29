@@ -21,7 +21,6 @@ public class UserBoardUpdateFormController implements Controller {
 		MainMyBatisDAO dao = new MainMyBatisDAO();
 		Board board = dao.BoardSelect(board_num);
 		
-		
 		request.setAttribute("board", board);
 		
 		return "commuUpdate";

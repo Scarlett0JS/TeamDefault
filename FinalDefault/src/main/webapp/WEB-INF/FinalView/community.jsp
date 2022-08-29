@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="./assets/css/slick.css">
     <link rel="stylesheet" href="./assets/css/boardstyles.css">
-    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
     <link rel="stylesheet" href="./assets/css/my.css">
    	<link rel="stylesheet" href="./assets/css/header.css">
 
@@ -87,20 +86,20 @@
                     <br>
                     <br>
                     <div id="allBoardList" style="display:none"></div>
-                    <div class="center">
+                    <!-- <div class="center">
 	                    <button class='btn' onclick="javascript:Load_Write()">Write</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </main>
+    <div id="back-top">
+		<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+	</div>
     
     <script src="./assets/js/jquery.slicknav.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/wow.min.js"></script>
     <script src="./assets/js/animated.headline.js"></script>
     <script src="./assets/js/jquery.barfiller.js"></script>
-    <script src="./assets/js/waypoints.min.js"></script>
     <script src="./assets/js/hover-direction-snake.min.js"></script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>

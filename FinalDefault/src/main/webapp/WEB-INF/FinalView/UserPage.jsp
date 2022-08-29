@@ -120,7 +120,7 @@
 </head>
 
 <body>
-    <jsp:include page="../header/header2.jsp" /> 
+    <jsp:include page="../header/header3.jsp" /> 
     <div class="main-panel">
         <div class="container">
             <div class="row margin-top-65 margin-bottom-160">
@@ -174,10 +174,10 @@
 
     </div>
 
-    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

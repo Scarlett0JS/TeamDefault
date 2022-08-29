@@ -12,14 +12,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Default</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/slick.css">
     <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./assets/css/themify-icons.css">
     <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/color_select.css">
+    <link rel="stylesheet" href="./assets/css/color_copy.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
@@ -100,20 +99,15 @@
                 }
             })
       }
-            
-
     </script>
 </head>
 
 <body>
-    <jsp:include page="../header/header.jsp" />
+    <jsp:include page="../header/header3.jsp" />
     <!-- Color Select-->
     <br>
     <br>
     <div class="container">
-        <h1>Color Select</h1>
-        <br>
-        <br>
         <div class="row">
             <div class="col-md-2 col-sm-6 ">
                 <div class="service-box1">
@@ -164,11 +158,10 @@
 
     </script>
 
-    <!-- JS here -->
-    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

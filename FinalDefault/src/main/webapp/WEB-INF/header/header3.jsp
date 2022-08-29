@@ -4,7 +4,6 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
@@ -48,35 +47,35 @@
         </div>
     </div>
     <header>
-        <div class="header-area header-transparent">
-            <div class="main-header ">
-                <div class="header-bottom  header-sticky">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col-xl-2 col-lg-2">
-                                <div class="logo">
-                                    <a href="javascript:Load_Main()"><img src="./assets/img/logo/logo.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-10 col-lg-10">
-                                <div class="menu-wrapper d-flex align-items-center justify-content-end">
-                                    <div class="main-menu d-none d-lg-block">
-                                        <nav>
-                                            <ul id="navigation">
+	    <div class="header-area-my header-color-my">
+	        <div class="main-header-my ">
+	            <div class="header-bottom-my  header-sticky-my">
+	                <div class="container-fluid-my">
+	                    <div class="row-my align-items-center-my">
+	                        <div class="col-xl-2-my col-lg-2-my">
+	                            <div class="logo">
+	                                <a href="javascript:Load_Main()"><img src="./assets/img/logo/logo.png" alt=""></a>
+	                            </div>
+	                        </div>
+	                        <div class="col-xl-10-my col-lg-10-my">
+	                            <div class="menu-wrapper-my d-flex-my align-items-center-my justify-content-end-my">
+	                                <div class="main-menu-my d-none-my d-lg-block-my">
+	                                    <nav>
+	                                        <ul id="navigation-my">
                                                 <li><a href="javascript:Load_Main()">Home</a></li>
                                                 <li><a href="javascript:Load_Community()">Community</a></li>
                                                 <li><a href="theme.html">Theme</a></li>
                                                 <c:if test="${empty sessionScope.userVo}">
-	                                                <li class="button-header margin-left ">
-	                                                <a href="javascript:Load_RegisterForm()" class="btn">Register</a>
+	                                                <li class="button-header-my margin-left-my ">
+	                                                <a href="javascript:Load_RegisterForm()" class="btn-my">Register</a>
 	                                                </li>
-	                                                <li class="button-header"><a href="javascript:Load_LoginForm()" class="btn">Log In</a></li>
+	                                                <li class="button-header-my"><a href="javascript:Load_LoginForm()" class="btn-my">Log In</a></li>
                                                 </c:if>
    												<c:if test="${!empty sessionScope.userVo}">
-   													<li class="button-header margin-left ">
-	                                                	<a href="javascript:Load_MyPage()" class="btn">My Page</a>
+   													<li class="button-header-my margin-left-my ">
+	                                                	<a href="javascript:Load_MyPage()" class="btn-my">My Page</a>
 	                                                </li>
-	                                                <li class="button-header"><a href="javascript:LogOut()" class="btn">Log Out</a></li>
+	                                                <li class="button-header-my"><a href="javascript:LogOut()" class="btn-my">Log Out</a></li>
                                                 </c:if>
                                             </ul>
                                         </nav>

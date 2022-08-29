@@ -9,7 +9,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Community</title>
+	<title>Default</title>
 	
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/slicknav.css">
@@ -90,13 +90,13 @@
 			</div>
 		</div>
 	</main>
+	<div id="back-top">
+		<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+	</div>
 
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/wow.min.js"></script>
     <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.barfiller.js"></script>
-    <script src="./assets/js/waypoints.min.js"></script>
     <script src="./assets/js/hover-direction-snake.min.js"></script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
