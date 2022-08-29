@@ -1,171 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Default</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/slick.css">
+    <link rel="stylesheet" href="./assets/css/slicknav.css">
     <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="./assets/css/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/slick.css">
     <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/color_select.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/my.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            LoadColorList()
-        })
 
-        function LoadColorList() {
-            $.ajax({
-                url: "${cpath}/ColorAllList.do",
-                type: "get",
-                dataType: "json",
-                success: loadColor,
-                error: function () {
-                    alert("error")
-                }
-            })
-        }
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
 
-        function loadColor(data) {
-            let pallete = []
-
-            for (i = 0; i < parseInt(data.length / 15); i++) {
-                let tmp = []
-                for (j = i * 15; j < i * 15 + 15; j++) {
-                    tmp.push(data[j].html_code)
-                }
-                pallete.push(tmp)
-            }
-
-            var tag = "";
-            for (i = 0; i < pallete.length; i++) {
-                for (j = 0; j < pallete[i].length; j++) {
-                    tag += "<div id=" + pallete[i][j] + " class='cocircle' onclick='colorSet(this)'></div>";
-                }
-            }
-
-            document.getElementById("cocorow").innerHTML = tag;
-
-            var colorBox = document.getElementsByClassName("cocircle");
-            for (i = 0; i < colorBox.length; i++) {
-                colorBox[i].style.background = colorBox[i].id;
-            }
-        }
-
-        //onclick event
-
-        let num1 = document.querySelector('body > div:nth-child(4) > div > div:nth-child(1) > div > div');
-
-        let num = 0;
-        function colorSet(target) {
-            var beforeColor;
-            if (num == 5) {
-                $('.service-icon-five').attr("id", "");
-                $('div').removeClass('active');
-            } else {
-                $('#tt').css("background", target.id); // 아이디가 'tt'인 곳에 색상 넣기
-
-                $($('.service-icon-five').get()[num]).attr("id", "");
-                num++;
-                $($('.service-icon-five').get()[num]).attr("id", "tt");
-                document.getElementById(target.id).className += " cdisabled";
-                if (beforeColor != undefined && beforeColor != null) { // 다중선택 안 되게 해주는 조건
-                    document.getElementById(beforeColor).className = document.getElementById(beforeColor).className.replace(" active", "");
-                }
-
-                //선택한 색상 표시 기능
-                document.getElementById(target.id).className += " active";
-                beforeColor = target.id;
-            }
-        }
-
-        let selection = new Array();
-
-        function emp() {
+    <script type="text/javascript">
+        function Load_ColorSelect() {
             location.href = "${cpath}/ColorSelect.do"
         }
-
-
-
-        function colorsubmit() {
-            for (i = 0; i <= 4; i++) {
-                selection += $($('.service-icon-five')[i]).css('background-color');
-                console.log(selection);
-            }
-        }
-
     </script>
+
 </head>
 
 <body>
     <jsp:include page="../header/header.jsp" />
-    <!-- Color Select-->
-    <br>
-    <br>
-    <div class="container">
-        <h1>Color Select</h1>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box1">
-                    <div class="service-icon-five" id="tt">
+    <main>
+        <!-- Slider Area Start-->
+        <div class="slider-area slider-bg ">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider d-flex align-items-center slider-height ">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-xl-5 col-lg-5 col-md-9 ">
+                                <div class="hero__caption">
+                                    <span data-animation="fadeInLeft" data-delay=".3s">Best Domain & hosting
+                                        service
+                                        provider</span>
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s ">It only takes 5 minutes to
+                                        get
+                                        your theme</h1>
+                                    <p data-animation="fadeInLeft" data-delay=".8s">Supercharge your WordPress
+                                        hosting
+                                        with detailed
+                                        website analytics, marketing tools, security, and data
+                                        backups all in one place.</p>
+                                    <!-- Slider btn -->
+                                    <!-- 슬라이더 애니메이션 넣기 -->
+                                    <div class="slider-btns">
+                                        <!--Hero form -->
+                                        <form action="#" class="search-box">
+                                            <div class="input-form">
+                                                <input type="text" placeholder="Search">
+                                                <!-- icon search -->
+                                                <div class="search-form">
+                                                    <button><i class="ti-search"></i></button>
+                                                </div>
+                                                <!-- icon search -->
+                                                <div class="world-form">
+                                                    <i class="fas fa-globe"></i>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="hero__img d-none d-lg-block f-right">
+                                    <!-- main image -->
+                                    <img src="./assets/img/my_img/mainEx.png" alt="" data-animation="fadeInRight"
+                                        data-delay="1s">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box">
-                    <div class="service-icon-five">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box">
-                    <div class="service-icon-five">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box">
-                    <div class="service-icon-five">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box">
-                    <div class="service-icon-five">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6 ">
-                <button type="button" class="emp-btn" onclick="javascript:emp()">EMPTY</button>
-                <button type="button" class="sel-btn">COLOR SELECTION</button>
-            </div>
-
         </div>
-    </div>
-    <br>
-    <Br>
-    <div class="container" id="cocontainer">
-        <div class="row" id="cocorow">
+
+        <section class="team-area section-padding40 section-bg1">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12">
+                        <div class="section-tittle text-center mb-105">
+                            <h2>How to use</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-cat">
+                            <div class="cat-icon">
+                                <img src="" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="#">d</a></h5>
+                                <p>내용</p>
+                                <button class='btn' onclick="javascript:Load_ColorSelect()">Color Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="about-area1 section-padding40">
+            <section class="pricing-card-area fix">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="section-tittle text-center mb-90 font-40px">
+                                <h2>Most popular Themes</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, sunt. Facere
+                                    laboriosam earum, iure
+                                    aut
+                                    mollitia voluptates animi fuga sunt suscipit voluptas soluta non totam, amet
+                                    incidunt temporibus
+                                    minima
+                                    nesciunt?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text">themeName</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text">themeName</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text">themeName</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text">themeName</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text">themeName</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text">themeName</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
-    <Br>
-    <Br>
-    <script>
+        <!-- Pricing Card End -->
+        <!--? About-1 Area Start -->
+        <!-- 🥕 -->
+        <div class="bg-light">
+            <div role="main" class="container">
+                <div class="row">
+                    <div class="col-6 center">
+                        <div class="my-3 p-3 bg-white rounded">
+                            <h2 class="mb-0 font-35px center font-weight-bold padding">Most Popular Extension</h2>
+                            <div class="media text-muted pt-3">
+                                <img data-src="" alt="" class="mr-2 rounded">
+                            </div>
+                            <div>
+                                <c:forEach var="allEx" items="${allExList}">
+                                    <div class="media text-muted pt-3 ">
+                                        <p>
+                                            <a href="${ allEx.ex_url }"><img src="${allEx.ex_filepath}"
+                                                    class="icon1"></a>
+                                        </p>
+                                        <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
+                                            <strong class="d-block text-gray-dark font-20px">${ allEx.ex_name }</strong>
+                                            CreatorName : ${ allEx.ex_producer }
+                                            <br>
+                                            ${ allEx.ex_detail }
+                                        </p>
+                                    </div>
+                                </c:forEach>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 center">
+                        <div class="my-3 p-3 bg-white rounded">
+                            <h2 class="mb-0 font-35px center font-weight-bold padding">Most Util Extension</h2>
+                            <div class="media text-muted pt-3">
+                                <img data-src="" alt="" class="mr-2 rounded">
+                            </div>
+                            <div>
+                                <c:forEach var="otherEx" items="${otherExList}">
+                                    <div class="media text-muted pt-3 ">
+                                        <p>
+                                            <a href="${ otherEx.ex_url }"><img src="${otherEx.ex_filepath}"
+                                                    class="icon1"></a>
+                                        </p>
+                                        <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
+                                            <strong class="d-block text-gray-dark font-20px">${ otherEx.ex_name
+                                                }</strong>
+                                            CreatorName : ${ otherEx.ex_producer }
+                                            <br>
+                                            ${ otherEx.ex_detail }
+                                        </p>
+                                    </div>
+                                </c:forEach>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 🥕 -->
+    <footer>
+        <div class="footer-wrappr " data-background="">
+            <div class="footer-area footer-padding ">
+                <div class="container">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <!-- logo -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer-bottom area -->
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="footer-copy-right text-center">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    </script>
-
-    <!-- JS here -->
-    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.barfiller.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
 </body>
 
 </html>

@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="./assets/css/slick.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/boardstyles.css">
     <link rel="stylesheet" href="./assets/css/my.css">
     <link rel="stylesheet" href="./assets/css/header.css">
@@ -40,7 +39,7 @@
 </head>
 
 <body>
-	<jsp:include page="../header/header2.jsp" />
+	<jsp:include page="../header/header2.jsp"/>
 	<main>
 		<div class="container" id="community-c">
 			<div class="row">

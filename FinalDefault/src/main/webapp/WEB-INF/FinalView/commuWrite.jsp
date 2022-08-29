@@ -15,6 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<!--     <link rel="stylesheet" href="./assets/css/header.css"> -->
     
     <!-- SummerNote -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
@@ -23,6 +24,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
  
+    
     <script>
         $(document).ready(function () {
             $('#summernote').summernote({
@@ -38,6 +40,7 @@
 </head>
 
 <body>
+<%-- 	<jsp:include page="../header/header2.jsp" /> --%>
     <div class="container my-5 py-5">
         <h2>Default</h2>
         <hr />
