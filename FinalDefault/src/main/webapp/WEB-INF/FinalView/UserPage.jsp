@@ -1,22 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/userpage.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="./assets/css/header.css">
+<link rel="stylesheet" href="./assets/css/userpage.css">
 
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
 
-    <script type="text/javascript">
+<script type="text/javascript">
         $(document).ready(function () {
             Load_UserDetail()
         })
@@ -120,64 +120,66 @@
 </head>
 
 <body>
-    <jsp:include page="../header/header3.jsp" /> 
-    <div class="main-panel">
-        <div class="container">
-            <div class="row margin-top-65 margin-bottom-160">
-                <div class="col-md-4 grid-margin stretch-card">
-                    <div class="card rounded-15">
-                        <div class="profile-card">
-                            <div class="profile-header">
-                                <div class="cover-image rounded-top-15">
-                                    <!-- <img src="https://cdn.pixabay.com/photo/2019/10/19/14/16/away-4561518_960_720.jpg" class="img img-fluid"> -->
-                                </div>
-                                <div class="user-image">
-                                    <img src="./assets/img/my_img/User.png" class="img">
-                                </div>
-                            </div>
-                            <div class="profile-content">
-                                <div class="profile-name">${ sessionScope.userVo.user_id }</div>
-                                <br>
-                                <ul class="profile-info-list ">
-                                	<li>
-                                    <a href="javascript:Load_Mypage()" class="profile-info-list-item rounded-30"><i class="mdi mdi-eye"></i>Profile Settings</a>
-                                    <a href="" class="profile-info-list-item rounded-30"><i
-                                            class="mdi mdi-bookmark-check"></i>My Theme</a>
-                                    <a href="" class="profile-info-list-item rounded-30"><i
-                                            class="mdi mdi-movie"></i>Something </a>
-                                    <a href="" class="profile-info-list-item rounded-30"><i
-                                            class="mdi mdi-account"></i>Something</a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	<jsp:include page="../header/header3.jsp" />
+	<div class="main-panel">
+		<div class="container">
+			<div class="row margin-top-65 margin-bottom-160">
+				<div class="col-md-4 grid-margin stretch-card">
+					<div class="card rounded-15">
+						<div class="profile-card">
+							<div class="profile-header">
+								<div class="cover-image rounded-top-15">
+									<!-- <img src="https://cdn.pixabay.com/photo/2019/10/19/14/16/away-4561518_960_720.jpg" class="img img-fluid"> -->
+								</div>
+								<div class="user-image">
+									<img src="./assets/img/my_img/User.png" class="img">
+								</div>
+							</div>
+							<div class="profile-content">
+								<div class="profile-name">${ sessionScope.userVo.user_id }</div>
+								<br>
+								<ul class="profile-info-list ">
+									<li><a href="javascript:Load_Mypage()"
+										class="profile-info-list-item rounded-30"><i
+											class="mdi mdi-eye"></i>Profile Settings</a> <a href=""
+										class="profile-info-list-item rounded-30"><i
+											class="mdi mdi-bookmark-check"></i>My Theme</a> <a href=""
+										class="profile-info-list-item rounded-30"><i
+											class="mdi mdi-movie"></i>Something </a> <a href=""
+										class="profile-info-list-item rounded-30"><i
+											class="mdi mdi-account"></i>Something</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                <div class="col-md-8 grid-margin stretch-card">
-                    <div class="card rounded-15">
-                        <div class="card-body">
-                            <p class="card-title">Profile Settings</p>
-                            <hr>
-                            <p class="card-description">User Information</p>
-                            <ul class="about" style="display:none" id="UserDetailArea"></ul>
-                            <p class="card-description">Delete Account</p>
-                            <ul class="about">
-                                <li class="leave">Do you want to leave us?
-                                    <a href="javascript:DeleteFromUser()" class="delete-outline">DELETE ACCOUNT</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+				<div class="col-md-8 grid-margin stretch-card">
+					<div class="card rounded-15">
+						<div class="card-body">
+							<p class="card-title">Profile Settings</p>
+							<hr>
+							<p class="card-description">User Information</p>
+							<ul class="about" style="display: none" id="UserDetailArea"></ul>
+							<p class="card-description">Delete Account</p>
+							<ul class="about">
+								<li class="leave">Do you want to leave us? <a
+									href="javascript:DeleteFromUser()" class="delete-outline">DELETE
+										ACCOUNT</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    </div>
+	</div>
 
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+	<script src="./assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/jquery.slicknav.min.js"></script>
+	<script src="./assets/js/slick.min.js"></script>
+	<script src="./assets/js/main.js"></script>
 </body>
 
 </html>

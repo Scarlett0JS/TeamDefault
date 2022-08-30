@@ -595,20 +595,6 @@ ul{
     margin: 0 auto
 }
 
-.d-flex-my {
-    display: -ms-flexbox !important;
-    display: flex !important
-}
-
-.justify-content-center-my {
-    -ms-flex-pack: center !important;
-    justify-content: center !important
-}
-
-.position-relative-my {
-    position: relative !important
-}
-
 .preloader-my .preloader-circle-my {
     width: 100px;
     height: 100px;
@@ -662,3 +648,13 @@ ul{
     color: #dca73a;
     text-transform: uppercase
 }
+
+.justify-content-center-my {
+    -ms-flex-pack: center !important;
+    justify-content: center !important
+}
+
+.position-relative-my {
+    position: relative !important
+}
+
