@@ -160,9 +160,11 @@
                             <button class='btn' onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
                             <div id="commentCard"></div>
                         </div>
-                    </div>
+                        </div>
                 </section>
             </div>
+            <div style="text-align: right; background-color :transparent;">
+			<button type="button" class="btm_image" id="heart"><img src="./assets/img/heart.png" width="32px" onclick="increase()">${vo.d_like}</button>
         </div>
     </div>
 
