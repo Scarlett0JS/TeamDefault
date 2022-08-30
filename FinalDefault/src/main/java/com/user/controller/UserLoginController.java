@@ -21,20 +21,28 @@ public class UserLoginController implements Controller {
 		String user_id = request.getParameter("userEmail");
 		String user_pw = request.getParameter("userPw");
 		
-		User user = new User(user_id, user_pw);
-		MainMyBatisDAO dao = new MainMyBatisDAO();
-		User userVo = dao.UserLogin(user);
-		
-		if (userVo != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("userVo", userVo);
-			return "main";
-		}else {
+		if (user_id.length() == 0 || user_pw.length() == 0) {
 			HashMap<String, String> errMap = new HashMap<String, String>();
-			errMap.put("loginError", "checkInput");
+			errMap.put("loginError", "nullInput");
 			request.setAttribute("loginError", errMap);
 			return "login";
+		} else {
+			User user = new User(user_id, user_pw);
+			MainMyBatisDAO dao = new MainMyBatisDAO();
+			User userVo = dao.UserLogin(user);
+			
+			if (userVo != null) {
+				HttpSession session = request.getSession();
+				session.setAttribute("userVo", userVo);
+				return "main";
+			}else {
+				HashMap<String, String> errMap = new HashMap<String, String>();
+				errMap.put("loginError", "checkInput");
+				request.setAttribute("loginError", errMap);
+				return "login";
+			}
 		}
+		
 	}
 
 }

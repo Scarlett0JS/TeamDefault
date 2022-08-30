@@ -24,22 +24,28 @@ public class UserRegisterController implements Controller {
 		
 		HashMap<String, String> errMap = new HashMap<String, String>();
 
-		if (!user_pw.equals(user_pw_confirm)) {
-			errMap.put("registerError", "checkPw");
-			errMap.put("user_id", user_id);
-			errMap.put("user_name", user_name);
+		if (user_id.length() == 0 || user_pw.length() == 0 || user_name.length() == 0) {
+			errMap.put("registerError", "checkInput");
 			request.setAttribute("registerError", errMap);
 			return "register";
 		} else {
-			User user = new User(user_id, user_pw, user_name);
-			MainMyBatisDAO dao = new MainMyBatisDAO();
-			try {
-				dao.UserRegister(user);
-				return "main";				
-			} catch (Exception e) {
-				errMap.put("registerError", "checkEmail");
+			if (!user_pw.equals(user_pw_confirm)) {
+				errMap.put("registerError", "checkPw");
+				errMap.put("user_id", user_id);
+				errMap.put("user_name", user_name);
 				request.setAttribute("registerError", errMap);
 				return "register";
+			} else {
+				User user = new User(user_id, user_pw, user_name);
+				MainMyBatisDAO dao = new MainMyBatisDAO();
+				try {
+					dao.UserRegister(user);
+					return "main";				
+				} catch (Exception e) {
+					errMap.put("registerError", "checkEmail");
+					request.setAttribute("registerError", errMap);
+					return "register";
+				}
 			}
 		}
 	}

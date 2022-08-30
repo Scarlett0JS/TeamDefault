@@ -26,6 +26,9 @@
 			}else if ("${registerError.registerError}" == "checkEmail") {
 				alert("Duplicated Email")
 				$("input[name='userEmail']").focus()
+			}else if ("${registerError.registerError}" == "checkInput") {
+				alert("Please enter everything")
+				$("input[name='userEmail']").focus()
 			}else {
 				$("input[name='userEmail']").focus()				
 			}

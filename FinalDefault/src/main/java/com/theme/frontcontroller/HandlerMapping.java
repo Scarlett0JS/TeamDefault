@@ -54,7 +54,6 @@ public class HandlerMapping {
 		mappings.put("/UserNickUpdate.do", new UserNickUpdateController());
 		mappings.put("/UserPwUpdate.do", new UserPwUpdateController());
 		mappings.put("/UserPostedList.do", new UserPostedListController());
-
 		
 		// Board
 		mappings.put("/UserBoardForm.do", new UserBoardFormController());

@@ -3,9 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%
-pageContext.setAttribute("newLineChar", "\n");
-%>
+<% pageContext.setAttribute("newLineChar", "\n"); %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <c:set var="sessionV" value="${session.userVo}" />
 <!DOCTYPE html>
@@ -28,7 +26,6 @@ pageContext.setAttribute("newLineChar", "\n");
 
     <script type="text/javascript">
         $(document).ready(function () {
-            console.log("${sessionScope.userVo}")
             Load_Comment("${vo.d_seq}")
         })
 
@@ -86,8 +83,9 @@ pageContext.setAttribute("newLineChar", "\n");
                             + "</div>"
                         html += obj.cmt_content
                         html += "</div>"
-                        html += "<button class='btn' onclick='DeleteComment("
-                            + commentData + ")'>Delete</button>"
+                        html += "<div style='text-align: right; background-color: transparent;''>"
+                        html += "<button class='btn' onclick='DeleteComment(" + commentData + ")'>Delete</button>"
+                        html += "</div>"
                         html += "</div>"
                         html += "</div>"
                     })
@@ -106,8 +104,7 @@ pageContext.setAttribute("newLineChar", "\n");
                         "user_id": user_id
                     },
                     success: function () {
-                        location.href = "${cpath}/UserBoardView.do?num="
-                            + "${vo.d_seq}"
+                        location.href = "${cpath}/UserBoardView.do?num=" + "${vo.d_seq}"
                     },
                     error: function () {
                         alert("Error")
@@ -147,19 +144,22 @@ pageContext.setAttribute("newLineChar", "\n");
         function updatePostLike() {
             let board_num = "${vo.d_seq}"
             var count = parseInt("${vo.d_like}")
+            let heart = document.querySelector("#heart")
             $.ajax({
                 url: "${cpath}/UserBoardLikeUpdate.do",
                 type: "post",
                 data: { "board_num": board_num },
                 success: function () {
-                	alert("Susssssss")
-                    count = count + 1
-                    document.querySelector("#heart").innerText = count
+                    location.href = "${cpath}/UserBoardView.do?num=" + "${vo.d_seq}"
                 },
-                error: function() {
+                error: function () {
                     alert("Error")
                 }
             })
+        }
+        
+        function Load_List(){
+        	location.href = "${cpath}/UserLangBoardList.do?lang=" + "${vo.d_category}"
         }
     </script>
 
@@ -183,12 +183,19 @@ pageContext.setAttribute("newLineChar", "\n");
                     </section>
                 </article>
                 <div>
+                </div>
+                <div style="text-align: right; background-color: transparent;">
+                	<button onclick="javascript:Load_List()">List</button>
                     <c:if test="${!empty sessionScope.userVo }">
                         <c:if test="${ sessionScope.userVo.user_id.equals(vo.user_id)}">
-                            <button class='btn' onclick="javascript:updatePost('${vo.d_seq}')">Update</button>
-                            <button class='btn' onclick="javascript:deletePost('${vo.d_seq}')">Delete</button>
+                            <button onclick="javascript:updatePost('${vo.d_seq}')">Update</button>
+                            <button onclick="javascript:deletePost('${vo.d_seq}')">Delete</button>
                         </c:if>
                     </c:if>
+                    <button type="button" class="btn-commuview-heart" id="heart">
+                        <img src="./assets/img/icon/heart.png" width="32px" onclick="javascript:updatePostLike()">
+                        ${vo.d_like}
+                    </button>
                 </div>
                 <br>
                 <!-- Comments section-->
@@ -197,23 +204,16 @@ pageContext.setAttribute("newLineChar", "\n");
                         <div class="card-body">
                             <textarea class="form-control" rows="3" id="commentVal"
                                 placeholder="Join the discussion and leave a comment!"></textarea>
-                            <button class='btn'
-                                onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
+                            <div style="text-align: right; background-color: transparent;">
+                                <button class='btn' onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
+                            </div>
                             <div id="commentCard"></div>
                         </div>
                     </div>
                 </section>
             </div>
-            <div style="text-align: right; background-color: transparent;">
-                <button type="button" class="btn-commuview-heart" id="heart">
-                    <img src="./assets/img/icon/heart.png" width="32px" onclick="javascript:updatePostLike()">
-                    ${vo.d_like}
-                </button>
-            </div>
         </div>
     </div>
-
-
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
     <script src="./assets/js/animated.headline.js"></script>

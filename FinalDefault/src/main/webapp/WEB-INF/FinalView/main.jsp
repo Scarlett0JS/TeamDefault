@@ -89,7 +89,7 @@
             </div>
         </div>
 
-        <section class="team-area section-padding40 section-bg1">
+        <section class="team-area section-padding20 section-bg1">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-12">
@@ -114,12 +114,12 @@
                 </div>
             </div>
         </section>
-        <div class="about-area1 section-padding40">
+        <div class="about-area1 section-padding20">
             <section class="pricing-card-area fix">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-xl-8 col-lg-8">
-                            <div class="section-tittle text-center mb-90 font-40px">
+                        <div class="col-xl-8 col-lg-2">
+                            <div class="section-tittle text-center mb-30 font-40px">
                                 <h2>Most popular Themes</h2>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, sunt. Facere
                                     laboriosam earum, iure

@@ -20,8 +20,9 @@
     	$(document).ready(function(){
     		if ("${loginError.loginError}" == "checkInput") {
 				alert("check email or password")
-			}  
-    		
+			}else if ("${loginError.loginError}" == "nullInput") {
+				alert("Please enter everything")
+			}
     		let emailInput = $("input[name='userEmail']")
     		emailInput.focus()
     	})

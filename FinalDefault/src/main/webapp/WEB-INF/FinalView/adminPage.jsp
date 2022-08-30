@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -29,6 +31,7 @@
                 Load_UserList()
             }
         })
+        
         function Load_UserList() {
             $.ajax({
                 url: "${cpath}/AdminUserList.do",
@@ -40,6 +43,7 @@
                 }
             })
         }
+        
         function goDel(user_id) {
             $.ajax({
                 url: "${cpath}/AdminDelete.do",
@@ -51,6 +55,7 @@
                 }
             });
         }
+        
         function UserHtml(data) {
             let html = "<table class='table table-bordered table-sm m-0'>"
             html += "<thead>"
