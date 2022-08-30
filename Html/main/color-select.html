@@ -6,62 +6,102 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<!-- CSS here -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<!-- 첫페이지 애니메이션 -->
-	<!-- 얘를 빼면 navbar위로 글자가 올라감 이유는 .. 몰?루 -->
 	<link rel="stylesheet" href="assets/css/slick.css">
-
 	<link rel="stylesheet" href="assets/css/animate.min.css">
-
-	<!-- 메인으로 이동하는 버튼(웹페이지 오른쪽 밑) -->
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-
-	<!-- 검색창 검색버튼 아이콘 불러오는 css -->
 	<link rel="stylesheet" href="assets/css/themify-icons.css">
 	<link rel="stylesheet" href="assets/css/header.css">
 	<link rel="stylesheet" href="assets/css/color select.css">
 
+	<script>
+		var beforeColor;
+		
+		window.onload = function () {
+			init();
+		}
+
+		var pallete = [["#FFBB00", "#FFE400", "#ABF200", "#1DDB16", "#00D8FF", "#0054FF", "#0100FF", "#5F00FF", "#FF00DD", "#FF007F", "#000000", "#FFFFFF"],
+		["#FAECC5", "#FAF4C0", "#E4F7BA", "#CEFBC9", "#D4F4FA", "#D9E5FF", "#DAD9FF", "#E8D9FF", "#FFD9FA", "#FFD9EC", "#F6F6F6", "#EAEAEA"],
+		["#FFE08C", "#FAED7D", "#CEF279", "#B7F0B1", "#B2EBF4", "#B2CCFF", "#B5B2FF", "#D1B2FF", "#FFB2F5", "#FFB2D9", "#D5D5D5", "#BDBDBD"],
+		["#F2CB61", "#E5D85C", "#BCE55C", "#86E57F", "#5CD1E5", "#6799FF", "#6B66FF", "#A566FF", "#F361DC", "#F361A6", "#A6A6A6", "#8C8C8C"],
+		["#CCA63D", "#C4B73B", "#9FC93C", "#47C83E", "#3DB7CC", "#4374D9", "#4641D9", "#8041D9", "#D941C5", "#D9418C", "#747474", "#5D5D5D"],
+		["#997000", "#998A00", "#6B9900", "#2F9D27", "#008299", "#003399", "#050099", "#3F0099", "#990085", "#99004C", "#4C4C4C", "#353535"],
+		["#670000", "#662500", "#664B00", "#665C00", "#476600", "#22741C", "#005766", "#002266", "#030066", "#2A0066", "#660058", "#660033"],
+		["#FF0000", "#FF5E00", "#FFD8D8", "#FAE0D4", "#FFA7A7", "#FFC19E", "#F15F5F", "#F29661", "#CC3D3D", "#CC723D", "#980000", "#993800"],
+		];
+		var tag = "";
+
+		function init() {
+			for (i = 0; i < pallete.length; i++) {
+				for (j = 0; j < pallete[i].length; j++) {
+					tag += "<div id=" + pallete[i][j] + " class='cocircle' onclick='colorSet(this)'></div>";
+				}
+			}
+
+			document.getElementById("cocorow").innerHTML = tag;
+
+			var colorBox = document.getElementsByClassName("cocircle");
+			for (i = 0; i < colorBox.length; i++) {
+				colorBox[i].style.background = colorBox[i].id;
+			}
+		}
+
+		//onclick event
+
+		let num1 = document.querySelector('body > div:nth-child(4) > div > div:nth-child(1) > div > div');
+		let num2 = document.querySelector('body > div:nth-child(4) > div > div:nth-child(2) > div > div');
+		let num3 = document.querySelector('body > div:nth-child(4) > div > div:nth-child(3) > div > div');
+		let num4 = document.querySelector('body > div:nth-child(4) > div > div:nth-child(4) > div > div');
+		let num5 = document.querySelector('body > div:nth-child(4) > div > div:nth-child(5) > div > div');
+
+		let num = 0;
+		function colorSet(target) {
+
+			if (num == 5) {
+				$('.service-icon-five').attr("id", "");
+				$('div').removeClass('active');
+			} else {
+				$('#tt').css("background", target.id); // 아이디가 'tt'인 곳에 색상 넣기
+
+				$($('.service-icon-five').get()[num]).attr("id", "");
+				num++;
+				$($('.service-icon-five').get()[num]).attr("id", "tt");
+				document.getElementById(target.id).className += " cdisabled";
+				if (beforeColor != undefined && beforeColor != null) { // 다중선택 안 되게 해주는 조건
+					document.getElementById(beforeColor).className = document.getElementById(beforeColor).className.replace(" active", "");
+				}
+
+				//선택한 색상 표시 기능
+				document.getElementById(target.id).className += " active";
+				beforeColor = target.id;
+			}
+		}
+
+		let selection = new Array();
+
+		function emp() {
+			$('.service-icon-five').removeAttr('style');
+			$(num1).attr("id", "tt");
+			num = 0;
+
+			$('div').removeClass('cdisabled');
+
+		}
+
+
+
+		function colorsubmit() {
+			for (i = 0; i <= 4; i++) {
+				selection += $($('.service-icon-five')[i]).css('background-color');
+				console.log(selection);
+			}
+		}
+
+	</script>
 </head>
 
 <body>
-	<div class="header-area-my header-color-my">
-		<div class="main-header-my">
-			<div class="header-bottom-my  header-sticky-my">
-				<div class="container-fluid-my">
-					<div class="row-my align-items-center-my">
-						<!-- Logo -->
-						<div class="col-xl-2-my col-lg-2-my">
-							<div class="logo-my">
-								<a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-							</div>
-						</div>
-						<div class="col-xl-10-my col-lg-10-my">
-							<div class="menu-wrapper-my d-flex-my align-items-center-my justify-content-end-my">
-								<!-- Main-menu -->
-								<div class="main-menu-my d-none-my d-lg-block-my">
-									<nav>
-										<ul id="navigation-my">
-											<li><a href="index.html">Home</a></li>
-											<!-- 게시판 -->
-											<li><a href="community.html">Community</a></li>
-											<li><a href="theme.html">Theme</a></li>
-											<!-- Button -->
-											<li class="button-header-my margin-left-my"><a href="register.html" class="btn-my">Register</a>
-											</li>
-											<li class="button-header-my "><a href="login.html" class="btn-my">Sign
-													In</a>
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- Color Select-->
 	<br>
 	<br>
@@ -111,7 +151,6 @@
 	<Br>
 	<div class="container" id="cocontainer">
 		<div class="row" id="cocorow">
-
 		</div>
 	</div>
 	<Br>
@@ -121,40 +160,11 @@
 	</script>
 
 	<!-- JS here -->
-	<!-- Jquery, Popper, Bootstrap -->
-	<!-- 얘 뺐더니 로딩 안됨 -->
 	<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-	<!-- Jquery Plugins, main Jquery -->
-	<!-- <script src="./assets/js/plugins.js"></script> -->
 	<script src="./assets/js/main.js"></script>
-
 	<script src="./assets/js/bootstrap.min.js"></script>
-	<!-- 첫페이지 애니메이션 -->
-	<!-- Jquery Slick -->
 	<script src="./assets/js/jquery.slicknav.min.js"></script>
 	<script src="./assets/js/slick.min.js"></script>
-
-	<!-- Owl-Carousel Plugins -->
-	<!-- Owl-Carousel Plugins = 슬라이드 효과 적용할수 있게 해주는 플러그인 -->
-	<!-- <script src="./assets/js/owl.carousel.min.js"></script> -->
-
-	<!-- counter , waypoint,Hover Direction -->
-	<!-- 지정된 숫자까지 숫자를 증가시켜주는 애니메이션 -->
-	<!-- <script src="./assets/js/jquery.counterup.min.js"></script> -->
-	<!-- 스크롤에 적용하는 애니메이션 -->
-	<!-- <script src="./assets/js/waypoints.min.js"></script> -->
-	<!-- 카운트 애니메이션 -->
-	<!-- <script src="./assets/js/jquery.countdown.min.js"></script> -->
-
-	<!-- contact js -->
-	<!-- <script src="./assets/js/contact.js"></script> -->
-	<!-- <script src="./assets/js/jquery.form.js"></script> -->
-	<!-- <script src="./assets/js/jquery.validate.min.js"></script> -->
-	<!-- <script src="./assets/js/mail-script.js"></script> -->
-	<!-- <script src="./assets/js/jquery.ajaxchimp.min.js"></script> -->
-
-	<!-- COLOR SELECT JS-->
-	<script src="assets/js/color select.js"></script>
 </body>
 
 </html>

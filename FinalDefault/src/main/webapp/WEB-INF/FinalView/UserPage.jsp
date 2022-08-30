@@ -11,10 +11,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/slick.css">
-    <link rel="stylesheet" href="./assets/css/animate.min.css">
-    <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
+	<link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/userpage.css">
 
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -74,7 +71,6 @@
         		error: function(){
         			alert("Error")
         		}
-        		
         	})
         }
         
@@ -124,7 +120,7 @@
 </head>
 
 <body>
-    <jsp:include page="../header/header.jsp" />
+    <jsp:include page="../header/header3.jsp" /> 
     <div class="main-panel">
         <div class="container">
             <div class="row margin-top-65 margin-bottom-160">
@@ -136,7 +132,7 @@
                                     <!-- <img src="https://cdn.pixabay.com/photo/2019/10/19/14/16/away-4561518_960_720.jpg" class="img img-fluid"> -->
                                 </div>
                                 <div class="user-image">
-                                    <img src="./assets/img/user/User.png" class="img ">
+                                    <img src="./assets/img/my_img/User.png" class="img">
                                 </div>
                             </div>
                             <div class="profile-content">
@@ -178,10 +174,10 @@
 
     </div>
 
-    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

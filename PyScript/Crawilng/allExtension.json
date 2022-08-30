@@ -3,9 +3,9 @@
         "ExtentionName": "Python",
         "ExtentionProducer": "Python",
         "ExtentionDetail": "IntelliSense (Pylance), Linting, Debugging (multi-threaded, remote), Jupyter Notebooks, code formatting, refactoring, unit tests, and more.",
-        "ExtentionInstallCnt": "63.2M",
+        "ExtentionInstallCnt": "63.3M",
         "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ms-python.python",
-        "ExtentionFile": "Python.png"
+        "ExtentionFile": "https://ms-python.gallerycdn.vsassets.io/extensions/ms-python/python/2022.13.12381007/1661508591140/Microsoft.VisualStudio.Services.Icons.Small"
     },
     "2": {
         "ExtentionName": "Jupyter",
@@ -13,15 +13,15 @@
         "ExtentionDetail": "Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more.",
         "ExtentionInstallCnt": "44M",
         "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter",
-        "ExtentionFile": "Jupyter.png"
+        "ExtentionFile": "https://ms-toolsai.gallerycdn.vsassets.io/extensions/ms-toolsai/jupyter/2022.8.1002401022/1661505907612/Microsoft.VisualStudio.Services.Icons.Small"
     },
     "3": {
         "ExtentionName": "Pylance",
         "ExtentionProducer": "Pylance",
         "ExtentionDetail": "A performant, feature-rich language server for Python in VS Code",
-        "ExtentionInstallCnt": "36.5M",
+        "ExtentionInstallCnt": "36.6M",
         "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance",
-        "ExtentionFile": "Pylance.png"
+        "ExtentionFile": "https://ms-python.gallerycdn.vsassets.io/extensions/ms-python/vscode-pylance/2022.8.41/1661387424226/Microsoft.VisualStudio.Services.Icons.Small"
     },
     "4": {
         "ExtentionName": "C/C++",
@@ -29,15 +29,15 @@
         "ExtentionDetail": "C/C++ IntelliSense, debugging, and code browsing.",
         "ExtentionInstallCnt": "35M",
         "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools",
-        "ExtentionFile": "CC++.png"
+        "ExtentionFile": "https://ms-vscode.gallerycdn.vsassets.io/extensions/ms-vscode/cpptools/1.12.2/1661390062737/Microsoft.VisualStudio.Services.Icons.Small"
     },
     "5": {
         "ExtentionName": "Jupyter Keymap",
         "ExtentionProducer": "Jupyter Keymap",
         "ExtentionDetail": "Jupyter keymaps for notebooks",
-        "ExtentionInstallCnt": "26.5M",
+        "ExtentionInstallCnt": "26.6M",
         "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-keymap",
-        "ExtentionFile": "Jupyter Keymap.png"
+        "ExtentionFile": "https://ms-toolsai.gallerycdn.vsassets.io/extensions/ms-toolsai/jupyter-keymap/1.0.0/1629490473618/Microsoft.VisualStudio.Services.Icons.Small"
     },
     "6": {
         "ExtentionName": "Live Server",
@@ -45,6 +45,6 @@
         "ExtentionDetail": "Launch a development local Server with live reload feature for static & dynamic pages",
         "ExtentionInstallCnt": "24.9M",
         "ExtentionUrl": "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer",
-        "ExtentionFile": "Live Server.png"
+        "ExtentionFile": "https://ritwickdey.gallerycdn.vsassets.io/extensions/ritwickdey/liveserver/5.7.5/1646738284779/Microsoft.VisualStudio.Services.Icons.Small"
     }
 }

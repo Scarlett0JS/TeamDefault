@@ -9,9 +9,7 @@
     <meta charset="UTF-8">
     <title>Insert title here</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico">
 
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
         function Load_Main() {

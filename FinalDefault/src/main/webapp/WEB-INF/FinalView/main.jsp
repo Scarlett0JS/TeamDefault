@@ -9,21 +9,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Template</title>
+    <title>Default</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico">
-    
+
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/slicknav.css">
     <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="./assets/css/themify-icons.css">
     <link rel="stylesheet" href="./assets/css/slick.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/my.css">
-    
+
+
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <script type="text/javascript">
+        function Load_ColorSelect() {
+            location.href = "${cpath}/ColorSelect.do"
+        }
+    </script>
+
 </head>
 
 <body>
@@ -100,6 +108,7 @@
                             <div class="cat-cap">
                                 <h5><a href="#">d</a></h5>
                                 <p>내용</p>
+                                <button class='btn' onclick="javascript:Load_ColorSelect()">Color Select</button>
                             </div>
                         </div>
                     </div>
@@ -202,57 +211,56 @@
                         </div>
                     </div>
                 </div>
+            </section>
         </div>
-        </section>
-        <!-- Pricing Card End -->
-        <!--? About-1 Area Start -->
         <!-- 🥕 -->
         <div class="bg-light">
             <div role="main" class="container">
                 <div class="row">
-                    <div class="col-6 center">
-                        <div class="my-3 p-3 bg-white rounded">
-                            <h2 class="mb-0 font-35px center font-weight-bold padding">Most Popular Extension</h2>
+                    <div class="col-6 center font-white">
+                        <div class="my-3 p-3 black-background rounded">
+                            <h2 class="mb-0 font-35px center font-weight-bold font font-white">Most Popular Extension</h2>
                             <div class="media text-muted pt-3">
                                 <img data-src="" alt="" class="mr-2 rounded">
                             </div>
                             <div>
-                            	<c:forEach var="allEx" items="${allExList}">
-	                                <div class="media text-muted pt-3 ">
-	                                    <p>
-	                                        <a href="${ allEx.ex_url }"><img src="./assets/img/all/${allEx.ex_filepath}" class="icon1"></a>
-	                                    </p>
-	                                    <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
-	                                        <strong class="d-block text-gray-dark font-20px">${ allEx.ex_name }</strong>
-	                                        CreatorName : ${ allEx.ex_producer }
-	                                        <br>
-	                                        ${ allEx.ex_detail }
-	                                    </p>
-	                                </div>
-                               	</c:forEach>
+                                <c:forEach var="allEx" items="${allExList}">
+                                    <div class="media text-muted pt-3 ">
+                                        <p>
+                                            <a href="${ allEx.ex_url }"><img src="${allEx.ex_filepath}" class="icon1"></a>
+                                        </p>
+                                        <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
+                                            <strong class="d-block text-gray-dark font-20px">${ allEx.ex_name }</strong>
+                                            CreatorName : ${ allEx.ex_producer }
+                                            <br>
+                                            ${ allEx.ex_detail }
+                                        </p>
+                                    </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 center">
-                        <div class="my-3 p-3 bg-white rounded">
-                            <h2 class="mb-0 font-35px center font-weight-bold padding">Most Util Extension</h2>
+                    <div class="col-6 center font-white">
+                        <div class="my-3 p-3 black-background rounded">
+                            <h2 class="mb-0 font-35px center font-weight-bold font font-white">Most Util Extension</h2>
                             <div class="media text-muted pt-3">
                                 <img data-src="" alt="" class="mr-2 rounded">
                             </div>
                             <div>
-                            	<c:forEach var="otherEx" items="${otherExList}">
-	                                <div class="media text-muted pt-3 ">
-	                                    <p>
-	                                        <a href="${ otherEx.ex_url }"><img src="./assets/img/all/${otherEx.ex_filepath}" class="icon1"></a>
-	                                    </p>
-	                                    <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
-	                                        <strong class="d-block text-gray-dark font-20px">${ otherEx.ex_name }</strong>
-	                                        CreatorName : ${ otherEx.ex_producer }
-	                                        <br>
-	                                        ${ otherEx.ex_detail }
-	                                    </p>
-	                                </div>
-                               	</c:forEach>
+                                <c:forEach var="otherEx" items="${otherExList}">
+                                    <div class="media text-muted pt-3 ">
+                                        <p>
+                                            <a href="${ otherEx.ex_url }"><img src="${otherEx.ex_filepath}" class="icon1"></a>
+                                        </p>
+                                        <p class="media-body pb-3 mb-0 small lh-125 font-12px px-4">
+                                            <strong class="d-block text-gray-dark font-20px">${ otherEx.ex_name
+                                                }</strong>
+                                            CreatorName : ${ otherEx.ex_producer }
+                                            <br>
+                                            ${ otherEx.ex_detail }
+                                        </p>
+                                    </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
@@ -290,7 +298,11 @@
             </div>
         </div>
     </footer>
-
+	  <!-- Scroll Up -->
+	<div id="back-top">
+		<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+	</div>
+	
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>

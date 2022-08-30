@@ -18,12 +18,10 @@
     <link rel="stylesheet" href="./assets/css/slicknav.css">
     <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./assets/css/slick.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/boardstyles.css">
+    <link rel="stylesheet" href="./assets/css/slick.css">
     <link rel="stylesheet" href="./assets/css/my.css">
     <link rel="stylesheet" href="./assets/css/header.css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script type="text/javascript">
@@ -73,9 +71,9 @@
                 html += "</div>"
                 html += "<div class='ms-3'>"
                 html += "<div clss='fw-bold'>" + obj.user_nick + "</div>"
-                html += obj.cmt_content,
-                    html += "</div>"
-                html += "<button onclick='DeleteComment(" + commentData + ")'>Delete</button>"
+                html += obj.cmt_content
+                html += "</div>"
+                html += "<button class='btn' onclick='DeleteComment(" + commentData + ")'>Delete</button>"
                 html += "</div>"
                 html += "</div>"
             })
@@ -158,9 +156,8 @@
                     <div class="card bg-light">
                         <div class="card-body">
                             <textarea class="form-control" rows="3" id="commentVal"
-                                placeholder="Join the discussion and leave a comment!"></textarea><br>
-                            <button class='btn'
-                                onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
+                                placeholder="Join the discussion and leave a comment!"></textarea>
+                            <button class='btn' onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
                             <div id="commentCard"></div>
                         </div>
                     </div>
@@ -171,11 +168,7 @@
 
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/wow.min.js"></script>
     <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.barfiller.js"></script>
-    <script src="./assets/js/waypoints.min.js"></script>
-    <script src="./assets/js/hover-direction-snake.min.js"></script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
