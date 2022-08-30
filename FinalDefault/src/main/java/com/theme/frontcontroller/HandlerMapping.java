@@ -3,6 +3,7 @@ package com.theme.frontcontroller;
 import java.util.HashMap;
 
 import com.admin.controller.AdminDeleteController;
+import com.admin.controller.AdminUserListController;
 import com.admin.controller.UserListController;
 import com.board.controller.UserBoardDeleteController;
 import com.board.controller.UserBoardFormController;
@@ -75,6 +76,7 @@ public class HandlerMapping {
 		// Admin
 		mappings.put("/UserList.do", new UserListController());
 		mappings.put("/AdminDelete.do", new AdminDeleteController());
+		mappings.put("/AdminUserList.do", new AdminUserListController());
 	}
 	
 	public Controller getController(String command) {

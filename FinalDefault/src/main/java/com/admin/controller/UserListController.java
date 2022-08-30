@@ -19,18 +19,10 @@ public class UserListController implements Controller {
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		MainMyBatisDAO dao = new MainMyBatisDAO();
-		List<User> user_list = dao.userList();
+		String user_id = ((User) request.getSession().getAttribute("userVo")).getUser_id();
+		request.setAttribute("user_id", user_id);
 		
-		Gson gson = new Gson();
-		String json = gson.toJson(user_list);
-		
-		response.setContentType("text/json;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		
-		out.println(json);
-		
-		return null;
+		return "adminPage";
 	}
 
 }

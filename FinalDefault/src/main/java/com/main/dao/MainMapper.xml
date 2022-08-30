@@ -96,10 +96,10 @@
 	
 	<!-- Admin -->
 	<select id="userList" resultType="com.theme.entity.User">
-		select * from user
+		select * from D_USER where user_type = 'U' order by user_joindate
 	</select>
 	
 	<delete id="userDelete" parameterType="String">
-		delete from member where USER_ID = #{user_id}
+		delete from D_USER where USER_ID = #{user_id}
 	</delete>
 </mapper>
