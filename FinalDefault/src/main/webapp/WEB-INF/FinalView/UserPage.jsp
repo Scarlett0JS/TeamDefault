@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,13 +18,13 @@
     <link rel="stylesheet" href="./assets/css/userpage.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  	<script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function () {
-        	if ("${empty sessionScope.userVo}" == "true") {
-        		location.href = "${cpath}/index.do"
-			} else {
-	            Load_UserDetail()				
-			}
+            if ("${empty sessionScope.userVo}" == "true") {
+                location.href = "${cpath}/index.do"
+            } else {
+                Load_UserDetail()
+            }
         })
 
         function Load_UserDetail() {
@@ -141,14 +140,14 @@
         function load_UserPostForm(data) {
             let html = ""
             $.each(data, function (idx, obj) {
-            	console.log(obj)
+                console.log(obj)
                 html += "<li class='about-items'>"
                 html += "<div class='row'>"
                 html += "<i class='mdi mdi-account icon-sm'></i>"
                 html += "<div class='col-md-1'>"
                 html += "<span class='about-item-name'>" + String(idx + 1) + "</span></div>"
                 html += "<div class='col-md-6'>"
-                html += "<span class='about-item-name'><a href='javascript:Load_boardView(" + obj.d_seq +")'>" + obj.d_title + "</a></span></div>"
+                html += "<span class='about-item-name'><a href='javascript:Load_boardView(" + obj.d_seq + ")'>" + obj.d_title + "</a></span></div>"
                 html += "<div class='col-md-3'>"
                 html += "<span class='about-item-name'>" + obj.d_date.split(" ")[0] + "</span></div>"
                 html += "<div class='col-md-1'>"
@@ -163,9 +162,9 @@
             $("#userpost").css("display", "block")
             $("#UserPostedArea").css("display", "block")
         }
-        
-        function Load_boardView(board_num){
-        	location.href = "${cpath}/UserBoardView.do?num=" + board_num
+
+        function Load_boardView(board_num) {
+            location.href = "${cpath}/UserBoardView.do?num=" + board_num
         }
 
     </script>
@@ -173,67 +172,7 @@
 </head>
 
 <body>
-	<jsp:include page="../header/header3.jsp" />
-	<div class="main-panel">
-		<div class="container">
-			<div class="row margin-top-65 margin-bottom-160">
-				<div class="col-md-4 grid-margin stretch-card">
-					<div class="card rounded-15">
-						<div class="profile-card">
-							<div class="profile-header">
-								<div class="cover-image rounded-top-15">
-									<!-- <img src="https://cdn.pixabay.com/photo/2019/10/19/14/16/away-4561518_960_720.jpg" class="img img-fluid"> -->
-								</div>
-								<div class="user-image">
-									<img src="./assets/img/my_img/User.png" class="img">
-								</div>
-							</div>
-							<div class="profile-content">
-								<div class="profile-name">${ sessionScope.userVo.user_id }</div>
-								<br>
-								<ul class="profile-info-list ">
-									<li><a href="javascript:Load_Mypage()"
-										class="profile-info-list-item rounded-30"><i
-											class="mdi mdi-eye"></i>Profile Settings</a> <a href=""
-										class="profile-info-list-item rounded-30"><i
-											class="mdi mdi-bookmark-check"></i>My Theme</a> <a href=""
-										class="profile-info-list-item rounded-30"><i
-											class="mdi mdi-movie"></i>Something </a> <a href=""
-										class="profile-info-list-item rounded-30"><i
-											class="mdi mdi-account"></i>Something</a>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-8 grid-margin stretch-card">
-					<div class="card rounded-15">
-						<div class="card-body">
-							<p class="card-title">Profile Settings</p>
-							<hr>
-							<p class="card-description">User Information</p>
-							<ul class="about" style="display: none" id="UserDetailArea"></ul>
-							<p class="card-description">Delete Account</p>
-							<ul class="about">
-								<li class="leave">Do you want to leave us? <a
-									href="javascript:DeleteFromUser()" class="delete-outline">DELETE
-										ACCOUNT</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-	<script src="./assets/js/bootstrap.min.js"></script>
-	<script src="./assets/js/jquery.slicknav.min.js"></script>
-	<script src="./assets/js/slick.min.js"></script>
-	<script src="./assets/js/main.js"></script>
-    <jsp:include page="../header/header.jsp" />
+    <jsp:include page="../header/header3.jsp" />
     <div class="main-panel">
         <div class="container">
             <div class="row margin-top-65 margin-bottom-160">
@@ -317,8 +256,6 @@
             </div>
         </div>
     </div>
-
-    
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
     <script src="./assets/js/main.js"></script>
