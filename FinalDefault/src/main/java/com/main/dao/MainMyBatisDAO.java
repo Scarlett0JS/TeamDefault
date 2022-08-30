@@ -170,6 +170,15 @@ public class MainMyBatisDAO {
 		session.close();
 		return colVo;
 	}
+	
+	// Admin
+	public List<User> userList(){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<User> userList = session.selectList("userList");
+		session.close();
+		return userList;
+	}
+	
 
 	
 }

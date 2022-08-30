@@ -37,6 +37,10 @@
         function Load_MyPage(){
         	location.href = "${cpath}/UserMypageForm.do?user_id=" + "${sessionScope.userVo.user_id}"
         }
+        
+        function Load_Admin(){
+        	location.href = "${cpath}/UserList.do"
+        }
     </script>
 </head>
     <div id="preloader-active">
@@ -68,6 +72,11 @@
                                                 <li><a href="javascript:Load_Main()">Home</a></li>
                                                 <li><a href="javascript:Load_Community()">Community</a></li>
                                                 <li><a href="theme.html">Theme</a></li>
+                                                <c:if test="${!empty sessionScope.userVo}">
+                                                <c:if test="${sessionScope.userVo.user_id.equals('admin@gjaischool.com')}">
+                                                	<li><a href="javascript:Load_Admin()">Admin</a></li>
+                                                </c:if>
+                                                </c:if>
                                                 <c:if test="${empty sessionScope.userVo}">
 	                                                <li class="button-header margin-left ">
 	                                                <a href="javascript:Load_RegisterForm()" class="btn">Register</a>
@@ -80,6 +89,7 @@
 	                                                </li>
 	                                                <li class="button-header"><a href="javascript:LogOut()" class="btn">Log Out</a></li>
                                                 </c:if>
+                                                
                                             </ul>
                                         </nav>
                                     </div>

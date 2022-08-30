@@ -94,4 +94,12 @@
 		SELECT * FROM D_COLOR dc ORDER BY COLOR_SEQ 
 	</select>
 	
+	<!-- Admin -->
+	<select id="userList" resultType="com.theme.entity.User">
+		select * from user
+	</select>
+	
+	<delete id="userDelete" parameterType="String">
+		delete from member where USER_ID = #{user_id}
+	</delete>
 </mapper>

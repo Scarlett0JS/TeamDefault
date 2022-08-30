@@ -49,5 +49,13 @@
 	<select id="allColor" resultType="com.theme.entity.Color">
 		select * from ColorMap order by col
 	</select>
-
+	
+	<select id="memberCount" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<select id="listPage" parameterType="hashMap" resultType="com.theme.entity.Member">
+		select memId, memName from member limit #{displayMember}, #{memberNum}
+	</select>
+	
 </mapper>
