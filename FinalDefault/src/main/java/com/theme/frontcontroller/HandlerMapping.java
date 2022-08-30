@@ -30,6 +30,7 @@ import com.user.controller.UserLoginFormController;
 import com.user.controller.UserLogoutController;
 import com.user.controller.UserMypageFormController;
 import com.user.controller.UserNickUpdateController;
+import com.user.controller.UserPostedListController;
 import com.user.controller.UserPwUpdateController;
 import com.user.controller.UserRegisterController;
 import com.user.controller.UserRegisterFormController;
@@ -52,6 +53,8 @@ public class HandlerMapping {
 		mappings.put("/UserDetailList.do", new UserDetailController());
 		mappings.put("/UserNickUpdate.do", new UserNickUpdateController());
 		mappings.put("/UserPwUpdate.do", new UserPwUpdateController());
+		mappings.put("/UserPostedList.do", new UserPostedListController());
+
 		
 		// Board
 		mappings.put("/UserBoardForm.do", new UserBoardFormController());

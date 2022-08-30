@@ -99,7 +99,6 @@
     
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.barfiller.js"></script>
     <script src="./assets/js/hover-direction-snake.min.js"></script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>

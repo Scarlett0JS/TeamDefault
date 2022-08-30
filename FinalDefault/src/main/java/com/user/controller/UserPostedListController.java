@@ -1,4 +1,4 @@
-package com.board.controller;
+package com.user.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,17 +13,19 @@ import com.main.controller.Controller;
 import com.main.dao.MainMyBatisDAO;
 import com.theme.entity.Board;
 
-public class UserBoardListController implements Controller {
+public class UserPostedListController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		String user_id = request.getParameter("user_id");
+		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
-		List<Board> boardList = dao.allBoardList();
+		List<Board> boardVo = dao.UserPostedselect(user_id);
 		
 		Gson gson = new Gson();
-		String json = gson.toJson(boardList);
+		String json = gson.toJson(boardVo);
 		
 		response.setContentType("text/json;charset=utf-8");
 		PrintWriter out = response.getWriter();

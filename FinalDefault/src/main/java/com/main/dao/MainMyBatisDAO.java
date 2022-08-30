@@ -70,6 +70,13 @@ public class MainMyBatisDAO {
 		session.close();
 	}
 	
+	public List<Board> UserPostedselect(String user_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Board> dto = session.selectList("UserPostedselect", user_id);
+		session.close();
+		return dto;
+	}
+	
 	// Board
 	public List<Board> allBoardList() {
 		SqlSession session = sqlSessionFactory.openSession();
