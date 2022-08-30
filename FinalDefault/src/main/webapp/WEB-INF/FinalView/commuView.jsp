@@ -1,30 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<% pageContext.setAttribute("newLineChar", "\n"); %>
+<%
+pageContext.setAttribute("newLineChar", "\n");
+%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <c:set var="sessionV" value="${session.userVo}" />
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Community</title>
+<meta charset="UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>Community</title>
 
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/slicknav.css">
-    <link rel="stylesheet" href="./assets/css/animate.min.css">
-    <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./assets/css/boardstyles.css">
-    <link rel="stylesheet" href="./assets/css/slick.css">
-    <link rel="stylesheet" href="./assets/css/my.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="./assets/css/slicknav.css">
+<link rel="stylesheet" href="./assets/css/animate.min.css">
+<link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="./assets/css/boardstyles.css">
+<link rel="stylesheet" href="./assets/css/slick.css">
+<link rel="stylesheet" href="./assets/css/my.css">
+<link rel="stylesheet" href="./assets/css/header.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script type="text/javascript">
+<script type="text/javascript">
         $(document).ready(function () {
             console.log("${sessionScope.userVo}")
             Load_Comment("${vo.d_seq}")
@@ -122,57 +126,110 @@
                 location.href = "${cpath}/UserLoginForm.do"
 			}
         }
+        
+      
     </script>
 
 </head>
 
 <body>
-    <jsp:include page="../header/header2.jsp" />
-    <div class="container mt-5">
-        <div class="row">
-            <div>
-                <!-- Content section -->
-                <article>
-                    <br class="mb-4">
-                    <h1 class="fw-bolder mb-1">${ vo.d_title }</h1><br>
-                    <div class="text-muted fst-italic mb-2">
-                        ${ fn:split(vo.d_date, " ")[0] } &nbsp&nbsp&nbsp ${ vo.user_id }
-                    </div><br>
-                    <section class="mb-5">
-                        <p class="fs-5 mb-4">${ fn:replace(vo.d_content, newLineChar, "<br />") }</p>
-                    </section>
-                </article>
-                <div>
-                    <c:if test="${!empty sessionScope.userVo }">
-                        <c:if test="${ sessionScope.userVo.user_id.equals(vo.user_id)}">
-                            <button class='btn' onclick="javascript:updatePost('${vo.d_seq}')")>Update</button>
-                            <button class='btn' onclick="javascript:deletePost('${vo.d_seq}')">Delete</button>
-                        </c:if>
-                    </c:if>
-                </div>
-                <br>
-                <!-- Comments section-->
-                <section class="mb-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <textarea class="form-control" rows="3" id="commentVal"
-                                placeholder="Join the discussion and leave a comment!"></textarea>
-                            <button class='btn' onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
-                            <div id="commentCard"></div>
-                        </div>
-                        </div>
-                </section>
-            </div>
-            <div style="text-align: right; background-color :transparent;">
-			<button type="button" class="btm_image" id="heart"><img src="./assets/img/heart.png" width="32px" onclick="increase()">${vo.d_like}</button>
-        </div>
-    </div>
+	<<<<<<< HEAD
+	<jsp:include page="../header/header2.jsp" />
+	<div class="container mt-5">
+		<div class="row">
+			<div>
+				<!-- Content section -->
+				<article>
+					<br class="mb-4">
+					<h1 class="fw-bolder mb-1">${ vo.d_title }</h1>
+					<br>
+					<div class="text-muted fst-italic mb-2">${ fn:split(vo.d_date, " ")[0] }
+						&nbsp&nbsp&nbsp ${ vo.user_id }</div>
+					<br>
+					<section class="mb-5">
+						<p class="fs-5 mb-4">${ fn:replace(vo.d_content, newLineChar, "<br />") }</p>
+					</section>
+				</article>
+				<div>
+					<c:if test="${!empty sessionScope.userVo }">
+						<c:if test="${ sessionScope.userVo.user_id.equals(vo.user_id)}">
+							<button class='btn'
+								onclick="javascript:updatePost('${vo.d_seq}')" )>Update</button>
+							<button class='btn'
+								onclick="javascript:deletePost('${vo.d_seq}')">Delete</button>
+						</c:if>
+					</c:if>
+				</div>
+				<br>
+				<!-- Comments section-->
+				<section class="mb-5">
+					<div class="card bg-light">
+						<div class="card-body">
+							<textarea class="form-control" rows="3" id="commentVal"
+								placeholder="Join the discussion and leave a comment!"></textarea>
+							<button class='btn'
+								onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
+							<div id="commentCard"></div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div style="text-align: right; background-color: transparent;">
+				<button type="button" class="btm_image" id="heart">
+					<img src="./assets/img/heart.png" width="32px" onclick="increase()">${vo.d_like}</button>
+			</div>
+		</div>
+		=======
+		<jsp:include page="../header/header2.jsp" />
+		<div class="container mt-5">
+			<div class="row">
+				<div>
+					<!-- Content section -->
+					<article>
+						<br class="mb-4">
+						<h1 class="fw-bolder mb-1">${ vo.d_title }</h1>
+						<br>
+						<div class="text-muted fst-italic mb-2">${ fn:split(vo.d_date, " ")[0] }
+							&nbsp&nbsp&nbsp ${ vo.user_id }</div>
+						<br>
+						<section class="mb-5">
+							<p class="fs-5 mb-4">${ fn:replace(vo.d_content, newLineChar, "<br />") }</p>
+						</section>
+					</article>
+					<div>
+						<c:if test="${!empty sessionScope.userVo }">
+							<c:if test="${ sessionScope.userVo.user_id.equals(vo.user_id)}">
+								<button class='btn'
+									onclick="javascript:updatePost('${vo.d_seq}')" )>Update</button>
+								<button class='btn'
+									onclick="javascript:deletePost('${vo.d_seq}')">Delete</button>
+							</c:if>
+						</c:if>
+					</div>
+					<br>
+					<!-- Comments section-->
+					<section class="mb-5">
+						<div class="card bg-light">
+							<div class="card-body">
+								<textarea class="form-control" rows="3" id="commentVal"
+									placeholder="Join the discussion and leave a comment!"></textarea>
+								<button class='btn'
+									onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
+								<div id="commentCard"></div>
+							</div>
+						</div>
+					</section>
+				</div>
 
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
+			</div>
+		</div>
+
+
+		<script src="./assets/js/jquery.slicknav.min.js"></script>
+		<script src="./assets/js/slick.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+		<script src="./assets/js/plugins.js"></script>
+		<script src="./assets/js/main.js"></script>
 </body>
 
 </html>

@@ -107,4 +107,13 @@ public class ThemeMyBatisDAO {
 
 	}
 	
+	public int memberCount() {
+		SqlSession session = sqlSessionFactory.openSession();
+		int cnt = session.selectOne("memberCount");
+		return cnt; 
+	}
+	
+	
+	
+	
 }

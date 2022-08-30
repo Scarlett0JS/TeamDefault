@@ -859,3 +859,8 @@ form.search-box .input-form .search-form i {
     width: 275px;
     height: 340px;
 }
+
+.btn-commuview-heart{
+	background-color: transparent;
+	border: 0px;
+}

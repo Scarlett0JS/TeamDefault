@@ -4,94 +4,137 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.theme.main.MainMapper">
 	<!-- User -->
-	<select id="UserLogin" parameterType="com.theme.entity.User" resultType="com.theme.entity.User">
-		select * from D_USER where user_id = #{user_id} and user_pw = #{user_pw}
+	<select id="UserLogin" parameterType="com.theme.entity.User"
+		resultType="com.theme.entity.User">
+		select * from D_USER where user_id = #{user_id} and user_pw
+		= #{user_pw}
 	</select>
-	
+
 	<insert id="UserRegister" parameterType="com.theme.entity.User">
-		Insert into D_USER (user_id, user_pw, user_nick)
-		values (#{user_id}, #{user_pw}, #{user_nick})
+		Insert into D_USER
+		(user_id, user_pw, user_nick)
+		values (#{user_id}, #{user_pw},
+		#{user_nick})
 	</insert>
-	
+
 	<delete id="UserDelete" parameterType="String">
-		DELETE FROM D_USER du WHERE USER_ID = #{user_id}
+		DELETE FROM D_USER du
+		WHERE USER_ID = #{user_id}
 	</delete>
-	
-	<select id="UserSelect" parameterType="String" resultType="com.theme.entity.User">
+
+	<select id="UserSelect" parameterType="String"
+		resultType="com.theme.entity.User">
 		SELECT * FROM D_USER du WHERE USER_ID = #{user_id}
 	</select>
-	
-	<update id="UserNickUpdate" parameterType="com.theme.entity.User">
-		UPDATE D_USER SET USER_NICK = #{user_nick} WHERE USER_ID = #{user_id}
+
+	<update id="UserNickUpdate"
+		parameterType="com.theme.entity.User">
+		UPDATE D_USER SET USER_NICK = #{user_nick} WHERE USER_ID
+		= #{user_id}
 	</update>
-	
+
 	<update id="UserPwUpdate" parameterType="com.theme.entity.User">
-		UPDATE D_USER SET USER_PW = #{user_pw} WHERE USER_ID = #{user_id}
+		UPDATE D_USER SET
+		USER_PW = #{user_pw} WHERE USER_ID = #{user_id}
 	</update>
-	
+
 	<!-- Board -->
 	<select id="allBoardList" resultType="com.theme.entity.Board">
-		SELECT * FROM D_BOARD db ORDER BY D_CNT DESC 
+		SELECT * FROM D_BOARD db
+		ORDER BY D_CNT DESC
 	</select>
-	
+
 	<update id="BoardCntUpdate" parameterType="int">
-		update D_BOARD set d_cnt = d_cnt+1 where d_seq = #{num}
+		update D_BOARD set
+		d_cnt = d_cnt+1 where d_seq = #{num}
 	</update>
-	
-	<select id="BoardView" parameterType="int" resultType="com.theme.entity.Board">
+
+	<select id="BoardView" parameterType="int"
+		resultType="com.theme.entity.Board">
 		select * from D_BOARD where d_seq = #{num}
 	</select>
-	
-	<select id="LangBoardList" parameterType="String" resultType="com.theme.entity.Board">
-		select * from D_BOARD where D_CATEGORY = #{lang} ORDER BY D_CNT DESC 
+
+	<select id="LangBoardList" parameterType="String"
+		resultType="com.theme.entity.Board">
+		select * from D_BOARD where D_CATEGORY = #{lang} ORDER BY
+		D_CNT DESC
 	</select>
-	
+
 	<delete id="BoardDelete" parameterType="int">
-		DELETE FROM D_BOARD db WHERE D_SEQ = #{num}
+		DELETE FROM D_BOARD db
+		WHERE D_SEQ = #{num}
 	</delete>
-	
+
 	<insert id="BoardInsert" parameterType="com.theme.entity.Board">
-		INSERT INTO D_BOARD (d_seq, D_TITLE, D_CONTENT, USER_ID, D_CATEGORY) 
-		VALUES (D_BOARD_seq.nextval, #{d_title}, #{d_content}, #{user_id}, #{d_category})
+		INSERT INTO D_BOARD
+		(d_seq, D_TITLE, D_CONTENT, USER_ID, D_CATEGORY)
+		VALUES
+		(D_BOARD_seq.nextval, #{d_title}, #{d_content}, #{user_id},
+		#{d_category})
 	</insert>
-	
-	<select id="BoardSelect" parameterType="int" resultType="com.theme.entity.Board">
+
+	<select id="BoardSelect" parameterType="int"
+		resultType="com.theme.entity.Board">
 		select * from D_BOARD where D_SEQ = #{num}
 	</select>
-	
+
 	<update id="BoardUpdate" parameterType="com.theme.entity.Board">
-		UPDATE D_BOARD SET D_TITLE = #{d_title}, D_CONTENT = #{d_content} WHERE D_SEQ = #{d_seq}
+		UPDATE D_BOARD SET
+		D_TITLE = #{d_title}, D_CONTENT = #{d_content} WHERE D_SEQ = #{d_seq}
 	</update>
-	
+
 	<!-- Comment -->
-	<select id="allCommentList" parameterType="int" resultType="com.theme.entity.Comment_nick">
-		SELECT dc.CMT_SEQ , dc.P_SEQ , dc.CMT_CONTENT , dc.CMT_DATE , du.USER_NICK , du.USER_ID 
-		FROM D_COMMENT dc JOIN D_USER du ON (dc.USER_ID = du.USER_ID)
-		WHERE dc.P_SEQ = #{board_num}
-		ORDER BY dc.CMT_DATE DESC
+	<select id="allCommentList" parameterType="int"
+		resultType="com.theme.entity.Comment_nick">
+		SELECT dc.CMT_SEQ , dc.P_SEQ , dc.CMT_CONTENT , dc.CMT_DATE
+		, du.USER_NICK , du.USER_ID
+		FROM D_COMMENT dc JOIN D_USER du ON
+		(dc.USER_ID = du.USER_ID)
+		WHERE
+		dc.P_SEQ = #{board_num}
+		ORDER BY
+		dc.CMT_DATE DESC
 	</select>
-	
-	<insert id="CommentWrite" parameterType="com.theme.entity.Comment">
-		INSERT INTO D_COMMENT (CMT_SEQ, P_SEQ, CMT_CONTENT, USER_ID)
-		VALUES (D_COMMENT_SEQ.nextval, #{p_seq}, #{cmt_content}, #{user_id})
+
+	<insert id="CommentWrite"
+		parameterType="com.theme.entity.Comment">
+		INSERT INTO D_COMMENT (CMT_SEQ, P_SEQ, CMT_CONTENT,
+		USER_ID)
+		VALUES (D_COMMENT_SEQ.nextval, #{p_seq}, #{cmt_content},
+		#{user_id})
 	</insert>
-	
-	<delete id="CommentDelete" parameterType="com.theme.entity.Comment">
+
+	<delete id="CommentDelete"
+		parameterType="com.theme.entity.Comment">
 		DELETE FROM D_COMMENT dc WHERE CMT_SEQ = #{cmt_seq}
 	</delete>
 
 	<!-- Extension -->
-	<select id="allExtension" resultType="com.theme.entity.Extension">
-		SELECT * FROM D_EXTENSION de WHERE EX_CATEGORY = 'A' ORDER BY EX_SEQ
+	<select id="allExtension"
+		resultType="com.theme.entity.Extension">
+		SELECT * FROM D_EXTENSION de WHERE EX_CATEGORY = 'A' ORDER
+		BY EX_SEQ
 	</select>
-	
-	<select id="otherExtension" resultType="com.theme.entity.Extension">
-		SELECT * FROM D_EXTENSION de WHERE EX_CATEGORY = 'O' ORDER BY EX_SEQ
+
+	<select id="otherExtension"
+		resultType="com.theme.entity.Extension">
+		SELECT * FROM D_EXTENSION de WHERE EX_CATEGORY = 'O' ORDER
+		BY EX_SEQ
 	</select>
-	
+
 	<!-- Color -->
 	<select id="allColor" resultType="com.theme.entity.Color">
-		SELECT * FROM D_COLOR dc ORDER BY COLOR_SEQ 
+		SELECT * FROM D_COLOR dc ORDER
+		BY COLOR_SEQ
 	</select>
-	
+
+	<!-- Admin -->
+	<select id="userList" resultType="com.theme.entity.User">
+		select * from user
+	</select>
+
+	<delete id="userDelete" parameterType="String">
+		delete from member where
+		USER_ID = #{user_id}
+	</delete>
 </mapper>
