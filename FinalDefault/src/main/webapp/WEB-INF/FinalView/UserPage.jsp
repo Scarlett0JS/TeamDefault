@@ -18,7 +18,11 @@
 
 <script type="text/javascript">
         $(document).ready(function () {
-            Load_UserDetail()
+        	if ("${empty sessionScope.userVo}" == "true") {
+        		location.href = "${cpath}/index.do"
+			} else {
+	            Load_UserDetail()				
+			}
         })
 
         function Load_UserDetail() {

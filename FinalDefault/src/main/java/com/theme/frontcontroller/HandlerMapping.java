@@ -7,6 +7,7 @@ import com.admin.controller.AdminUserListController;
 import com.admin.controller.UserListController;
 import com.board.controller.UserBoardDeleteController;
 import com.board.controller.UserBoardFormController;
+import com.board.controller.UserBoardLikeUpdateController;
 import com.board.controller.UserBoardListController;
 import com.board.controller.UserBoardUpdateController;
 import com.board.controller.UserBoardUpdateFormController;
@@ -62,6 +63,7 @@ public class HandlerMapping {
 		mappings.put("/UserBoradWrite.do", new UserBoardWriteController());
 		mappings.put("/UserBoardUpdateForm.do", new UserBoardUpdateFormController());
 		mappings.put("/UserBoardUpdate.do", new UserBoardUpdateController());
+		mappings.put("/UserBoardLikeUpdate.do", new UserBoardLikeUpdateController());
 		
 		// Comment
 		mappings.put("/CommentList.do", new CommentListController());

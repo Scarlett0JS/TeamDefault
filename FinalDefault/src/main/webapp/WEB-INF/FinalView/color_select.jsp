@@ -91,7 +91,8 @@
                 url: "${cpath}/ColorSelectedFromUser.do",
                 type: "post",
                 data: selection,
-                success: function(){
+                success: function(data){
+                	console.log(data)
                     console.log("Success")
                 },
                 error: function(){

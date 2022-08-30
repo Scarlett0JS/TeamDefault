@@ -7,17 +7,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.main.controller.Controller;
+import com.main.dao.MainMyBatisDAO;
 
-public class UserBoardWriteFormController implements Controller {
+public class UserBoardLikeUpdateController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		
-		String lang = request.getParameter("lang");
-		request.setAttribute("lang", lang);
+		MainMyBatisDAO dao = new MainMyBatisDAO();
+		dao.BoardLikeUpdate(board_num);
 		
-		return "commuWrite";
+		return null;
 	}
 
 }

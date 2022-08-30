@@ -126,6 +126,13 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+	
+	public void BoardLikeUpdate(int board_num) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("BoardLikeUpdate", board_num);
+		session.commit();
+		session.close();
+	}
 
 	// Comment
 	public List<Comment_nick> allCommentList(int board_num) {
@@ -178,5 +185,6 @@ public class MainMyBatisDAO {
 		session.close();
 		return userList;
 	}
+
 	
 }

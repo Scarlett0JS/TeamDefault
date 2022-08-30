@@ -25,6 +25,5 @@
 			<div class="panel-footer">Spring 특화 A</div>
 		</div>
 	</div>
-
 </body>
 </html>

@@ -6,7 +6,6 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html class="no-js">
-
 <head>
     <meta charset="UTF-8">
     <title>Default</title>
