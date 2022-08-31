@@ -43,16 +43,16 @@
 
         function UserDetailHtml(data) {
             let star = "*".repeat(data.user_pw.length)
-            let html = "<li class='about-items'><i class='mdi mdi-account icon-sm'></i>"
-            html += "<span class='about-item-name'>Email:</span>"
-            html += "<span class='about-item-detail' id='userIdArea'>" + data.user_id + "</span>"
-            html += "<li class='about-items'><i class='mdi mdi-account icon-sm'></i>"
-            html += "<span class='about-item-name'>Name:</span>"
-            html += "<span class='about-item-detail' id='userNickArea'>" + data.user_nick + "</span>"
+            let html = "<li class='about-items row'>"
+            html += "<span class='about-item-name col-2'>Email :</span>"
+            html += "<span class='about-item-detail col-3' id='userIdArea'>" + data.user_id + "</span>"
+            html += "<li class='about-items row'>"
+            html += "<span class='about-item-name col-2'>Name :</span>"
+            html += "<span class='about-item-detail col-8' id='userNickArea'>" + data.user_nick + "</span>"
             html += "<a href='javascript:EditUserNickForm()' class='about-item-edit' id='userNickHref'>Edit</a></li>"
-            html += "<li class='about-items'><i class='mdi mdi-lock-outline icon-sm'></i>"
-            html += "<span class='about-item-name'>Password:</span>"
-            html += "<span class='about-item-detail' id='userPwArea'>" + star + "</span>"
+            html += "<li class='about-items row'>"
+            html += "<span class='about-item-name col-2'>Password :</span>"
+            html += "<span class='about-item-detail col-8' id='userPwArea'>" + star + "</span>"
             html += "<a href='javascript:EditUserPwForm()' class='about-item-edit' id='userPwHref'>Edit</a></li>"
             $("#UserDetailArea").html(html)
             $("#userprof").css("display", "block")
@@ -194,14 +194,12 @@
 								<br>
 								<ul class="profile-info-list ">
 									<li><a href="javascript:Load_Mypage()"
-										class="profile-info-list-item rounded-30"> <i
-											class="mdi mdi-eye"></i>Profile Settings
-									</a> <!-- 유저가 좋아요한 테마 로딩 --> <a href=""
-										class="profile-info-list-item rounded-30"><i
-											class="mdi mdi-bookmark-check"></i>My Theme</a> <!-- 유저가 올린 포스트 로딩 -->
-										<a href="javascript:Load_UserPost()"
-										class="profile-info-list-item rounded-30"><i
-											class="mdi mdi-movie"></i>My Post</a>
+										class="profile-info-list-item rounded-30"> 
+										<i class="mdi mdi-eye"></i>Profile Settings</a> 
+										<!-- 유저가 좋아요한 테마 로딩 --> 
+										<a href="" class="profile-info-list-item rounded-30"><i class="mdi mdi-bookmark-check"></i>My Theme</a> 
+										<!-- 유저가 올린 포스트 로딩 -->
+										<a href="javascript:Load_UserPost()" class="profile-info-list-item rounded-30"><i class="mdi mdi-movie"></i>My Post</a>
 								</ul>
 							</div>
 						</div>
@@ -219,8 +217,8 @@
 
 							<p class="card-description">Delete Account</p>
 							<ul class="about">
-								<li class="leave">Do you want to leave us? <a
-									href="javascript:DeleteFromUser()" class="delete-outline">DELETE ACCOUNT</a></li>
+								<li class="leave">Do you want to leave us? 
+									<a href="javascript:DeleteFromUser()" class="delete-outline">DELETE ACCOUNT</a></li>
 							</ul>
 						</div>
 
@@ -231,21 +229,11 @@
 								<li class="about-items">
 									<div class="row">
 										<i class="mdi mdi-account icon-sm "></i>
-										<div class="col-md-1">
-											<span class="about-item-name">No. </span>
-										</div>
-										<div class="col-md-6">
-											<span class="about-item-name">Title </span>
-										</div>
-										<div class="col-md-3">
-											<span class="about-item-name">Date </span>
-										</div>
-										<div class="col-md-1">
-											<span class="about-item-name">Hits </span>
-										</div>
-										<div class="col-md-1">
-											<span class="about-item-name">Like </span>
-										</div>
+										<div class="col-md-1"><span class="about-item-name">No. </span></div>
+										<div class="col-md-6"><span class="about-item-name">Title </span></div>
+										<div class="col-md-3"><span class="about-item-name">Date </span></div>
+										<div class="col-md-1"><span class="about-item-name">Hits </span></div>
+										<div class="col-md-1"><span class="about-item-name">Like </span></div>
 									</div>
 								</li>
 							</ul>
