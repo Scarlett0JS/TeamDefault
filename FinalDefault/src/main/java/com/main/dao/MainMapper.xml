@@ -112,8 +112,11 @@
 	</delete>
 	
 	<!-- Theme -->
-	<select id="allThemeList">
-		select * from d_theme order by theme_seq
+	<select id="allThemeList" resultType="com.theme.entity.Theme">
+		SELECT dt.*
+		FROM D_THEME dt , (SELECT rownum, THEME_SEQ FROM D_THEME) dt2 
+		WHERE dt.THEME_SEQ = dt2.THEME_SEQ 
+		AND ROWNUM  BETWEEN 1 AND (1+15)
 	</select>
 	
 </mapper>

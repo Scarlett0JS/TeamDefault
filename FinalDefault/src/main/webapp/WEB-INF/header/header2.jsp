@@ -62,7 +62,7 @@
 						<div class="col-xl-2-my col-lg-2-my">
 							<div class="logo">
 								<a href="javascript:Load_Main()"><img
-									src="./assets/img/logo/logo.png" alt="Logo"></a>
+									src="./assets/img/logo/exLogo.png" alt="Logo"></a>
 							</div>
 						</div>
 						<div class="col-xl-10-my col-lg-10-my">

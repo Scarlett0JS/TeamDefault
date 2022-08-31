@@ -202,6 +202,4 @@ public class MainMyBatisDAO {
 		return themelist;
 	}
 
-
-	
 }
