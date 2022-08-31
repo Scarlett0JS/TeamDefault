@@ -23,6 +23,7 @@ import com.comment.controller.CommentInsertController;
 import com.comment.controller.CommentListController;
 import com.main.controller.Controller;
 import com.main.controller.IndexController;
+import com.theme.controller.ThemeAllListController;
 import com.user.controller.UserDeleteController;
 import com.user.controller.UserDetailController;
 import com.user.controller.UserLoginController;
@@ -65,7 +66,7 @@ public class HandlerMapping {
 		mappings.put("/UserBoradWrite.do", new UserBoardWriteController());
 		mappings.put("/UserBoardUpdateForm.do", new UserBoardUpdateFormController());
 		mappings.put("/UserBoardUpdate.do", new UserBoardUpdateController());
-		//mappings.put("/UserBoardLikeUpdate.do", new UserBoardLikeUpdateController());
+		mappings.put("/UserBoardLikeUpdate.do", new UserBoardLikeUpdateController());
 		
 		// Comment
 		mappings.put("/CommentList.do", new CommentListController());
@@ -81,6 +82,9 @@ public class HandlerMapping {
 		mappings.put("/UserList.do", new UserListController());
 		mappings.put("/AdminDelete.do", new AdminDeleteController());
 		mappings.put("/AdminUserList.do", new AdminUserListController());
+		
+		// Themes
+		mappings.put("/ThemeAllList.do", new ThemeAllListController());
 	}
 	
 	public Controller getController(String command) {

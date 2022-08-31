@@ -13,6 +13,7 @@ import com.theme.entity.Color;
 import com.theme.entity.Comment;
 import com.theme.entity.Comment_nick;
 import com.theme.entity.Extension;
+import com.theme.entity.Theme;
 import com.theme.entity.User;
 
 public class MainMyBatisDAO {
@@ -192,6 +193,15 @@ public class MainMyBatisDAO {
 		session.close();
 		return userList;
 	}
+	
+	// Theme
+	public List<Theme> allThemeList() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Theme> themelist = session.selectList("allThemeList");
+		session.close();
+		return themelist;
+	}
+
 
 	
 }

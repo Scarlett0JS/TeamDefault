@@ -39,6 +39,10 @@
         function Load_Admin(){
         	location.href = "${cpath}/UserList.do"
         }
+        
+        function Load_Theme(){
+        	location.href = "${cpath}/ThemeAllList.do"
+        }
     </script>
 </head>
 <div id="preloader-active">
@@ -71,7 +75,7 @@
 										<ul id="navigation">
 											<li><a href="javascript:Load_Main()">Home</a></li>
 											<li><a href="javascript:Load_Community()">Community</a></li>
-											<li><a href="theme.html">Theme</a></li>
+											<li><a href="javascript:Load_Theme()">Theme</a></li>
 											<c:if test="${!empty sessionScope.userVo}">
 												<c:if
 													test="${sessionScope.userVo.user_id.equals('admin@gjaischool.com')}">

@@ -110,4 +110,10 @@
 	<delete id="userDelete" parameterType="String">
 		delete from D_USER where USER_ID = #{user_id}
 	</delete>
+	
+	<!-- Theme -->
+	<select id="allThemeList">
+		select * from d_theme order by theme_seq
+	</select>
+	
 </mapper>
