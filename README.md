@@ -7,6 +7,7 @@ Vscode 테마 추천 서비스 제공 웹사이트 구성
 > 1. github desktop 실행 -> file -> clone repository
 > 2. URL -> https://github.com/PringlesHair/First_Project.git
 > 3. Local_path를 전자정부프레임워크 디렉토리로 설정 -> clone
+> 머가문제일깡
 --------------
 ### Java web project import
 > 1. 새로운 워크스페이스 에서 clone한 repository import
