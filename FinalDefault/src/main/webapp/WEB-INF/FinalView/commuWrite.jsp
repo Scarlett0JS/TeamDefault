@@ -58,7 +58,6 @@
                 <textarea id="summernote" name="summernote"></textarea>
                 <br>
                 <button type="submit" class="btn btn-success">Submit</button>
-                <button type="reset" class="btn btn-warning">Cancel</button>
                 <button type="button" class="btn btn-info" onclick="javascript:Load_community()">List</button>
             </form>
         </div>

@@ -601,7 +601,7 @@ ul{
     position: relative;
     border-style: solid;
     border-width: 1px;
-    border-top-color: #F067FF;
+    border-top-color: #000000;
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
@@ -609,7 +609,7 @@ ul{
     border-radius: 50%;
     -webkit-box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
     box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
-    background-color: #fff;
+    background-color: tran;
     -webkit-animation: zoom 2000ms infinite ease;
     animation: zoom 2000ms infinite ease;
     -webkit-transition: .6s;
@@ -640,7 +640,7 @@ ul{
 }
 
 .preloader-my .preloader-img-my img {
-    max-width: 55px
+    max-width: 60px
 }
 
 .preloader-my .pere-text-my strong {
@@ -658,3 +658,7 @@ ul{
     position: relative !important
 }
 
+/* .pere-text-my img{
+    width: 90px;
+    height: 90px;
+} */

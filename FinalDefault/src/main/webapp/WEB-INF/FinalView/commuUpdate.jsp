@@ -58,7 +58,6 @@
                 <textarea id="summernote" name="summernote"> ${ board.d_content } </textarea>
                 <br>
                 <button type="submit" class="btn btn-outline-success">Submit</button>
-                <button type="reset" class="btn btn-outline-warning">Cancel</button>
                 <button type="button" class="btn btn-outline-info" onclick="javascript:Load_community()">List</button>
             </form>
         </div>
