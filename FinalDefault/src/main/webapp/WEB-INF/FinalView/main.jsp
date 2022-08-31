@@ -107,7 +107,7 @@
                             <div class="cat-cap">
                                 <h5><a href="#">d</a></h5>
                                 <p>내용</p>
-                                <button class='btn' onclick="javascript:Load_ColorSelect()">Color Select</button>
+                                <button class='btn-e' onclick="javascript:Load_ColorSelect()">Color Select</button>
                             </div>
                         </div>
                     </div>

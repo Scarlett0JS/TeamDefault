@@ -220,7 +220,7 @@
 							<p class="card-description">Delete Account</p>
 							<ul class="about">
 								<li class="leave">Do you want to leave us? <a
-									href="javascript:DeleteFromUser()" class="delete-outline">DELETEACCOUNT</a></li>
+									href="javascript:DeleteFromUser()" class="delete-outline">DELETE ACCOUNT</a></li>
 							</ul>
 						</div>
 
