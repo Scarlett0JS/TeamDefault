@@ -49,11 +49,11 @@
             html += "<li class='about-items row'>"
             html += "<span class='about-item-name col-2'>Name :</span>"
             html += "<span class='about-item-detail col-8' id='userNickArea'>" + data.user_nick + "</span>"
-            html += "<a href='javascript:EditUserNickForm()' class='about-item-edit' id='userNickHref'>Edit</a></li>"
+            html += "<a href='javascript:EditUserNickForm()' class='about-item-edit col-1' id='userNickHref'>Edit</a></li>"
             html += "<li class='about-items row'>"
             html += "<span class='about-item-name col-2'>Password :</span>"
             html += "<span class='about-item-detail col-8' id='userPwArea'>" + star + "</span>"
-            html += "<a href='javascript:EditUserPwForm()' class='about-item-edit' id='userPwHref'>Edit</a></li>"
+            html += "<a href='javascript:EditUserPwForm()' class='about-item-edit col-1' id='userPwHref'>Edit</a></li>"
             $("#UserDetailArea").html(html)
             $("#userprof").css("display", "block")
             $("#UserDetailArea").css("display", "block")
