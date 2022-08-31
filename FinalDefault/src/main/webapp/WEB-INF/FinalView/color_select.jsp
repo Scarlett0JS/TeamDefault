@@ -83,23 +83,12 @@
         }
 
         function colorsubmit() {
-            let selection = {};
+            let selection = "";
             for (i = 0; i <= 4; i++) {
-            	selection[String(i)] = $($('.service-icon-five')[i]).css('background-color').slice(4,-1)
+            	selection += String(i+1) + "=" + $($('.service-icon-five')[i]).css('background-color').slice(4,-1) + "&"
             	}
-            $.ajax({
-                url: "${cpath}/ColorSelectedFromUser.do",
-                type: "post",
-                data: selection,
-                success: function(data){
-                	console.log(data)
-                    console.log("Success")
-                },
-                error: function(){
-                    console.log("Error")
-                }
-            })
-      }
+            location.href = "${cpath}/ColorSelectedFromUser.do?" + selection
+      	}
     </script>
 </head>
 

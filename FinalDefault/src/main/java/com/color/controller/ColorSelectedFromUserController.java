@@ -20,14 +20,15 @@ public class ColorSelectedFromUserController implements Controller {
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String one = request.getParameter("0");
-		String two = request.getParameter("1");
-		String three = request.getParameter("2");
-		String four = request.getParameter("3");
-		String five = request.getParameter("4");
-		String aa = "?aa="+one+","+two+","+three+","+four+","+five;
+		String one = request.getParameter("1");
+		String two = request.getParameter("2");
+		String three = request.getParameter("3");
+		String four = request.getParameter("4");
+		String five = request.getParameter("5");
 		
-		String domain = "http://127.0.0.1:5000/predict"+aa.replace(" ", "");		
+		String ColorData = "?ColorData="+one+":"+two+":"+three+":"+four+":"+five;
+		String domain = "http://127.0.0.1:5000/ColorRecommend"+ColorData.replace(" ", "");	
+		
 		try {			
 			URL u = new URL(domain);			
 			HttpURLConnection http = (HttpURLConnection) u.openConnection();			
@@ -54,7 +55,7 @@ public class ColorSelectedFromUserController implements Controller {
 			e.printStackTrace();
 		}
 		
-		return "main";
+		return null;
 	}
 
 }
