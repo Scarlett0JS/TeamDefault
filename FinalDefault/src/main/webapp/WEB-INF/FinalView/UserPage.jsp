@@ -6,19 +6,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile Settings</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Profile Settings</title>
 
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/slick.css">
-    <link rel="stylesheet" href="./assets/css/animate.min.css">
-    <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/userpage.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="./assets/css/slicknav.css">
+<link rel="stylesheet" href="./assets/css/slick.css">
+<link rel="stylesheet" href="./assets/css/animate.min.css">
+<link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="./assets/css/header.css">
+<link rel="stylesheet" href="./assets/css/userpage.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
         $(document).ready(function () {
             if ("${empty sessionScope.userVo}" == "true") {
                 location.href = "${cpath}/index.do"
@@ -172,93 +174,97 @@
 </head>
 
 <body>
-    <jsp:include page="../header/header3.jsp" />
-    <div class="main-panel">
-        <div class="container">
-            <div class="row margin-top-65 margin-bottom-160">
-                <div class="col-md-4 grid-margin stretch-card">
-                    <div class="card rounded-15">
-                        <div class="profile-card">
-                            <div class="profile-header">
-                                <div class="cover-image rounded-top-15">
-                                    <!-- <img src="https://cdn.pixabay.com/photo/2019/10/19/14/16/away-4561518_960_720.jpg" class="img img-fluid"> -->
-                                </div>
-                                <div class="user-image">
-                                    <img src="./assets/img/my_img/User.png" class="img ">
-                                </div>
-                            </div>
-                            <div class="profile-content">
-                                <div class="profile-name">${ sessionScope.userVo.user_id }</div>
-                                <br>
-                                <ul class="profile-info-list ">
-                                    <li><a href="javascript:Load_Mypage()" class="profile-info-list-item rounded-30">
-                                            <i class="mdi mdi-eye"></i>Profile Settings</a>
-                                        <!-- 유저가 좋아요한 테마 로딩 -->
-                                        <a href="" class="profile-info-list-item rounded-30"><i
-                                                class="mdi mdi-bookmark-check"></i>My Theme</a>
-                                        <!-- 유저가 올린 포스트 로딩 -->
-                                        <a href="javascript:Load_UserPost()"
-                                            class="profile-info-list-item rounded-30"><i class="mdi mdi-movie"></i>My
-                                            Post</a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	<jsp:include page="../header/header3.jsp" />
+	<div class="main-panel">
+		<div class="container">
+			<div class="row margin-top-65 margin-bottom-160">
+				<div class="col-md-4 grid-margin stretch-card">
+					<div class="card rounded-15">
+						<div class="profile-card">
+							<div class="profile-header">
+								<div class="cover-image rounded-top-15">
+									<!-- <img src="https://cdn.pixabay.com/photo/2019/10/19/14/16/away-4561518_960_720.jpg" class="img img-fluid"> -->
+								</div>
+								<div class="user-image">
+									<img src="./assets/img/my_img/User.png" class="img ">
+								</div>
+							</div>
+							<div class="profile-content">
+								<div class="profile-name">${ sessionScope.userVo.user_id }</div>
+								<br>
+								<ul class="profile-info-list ">
+									<li><a href="javascript:Load_Mypage()"
+										class="profile-info-list-item rounded-30"> <i
+											class="mdi mdi-eye"></i>Profile Settings
+									</a> <!-- 유저가 좋아요한 테마 로딩 --> <a href=""
+										class="profile-info-list-item rounded-30"><i
+											class="mdi mdi-bookmark-check"></i>My Theme</a> <!-- 유저가 올린 포스트 로딩 -->
+										<a href="javascript:Load_UserPost()"
+										class="profile-info-list-item rounded-30"><i
+											class="mdi mdi-movie"></i>My Post</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                <div class="col-md-8 grid-margin stretch-card">
-                    <div class="card rounded-15">
-                        <div class="card-body" style="display:none" id="userprof">
-                            <p class="card-title">Profile Settings</p>
-                            <hr>
-                            <p class="card-description">User Information</p>
+				<div class="col-md-8 grid-margin stretch-card">
+					<div class="card rounded-15">
+						<div class="card-body" style="display: none" id="userprof">
+							<p class="card-title">Profile Settings</p>
+							<hr>
+							<p class="card-description">User Information</p>
 
-                            <ul class="about" style="display: none" id="UserDetailArea"></ul>
+							<ul class="about" style="display: none" id="UserDetailArea"></ul>
 
-                            <p class="card-description">Delete Account</p>
-                            <ul class="about">
-                                <li class="leave">Do you want to leave us? <a href="javascript:DeleteFromUser()"
-                                        class="delete-outline">DELETEACCOUNT</a></li>
-                            </ul>
-                        </div>
+							<p class="card-description">Delete Account</p>
+							<ul class="about">
+								<li class="leave">Do you want to leave us? <a
+									href="javascript:DeleteFromUser()" class="delete-outline">DELETEACCOUNT</a></li>
+							</ul>
+						</div>
 
-                        <div class="card-body" style="display:none" id="userpost">
-                            <p class="card-title">My Post</p>
-                            <hr>
-                            <ul class="post-sort">
-                                <li class="about-items">
-                                    <div class="row">
-                                        <i class="mdi mdi-account icon-sm "></i>
-                                        <div class="col-md-1">
-                                            <span class="about-item-name">No. </span>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <span class="about-item-name">Title </span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <span class="about-item-name">Date </span>
-                                        </div>
-                                        <div class="col-md-1">
-                                            <span class="about-item-name">Hits </span>
-                                        </div>
-                                        <div class="col-md-1">
-                                            <span class="about-item-name">Like </span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <hr class="post-hr">
-                            <ul class="post-sort" style="display:none" id="UserPostedArea"></ul>
-                        </div>
+						<div class="card-body" style="display: none" id="userpost">
+							<p class="card-title">My Post</p>
+							<hr>
+							<ul class="post-sort">
+								<li class="about-items">
+									<div class="row">
+										<i class="mdi mdi-account icon-sm "></i>
+										<div class="col-md-1">
+											<span class="about-item-name">No. </span>
+										</div>
+										<div class="col-md-6">
+											<span class="about-item-name">Title </span>
+										</div>
+										<div class="col-md-3">
+											<span class="about-item-name">Date </span>
+										</div>
+										<div class="col-md-1">
+											<span class="about-item-name">Hits </span>
+										</div>
+										<div class="col-md-1">
+											<span class="about-item-name">Like </span>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<hr class="post-hr">
+							<ul class="post-sort" style="display: none" id="UserPostedArea"></ul>
+						</div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./assets/js/jquery.slicknav.min.js"></script>
+	<script src="./assets/js/hover-direction-snake.min.js"></script>
+	<script src="./assets/js/slick.min.js"></script>
+	<script src="./assets/js/animated.headline.js"></script>
+	<script src="./assets/js/plugins.js"></script>
+	<script src="./assets/js/header.js"></script>
+	<script src="./assets/js/main.js"></script>
 </body>
 
 </html>

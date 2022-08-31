@@ -81,8 +81,7 @@
                         html += "<img class='rounded-circle' src='https://dummyimage.com/50x50/ced4da/6c757d.jpg'>"
                         html += "</div>"
                         html += "<div class='ms-3'>"
-                        html += "<div clss='fw-bold'>" + obj.user_nick
-                            + "</div>"
+                        html += "<div clss='fw-bold'>" + obj.user_nick + "</div>"
                         html += obj.cmt_content
                         html += "</div>"
                         html += "<div style='text-align: right; background-color: transparent;''>"
@@ -90,6 +89,7 @@
                         html += "</div>"
                         html += "</div>"
                         html += "</div>"
+                        html += "<br>"
                     })
             $("#commentCard").html(html)
         }

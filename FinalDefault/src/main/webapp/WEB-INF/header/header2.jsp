@@ -12,34 +12,35 @@
 
 <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
-        function Load_Main() {
-            location.href = "${cpath}/index.do"
-        }
+	function Load_Main() {
+		location.href = "${cpath}/index.do"
+	}
 
-        function Load_RegisterForm() {
-            location.href = "${cpath}/UserRegisterForm.do"
-        }
+	function Load_RegisterForm() {
+		location.href = "${cpath}/UserRegisterForm.do"
+	}
 
-        function Load_LoginForm() {
-            location.href = "${cpath}/UserLoginForm.do"
-        }
+	function Load_LoginForm() {
+		location.href = "${cpath}/UserLoginForm.do"
+	}
 
-        function Load_Community() {
-            location.href = "${cpath}/UserBoardForm.do"
-        }
+	function Load_Community() {
+		location.href = "${cpath}/UserBoardForm.do"
+	}
 
-        function LogOut() {
-            location.href = "${cpath}/UserLogout.do"
-        }
+	function LogOut() {
+		location.href = "${cpath}/UserLogout.do"
+	}
 
-        function Load_MyPage() {
-            location.href = "${cpath}/UserMypageForm.do?user_id=" + "${sessionScope.userVo.user_id}"
-        }
+	function Load_MyPage() {
+		location.href = "${cpath}/UserMypageForm.do?user_id="
+				+ "${sessionScope.userVo.user_id}"
+	}
 
-        function Load_Community() {
-            location.href = "${cpath}/UserBoardForm.do"
-        }
-    </script>
+	function Load_Community() {
+		location.href = "${cpath}/UserBoardForm.do"
+	}
+</script>
 </head>
 <div id="preloader-active-my">
 	<div

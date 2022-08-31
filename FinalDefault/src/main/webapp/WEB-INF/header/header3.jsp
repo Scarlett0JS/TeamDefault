@@ -41,7 +41,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="./assets/img/logo/loder.png" alt="">
+                    <img src="./assets/img/logo/exLogo.png" alt="">
                 </div>
             </div>
         </div>
