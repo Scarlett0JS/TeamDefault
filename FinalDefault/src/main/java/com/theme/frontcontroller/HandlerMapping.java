@@ -54,7 +54,7 @@ public class HandlerMapping {
 		mappings.put("/UserNickUpdate.do", new UserNickUpdateController());
 		mappings.put("/UserPwUpdate.do", new UserPwUpdateController());
 		mappings.put("/UserPostedList.do", new UserPostedListController());
-		
+
 		// Board
 		mappings.put("/UserBoardForm.do", new UserBoardFormController());
 		mappings.put("/UserBoardList.do", new UserBoardListController());
@@ -65,7 +65,7 @@ public class HandlerMapping {
 		mappings.put("/UserBoradWrite.do", new UserBoardWriteController());
 		mappings.put("/UserBoardUpdateForm.do", new UserBoardUpdateFormController());
 		mappings.put("/UserBoardUpdate.do", new UserBoardUpdateController());
-		mappings.put("/UserBoardLikeUpdate.do", new UserBoardLikeUpdateController());
+		//mappings.put("/UserBoardLikeUpdate.do", new UserBoardLikeUpdateController());
 		
 		// Comment
 		mappings.put("/CommentList.do", new CommentListController());
