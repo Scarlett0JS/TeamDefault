@@ -42,7 +42,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="login-body slider-bg">
         <form class="form-default" id="frm-register" action="${cpath}/UserRegister.do" method="POST">
             <div class="login-form">
                 <div class="logo-login">

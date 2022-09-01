@@ -270,9 +270,9 @@ h6 {
     width: 100%;
     padding-top: 100px;
     padding-right: 15px;
-    padding-left: 10rem;
-    margin-right: auto;
-    margin-left: auto
+    padding-left: 15px;
+    /* margin-right: auto; */
+    /* margin-left: auto */
 }
 
 
@@ -297,10 +297,11 @@ h6 {
 }
 
 .detail-main-img {
-    width: 100%;
-    height: 430px;
+    /* width: 800px; */
+    width: 120%;
+    height: 450px;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     border-radius: 10px;
 }
 
@@ -512,6 +513,42 @@ form.search-box .input-form .search-form button,
     margin: 9px;
 }
 
+.java_icon{
+    background-size: 20px;
+    background-image: url('../img/my_img/logo/java_logo.png');
+}
+
+.python_icon{
+    background-size: 20px;
+    background-image: url('../img/my_img/logo/python_logo.png');
+}
+
+.html_icon{
+    background-size: 20px;
+    background-image: url('../img/my_img/logo/html_logo.png');
+}
+
+.js_icon{
+    background-size: 20px;
+    background-image: url('../img/my_img/logo/js_logo.png');
+}
+
+.blue {
+	background-color: blue;
+}
+
+.red {
+	background-color: red;
+}
+
+.orange {
+	background-color: orange;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -605,12 +642,32 @@ form.search-box .input-form .search-form button,
     padding-top: 2.3rem !important
 }
 
+.pt-30 {
+    padding-top: 30px
+}
+
+.pt-50 {
+    padding-top: 50px
+}
+
+.pt-40 {
+    padding-top: 40px
+}
+
 .pl-60 {
     padding-left: 60px
 }
 
-.pl-80 {
-    padding-left: 90px
+.pl-50 {
+    padding-left: 50px
+}
+
+.pl-70 {
+    padding-left: 70px
+}
+
+.pl-180 {
+    padding-left: 180px
 }
 
 .pl-10 {
@@ -697,11 +754,15 @@ form.search-box .input-form .search-form button,
 }
 
 .pt-10{
-    padding-top: 12rem;
+    padding-top: 11rem;
 }
 
 .pt-8{
     padding-top: 5.5rem;
+}
+
+.pt-6{
+    padding-top: 6rem;
 }
 
 .pt-7{
@@ -710,6 +771,10 @@ form.search-box .input-form .search-form button,
 
 .pb-30 {
     padding-bottom: 30px
+}
+
+.pb-100 {
+    padding-bottom: 100px
 }
 
 .theme-list-title h1 {
@@ -727,6 +792,13 @@ form.search-box .input-form .search-form button,
 }
 
 .login-body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.register-body{
     margin: 0;
     padding: 0;
     width: 100%;
@@ -769,6 +841,11 @@ form.search-box .input-form .search-form i {
     border: 0px solid black;
     border-radius: 1rem; 
 } */
+
+.mem{
+    color: black;
+    opacity: 0.5;
+}
 
 #back-top {
     background: rgba(98, 154, 221, 1);
@@ -841,12 +918,12 @@ form.search-box .input-form .search-form i {
     min-width: 992px !important
 }
 
-.pr-110 {
-    padding-right: 110px
+.pr-60 {
+    padding-right: 60px
 }
 
-.pl-110 {
-    padding-left: 110px
+.pl-90 {
+    padding-left: 90px
 }
 
 .themeName-li{
@@ -873,10 +950,4 @@ form.search-box .input-form .search-form i {
     height: 340px;
 }
 
-.pt-30 {
-    padding-top: 30px
-}
 
-.pt-30{
-    padding-top: 6rem;
-}

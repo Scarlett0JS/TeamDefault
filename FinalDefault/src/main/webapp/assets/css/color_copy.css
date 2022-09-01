@@ -15,22 +15,6 @@
   border: 10px solid rgb(236, 234, 230);
 }
 
-.emp-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.sel-btn {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
 .btn-group_color{
   position: absolute;
   top : 10%;
@@ -66,15 +50,16 @@
 }
 
 div.activered {
-  outline: 5px solid red;
+  border : 5px solid red; /*선택 색상 테두리 변경하면 됨!*/
+  border-radius: 100%;
 }
 
 .cocircle {
-  width: 80px;
-  height: 80px;
+  width: 90px; /*동그라미 크기!(한줄에 11개일때 크기)*/
+  height: 90px;
   padding: 40px;
   border-radius: 100%;
-  /* border: 5px solid transparent; */
+  border: 2px solid rgb(236, 234, 230); /*동그라미 테두리 두께!*/
   margin: 10px 10px 10px 10px;
   cursor: pointer;
 }
@@ -82,3 +67,47 @@ div.activered {
 .cdisabled {
   pointer-events: none;
 }
+
+.container-color {
+	min-width: 992px !important;
+	padding-top: 5rem;
+}
+
+.container-color {
+	width: 100%;
+	padding-right: 1px;
+	padding-left: 1px;
+	padding-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media ( min-width :576px) {
+	.container-color {
+		max-width: 540px
+	}
+}
+
+@media ( min-width :768px) {
+	.container-color {
+		max-width: 720px
+	}
+}
+
+@media ( min-width :992px) {
+	.container-color {
+		max-width: 960px
+	}
+}
+
+@media ( min-width :1200px) {
+	.container-color {
+		max-width: 1200px
+	}
+}
+
+.container-color {
+	min-width: 992px !important
+}
+
+

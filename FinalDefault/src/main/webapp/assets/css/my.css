@@ -248,6 +248,10 @@ a.bg-light:focus, a.bg-light:hover, button.bg-light:focus, button.bg-light:hover
 	text-align: right;
 }
 
+.left {
+	text-align: left;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Poppins", sans-serif;
 	color: #000000;
@@ -581,6 +585,10 @@ a:active {
 	padding-top: 2.3rem !important
 }
 
+.pt-3 {
+	padding-top: 1.6rem !important
+}
+
 .pl-90 {
 	padding-left: 90px
 }
@@ -864,187 +872,390 @@ form.search-box .input-form .search-form i {
 
 /* main-colorSelect btn*/
 .btn-colorSelect {
-    font-family: "Poppins", sans-serif;
-    text-transform: capitalize;
-    padding: 20px 20px !important;
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1;
-    -moz-user-select: none;
-    letter-spacing: 1px;
-    line-height: 0;
-    margin-bottom: 0;
-    cursor: pointer;
-    transition: color 0.4s linear;
-    position: relative;
-    z-index: 1;
-    border: 0;
-    overflow: hidden;
-    margin: 0;
-    border-radius: 30px !important;
-    display: inline-block !important
+	font-family: "Poppins", sans-serif;
+	text-transform: capitalize;
+	padding: 20px 20px !important;
+	color: #fff;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1;
+	-moz-user-select: none;
+	letter-spacing: 1px;
+	line-height: 0;
+	margin-bottom: 0;
+	cursor: pointer;
+	transition: color 0.4s linear;
+	position: relative;
+	z-index: 1;
+	border: 0;
+	overflow: hidden;
+	margin: 0;
+	border-radius: 30px !important;
+	display: inline-block !important
 }
 
 .btn-colorSelect::after {
-    position: unset !important
+	position: unset !important
 }
 
 .btn-colorSelect::before {
-    content: "";
-    position: absolute !important;
-    left: 0;
-    top: 0;
-    width: 101%;
-    height: 101%;
-    z-index: 1;
-    border-radius: 5px;
-    transition: transform 0.5s;
-    transition-timing-function: ease;
-    transform-origin: 0 0;
-    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-    transform: scaleX(0);
-    border-radius: 0px
+	content: "";
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 101%;
+	height: 101%;
+	z-index: 1;
+	border-radius: 5px;
+	transition: transform 0.5s;
+	transition-timing-function: ease;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+	transform: scaleX(0);
+	border-radius: 0px
 }
 
 .btn-colorSelect:hover {
-    color: #fff !important;
+	color: #fff !important;
 }
 
 .btn-colorSelect:hover::before {
-    transform: scaleX(1);
-    color: #fff !important;
-    z-index: -1
+	transform: scaleX(1);
+	color: #fff !important;
+	z-index: -1
 }
 
-.btn-colorSelect.focus,
-.btn-colorSelect:focus {
-    outline: 0;
-    box-shadow: none
+.btn-colorSelect.focus, .btn-colorSelect:focus {
+	outline: 0;
+	box-shadow: none
 }
 
-.btn-colorSelect.focus,
-.btn-colorSelect:focus {
-    outline: 0;
-    box-shadow: none
+.btn-colorSelect.focus, .btn-colorSelect:focus {
+	outline: 0;
+	box-shadow: none
 }
 
-.btn-colorSelect,
-.border-btn::before,
-.main-header .main-menu ul ul.submenu,
-form.search-box .input-form .search-form button,
-.pricing-card-area .single-card .card-bottom .borders-btn:hover,
-.pricing-card-area .single-card:hover .card-bottom .borders-btn,
-.footer-area .footer-form form .form-icon button {
-    background: #a077ff;
-    background: -moz-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
-    background: -webkit-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
-    background: linear-gradient(to bottom, #a077ff 0%, #ef67ff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff', endColorstr='#ef67ff', GradientType=0)
+.btn-colorSelect, .border-btn::before, .main-header .main-menu ul ul.submenu,
+	form.search-box .input-form .search-form button, .pricing-card-area .single-card .card-bottom .borders-btn:hover,
+	.pricing-card-area .single-card:hover .card-bottom .borders-btn,
+	.footer-area .footer-form form .form-icon button {
+	background: #a077ff;
+	background: -moz-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
+	background: -webkit-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
+	background: linear-gradient(to bottom, #a077ff 0%, #ef67ff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff',
+		endColorstr='#ef67ff', GradientType;=0)
 }
 
 .btn-colorSelect::before {
-    background: #a077ff;
-    background: -moz-linear-gradient(top, #9a73f5 0%, #e562f3 100%);
-    background: -webkit-linear-gradient(top, #9770f3 0%, #e361f1 100%);
-    background: linear-gradient(to bottom, #926ceb 0%, #e05eee 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff', endColorstr='#ef67ff', GradientType=0)
+	background: #a077ff;
+	background: -moz-linear-gradient(top, #9a73f5 0%, #e562f3 100%);
+	background: -webkit-linear-gradient(top, #9770f3 0%, #e361f1 100%);
+	background: linear-gradient(to bottom, #926ceb 0%, #e05eee 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff',
+		endColorstr='#ef67ff', GradientType=0)
 }
-
-
 
 /* commuLnag btn*/
 .btn-e {
-    font-family: "Poppins", sans-serif;
-    text-transform: capitalize;
-    padding: 15px 20px !important;
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1;
-    -moz-user-select: none;
-    letter-spacing: 1px;
-    line-height: 0;
-    margin-bottom: 0;
-    cursor: pointer;
-    transition: color 0.4s linear;
-    position: relative;
-    z-index: 1;
-    border: 0;
-    overflow: hidden;
-    margin: 0;
-    border-radius: 30px !important;
-    display: inline-block !important
+	font-family: "Poppins", sans-serif;
+	text-transform: capitalize;
+	padding: 15px 20px !important;
+	color: #fff;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1;
+	-moz-user-select: none;
+	letter-spacing: 1px;
+	line-height: 0;
+	margin-bottom: 0;
+	cursor: pointer;
+	transition: color 0.4s linear;
+	position: relative;
+	z-index: 1;
+	border: 0;
+	overflow: hidden;
+	margin: 0;
+	border-radius: 30px !important;
+	display: inline-block !important
 }
 
 .btn-e::after {
-    position: unset !important
+	position: unset !important
 }
 
 .btn-e::before {
-    content: "";
-    position: absolute !important;
-    left: 0;
-    top: 0;
-    width: 101%;
-    height: 101%;
-    z-index: 1;
-    border-radius: 5px;
-    transition: transform 0.5s;
-    transition-timing-function: ease;
-    transform-origin: 0 0;
-    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-    transform: scaleX(0);
-    border-radius: 0px
+	content: "";
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 101%;
+	height: 101%;
+	z-index: 1;
+	border-radius: 5px;
+	transition: transform 0.5s;
+	transition-timing-function: ease;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+	transform: scaleX(0);
+	border-radius: 0px
 }
 
 .btn-e:hover {
-    color: #fff !important;
+	color: #fff !important;
 }
 
 .btn-e:hover::before {
-    transform: scaleX(1);
-    color: #fff !important;
-    z-index: -1
+	transform: scaleX(1);
+	color: #fff !important;
+	z-index: -1
 }
 
-.btn-e.focus,
-.btn-e:focus {
-    outline: 0;
-    box-shadow: none
+.btn-e.focus, .btn-e:focus {
+	outline: 0;
+	box-shadow: none
 }
 
-.btn-e.focus,
-.btn-e:focus {
-    outline: 0;
-    box-shadow: none
+.btn-e.focus, .btn-e:focus {
+	outline: 0;
+	box-shadow: none
 }
 
-.btn-e,
-.border-btn::before,
-.main-header .main-menu ul ul.submenu,
-form.search-box .input-form .search-form button,
-.pricing-card-area .single-card .card-bottom .borders-btn:hover,
-.pricing-card-area .single-card:hover .card-bottom .borders-btn,
-.footer-area .footer-form form .form-icon button {
-    background: #a077ff;
-    background: -moz-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
-    background: -webkit-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
-    background: linear-gradient(to bottom, #a077ff 0%, #ef67ff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff', endColorstr='#ef67ff', GradientType=0)
+.btn-e, .border-btn::before, .main-header .main-menu ul ul.submenu, form.search-box .input-form .search-form button,
+	.pricing-card-area .single-card .card-bottom .borders-btn:hover,
+	.pricing-card-area .single-card:hover .card-bottom .borders-btn,
+	.footer-area .footer-form form .form-icon button {
+	background: #a077ff;
+	background: -moz-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
+	background: -webkit-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
+	background: linear-gradient(to bottom, #a077ff 0%, #ef67ff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff',
+		endColorstr='#ef67ff', GradientType=0)
 }
 
 .btn-e::before {
-    background: #a077ff;
-    background: -moz-linear-gradient(top, #9a73f5 0%, #e562f3 100%);
-    background: -webkit-linear-gradient(top, #9770f3 0%, #e361f1 100%);
-    background: linear-gradient(to bottom, #926ceb 0%, #e05eee 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff', endColorstr='#ef67ff', GradientType=0)
+	background: #a077ff;
+	background: -moz-linear-gradient(top, #9a73f5 0%, #e562f3 100%);
+	background: -webkit-linear-gradient(top, #9770f3 0%, #e361f1 100%);
+	background: linear-gradient(to bottom, #926ceb 0%, #e05eee 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff',
+		endColorstr='#ef67ff', GradientType=0)
 }
 
+.blue {
+	background-color: blue;
+}
 
+.red {
+	background-color: red;
+}
+
+.orange {
+	background-color: orange;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.btn-lang {
+	display: inline-block;
+	font-weight: 500;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid black;
+	font-size: 15px;
+	line-height: 1;
+	border-radius: 0.3rem;
+	/* margin-top: 13px;
+    margin-right: 5px;
+    margin-left: 10px; */
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.pb-10 {
+    padding-bottom: 10px
+}
+
+.btn-color-e {
+	font-family: "Poppins", sans-serif;
+	text-transform: capitalize;
+	padding: 15px 20px !important;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1;
+	-moz-user-select: none;
+	line-height: 0;
+	margin-bottom: 0;
+	cursor: pointer;
+	transition: color 0.4s linear;
+	position: relative;
+	z-index: 1;
+	border: 0;
+	overflow: hidden;
+	margin: 0;
+	border-radius: 30px !important;
+	display: inline-block !important
+}
+
+.btn-color-e::after {
+	position: unset !important
+}
+
+.btn-color-e::before {
+	content: "";
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 101%;
+	height: 101%;
+	z-index: 1;
+	border-radius: 5px;
+	transition: transform 0.5s;
+	transition-timing-function: ease;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+	transform: scaleX(0);
+	border-radius: 0px
+}
+
+.btn-color-e:hover {
+	color: #fff !important;
+}
+
+.btn-color-e:hover::before {
+	transform: scaleX(1);
+	color: #fff !important;
+	z-index: -1
+}
+
+.btn-color-e.focus, .btn-e:focus {
+	outline: 0;
+	box-shadow: none
+}
+
+.btn-color-e.focus, .btn-e:focus {
+	outline: 0;
+	box-shadow: none
+}
+
+.btn-color-e, .border-btn::before, .main-header .main-menu ul ul.submenu, form.search-box .input-form .search-form button,
+	.pricing-card-area .single-card .card-bottom .borders-btn:hover,
+	.pricing-card-area .single-card:hover .card-bottom .borders-btn,
+	.footer-area .footer-form form .form-icon button {
+	background: #a077ff;
+	background: -moz-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
+	background: -webkit-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
+	background: linear-gradient(to bottom, #a077ff 0%, #ef67ff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff',
+		endColorstr='#ef67ff', GradientType=0)
+}
+
+.btn-color-e::before {
+	background: #a077ff;
+	background: -moz-linear-gradient(top, #9a73f5 0%, #e562f3 100%);
+	background: -webkit-linear-gradient(top, #9770f3 0%, #e361f1 100%);
+	background: linear-gradient(to bottom, #926ceb 0%, #e05eee 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff',
+		endColorstr='#ef67ff', GradientType=0)
+}
+
+.btn-color-s {
+	font-family: "Poppins", sans-serif;
+	text-transform: capitalize;
+	padding: 5px 15px !important;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 20px;
+	-moz-user-select: none;
+	margin-bottom: 0;
+	cursor: pointer;
+	transition: color 0.4s linear;
+	position: relative;
+	z-index: 1;
+	border: 0;
+	overflow: hidden;
+	margin: 0;
+	border-radius: 20px !important;
+	display: inline-block !important;
+	
+}
+
+.btn-color-s::after {
+	position: unset !important
+}
+
+.btn-color-s::before {
+	content: "";
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 101%;
+	height: 101%;
+	z-index: 1;
+	border-radius: 5px;
+	transition: transform 0.5s;
+	transition-timing-function: ease;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+	transform: scaleX(0);
+	border-radius: 0px
+}
+
+.btn-color-s:hover {
+	color: #fff !important;
+}
+
+.btn-color-s:hover::before {
+	transform: scaleX(1);
+	color: #fff !important;
+	z-index: -1
+}
+
+.btn-color-s.focus, .btn-e:focus {
+	outline: 0;
+	box-shadow: none
+}
+
+.btn-color-s.focus, .btn-e:focus {
+	outline: 0;
+	box-shadow: none
+}
+
+.btn-color-s, .border-btn::before, .main-header .main-menu ul ul.submenu, form.search-box .input-form .search-form button,
+	.pricing-card-area .single-card .card-bottom .borders-btn:hover,
+	.pricing-card-area .single-card:hover .card-bottom .borders-btn,
+	.footer-area .footer-form form .form-icon button {
+	background: #a077ff;
+	background: -moz-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
+	background: -webkit-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
+	background: linear-gradient(to bottom, #a077ff 0%, #ef67ff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff',
+		endColorstr='#ef67ff', GradientType=0)
+}
+
+.btn-color-s::before {
+	background: #a077ff;
+	background: -moz-linear-gradient(top, #9a73f5 0%, #e562f3 100%);
+	background: -webkit-linear-gradient(top, #9770f3 0%, #e361f1 100%);
+	background: linear-gradient(to bottom, #926ceb 0%, #e05eee 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff',
+		endColorstr='#ef67ff', GradientType=0)
+}
 
 
 
