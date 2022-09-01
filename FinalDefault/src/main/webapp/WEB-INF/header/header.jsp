@@ -50,7 +50,7 @@
 		<div class="preloader-inner position-relative">
 			<div class="preloader-circle"></div>
 			<div class="preloader-img pere-text">
-				<img src="./assets/img/logo/logo.png" alt="">
+				<img src="./assets/img/logo/exLogo.png" alt="">
 			</div>
 		</div>
 	</div>
@@ -64,7 +64,7 @@
 						<div class="col-xl-2 col-lg-2">
 							<div class="logo">
 								<a href="javascript:Load_Main()"><img
-									src="./assets/img/logo/logo.png" alt=""></a>
+									src="./assets/img/logo/exLogo.png" alt=""></a>
 							</div>
 						</div>
 						<div class="col-xl-10 col-lg-10">
