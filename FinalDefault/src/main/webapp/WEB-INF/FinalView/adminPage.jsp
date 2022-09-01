@@ -11,13 +11,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Default</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/slicknav.css">
-    <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./assets/css/slick.css">
-    <link rel="stylesheet" href="./assets/css/boardstyles.css">
-    <link rel="stylesheet" href="./assets/css/my.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/slicknav.css">
+	<link rel="stylesheet" href="./assets/css/animate.min.css">
+	<link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="./assets/css/slick.css">
+	<link rel="stylesheet" href="./assets/css/boardstyles.css">
+	<link rel="stylesheet" href="./assets/css/my.css">
+	<link rel="stylesheet" href="./assets/css/header.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -157,12 +158,13 @@
         </div>
     
 
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/hover-direction-snake.min.js"></script>
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
+	<script src="./assets/js/jquery.slicknav.min.js"></script>
+	<script src="./assets/js/hover-direction-snake.min.js"></script>
+	<script src="./assets/js/slick.min.js"></script>
+	<script src="./assets/js/animated.headline.js"></script>
+	<script src="./assets/js/plugins.js"></script>
+	<script src="./assets/js/header.js"></script>
+	<script src="./assets/js/main.js"></script>
 </body>
 
 </html>
