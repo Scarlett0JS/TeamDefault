@@ -40,7 +40,7 @@ public class UserRegisterController implements Controller {
 				MainMyBatisDAO dao = new MainMyBatisDAO();
 				try {
 					dao.UserRegister(user);
-					return "main";				
+					return "redirect:/index.do";				
 				} catch (Exception e) {
 					errMap.put("registerError", "checkEmail");
 					request.setAttribute("registerError", errMap);

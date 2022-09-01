@@ -18,7 +18,7 @@ public class UserLogoutController implements Controller {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		return "main";
+		return "redirect:/index.do";
 	}
 
 }

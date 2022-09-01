@@ -83,11 +83,11 @@
         }
 
         function colorsubmit() {
-        		console.log("진짜 미춰버리겠네 안지수")
             let selection = "";
             for (i = 0; i <= 4; i++) {
             	selection += String(i+1) + "=" + $($('.service-icon-five')[i]).css('background-color').slice(4,-1) + "&"
             	}
+            selection += "lang=Python"
             location.href = "${cpath}/ColorSelectedFromUser.do?" + selection
       	}
     </script>
