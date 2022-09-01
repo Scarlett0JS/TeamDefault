@@ -140,8 +140,8 @@ pageContext.setAttribute("newLineChar", "\n");
 					<select name="plan" id="plan" class="btn-lang blue">
 						<option value="Python" class="python blue left" selected>Python</option>
 						<option value="Java" class="java red left">Java</option>
-						<option value="Html" class="html orange left">Html</option>
-						<option value="Javascript" class="js yellow left">Javascript</option>
+						<option value="HTML" class="html orange left">Html</option>
+						<option value="JavaScript" class="js yellow left">Javascript</option>
 					</select>
 				</div>
 				<div class="pb-10">
@@ -164,9 +164,6 @@ pageContext.setAttribute("newLineChar", "\n");
 	</div>
 	<Br>
 	<Br>
-	<script>
-		
-	</script>
 
 	<script src="./assets/js/jquery.slicknav.min.js"></script>
 	<script src="./assets/js/hover-direction-snake.min.js"></script>

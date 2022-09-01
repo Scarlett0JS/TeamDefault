@@ -19,7 +19,7 @@ def ThemeRgb(lang):
     cur, conn = dbConnection()
     resultLi = []
     
-    sql = f"SELECT THEME_SEQ, THEME_COL1 , THEME_COL2 , THEME_COL3 , THEME_COL4 , THEME_COL5 FROM D_THEME dt WHERE THEME_FONT = 'JetBrains Mono' AND THEME_LANG = '{lang}' ORDER BY THEME_SEQ "
+    sql = f"SELECT THEME_SEQ, THEME_COL1 , THEME_COL2 , THEME_COL3 , THEME_COL4 , THEME_COL5 FROM D_THEME dt WHERE THEME_FONT = 'JetBrains Mono' AND THEME_LANG = '{lang}' ORDER BY THEME_INSTALLCNT"
         
     for row in cur.execute(sql):
         resultLi.append((str(row[0]),[tuple(map(int, i.split(","))) for i in row[1:]]))
@@ -48,6 +48,7 @@ def ColorRecommend() :
         return "Error?";
     else :
         recommedTheme = calDistance(request.args['ColorData'])
+        print(recommedTheme)
         return recommedTheme
 
 if __name__ == "__main__" :

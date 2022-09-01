@@ -23,6 +23,17 @@
 
   <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
   <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+  
+  <script type="text/javascript">
+  	function Load_colorSelect(){
+  		location.href = "${cpath}/ColorSelect.do"
+  	}
+  	
+  	function Load_ThemeDetail(seq){
+  		location.href = "${cpath}/ThemeDetail.do?seq=" + String(seq)
+  	}
+  </script>
+  
 </head>
 
 <body>
@@ -30,7 +41,7 @@
   <main>
     <div class="center pt-10 theme-list-title">
       <h1>Recommendation Theme List</h1>
-      <button class='btn-e' onclick="">Color Select</button>
+      <button class='btn-e' onclick="javascript:Load_colorSelect()">Color Select RE</button>
     </div>
     <div class="container">
       <div class="pt-5">
@@ -40,7 +51,7 @@
               <div class="card-li mb-4 shadow-sm">
                 <img class="card-li-img-top rounded" src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${themeData.theme_filepath }" alt="">
                 <div class="card-li-body">
-                  <p class="themeName-li"><a href="${themeData.theme_url}">${themeData.theme_name} | ${themeData.theme_lang}</a></p>
+                  <p class="themeName-li"><a href="javascript:Load_ThemeDetail(${ themeData.theme_seq })">${themeData.theme_name} | ${themeData.theme_lang}</a></p>
                   <p id="theme-by-li">${themeData.theme_producer}
                     <img src="./assets/img/icon/download_icon.png" alt="download_icon" class="download-icon-li"> ${themeData.theme_installcnt} |
                     <img src="./assets/img/icon/heart.png" alt="heart" class="heart-li"> ${themeData.theme_likes}

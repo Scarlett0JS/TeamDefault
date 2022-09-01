@@ -150,9 +150,7 @@
         	let html = ""
         	$.each(data, function (idx, obj) {
         		console.log(obj)
-        		
         		html +="hr"
-        		
         	})
             $("#UserThemeArea").html(html)
            	$("#userpost").css("display", "none")
