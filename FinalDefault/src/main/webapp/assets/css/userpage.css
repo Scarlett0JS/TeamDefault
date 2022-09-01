@@ -314,14 +314,14 @@ a:hover {
 }
 
 ul.post-sort {
-		margin-top: 20px;
-		margin-bottom: 14px;
-		margin-right: 2% !important;
-		font-weight: 400;
-		color: #76838f;
+	margin-top: 20px;
+	margin-bottom: 14px;
+	margin-right: 2% !important;
+	font-weight: 400;
+	color: #76838f;
     list-style: none;
     color: black;
-		padding: 0;
+	padding: 0;
 }
 
 .post-hr {
