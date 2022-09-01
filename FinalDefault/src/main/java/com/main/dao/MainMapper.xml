@@ -17,6 +17,33 @@
 		DELETE FROM D_USER du WHERE USER_ID = #{user_id}
 	</delete>
 	
+	<!-- 오류 처리 -->
+	<update id="DisableBoard">
+		ALTER TABLE D_BOARD DISABLE CONSTRAINT FK_D_BOARD_USER_ID_D_USER_USER
+	</update>
+	
+	<update id="EnableBoard">
+		ALTER TABLE D_BOARD ENABLE CONSTRAINT FK_D_BOARD_USER_ID_D_USER_USER
+	</update>
+	
+	<update id="DisableComment">
+		ALTER TABLE D_COMMENT DISABLE CONSTRAINT FK_D_COMMENT_USER_ID_D_USER_US
+	</update>
+	
+	<update id="EnableComment">
+		ALTER TABLE D_COMMENT ENABLE CONSTRAINT FK_D_COMMENT_USER_ID_D_USER_US
+	</update>
+	
+	<!--  아이디 FK 제약조건 처리
+	<update id="DisableUserFavs">
+		ALTER TABLE D_USER_FAVS DISABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER
+	</update>
+	
+	<update id="EnableUserFavs">
+		ALTER TABLE D_USER_FAVS ENABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER
+	</update>
+	-->
+	
 	<select id="UserSelect" parameterType="String" resultType="com.theme.entity.User">
 		SELECT * FROM D_USER du WHERE USER_ID = #{user_id}
 	</select>

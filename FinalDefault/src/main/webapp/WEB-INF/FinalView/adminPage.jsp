@@ -84,19 +84,6 @@
             })
         }
         
-        function goDel(user_id) {
-        	alert("goDel");
-            $.ajax({
-                url: "${cpath}/AdminDelete.do",
-                type: "get",
-                data: { "user_id": user_id },
-                success: Load_UserList,
-                error: function () {
-                    alert("error");
-                }
-            });
-        }
-        
         function UserHtml(data) {
         	let html = "<div class='table-responsive'>"
             html += "<thead>"
@@ -119,12 +106,33 @@
                 html += "<td>" + obj.user_joindate + "</td>"
                 html += "<td>" + obj.user_id + "</td>"
                 html += "<td class='td-actions text-right'>"
-                html += "<button type='button' rel='tooltip' class='btn btn-danger btn-just-icon btn-sm' onclick='goDel(\"" + obj.user_id + "\")'><i class='material-icons'>delete</i></button></td>";
+                html += "<button type='button' rel='tooltip' class='btn btn-danger btn-just-icon btn-sm' onclick='check(\"" + obj.user_id + "\")'><i class='material-icons'>delete</i></button></td>";
                 html += "</tr>"
             })
             html += "</tbody>"
             html += "</div>"
             $(".table").html(html)
+        }
+        function check(user_id){
+        	var check= confirm("정말 삭제하시겠습니까?");
+        	if(check==true){
+        		goDel(user_id);
+        	}
+        	else{
+        		return;
+        	}
+        }
+        
+        function goDel(user_id) {
+            $.ajax({
+                url: "${cpath}/AdminDelete.do",
+                type: "get",
+                data: { "user_id": user_id },
+                success: Load_UserList,
+                error: function () {
+                    alert("error");
+                }
+            });
         }
 
     </script>

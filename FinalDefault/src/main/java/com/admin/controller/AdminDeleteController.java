@@ -18,8 +18,9 @@ public class AdminDeleteController implements Controller {
 		MainMyBatisDAO dao = new MainMyBatisDAO();
 		
 		String user_id = request.getParameter("user_id");
+		dao.Disable();
 		dao.UserDelete(user_id);
-		
+		dao.Enable();
 		return null;
 	}
 

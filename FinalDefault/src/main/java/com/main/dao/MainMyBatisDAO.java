@@ -43,8 +43,14 @@ public class MainMyBatisDAO {
 	}
 	
 	public void UserDelete(String user_id) {
-		SqlSession session = sqlSessionFactory.openSession();
-		session.delete("UserDelete", user_id);
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			session.delete("UserDelete", user_id);			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 		session.commit();
 		session.close();
 	}
@@ -193,5 +199,21 @@ public class MainMyBatisDAO {
 		return userList;
 	}
 
-	
+	// constraint 
+	public void Disable() {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("DisableBoard");
+		session.update("DisableComment");
+		//session.update("DisableUserFavs");
+		session.commit();
+		session.close();
+	}
+	public void Enable() {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("EnableBoard");
+		session.update("EnableComment");
+		//session.update("EnableUserFavs");
+		session.commit();
+		session.close();
+	}
 }
