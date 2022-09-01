@@ -161,7 +161,7 @@
         }
         
         function Load_List(){
-        	location.href = "${cpath}/UserLangBoardList.do?lang=" + "${vo.d_category}"
+        	location.href = "${cpath}/UserLangBoardList.do?lang=" + "${vo.d_category}" + "&page=1"
         }
     </script>
 

@@ -22,7 +22,11 @@
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
     
-	
+	<script type="text/javascript">
+		function Load_ThemeDetail(theme_seq){
+			location.href = "${cpath}/ThemeDetail.do?seq=" + String(theme_seq)
+		}
+	</script>
 </head>
 
 <body>
@@ -39,7 +43,7 @@
                             <div class="card-li mb-4 shadow-sm">
                                 <img class="card-li-img-top rounded" src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath }" alt="">
                                 <div class="card-li-body">
-                                    <p class="themeName-li"><a href="${theme.theme_url}">${theme.theme_name} | ${theme.theme_lang}</a></p>
+                                    <p class="themeName-li"><a href="javascript:Load_ThemeDetail(${ theme.theme_seq })">${theme.theme_name} | ${theme.theme_lang}</a></p>
                                     <p id="theme-by-li">${theme.theme_producer}
                                         <img src="./assets/img/icon/download_icon.png" alt="download_icon"
                                             class="download-icon-li"> ${theme.theme_installcnt} |
@@ -54,7 +58,7 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center pagination-lg">
                     <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
+                        <a class="page-link" href="${cpath}/ThemeAllList.do?page=${paging.curpage-5}" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                             <span class="sr-only">Previous</span>
                         </a>
@@ -63,10 +67,18 @@
 	                    <li class="page-item"><a class="page-link" href="${cpath}/ThemeAllList.do?page=${page}">${ page }</a></li>
                     </c:forEach>
                     <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                    	<c:if test="${ paging.curpage+5 < paging.totalPagingCount }">
+	                        <a class="page-link" href="${cpath}/ThemeAllList.do?page=${paging.curpage+5}" aria-label="Next">
+	                            <span aria-hidden="true">&raquo;</span>
+	                            <span class="sr-only">Next</span>
+	                        </a>
+                        </c:if>
+                        <c:if test="${ paging.curpage+5 >= paging.totalPagingCount }">
+	                        <a class="page-link" aria-label="Next">
+	                            <span aria-hidden="true">&raquo;</span>
+	                            <span class="sr-only">Next</span>
+	                        </a>                        
+                        </c:if>
                     </li>
                 </ul>
             </nav>

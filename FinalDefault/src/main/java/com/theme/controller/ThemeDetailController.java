@@ -1,4 +1,4 @@
-package com.comment.controller;
+package com.theme.controller;
 
 import java.io.IOException;
 
@@ -8,25 +8,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.main.controller.Controller;
 import com.main.dao.MainMyBatisDAO;
-import com.theme.entity.Comment;
+import com.theme.entity.Theme;
 
-public class CommentInsertController implements Controller {
+public class ThemeDetailController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		String comment = request.getParameter("comment");
-		int board_num = Integer.parseInt(request.getParameter("board_num"));
-		String user_id = request.getParameter("user_id");
-		
-		Comment vo = new Comment(comment, board_num, user_id);
+
+		int theme_seq = Integer.parseInt(request.getParameter("seq"));
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
+		Theme themeVo = dao.Themeselect(theme_seq);
 		
-		dao.CommentWrite(vo);
+		request.setAttribute("themeVo", themeVo);
 		
-		return null;
+		return "ThemeDetail";
 	}
 
 }

@@ -51,9 +51,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Title</span>
                     </div>
-                    <input type="hidden" id="Writer" name="Writer" value=${ sessionScope.userVo.user_id }> <input
-                        type="hidden" id="Lang" name="Lang" value=${ lang }> <input type="text" class="form-control"
-                        id="summerTitle" name="summerTitle">
+                    <input type="hidden" id="Writer" name="Writer" value=${ sessionScope.userVo.user_id }> 
+                    <input type="hidden" id="Lang" name="Lang" value=${ lang }> 
+                    <input type="text" class="form-control" id="summerTitle" name="summerTitle">
                 </div>
                 <textarea id="summernote" name="summernote"></textarea>
                 <br>

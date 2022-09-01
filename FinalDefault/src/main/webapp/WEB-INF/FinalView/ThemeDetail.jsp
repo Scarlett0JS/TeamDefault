@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +33,13 @@
             let temp = imgtag.src.split("/")
             let imgLi = temp[temp.length - 1].split("%20").join(" ").split(".")[0].split("_")
             imgtag.src = destPath + [imgLi[0], imgLi[1], lang, imgLi[3]].join("_") + ".png"
+        }
+        
+        function Load_FontImg(font){
+        	let imgtag = document.getElementById("ThemeImg")
+        	let temp = imgtag.src.split("/")
+        	let imgLi = temp[temp.length - 1].split("%20").join(" ").split(".")[0].split("_")
+        	imgtag.src = destPath + [imgLi[0], imgLi[1], imgLi[2], font].join("_") + ".png"
         }
 
     </script>

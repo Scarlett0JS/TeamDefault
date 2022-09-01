@@ -18,19 +18,18 @@ public class ThemeAllListController implements Controller {
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String page = request.getParameter("page");
+		int page = Integer.parseInt(request.getParameter("page"));
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
 		
-		if (page == null) {
-			page = "1";
+		if (page <= 0) {
+			page = 1;
 		}
 		
 		int totalArticleCount = dao.allThemeCount();
-		int inputpage = Integer.parseInt(page);
-		Paging paging = new Paging(inputpage, totalArticleCount, 16);
+		Paging paging = new Paging(page, totalArticleCount, 16);
 		
-		List<Theme> themeVo = dao.allThemeList(16*inputpage - 15);
+		List<Theme> themeVo = dao.allThemeList(16*page - 15);
 		
 		request.setAttribute("paging", paging);
 		request.setAttribute("themeVo", themeVo);

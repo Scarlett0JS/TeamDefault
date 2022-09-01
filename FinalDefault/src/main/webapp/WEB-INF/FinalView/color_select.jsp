@@ -99,7 +99,7 @@ pageContext.setAttribute("newLineChar", "\n");
 					+ $($('.service-icon-five')[i]).css('background-color')
 							.slice(4, -1) + "&"
 		}
-		selection += "lang=Python"
+		selection += "lang=" + $("#plan option:selected").val()
 		location.href = "${cpath}/ColorSelectedFromUser.do?" + selection
 	}
 </script>
@@ -138,11 +138,10 @@ pageContext.setAttribute("newLineChar", "\n");
 			<div class="col-md-2 col-sm-6 center">
 				<div class="pt-3 pb-10">
 					<select name="plan" id="plan" class="btn-lang blue">
-						<option value="starter" class="python blue left" selected>Python
-						</option>
-						<option value="free" class="java red left">Java</option>
-						<option value="professional" class="html orange left">Html</option>
-						<option value="corporate" class="js yellow left">Javascript</option>
+						<option value="Python" class="python blue left" selected>Python</option>
+						<option value="Java" class="java red left">Java</option>
+						<option value="Html" class="html orange left">Html</option>
+						<option value="Javascript" class="js yellow left">Javascript</option>
 					</select>
 				</div>
 				<div class="pb-10">

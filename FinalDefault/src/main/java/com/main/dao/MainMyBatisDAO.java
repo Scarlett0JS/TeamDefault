@@ -13,6 +13,7 @@ import com.theme.entity.Color;
 import com.theme.entity.Comment;
 import com.theme.entity.Comment_nick;
 import com.theme.entity.Extension;
+import com.theme.entity.LangPage;
 import com.theme.entity.Theme;
 import com.theme.entity.User;
 
@@ -86,9 +87,9 @@ public class MainMyBatisDAO {
 	}
 	
 	// Board
-	public List<Board> allBoardList() {
+	public List<Board> allBoardList(int inputpage) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<Board> boardList = session.selectList("allBoardList");
+		List<Board> boardList = session.selectList("allBoardList", inputpage);
 		session.close();
 		return boardList;
 	}
@@ -107,9 +108,9 @@ public class MainMyBatisDAO {
 		return bvo;
 	}
 	
-	public List<Board> LangBoardList(String lang) {
+	public List<Board> LangBoardList(LangPage lp) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<Board> boardList = session.selectList("LangBoardList", lang);
+		List<Board> boardList = session.selectList("LangBoardList", lp);
 		session.close();
 		return boardList;
 	}
@@ -147,6 +148,20 @@ public class MainMyBatisDAO {
 		session.update("BoardLikeUpdate", board_num);
 		session.commit();
 		session.close();
+	}
+	
+	public int allBoardCount() {
+		SqlSession session = sqlSessionFactory.openSession();
+		int count = session.selectOne("allBoardCount");
+		session.close();
+		return count;
+	}
+	
+	public int LangBoardCount(String lang) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int count = session.selectOne("LangBoardCount", lang);
+		session.close();
+		return count;
 	}
 
 	// Comment
@@ -250,5 +265,4 @@ public class MainMyBatisDAO {
 		session.close();
 		return allpage;
 	}
-
 }

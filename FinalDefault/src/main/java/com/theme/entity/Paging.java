@@ -6,23 +6,27 @@ public class Paging {
 	private int totalPagingCount;
 	private int start;
 	private int end;
+	private int curpage;
 	
 	public Paging() {
 		super();
 	}
-
-	public Paging(int articleCountPerPage, int totalAticleCount, int totalPagingCount, int start, int end) {
+	
+	public Paging(int articleCountPerPage, int totalAticleCount, int totalPagingCount, int start, int end,
+			int curpage) {
 		super();
 		this.articleCountPerPage = articleCountPerPage;
 		this.totalAticleCount = totalAticleCount;
 		this.totalPagingCount = totalPagingCount;
 		this.start = start;
 		this.end = end;
+		this.curpage = curpage;
 	}
-	
+
 	public Paging(int page, int totalAticleCount, int aticleCountPerPage) {
 		this.totalAticleCount = totalAticleCount;
 		this.articleCountPerPage = aticleCountPerPage;
+		this.curpage = page;
 		
 		totalPagingCount = totalAticleCount/aticleCountPerPage;
 		if (totalAticleCount%aticleCountPerPage!=0) {
@@ -80,11 +84,20 @@ public class Paging {
 		this.end = end;
 	}
 
+	public int getCurpage() {
+		return curpage;
+	}
+
+	public void setCurpage(int curpage) {
+		this.curpage = curpage;
+	}
+
 	@Override
 	public String toString() {
 		return "Paging [articleCountPerPage=" + articleCountPerPage + ", totalAticleCount=" + totalAticleCount
-				+ ", totalPagingCount=" + totalPagingCount + ", start=" + start + ", end=" + end + "]";
+				+ ", totalPagingCount=" + totalPagingCount + ", start=" + start + ", end=" + end + ", curpage="
+				+ curpage + "]";
 	}
-	
+
 
 }

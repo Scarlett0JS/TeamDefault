@@ -25,7 +25,7 @@
 	}
 
 	function Load_Community() {
-		location.href = "${cpath}/UserBoardForm.do"
+		location.href = "${cpath}/UserBoardList.do?page=" + "1"
 	}
 
 	function LogOut() {
@@ -33,8 +33,7 @@
 	}
 
 	function Load_MyPage() {
-		location.href = "${cpath}/UserMypageForm.do?user_id="
-				+ "${sessionScope.userVo.user_id}"
+		location.href = "${cpath}/UserMypageForm.do?user_id="+ "${sessionScope.userVo.user_id}"
 	}
 
 	function Load_Community() {
@@ -77,10 +76,10 @@
 									<nav>
 										<ul id="navigation-my">
 											<li><a href="javascript:Load_Community()">All</a></li>
-											<li><a href="${cpath}/UserLangBoardList.do?lang=Python">Python</a></li>
-											<li><a href="${cpath}/UserLangBoardList.do?lang=Java">Java</a></li>
-											<li><a href="${cpath}/UserLangBoardList.do?lang=Html">Html</a></li>
-											<li><a href="${cpath}/UserLangBoardList.do?lang=JavaScript">JavaScript</a>
+											<li><a href="${cpath}/UserLangBoardList.do?lang=Python&page=1">Python</a></li>
+											<li><a href="${cpath}/UserLangBoardList.do?lang=Java&page=1">Java</a></li>
+											<li><a href="${cpath}/UserLangBoardList.do?lang=Html&page=1">Html</a></li>
+											<li><a href="${cpath}/UserLangBoardList.do?lang=JavaScript&page=1">JavaScript</a>
 											</li>
 											<li><a href="javascript:Load_Theme()">Theme</a></li>
 											<c:if test="${empty sessionScope.userVo}">

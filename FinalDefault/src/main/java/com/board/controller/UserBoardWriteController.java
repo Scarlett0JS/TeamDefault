@@ -25,7 +25,7 @@ public class UserBoardWriteController implements Controller {
 		MainMyBatisDAO dao = new MainMyBatisDAO();
 		dao.BoardInsert(vo);
 		
-		return "community";
+		return "redirect:/UserLangBoardList.do?lang=" + lang + "&" + "page=1";
 	}
 
 }

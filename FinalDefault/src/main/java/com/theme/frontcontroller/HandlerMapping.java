@@ -6,7 +6,6 @@ import com.admin.controller.AdminDeleteController;
 import com.admin.controller.AdminUserListController;
 import com.admin.controller.UserListController;
 import com.board.controller.UserBoardDeleteController;
-import com.board.controller.UserBoardFormController;
 import com.board.controller.UserBoardLikeUpdateController;
 import com.board.controller.UserBoardListController;
 import com.board.controller.UserBoardUpdateController;
@@ -25,6 +24,7 @@ import com.main.controller.Controller;
 import com.main.controller.ErrorController;
 import com.main.controller.IndexController;
 import com.theme.controller.ThemeAllListController;
+import com.theme.controller.ThemeDetailController;
 import com.user.controller.UserDeleteController;
 import com.user.controller.UserDetailController;
 import com.user.controller.UserLoginController;
@@ -59,7 +59,6 @@ public class HandlerMapping {
 		mappings.put("/UserPostedList.do", new UserPostedListController());
 
 		// Board
-		mappings.put("/UserBoardForm.do", new UserBoardFormController());
 		mappings.put("/UserBoardList.do", new UserBoardListController());
 		mappings.put("/UserBoardView.do", new UserBoardViewController());
 		mappings.put("/UserLangBoardList.do", new UserLangBoardListController());
@@ -87,6 +86,7 @@ public class HandlerMapping {
 		
 		// Themes
 		mappings.put("/ThemeAllList.do", new ThemeAllListController());
+		mappings.put("/ThemeDetail.do", new ThemeDetailController());
 	}
 	
 	public Controller getController(String command) {

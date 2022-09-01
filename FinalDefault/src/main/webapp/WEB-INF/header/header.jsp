@@ -25,7 +25,7 @@
         }
         
         function Load_Community(){
-        	location.href = "${cpath}/UserBoardForm.do"
+        	location.href = "${cpath}/UserBoardList.do?page=" + "1"
         }
         
         function LogOut(){

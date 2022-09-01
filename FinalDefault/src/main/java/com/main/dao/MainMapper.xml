@@ -62,7 +62,9 @@
 	
 	<!-- Board -->
 	<select id="allBoardList" resultType="com.theme.entity.Board">
-		SELECT * FROM D_BOARD db ORDER BY D_CNT DESC 
+		SELECT db.* 
+		FROM D_BOARD db , (SELECT rownum AS num, D_SEQ FROM D_BOARD) db2
+		WHERE db.D_SEQ = db2.D_SEQ AND db2.num BETWEEN #{inputpage} AND #{inputpage}+20 
 	</select>
 	
 	<update id="BoardCntUpdate" parameterType="int">
@@ -73,8 +75,10 @@
 		select * from D_BOARD where d_seq = #{num}
 	</select>
 	
-	<select id="LangBoardList" parameterType="String" resultType="com.theme.entity.Board">
-		select * from D_BOARD where D_CATEGORY = #{lang} ORDER BY D_CNT DESC 
+	<select id="LangBoardList" parameterType="com.theme.entity.LangPage" resultType="com.theme.entity.Board">
+		SELECT db.* 
+		FROM D_BOARD db , (SELECT rownum AS num, D_SEQ FROM D_BOARD WHERE D_CATEGORY = #{lang}) db2
+		WHERE db.D_SEQ = db2.D_SEQ AND db2.num BETWEEN #{inputpage} AND #{inputpage}+20
 	</select>
 	
 	<delete id="BoardDelete" parameterType="int">
@@ -97,6 +101,14 @@
 	<update id="BoardLikeUpdate" parameterType="int">
 		UPDATE D_BOARD SET D_LIKE = D_LIKE + 1 WHERE D_SEQ = #{board_num}
 	</update>
+	
+	<select id="allBoardCount" resultType="Integer">
+		SELECT COUNT(*) FROM D_BOARD
+	</select>
+	
+	<select id="LangBoardCount" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) FROM D_BOARD WHERE D_CATEGORY = #{lang}
+	</select>
 	
 	<!-- Comment -->
 	<select id="allCommentList" parameterType="int" resultType="com.theme.entity.Comment_nick">
