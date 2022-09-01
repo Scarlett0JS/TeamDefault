@@ -40,8 +40,8 @@
                                 <img class="card-li-img-top rounded" src="assets/img/my_img/1337_HTML_Fira code_e.png"
                                     alt="card-li image cap">
                                 <div class="card-li-body">
-                                    <p class="themeName-li"><a href="${theme.theme_url}">${theme.theme_name}</a></p>
-                                    <p id="theme-by-li">${theme.theme_producer}|
+                                    <p class="themeName-li"><a href="${theme.theme_url}">${theme.theme_name} | ${theme.theme_lang}</a></p>
+                                    <p id="theme-by-li">${theme.theme_producer}
                                         <img src="assets/img/icon/download_icon.png" alt="download_icon"
                                             class="download-icon-li"> ${theme.theme_installcnt} |
                                         <img src="assets/img/icon/heart.png" alt="heart" class="heart-li">

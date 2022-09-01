@@ -35,6 +35,7 @@ public class MainMyBatisDAO {
 		session.close();
 		return uvo;
 	}
+	
 	public int UserRegister(User user) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int flag = session.insert("UserRegister", user);
@@ -156,6 +157,7 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+	
 	public void CommentDelete(Comment vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.delete("CommentDelete", vo);
@@ -200,6 +202,13 @@ public class MainMyBatisDAO {
 		List<Theme> themelist = session.selectList("allThemeList");
 		session.close();
 		return themelist;
+	}
+
+	public Theme Themeselect(int seq) {
+		SqlSession session = sqlSessionFactory.openSession();
+		Theme vo = session.selectOne("Themeselect", seq);
+		session.close();
+		return vo;
 	}
 
 }
