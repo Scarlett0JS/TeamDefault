@@ -142,12 +142,25 @@
 	<select id="allThemeList" resultType="com.theme.entity.Theme">
 		SELECT dt.*
 		FROM D_THEME dt , (SELECT rownum, THEME_SEQ FROM D_THEME) dt2 
-		WHERE dt.THEME_SEQ = dt2.THEME_SEQ AND THEME_FONT = 'JetBrains Mono' AND ROWNUM  BETWEEN 1 AND (1+15)
-		ORDER BY dt.THEME_SEQ 
+		WHERE dt.THEME_SEQ = dt2.THEME_SEQ AND THEME_FONT = 'JetBrains Mono' AND ROWNUM  BETWEEN #{inputpage} AND (#{inputpage}+15)
+		ORDER BY dt.THEME_INSTALLCNT 
 	</select>
 	
 	<select id="Themeselect" resultType="com.theme.entity.Theme">
 		SELECT * FROM D_THEME dt WHERE THEME_SEQ = #{seq}
+	</select>
+	
+	<select id="mostThemeSelect" resultType="com.theme.entity.Theme">
+		SELECT dt.*
+		FROM D_THEME dt , 
+		(SELECT rownum, THEME_SEQ, THEME_INSTALLCNT FROM D_THEME 
+		WHERE THEME_FONT = 'JetBrains Mono' AND THEME_LANG = 'Python'
+		ORDER BY THEME_INSTALLCNT desc) dt2 
+		WHERE dt.THEME_SEQ = dt2.THEME_SEQ AND ROWNUM  BETWEEN 1 AND (1+5)
+	</select>
+	
+	<select id="allThemeCount" resultType="Integer">
+		SELECT count(*) FROM D_THEME dt WHERE THEME_FONT = 'JetBrains Mono'
 	</select>
 	
 </mapper>

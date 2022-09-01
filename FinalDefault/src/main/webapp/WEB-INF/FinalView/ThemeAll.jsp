@@ -21,7 +21,8 @@
     <!-- JS here -->
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-
+    
+	
 </head>
 
 <body>
@@ -30,22 +31,19 @@
         <div class="center pt-10 theme-list-title">
             <h1>Themes for Visual Studio Code</h1>
         </div>
-        <!-- 🥕 -->
         <div class="container">
             <div class="pt-5">
                 <div class="row">
                     <c:forEach var="theme" items="${themeVo}" varStatus="cnt">
                         <div class="col">
                             <div class="card-li mb-4 shadow-sm">
-                                <img class="card-li-img-top rounded" src="assets/img/my_img/1337_HTML_Fira code_e.png"
-                                    alt="card-li image cap">
+                                <img class="card-li-img-top rounded" src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath }" alt="">
                                 <div class="card-li-body">
                                     <p class="themeName-li"><a href="${theme.theme_url}">${theme.theme_name} | ${theme.theme_lang}</a></p>
                                     <p id="theme-by-li">${theme.theme_producer}
-                                        <img src="assets/img/icon/download_icon.png" alt="download_icon"
+                                        <img src="./assets/img/icon/download_icon.png" alt="download_icon"
                                             class="download-icon-li"> ${theme.theme_installcnt} |
-                                        <img src="assets/img/icon/heart.png" alt="heart" class="heart-li">
-                                        ${theme.theme_likes}
+                                        <img src="./assets/img/icon/heart.png" alt="heart" class="heart-li"> ${theme.theme_likes}
                                     </p>
                                 </div>
                             </div>
@@ -61,11 +59,9 @@
                             <span class="sr-only">Previous</span>
                         </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <c:forEach var="page" begin="${paging.start}" end="${ paging.end }">
+	                    <li class="page-item"><a class="page-link" href="${cpath}/ThemeAllList.do?page=${page}">${ page }</a></li>
+                    </c:forEach>
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>

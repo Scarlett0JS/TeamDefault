@@ -22,6 +22,7 @@ import com.comment.controller.CommentDeleteController;
 import com.comment.controller.CommentInsertController;
 import com.comment.controller.CommentListController;
 import com.main.controller.Controller;
+import com.main.controller.ErrorController;
 import com.main.controller.IndexController;
 import com.theme.controller.ThemeAllListController;
 import com.user.controller.UserDeleteController;
@@ -42,6 +43,7 @@ public class HandlerMapping {
 	public HandlerMapping() {
 		mappings = new HashMap<String, Controller>();
 		mappings.put("/index.do", new IndexController());
+		mappings.put("/Error.do", new ErrorController());
 		
 		// User
 		mappings.put("/UserRegisterForm.do", new UserRegisterFormController());

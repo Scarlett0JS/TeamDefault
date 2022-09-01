@@ -34,6 +34,10 @@
         function Load_MyPage(){
         	location.href = "${cpath}/UserMypageForm.do?user_id=" + "${sessionScope.userVo.user_id}"
         }
+        
+        function Load_Theme(){
+        	location.href = "${cpath}/ThemeAllList.do?page=" + "1"
+        }
     </script>
 </head>
 
@@ -68,7 +72,7 @@
 										<ul id="navigation-my">
 											<li><a href="javascript:Load_Main()">Home</a></li>
 											<li><a href="javascript:Load_Community()">Community</a></li>
-											<li><a href="theme.html">Theme</a></li>
+											<li><a href="javascript:Load_Theme()">Theme</a></li>
 											<c:if test="${empty sessionScope.userVo}">
 												<li class="button-header-my margin-left-my "><a
 													href="javascript:Load_RegisterForm()" class="btn-my">Register</a>

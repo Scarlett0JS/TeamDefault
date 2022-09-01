@@ -40,6 +40,10 @@
 	function Load_Community() {
 		location.href = "${cpath}/UserBoardForm.do"
 	}
+	
+    function Load_Theme(){
+    	location.href = "${cpath}/ThemeAllList.do?page=" + "1"
+    }
 </script>
 </head>
 <div id="preloader-active-my">
@@ -76,17 +80,15 @@
 											<li><a href="${cpath}/UserLangBoardList.do?lang=Python">Python</a></li>
 											<li><a href="${cpath}/UserLangBoardList.do?lang=Java">Java</a></li>
 											<li><a href="${cpath}/UserLangBoardList.do?lang=Html">Html</a></li>
-											<li><a
-												href="${cpath}/UserLangBoardList.do?lang=JavaScript">JavaScript</a>
+											<li><a href="${cpath}/UserLangBoardList.do?lang=JavaScript">JavaScript</a>
 											</li>
-											<li><a href="theme.html">Theme</a></li>
+											<li><a href="javascript:Load_Theme()">Theme</a></li>
 											<c:if test="${empty sessionScope.userVo}">
 												<li class="button-header-my margin-left-my "><a
 													href="javascript:Load_RegisterForm()" class="btn-my">Register</a>
 												</li>
 												<li class="button-header-my"><a
-													href="javascript:Load_LoginForm()" class="btn-my">Log
-														In</a></li>
+													href="javascript:Load_LoginForm()" class="btn-my">Log In</a></li>
 											</c:if>
 											<c:if test="${!empty sessionScope.userVo}">
 												<li class="button-header-my margin-left-my "><a

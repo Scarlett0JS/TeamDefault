@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.main.dao.MainMyBatisDAO;
 import com.theme.entity.Extension;
+import com.theme.entity.Theme;
 
 public class IndexController implements Controller{
 
@@ -19,9 +20,11 @@ public class IndexController implements Controller{
 		MainMyBatisDAO dao = new MainMyBatisDAO();
 		List<Extension> allExList = dao.allExtension();
 		List<Extension> otherExList = dao.otherExtension();
+		List<Theme> mostTheme = dao.mostThemeSelect();
 		
 		request.setAttribute("allExList", allExList);
 		request.setAttribute("otherExList", otherExList);
+		request.setAttribute("mostTheme", mostTheme);
 		
 		return "main";
 	}

@@ -134,78 +134,19 @@
                     <div>
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card mb-4 shadow-sm">
-                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text">themeName</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted"></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card mb-4 shadow-sm">
-                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text">themeName</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted"></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card mb-4 shadow-sm">
-                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text">themeName</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted"></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card mb-4 shadow-sm">
-                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text">themeName</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted"></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card mb-4 shadow-sm">
-                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text">themeName</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted"></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card mb-4 shadow-sm">
-                                        <img class="card-img-top" src="./assets/img/my_img/1337_HTML_Fira code_e.png"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text">themeName</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted"></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+								<c:forEach var="theme" items="${mostTheme}">
+									<div class="col-md-4">
+	                                    <div class="card mb-4 shadow-sm">
+	                                        <img class="card-img-top" src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath }" alt="">
+	                                        <div class="card-body">
+	                                            <p class="card-text">${ theme.theme_name }</p>
+	                                            <div class="d-flex justify-content-between align-items-center">
+	                                                <small class="text-muted"></small>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </div>
+								</c:forEach>
                             </div>
                         </div>
                     </div>

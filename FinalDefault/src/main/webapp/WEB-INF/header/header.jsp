@@ -41,7 +41,7 @@
         }
         
         function Load_Theme(){
-        	location.href = "${cpath}/ThemeAllList.do"
+        	location.href = "${cpath}/ThemeAllList.do?page=" + "1"
         }
     </script>
 </head>

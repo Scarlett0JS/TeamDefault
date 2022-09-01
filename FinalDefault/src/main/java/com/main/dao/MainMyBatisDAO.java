@@ -222,9 +222,9 @@ public class MainMyBatisDAO {
 
 	
 	// Theme
-	public List<Theme> allThemeList() {
+	public List<Theme> allThemeList(int inputpage) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<Theme> themelist = session.selectList("allThemeList");
+		List<Theme> themelist = session.selectList("allThemeList", inputpage);
 		session.close();
 		return themelist;
 	}
@@ -234,6 +234,20 @@ public class MainMyBatisDAO {
 		Theme vo = session.selectOne("Themeselect", seq);
 		session.close();
 		return vo;
+	}
+
+	public List<Theme> mostThemeSelect() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Theme> mostVo = session.selectList("mostThemeSelect");
+		session.close();
+		return mostVo;
+	}
+
+	public int allThemeCount() {
+		SqlSession session = sqlSessionFactory.openSession();
+		int allpage = session.selectOne("allThemeCount");
+		session.close();
+		return allpage;
 	}
 
 }

@@ -102,9 +102,27 @@ def InsertTheme(jsonPath):
     cur.close()
     conn.close()
     print("Insert Complete")
+
+def reInsertColorMap(jsonPath):
+    with open(jsonPath, 'r', encoding="utf-8") as f:
+        colordata = json.load(f)
+        f.close()
+    
+    sql = "Insert into D_COLOR values(D_COLOR_seq.nextval, :1 ,:2, 'admin@gjaischool.com')"
+    insertLi = sorted([(val['RGB'], val['Hexadecimal']) for val in colordata], key= lambda x:(int(x[0].split(",")[0]), int(x[0].split(",")[1]), int(x[0].split(",")[2])))
+     
+    cursor, connection = dbConnection()
+    
+    cursor.executemany(sql, insertLi)
+    connection.commit()
+    
+    cursor.close()
+    connection.close()
+    print("Insert Complete")
     
 if __name__ == "__main__":
     # allExtension("../Crawilng/allExtension.json")
     # otherExtension("../Crawilng/otherExtension.json")
     # InsertTheme()
+    reInsertColorMap(os.path.join(r'C:\eGovFrame-4.0.0\First_Project\PyScript\Colormap', 'reColor_dimension.json'))
     print("Done")

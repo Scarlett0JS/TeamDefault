@@ -64,12 +64,14 @@ public class ColorSelectedFromUserController implements Controller {
 				
 				request.setAttribute("Recommand", resultLi);
 			}
+			return "ThemeRecommand";
 		} catch (MalformedURLException e) {			
-			System.out.println(domain+" is not a URL I understand");		
+			System.out.println(domain+" is not a URL I understand");
+			return "redirect:/Error.do";
 		} catch (IOException e){		
 			e.printStackTrace();
+			return "redirect:/Error.do";
 		}
-		return null;
 	}
 
 }
