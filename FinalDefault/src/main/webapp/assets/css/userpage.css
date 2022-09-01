@@ -9,6 +9,7 @@ body{
     color: #000;
 
 }
+
 p {
     font-size: 0.875rem;
     margin-bottom: .5rem;
@@ -27,6 +28,8 @@ p {
     border: 1px solid #e7eaed;
     border-radius: 0;
 }
+
+/* change */
 .card .card-description {
     margin-top: 20px;
     margin-bottom: 14px;
@@ -40,6 +43,7 @@ p {
 	position: relative;
 }
 
+/* change */
 .cover-image {
 	height: 150px;
 	width: 100%;
@@ -61,6 +65,7 @@ p {
 	z-index: 5;
 }
 
+/* change */
 .user-image img {
 	height: 80px;
 	width: 80px;
@@ -146,6 +151,7 @@ ul.about {
     color: black;
 	padding: 0;
 }
+
 li.about-items {
     margin: 10px;
     font-size: 0.9rem;
@@ -154,20 +160,22 @@ li.about-items {
 }
 
 li.about-items i {
-color:#607d8b;
+    color:#607d8b;
 }
 
+/* 🥕 */
 span.about-item-name {
     width: 100%;
-    display: inline-flex;
-	margin-left: 10px;
+    /* display: inline-flex; */
+	margin-left: 10px ;
 }
-
 
 span.about-item-detail {
     display: inline-flex;
     width: calc(100% - 160px);
+    margin-right: 49px; /* 🥕 */
 }
+
 span.about-item-detail > button{
     margin-right: 10px;
 }
@@ -177,6 +185,7 @@ span.about-item-detail > button{
     height: 40px;
     padding: 0;
 }
+
 .btn.btn-rounded {
     border-radius: 50px;
 }
@@ -233,9 +242,10 @@ a.about-item-edit {
     color:#607d8b;
 }
 
+/* 🥕 */
 .leave{
     font-size: 0.9rem;
-    margin-left: 20px;
+    margin-left: 34px;
     margin-bottom: 8px;
     margin-right: 12px;
 }
@@ -256,8 +266,9 @@ a.about-item-edit {
     border-radius: 5px;
     border-color: red;
     padding-left: 14px;
-    padding-right: 14px;
-    
+    padding-right: 14px;  
+    margin-right: 10px;
+      
     background-color: transparent;
     line-height: 1.5;
 }
@@ -323,4 +334,8 @@ ul.post-sort {
 	padding: 0.5rem 0.9rem;
 	font-size: 0.8rem;
 	line-height: 1.5;
+}
+
+.post-a{
+	color: black !important;
 }

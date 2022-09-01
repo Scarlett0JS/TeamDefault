@@ -34,7 +34,7 @@ public class UserLoginController implements Controller {
 			if (userVo != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("userVo", userVo);
-				return "main";
+				return "redirect:/index.do";
 			}else {
 				HashMap<String, String> errMap = new HashMap<String, String>();
 				errMap.put("loginError", "checkInput");

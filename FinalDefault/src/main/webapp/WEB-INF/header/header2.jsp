@@ -48,7 +48,8 @@
 		<div class="preloader-inner-my position-relative-my">
 			<div class="preloader-circle-my"></div>
 			<div class="preloader-img-my pere-text-my">
-				<img src="./assets/img/logo/logo.png" alt="">
+				<img src="./assets/img/logo/exLogo.png" alt="">
+
 			</div>
 		</div>
 	</div>

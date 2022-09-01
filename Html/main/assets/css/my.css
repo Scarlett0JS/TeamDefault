@@ -605,7 +605,11 @@ form.search-box .input-form .search-form button,
     padding-top: 2.3rem !important
 }
 
-.pl-90 {
+.pl-60 {
+    padding-left: 60px
+}
+
+.pl-80 {
     padding-left: 90px
 }
 
@@ -693,7 +697,7 @@ form.search-box .input-form .search-form button,
 }
 
 .pt-10{
-    padding-top: 6rem;
+    padding-top: 12rem;
 }
 
 .pt-8{
@@ -702,6 +706,10 @@ form.search-box .input-form .search-form button,
 
 .pt-7{
     padding-top: 6.8rem;
+}
+
+.pb-30 {
+    padding-bottom: 30px
 }
 
 .theme-list-title h1 {
@@ -837,6 +845,10 @@ form.search-box .input-form .search-form i {
     padding-right: 110px
 }
 
+.pl-110 {
+    padding-left: 110px
+}
+
 .themeName-li{
     font-size: 18px;
     font-weight: 400;
@@ -859,4 +871,12 @@ form.search-box .input-form .search-form i {
     border-radius: 1.25rem;
     width: 275px;
     height: 340px;
+}
+
+.pt-30 {
+    padding-top: 30px
+}
+
+.pt-30{
+    padding-top: 6rem;
 }

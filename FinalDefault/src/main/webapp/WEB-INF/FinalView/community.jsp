@@ -55,7 +55,7 @@
 	            html += "<tr class='community-a'>"
 	            html += "<td>" + obj.user_id + "</td>"
 	            html += "<td><a href = '${cpath}/UserBoardView.do?num="+ obj.d_seq + "'>" + obj.d_title + "</a></td>"
-	            html += "<td>" + obj.d_date.split(" ")[0] + "</td>"
+	            html += "<td class='center'>" + obj.d_date.split(" ")[0] + "</td>"
 	            html += "<td>" + obj.d_cnt + "</td>"
 	            html += "</tr>"
 	        })
@@ -92,6 +92,23 @@
 				</div>
 			</div>
 		</div>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item"><a class="page-link" href="#"
+					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+						<span class="sr-only">Previous</span>
+				</a></li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item"><a class="page-link" href="#">4</a></li>
+				<li class="page-item"><a class="page-link" href="#">5</a></li>
+				<li class="page-item"><a class="page-link" href="#"
+					aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
+						class="sr-only">Next</span>
+				</a></li>
+			</ul>
+		</nav>
 	</main>
 	<div id="back-top">
 		<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>

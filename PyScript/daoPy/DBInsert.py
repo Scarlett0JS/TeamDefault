@@ -4,6 +4,8 @@ import json
 import cx_Oracle
 import pandas as pd
 
+from pprint import pprint
+
 def dbConnection():
     dsn = cx_Oracle.makedsn("project-db-stu.ddns.net", 1524, service_name = "XE")
     connection = cx_Oracle.connect(user = "gjai_4_3_0822", password="smhrd3", dsn=dsn, encoding="utf-8")
@@ -11,9 +13,12 @@ def dbConnection():
     return cursor, connection
 
 def test():
-    cur = dbConnection()
-    for row in cur.execute("select * from colormap"):
+    cur, connection = dbConnection()
+    for row in cur.execute("select * from d_board"):
         print(row)
+    
+    cur.close()
+    connection.close()
 
 def InsertColorMap():
     with open("Colormap/Color_dimension.json", 'r', encoding="utf-8") as f:
@@ -67,7 +72,39 @@ def otherExtension(JsonName):
     cursor.close()
     connection.close()
     print("Insert Complete")
+
+def InsertTheme(jsonPath):
+    with open(jsonPath, 'r', encoding="utf-8") as f:
+        jsonData = json.load(f)
+        f.close()
+    
+    sql = "Insert into D_THEME (THEME_SEQ, THEME_NAME, THEME_LANG, THEME_FONT, THEME_COL1, THEME_COL2, THEME_COL3, THEME_COL4, THEME_COL5, THEME_PRODUCER, THEME_FILEPATH, THEME_URL, THEME_ICON, THEME_INSTALLCNT) values(:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14)"
+    
+    insertLi = []
+    for idx, data in enumerate(jsonData):
+        insertLi.append(tuple([idx,
+                               data['name'], # themename
+                               data['imgpath'].split(".")[0].split("_")[2], # themelang
+                               data['imgpath'].split(".")[0].split("_")[3], # themefont
+                               *data['rgbVal'], # themergb
+                               data['info'], # themeproducer
+                               data['imgpath'], # themeimgpath
+                               data['url'], # themeurl
+                               data['Iconurl'], # themeicon
+                               data['InstallCnt'] # themeinstallcount
+                               ]))
+    
+    cur, conn = dbConnection()
+    
+    cur.executemany(sql, insertLi)
+    conn.commit()
+    
+    cur.close()
+    conn.close()
+    print("Insert Complete")
     
 if __name__ == "__main__":
-    allExtension("../Crawilng/allExtension.json")
-    otherExtension("../Crawilng/otherExtension.json")
+    # allExtension("../Crawilng/allExtension.json")
+    # otherExtension("../Crawilng/otherExtension.json")
+    # InsertTheme()
+    print("Done")

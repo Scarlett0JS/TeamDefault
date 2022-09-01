@@ -1,214 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Community</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/slicknav.css">
     <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./assets/css/boardstyles.css">
     <link rel="stylesheet" href="./assets/css/slick.css">
+    <link rel="stylesheet" href="./assets/css/boardstyles.css">
     <link rel="stylesheet" href="./assets/css/my.css">
     <link rel="stylesheet" href="./assets/css/header.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            Load_Comment("${vo.d_seq}")
-        })
-
-        function deletePost(num) {
-            $.ajax({
-                url: "${cpath}/UserBoardDelete.do",
-                type: "get",
-                data: {
-                    "num": num
-                },
-                success: function () {
-                    location.href = "${cpath}/UserBoardForm.do"
-                },
-                error: function () {
-                    alert("Error")
-                }
-            })
-        }
-
-        function updatePost(num) {
-            location.href = "${cpath}/UserBoardUpdateForm.do?board_num=" + num
-        }
-
-        function Load_Comment(board_num) {
-            $.ajax({
-                url: "${cpath}/CommentList.do",
-                type: "get",
-                data: {
-                    "board_num": board_num
-                },
-                dataType: "json",
-                success: CommentHtml,
-                error: function () {
-                    alert("Error")
-                }
-            })
-        }
-
-        function CommentHtml(data) {
-            let html = ""
-            $
-                .each(
-                    data,
-                    function (idx, obj) {
-                        let commentData = JSON.stringify({
-                            cmt_seqs: obj.cmt_seq,
-                            user_ids: obj.user_id
-                        })
-                        html += "<div class='d-flex'>"
-                        html += "<div class='flex-shrink-0'>"
-                        html += "<img class='rounded-circle' src='https://dummyimage.com/50x50/ced4da/6c757d.jpg'>"
-                        html += "</div>"
-                        html += "<div class='ms-3'>"
-                        html += "<div clss='fw-bold'>" + obj.user_nick
-                            + "</div>"
-                        html += obj.cmt_content
-                        html += "</div>"
-                        html += "<div style='text-align: right; background-color: transparent;''>"
-                        html += "<button class='btn' onclick='DeleteComment(" + commentData + ")'>Delete</button>"
-                        html += "</div>"
-                        html += "</div>"
-                        html += "</div>"
-                    })
-            $("#commentCard").html(html)
-        }
-
-        function InsertComment(board_num, user_id) {
-            if ("${!empty sessionScope.userVo }" == "true") {
-                let textval = $("#commentVal").val()
-                $.ajax({
-                    url: "${cpath}/CommentInsert.do",
-                    type: "post",
-                    data: {
-                        "comment": textval,
-                        "board_num": board_num,
-                        "user_id": user_id
-                    },
-                    success: function () {
-                        location.href = "${cpath}/UserBoardView.do?num="
-                            + "${vo.d_seq}"
-                    },
-                    error: function () {
-                        alert("Error")
-                    }
-                })
-            } else {
-                alert("Please Login")
-                location.href = "${cpath}/UserLoginForm.do"
-            }
-        }
-
-        function DeleteComment(commentData) {
-            if ("${!empty sessionScope.userVo }" == "true") {
-                if ("${sessionScope.userVo.user_id}" == commentData.user_ids) {
-                    $.ajax({
-                        url: "${cpath}/CommentDelete.do",
-                        type: "post",
-                        data: {
-                            "comment_num": commentData.cmt_seqs
-                        },
-                        success: function () {
-                            location.href = "${cpath}/UserBoardView.do?num=" + "${vo.d_seq}"
-                        },
-                        error: function () {
-                            alert("Error")
-                        }
-                    })
-                } else {
-                    alert("You don't have permission")
-                }
-            } else {
-                alert("Please Login")
-                location.href = "${cpath}/UserLoginForm.do"
-            }
-        }
-
-        function updatePostLike() {
-            let board_num = "${vo.d_seq}"
-            var count = parseInt("${vo.d_like}")
-            let heart = document.querySelector("#heart")
-            $.ajax({
-                url: "${cpath}/UserBoardLikeUpdate.do",
-                type: "post",
-                data: { "board_num": board_num },
-                success: function () {
-                    location.href = "${cpath}/UserBoardView.do?num=" + "${vo.d_seq}"
-                },
-                error: function () {
-                    alert("Error")
-                }
-            })
-        }
-    </script>
+    <!-- JS here -->
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
 
 </head>
 
 <body>
     <jsp:include page="../header/header2.jsp" />
-    <div class="container mt-5">
-        <div class="row">
-            <div>
-                <!-- Content section -->
-                <article>
-                    <br class="mb-4">
-                    <h1 class="fw-bolder mb-1">${ vo.d_title }</h1>
-                    <br>
-                    <div class="text-muted fst-italic mb-2">${ fn:split(vo.d_date, " ")[0] }
-                        &nbsp&nbsp&nbsp ${ vo.user_id }</div>
-                    <br>
-                    <section class="mb-5">
-                        <p class="fs-5 mb-4">${ fn:replace(vo.d_content, newLineChar, "<br />") }</p>
-                    </section>
-                </article>
-                <div>
-                </div>
-                <div style="text-align: right; background-color: transparent;">
-                    <c:if test="${!empty sessionScope.userVo }">
-                        <c:if test="${ sessionScope.userVo.user_id.equals(vo.user_id)}">
-                            <button class='btn' onclick="javascript:updatePost('${vo.d_seq}')">Update</button>
-                            <button class='btn' onclick="javascript:deletePost('${vo.d_seq}')">Delete</button>
-                        </c:if>
-                    </c:if>
-                    <button type="button" class="btn-commuview-heart" id="heart">
-                        <img src="./assets/img/icon/heart.png" width="32px" onclick="javascript:updatePostLike()">
-                        ${vo.d_like}
-                    </button>
-                </div>
-                <br>
-                <!-- Comments section-->
-                <section class="mb-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <textarea class="form-control" rows="3" id="commentVal"
-                                placeholder="Join the discussion and leave a comment!"></textarea>
-                            <div style="text-align: right; background-color: transparent;">
-                                <button class='btn'
-                                    onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
-                            </div>
-                            <div id="commentCard"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+    <main>
+        <div class="center pt-10 theme-list-title">
+            <h1>Themes for Visual Studio Code</h1>
         </div>
-    </div>
+        <!-- 🥕 -->
+        <div class="container">
+            <div class="pt-5">
+                <div class="row">
+                    <c:forEach var="theme" items="${themeVo}" varStatus="cnt">
+                        <div class="col">
+                            <div class="card-li mb-4 shadow-sm">
+                                <img class="card-li-img-top rounded" src="assets/img/my_img/1337_HTML_Fira code_e.png"
+                                    alt="card-li image cap">
+                                <div class="card-li-body">
+                                    <p class="themeName-li">${theme.theme_name}</p>
+                                    <p id="theme-by-li">${theme.theme_producer}|
+                                        <img src="assets/img/icon/download_icon.png" alt="download_icon"
+                                            class="download-icon-li"> ${theme.theme_installcnt} |
+                                        <img src="assets/img/icon/heart.png" alt="heart" class="heart-li">
+                                        ${theme.theme_likes}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center pagination-lg">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        </div>
+    </main>
+    <footer>
 
+    </footer>
 
     <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
     <script src="./assets/js/animated.headline.js"></script>
     <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/header.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 

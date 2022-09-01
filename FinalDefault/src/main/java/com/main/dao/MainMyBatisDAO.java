@@ -13,6 +13,7 @@ import com.theme.entity.Color;
 import com.theme.entity.Comment;
 import com.theme.entity.Comment_nick;
 import com.theme.entity.Extension;
+import com.theme.entity.Theme;
 import com.theme.entity.User;
 
 public class MainMyBatisDAO {
@@ -34,6 +35,7 @@ public class MainMyBatisDAO {
 		session.close();
 		return uvo;
 	}
+	
 	public int UserRegister(User user) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int flag = session.insert("UserRegister", user);
@@ -161,6 +163,7 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+	
 	public void CommentDelete(Comment vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.delete("CommentDelete", vo);
@@ -216,4 +219,21 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+
+	
+	// Theme
+	public List<Theme> allThemeList() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Theme> themelist = session.selectList("allThemeList");
+		session.close();
+		return themelist;
+	}
+
+	public Theme Themeselect(int seq) {
+		SqlSession session = sqlSessionFactory.openSession();
+		Theme vo = session.selectOne("Themeselect", seq);
+		session.close();
+		return vo;
+	}
+
 }
