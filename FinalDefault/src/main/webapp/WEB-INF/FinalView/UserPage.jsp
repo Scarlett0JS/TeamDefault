@@ -55,6 +55,9 @@
             html += "<span class='about-item-detail col-8' id='userPwArea'>" + star + "</span>"
             html += "<a href='javascript:EditUserPwForm()' class='about-item-edit col-1' id='userPwHref'>Edit</a></li>"
             $("#UserDetailArea").html(html)
+           	$("#userpost").css("display", "none")
+            $("#UserPostedArea").css("display", "none")
+            
             $("#userprof").css("display", "block")
             $("#UserDetailArea").css("display", "block")
         }
@@ -138,6 +141,28 @@
                 }
             })
         }
+        
+        function Load_UserTheme(){
+
+        }
+         
+        function load_UserThemeForm(data){
+        	let html = ""
+        	$.each(data, function (idx, obj) {
+        		console.log(obj)
+        		
+        		html +="hr"
+        		
+        	})
+            $("#UserThemeArea").html(html)
+           	$("#userpost").css("display", "none")
+            $("#UserPostedArea").css("display", "none")
+            $("#userprof").css("display", "none")
+            $("#UserDetailArea").css("display", "none")
+            
+            $("#usertheme").css("display", "block")
+            $("#UserThemeArea").css("display", "block")
+        }
 
         function load_UserPostForm(data) {
             let html = ""
@@ -149,7 +174,9 @@
                 html += "<div class='col-md-1'>"
                 html += "<span class='about-item-name'>" + String(idx + 1) + "</span></div>"
                 html += "<div class='col-md-6'>"
+                html += "<div class='post-a'>"
                 html += "<span class='about-item-name'><a href='javascript:Load_boardView(" + obj.d_seq + ")'>" + obj.d_title + "</a></span></div>"
+              	html += "</div>"
                 html += "<div class='col-md-3'>"
                 html += "<span class='about-item-name'>" + obj.d_date.split(" ")[0] + "</span></div>"
                 html += "<div class='col-md-1'>"
@@ -193,13 +220,14 @@
 								<div class="profile-name">${ sessionScope.userVo.user_id }</div>
 								<br>
 								<ul class="profile-info-list ">
-									<li><a href="javascript:Load_Mypage()"
-										class="profile-info-list-item rounded-30"> 
-										<i class="mdi mdi-eye"></i>Profile Settings</a> 
+									<li>
+										<!-- 유저 프로필 세팅 화면 로딩 --> 
+										<a href="javascript:Load_UserDetail()" class="profile-info-list-item rounded-30"><i class="mdi mdi-eye"></i>Profile Settings</a> 
 										<!-- 유저가 좋아요한 테마 로딩 --> 
-										<a href="" class="profile-info-list-item rounded-30"><i class="mdi mdi-bookmark-check"></i>My Theme</a> 
+										<a href="javascript:Load_UserTheme()" class="profile-info-list-item rounded-30"><i class="mdi mdi-bookmark-check"></i>My Theme</a> 
 										<!-- 유저가 올린 포스트 로딩 -->
 										<a href="javascript:Load_UserPost()" class="profile-info-list-item rounded-30"><i class="mdi mdi-movie"></i>My Post</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -221,6 +249,10 @@
 									<a href="javascript:DeleteFromUser()" class="delete-outline">DELETE ACCOUNT</a></li>
 							</ul>
 						</div>
+
+
+						<ul class="post-sort" style="display: none" id="UserThemeArea"></ul>
+						
 
 						<div class="card-body" style="display: none" id="userpost">
 							<p class="card-title">My Post</p>

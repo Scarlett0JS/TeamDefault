@@ -266,8 +266,9 @@ a.about-item-edit {
     border-radius: 5px;
     border-color: red;
     padding-left: 14px;
-    padding-right: 14px;
-    
+    padding-right: 14px;  
+    margin-right: 10px;
+      
     background-color: transparent;
     line-height: 1.5;
 }
@@ -335,6 +336,6 @@ ul.post-sort {
 	line-height: 1.5;
 }
 
-.a-title{
-	color: black;
+.post-a{
+	color: black !important;
 }
