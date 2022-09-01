@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -10,18 +10,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Default</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/slick.css">
-    <link rel="stylesheet" href="./assets/css/animate.min.css">
-    <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/color_copy.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Default</title>
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="./assets/css/slick.css">
+<link rel="stylesheet" href="./assets/css/animate.min.css">
+<link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="./assets/css/header.css">
+<link rel="stylesheet" href="./assets/css/color_copy.css">
+<link rel="stylesheet" href="./assets/css/my.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
+
+<script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
         $(document).ready(function () {
             LoadColorList()
         })
@@ -59,7 +64,7 @@
             var beforeColor;
             if (num == 5) {
                 $('.service-icon-five').attr("id", "");
-                $('div').removeClass('active');
+                $('div').removeClass('activered');
             } else {
                 $('#tt').css("background", target.id); // 아이디가 'tt'인 곳에 색상 넣기
 
@@ -68,11 +73,11 @@
                 $($('.service-icon-five').get()[num]).attr("id", "tt");
                 document.getElementById(target.id).className += " cdisabled";
                 if (beforeColor != undefined && beforeColor != null) { // 다중선택 안 되게 해주는 조건
-                    document.getElementById(beforeColor).className = document.getElementById(beforeColor).className.replace(" active", "");
+                    document.getElementById(beforeColor).className = document.getElementById(beforeColor).className.replace(" activered", "");
                 }
 
                 //선택한 색상 표시 기능
-                document.getElementById(target.id).className += " active";
+                document.getElementById(target.id).className += " activered";
                 beforeColor = target.id;
             }
         }
@@ -94,65 +99,73 @@
 </head>
 
 <body>
-    <jsp:include page="../header/header3.jsp" />
-    <!-- Color Select-->
-    <br>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box1">
-                    <div class="service-icon-five" id="tt">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box">
-                    <div class="service-icon-five">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box">
-                    <div class="service-icon-five">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box">
-                    <div class="service-icon-five">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6 ">
-                <div class="service-box">
-                    <div class="service-icon-five">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6 ">
-                <button type="button" class="emp-btn" onclick="javascript:emp()">EMPTY</button>
-                <button type="button" class="sel-btn" onclick="javascript:colorsubmit()">COLOR SELECTION</button>
-            </div>
+	<jsp:include page="../header/header3.jsp" />
+	<!-- Color Select-->
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 col-sm-6 ">
+				<div class="service-box1">
+					<div class="service-icon-five" id="tt"></div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-6 ">
+				<div class="service-box">
+					<div class="service-icon-five"></div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-6 ">
+				<div class="service-box">
+					<div class="service-icon-five"></div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-6 ">
+				<div class="service-box">
+					<div class="service-icon-five"></div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-6 ">
+				<div class="service-box">
+					<div class="service-icon-five"></div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-6 ">
+				<div class="btn-group_color center pb-5">
+					<button type="button" class="btn-dropdown1 dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">언어선택
+					</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item dropdown-icon" href="#">JAVA</a> <a
+							class="dropdown-item dropdown-icon2" href="#">PYTHON</a> <a
+							class="dropdown-item dropdown-icon3" href="#">HTML</a> <a
+							class="dropdown-item dropdown-icon4" href="#">JAVASCRIPT</a>
+					</div>
+				</div>
+				<button type="button" class="emp-btn" onclick="javascript:emp()">EMPTY</button>
+				<button type="button" class="sel-btn"
+					onclick="javascript:colorsubmit()">COLOR SELECTION</button>
+			</div>
 
-        </div>
-    </div>
-    <br>
-    <Br>
-    <div class="container" id="cocontainer">
-        <div class="row" id="cocorow">
-        </div>
-    </div>
-    <Br>
-    <Br>
-    <script>
+		</div>
+	</div>
+	<br>
+	<Br>
+	<div class="container" id="cocontainer">
+		<div class="row" id="cocorow"></div>
+	</div>
+	<Br>
+	<Br>
+	<script>
 
     </script>
 
 	<script src="./assets/js/jquery.slicknav.min.js"></script>
 	<script src="./assets/js/hover-direction-snake.min.js"></script>
+	<script src="./assets/js/popper.min.js"></script>
 	<script src="./assets/js/slick.min.js"></script>
 	<script src="./assets/js/animated.headline.js"></script>
+	<script src="./assets/js/bootstrap.min.js"></script>
 	<script src="./assets/js/plugins.js"></script>
 	<script src="./assets/js/header.js"></script>
 	<script src="./assets/js/main.js"></script>
