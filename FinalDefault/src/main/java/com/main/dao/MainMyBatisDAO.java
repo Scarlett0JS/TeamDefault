@@ -211,6 +211,7 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+	
 	public void Enable() {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.update("EnableBoard");

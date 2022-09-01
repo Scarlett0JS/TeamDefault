@@ -27,15 +27,10 @@ public class ThemeAllListController implements Controller {
 		}
 		
 		int totalArticleCount = dao.allThemeCount();
-		
 		int inputpage = Integer.parseInt(page);
 		Paging paging = new Paging(inputpage, totalArticleCount, 16);
-
-//		System.out.println(paging.toString());
 		
 		List<Theme> themeVo = dao.allThemeList(16*inputpage - 15);
-		
-		System.out.println(themeVo.toString());
 		
 		request.setAttribute("paging", paging);
 		request.setAttribute("themeVo", themeVo);

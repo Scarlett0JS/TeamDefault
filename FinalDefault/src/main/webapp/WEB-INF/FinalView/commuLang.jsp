@@ -45,7 +45,7 @@
 		<div class="container" id="community-c">
 			<div class="row">
 				<div class="col-md-12 center">
-					<h1>Community</h1>
+					<h1>${lang} Community</h1>
 					<br> <br>
 					<table class="table">
 						<thead>

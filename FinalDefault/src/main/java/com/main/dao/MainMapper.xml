@@ -140,11 +140,11 @@
 	
 	<!-- Theme -->
 	<select id="allThemeList" resultType="com.theme.entity.Theme">
-		SELECT dt.* 
-		FROM D_THEME dt, 
+		SELECT dt.*
+		FROM D_THEME dt , 
 		(SELECT rownum AS num, THEME_SEQ FROM D_THEME WHERE THEME_FONT = 'JetBrains Mono' ) dt2 
-		WHERE dt.THEME_SEQ = dt2.THEME_SEQ AND dt2.num BETWEEN #{inputpage} AND #{inputpage}+15
-		ORDER BY THEME_INSTALLCNT DESC
+		WHERE dt.THEME_SEQ = dt2.THEME_SEQ 
+		AND dt2.num BETWEEN #{inputpage} AND #{inputpage}+15
 	</select>
 	
 	<select id="Themeselect" resultType="com.theme.entity.Theme">
