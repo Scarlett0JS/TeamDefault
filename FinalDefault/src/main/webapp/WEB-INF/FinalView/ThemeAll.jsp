@@ -75,7 +75,6 @@
                 </ul>
             </nav>
         </div>
-        </div>
     </main>
     <footer>
 
