@@ -255,8 +255,8 @@
 							<hr>
 							<ul class="post-sort">
 								<li class="about-items">
-									<div class="row">
-										<i class="mdi mdi-account icon-sm "></i>
+									<div class="row post-tcolor">
+										<i class="mdi mdi-account icon-sm"></i>
 										<div class="col-md-1"><span class="about-item-name post-right">No. </span></div>
 										<div class="col-md-6"><span class="about-item-name">Title </span></div>
 										<div class="col-md-3"><span class="about-item-name">Date </span></div>

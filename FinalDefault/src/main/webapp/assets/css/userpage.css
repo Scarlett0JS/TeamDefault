@@ -318,9 +318,8 @@ ul.post-sort {
 	margin-bottom: 14px;
 	margin-right: 2% !important;
 	font-weight: 400;
-	color: #76838f;
+/* 	color: #76838f; */
     list-style: none;
-    color: black;
 	padding: 0;
 }
 
@@ -353,4 +352,8 @@ ul.post-sort {
     width: 100%;
     float: right !important;
     text-align: right !important;
+}
+
+.post-tcolor{
+	color: #76838f;	
 }
