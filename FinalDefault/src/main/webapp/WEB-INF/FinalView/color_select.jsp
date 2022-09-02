@@ -137,7 +137,7 @@ pageContext.setAttribute("newLineChar", "\n");
 			</div>
 			<div class="col-md-2 col-sm-6 center">
 				<div class="pt-3 pb-10">
-					<select name="plan" id="plan" class="btn-lang blue">
+					<select name="plan" id="plan" class="btn-lang">
 						<option value="Python" class="python blue left" selected>Python</option>
 						<option value="Java" class="java red left">Java</option>
 						<option value="HTML" class="html orange left">Html</option>
@@ -145,21 +145,21 @@ pageContext.setAttribute("newLineChar", "\n");
 					</select>
 				</div>
 				<div class="pb-10">
-					<button type="button" class="btn-color-e" onclick="javascript:emp()">EMPTY</button>
-				</div>
-				<div class="pb-10">
-					<button type="button" class="btn-color-s"
-						onclick="javascript:colorsubmit()">
-						COLOR<br/>
-						SELECTION
-					</button>
+					<button type="button" class="btn-color-e"
+						onclick="javascript:emp()">EMPTY</button>
 				</div>
 			</div>
+		</div>
+		<div class="pt-10 pb-10 center">
+			<button type="button" class="btn-color-s"
+				onclick="javascript:colorsubmit()">
+				COLOR<br /> SELECTION
+			</button>
 		</div>
 	</div>
 	<br>
 	<Br>
-	<div class="container" id="cocontainer">
+	<div class="container-color-s" id="cocontainer">
 		<div class="row" id="cocorow"></div>
 	</div>
 	<Br>

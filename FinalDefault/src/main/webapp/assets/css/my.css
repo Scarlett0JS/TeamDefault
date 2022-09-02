@@ -265,13 +265,10 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 	padding-top: 100px;
 	padding-right: 15px;
-	padding-left: 10rem;
-	margin-right: auto;
-	margin-left: auto
+	padding-left: 150px;
 }
 
 /* detail.html */
-/* class이름 이따구로 지어서 당황스러우시져 바꿔야됩니다.. 작명 실패! */
 .header-color {
 	background-color: #282C34;
 }
@@ -589,6 +586,10 @@ a:active {
 	padding-top: 1.6rem !important
 }
 
+.pt-10 {
+	padding-top: 4rem !important
+}
+
 .pl-90 {
 	padding-left: 90px
 }
@@ -652,8 +653,8 @@ a:active {
 	font-size: 20px;
 	line-height: 1;
 	border-radius: 0.5rem;
-	margin-right: 15px;
-	background-color: green;
+	margin-right: 12px;
+	background-color: #0084D0;
 }
 
 .btn-install a {
@@ -945,7 +946,7 @@ form.search-box .input-form .search-form i {
 	background: -webkit-linear-gradient(top, #a077ff 0%, #ef67ff 100%);
 	background: linear-gradient(to bottom, #a077ff 0%, #ef67ff 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a077ff',
-		endColorstr='#ef67ff', GradientType;=0)
+		endColorstr='#ef67ff', GradientType=0)
 }
 
 .btn-colorSelect::before {
@@ -1257,6 +1258,8 @@ form.search-box .input-form .search-form i {
 		endColorstr='#ef67ff', GradientType=0)
 }
 
-
+.mt-8{
+	margin-top: 80px
+}
 
 

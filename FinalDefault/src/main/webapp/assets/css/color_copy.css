@@ -70,14 +70,13 @@ div.activered {
 
 .container-color {
 	min-width: 992px !important;
-	padding-top: 5rem;
 }
 
 .container-color {
 	width: 100%;
 	padding-right: 1px;
 	padding-left: 1px;
-	padding-top: 50px;
+	padding-top: 100px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -107,6 +106,47 @@ div.activered {
 }
 
 .container-color {
+	min-width: 992px !important
+}
+
+.container-color-s {
+	min-width: 992px !important;
+
+}
+
+.container-color-s {
+	width: 100%;
+	padding-right: 1px;
+	padding-left: 1px;
+	margin-right: auto;
+	margin-left: auto
+}
+
+@media ( min-width :576px) {
+	.container-color-s {
+		max-width: 540px
+	}
+}
+
+@media ( min-width :768px) {
+	.container-color-s {
+		max-width: 720px
+	}
+}
+
+@media ( min-width :992px) {
+	.container-color-s {
+		max-width: 960px
+	}
+}
+
+@media ( min-width :1200px) {
+	.container-color-s {
+		max-width: 1200px
+	}
+}
+
+.container-color-s {
 	min-width: 992px !important
 }
 
