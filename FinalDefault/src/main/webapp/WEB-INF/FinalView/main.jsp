@@ -139,7 +139,7 @@
 								<c:forEach var="theme" items="${mostTheme}">
 									<div class="col-md-4">
 	                                    <div class="card mb-4 shadow-sm">
-	                                        <img class="card-img-top" src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath }" alt="">
+	                                        <img class="card-img-top rounded" src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath }" alt="">
 	                                        <div class="card-body">
 	                                            <p class="card-text"><a href = "javascript:Load_ThemeDetail(${theme.theme_seq })"> ${ theme.theme_name } </a></p>
 	                                            <div class="d-flex justify-content-between align-items-center">
@@ -156,18 +156,15 @@
             </section>
         </div>
         <!-- 🥕 -->
-        <div class="bg-light">
+        <div class="extension">
             <div role="main" class="container">
                 <div class="row">
                     <div class="col-6 center font-white">
-                        <div class="my-3 p-3 black-background rounded">
-                            <h2 class="mb-0 font-35px center font-weight-bold font font-white">Most Popular Extension</h2>
-                            <div class="media text-muted pt-3">
-                                <img data-src="" alt="" class="mr-2 rounded">
-                            </div>
+                        <div class="my-3 p-3 black-background all-rounded">
+                            <h2 class="mb-5 font-35px center font-weight-bold font font-white ">Most Popular Extension</h2>
                             <div>
                                 <c:forEach var="allEx" items="${allExList}">
-                                    <div class="media text-muted pt-3 ">
+                                    <div class="media text-muted pt-5">
                                         <p>
                                             <a href="${ allEx.ex_url }"><img src="${allEx.ex_filepath}" class="icon1"></a>
                                         </p>
@@ -183,14 +180,11 @@
                         </div>
                     </div>
                     <div class="col-6 center font-white">
-                        <div class="my-3 p-3 black-background rounded">
-                            <h2 class="mb-0 font-35px center font-weight-bold font font-white">Most Util Extension</h2>
-                            <div class="media text-muted pt-3">
-                                <img data-src="" alt="" class="mr-2 rounded">
-                            </div>
+                        <div class="my-3 p-3 black-background all-rounded">
+                            <h2 class="mb-5 font-35px center font-weight-bold font font-white">Most Util Extension</h2>
                             <div>
                                 <c:forEach var="otherEx" items="${otherExList}">
-                                    <div class="media text-muted pt-3 ">
+                                    <div class="media text-muted pt-5">
                                         <p>
                                             <a href="${ otherEx.ex_url }"><img src="${otherEx.ex_filepath}" class="icon1"></a>
                                         </p>
