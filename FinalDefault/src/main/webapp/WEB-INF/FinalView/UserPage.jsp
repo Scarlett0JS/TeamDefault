@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="./assets/css/header.css">
 <link rel="stylesheet" href="./assets/css/userpage.css">
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./assets/js/userpage.js"></script>
 <script type="text/javascript">
         $(document).ready(function () {
             if ("${empty sessionScope.userVo}" == "true") {
@@ -27,6 +27,8 @@
             } else {
                 Load_UserDetail()
             }
+            
+            console.log("${themeVo}")
         })
 
         function Load_UserDetail() {
@@ -142,25 +144,13 @@
             })
         }
         
-        function Load_UserTheme(){
-
-        }
-         
-        function load_UserThemeForm(data){
-        	let html = ""
-        	$.each(data, function (idx, obj) {
-        		console.log(obj)
-        		html +="hr"
-        	})
-            $("#UserThemeArea").html(html)
-           	$("#userpost").css("display", "none")
-            $("#UserPostedArea").css("display", "none")
-            $("#userprof").css("display", "none")
-            $("#UserDetailArea").css("display", "none")
-            
-            $("#usertheme").css("display", "block")
-            $("#UserThemeArea").css("display", "block")
-        }
+		function Load_UserTheme() {
+			$("#userpost").css("display", "none")
+			$("#UserPostedArea").css("display", "none")
+			$("#userprof").css("display", "none")
+			$("#UserDetailArea").css("display", "none")
+			$("#usertheme").css("display", "block")
+		}
 
         function load_UserPostForm(data) {
             let html = ""
@@ -191,7 +181,10 @@
         function Load_boardView(board_num) {
             location.href = "${cpath}/UserBoardView.do?num=" + board_num
         }
-
+		
+		function Load_ThemeDetail(seq) {
+			location.href = "${cpath}/ThemeDetail.do?seq=" + String(seq)
+		}
     </script>
 
 </head>
@@ -247,7 +240,36 @@
 						</div>
 
 
-						<ul class="post-sort" style="display: none" id="UserThemeArea"></ul>
+						<div class="card-body" style="display: none" id="usertheme">
+							<p class="card-title">My Theme</p>
+								<hr>
+								<div id="contents">
+									<div id="morecontents" class="main">
+										<div class="container margin-top-30">
+											<div class="row">
+												<c:forEach var="theme" items="${themeVo}">
+													<div class="col-md-6 morecontents">
+														<div class="card mb-4 shadow-sm rounded-20">
+															<img class="card-img-top rounded-20"
+																src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath}"
+																alt="">
+															<div class="card-body">
+																<p class="card-text"> <a
+																		href="javascript:Load_ThemeDetail(${theme.theme_seq})">
+																		${ theme.theme_name } </a></p>
+																<div class="d-flex justify-content-between align-items-center">
+																	<small class="text-muted"></small>
+																</div>
+															</div>
+														</div>
+													</div>
+												</c:forEach>
+											</div>
+										</div>
+										<div id="more-wrap"> <a href="javascript:;" class="more">∨ More</a> </div>
+									</div>
+								</div>
+						</div>
 						
 
 						<div class="card-body" style="display: none" id="userpost">

@@ -158,7 +158,7 @@
 	<!-- Theme -->
 	<select id="allThemeList" resultType="com.theme.entity.Theme">
 		SELECT
-			dt2.THEME_SEQ,dt2.THEME_NAME,dt2.THEME_LANG,dt2.THEME_FONT,dt2.THEME_IKES,
+			dt2.THEME_SEQ, dt2.THEME_NAME, dt2.THEME_LANG, dt2.THEME_FONT, dt2.THEME_IKES,
 			dt2.THEME_COL1,dt2.THEME_COL2,dt2.THEME_COL3 ,dt2.THEME_COL4,dt2.THEME_COL5,
 			dt2.THEME_PRODUCER,dt2.THEME_FILEPATH,dt2.THEME_URL,dt2.THEME_ICON,dt2.THEME_INSTALLCNT
 		FROM
@@ -169,6 +169,7 @@
 				(SELECT *
 				FROM D_THEME
 				WHERE THEME_FONT = 'JetBrains Mono'
+				AND THEME_LANG = 'Python'
 				ORDER BY THEME_INSTALLCNT DESC) dt
 			<![CDATA[WHERE rownum <= #{inputpage} + 15) dt2]]>
 		WHERE dt2.rnum >= #{inputpage}
@@ -230,6 +231,12 @@
 	<delete id="DeleteUserFavs" parameterType="com.theme.entity.User_Favs">
 		DELETE FROM D_USER_FAVS WHERE THEME_SEQ = #{theme_seq} AND USER_ID = #{user_id}
 	</delete>
+	
+	<select id="UserLikeThemeSelect" parameterType="String" resultType="com.theme.entity.Theme">
+		SELECT dt.*
+		FROM D_THEME dt , (SELECT * FROM D_USER_FAVS duf WHERE USER_ID = #{user_id}) uf
+		WHERE dt.THEME_SEQ = uf.THEME_SEQ
+	</select>
 	
 	<!-- 오류 처리  -->
 	<!-- Board Constraint -->

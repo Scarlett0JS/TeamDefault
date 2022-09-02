@@ -43,7 +43,7 @@
                             <div class="card-li mb-4 shadow-sm">
                                 <img class="card-li-img-top rounded" src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath }" alt="">
                                 <div class="card-li-body">
-                                    <p class="themeName-li"><a href="javascript:Load_ThemeDetail(${ theme.theme_seq })">${theme.theme_name} | ${theme.theme_lang}</a></p>
+                                    <p class="themeName-li"><a href="javascript:Load_ThemeDetail(${ theme.theme_seq })">${theme.theme_name}</a></p>
                                     <p id="theme-by-li">${theme.theme_producer}
                                         <img src="./assets/img/icon/download_icon.png" alt="download_icon"
                                             class="download-icon-li"> ${theme.theme_installcnt} |

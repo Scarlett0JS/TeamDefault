@@ -28,9 +28,10 @@
     <script type="text/javascript">
 
 		$(window).load(function(){
-			let curheart = document.getElementById("heart")
+			let curheart = document.getElementById("HeartImg")
 			let fullheart = "./assets/img/icon/heart.png"
 			let binheart = "./assets/img/icon/empty_heart.png"
+			
 			if ("${!empty sessionScope.userVo}" == "true") {
 				$.ajax({
 					url: "${cpath}/ThemeLikeCheck.do",
@@ -38,21 +39,17 @@
 					data: {"theme_seq" : "${themeVo.theme_seq}"},
 					dataType: "json",
 					success: function(data){
-	        			if (data.flag = "full") {
+	        			if (data.flag == "full") {
 							curheart.src = fullheart
-						} else {
-							curheart.src = binheart
 						}
 					},
 					error: function(){
 						alert("Error")
 					}
-					
 				})
 			}
 		})
     	
-
         function Load_LanguageImg(lang) {
 	        let destPath = "./assets/img/reFinal_ThemeImg/ThemeImg_Concat/"
             let imgtag = document.getElementById("ThemeImg")
@@ -70,7 +67,7 @@
         }
 		
         function updateThemeLike(theme_seq){
-        	let curheart = document.getElementById("heart")
+        	let curheart = document.getElementById("HeartImg")
         	let fullheart = "./assets/img/icon/heart.png"
         	let binheart = "./assets/img/icon/empty_heart.png"
         	if ("${!empty sessionScope.userVo }" == "true") {
@@ -78,13 +75,8 @@
 	        		url: "${cpath}/ThemeLikeUpdate.do",
 	        		type: "get",
 	        		data: {"theme_seq" : theme_seq},
-	        		dataType: "json",
-	        		success: function(data){
-	        			if (data.flag = "full") {
-							curheart.src = fullheart
-						} else {
-							curheart.src = binheart
-						}
+	        		success: function(){
+	        			location.href = "${cpath}/ThemeDetail.do?seq=" + "${themeVo.theme_seq}"
 	        		},
 	        		error: function(){
 	        			alert("Error")
@@ -166,7 +158,7 @@
                                             </button>
                                         </a>
                                         <button type="button" class="btn-commuview-heart" id="heart" onclick="javascript:updateThemeLike('${themeVo.theme_seq}')">
-                                            <img src="./assets/img/icon/empty_heart.png" width="32px" >
+                                            <img src="./assets/img/icon/empty_heart.png" width="32px" id="HeartImg">
                                         </button>
                                     </p>
                                 </div>

@@ -27,26 +27,17 @@ public class ThemeLikeUpdateController implements Controller {
 		Gson gson = new Gson();
 		
 		User_Favs uf = new User_Favs(theme_seq, user.getUser_id());
-		HashMap<String, String> flagmap = new HashMap<String, String>();
-		String json = null;
 		
 		int flag = dao.selectUserFavs(uf);
 		
 		if (flag == 0) {
 			dao.InsertUserFavs(uf);	
 			dao.ThemeUpdateLikeplus(theme_seq);
-			flagmap.put("flag", "full");
-			json = gson.toJson(flagmap);
 		} else {
 			dao.DeleteUserFavs(uf);
 			dao.ThemeUpdateLikeminus(theme_seq);
-			flagmap.put("flag", "empty");
-			json = gson.toJson(flagmap);
 		}
 		
-		response.setContentType("text/json;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		out.println(json);
 		
 		return null;
 	}

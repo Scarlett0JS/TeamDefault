@@ -95,6 +95,13 @@ public class MainMyBatisDAO {
 		return flag;
 	}
 	
+	public List<Theme> UserLikeThemeSelect(String user_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Theme> themeVo = session.selectList("UserLikeThemeSelect", user_id);
+		session.close();
+		return themeVo;
+	}
+	
 	// Board
 	public List<Board> allBoardList(int inputpage) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -318,6 +325,8 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+
+
 
 
 }

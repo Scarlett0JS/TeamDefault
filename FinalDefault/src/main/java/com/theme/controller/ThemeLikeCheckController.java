@@ -31,12 +31,12 @@ public class ThemeLikeCheckController implements Controller {
 		String json = null;
 		
 		int flag = dao.selectUserFavs(uf);
-		
+
 		if (flag == 0) {
-			flagmap.put("flag", "full");
+			flagmap.put("flag", "empty");
 			json = gson.toJson(flagmap);
 		} else {
-			flagmap.put("flag", "empty");
+			flagmap.put("flag", "full");
 			json = gson.toJson(flagmap);
 		}
 		
