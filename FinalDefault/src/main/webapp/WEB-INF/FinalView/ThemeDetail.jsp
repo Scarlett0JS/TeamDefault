@@ -57,7 +57,7 @@
 							src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${themeVo.theme_filepath }"
 							alt="" class="mb-0 center rounded detail-main-img">
 					</div>
-					<div class="col-sm-5">
+					<div class="col-sm-5 pl-0">
 						<div class="mt-8">
 							<h1 id="theme-name">
 								<img src="${ themeVo.theme_icon }" alt="" class="theme-icon">
