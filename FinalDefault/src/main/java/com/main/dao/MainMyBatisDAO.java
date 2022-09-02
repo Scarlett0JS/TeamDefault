@@ -46,14 +46,8 @@ public class MainMyBatisDAO {
 	}
 	
 	public void UserDelete(String user_id) {
-		SqlSession session = null;
-		try {
-			session = sqlSessionFactory.openSession();
-			session.delete("UserDelete", user_id);			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("UserDelete", user_id);			
 		session.commit();
 		session.close();
 	}
@@ -239,8 +233,17 @@ public class MainMyBatisDAO {
 	
 	// Theme
 	public List<Theme> allThemeList(int inputpage) {
-		SqlSession session = sqlSessionFactory.openSession();
-		List<Theme> themelist = session.selectList("allThemeList", inputpage);
+		SqlSession session = null;
+		List<Theme> themelist = null;
+		
+		try {
+			session = sqlSessionFactory.openSession();
+			themelist = session.selectList("allThemeList", inputpage);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
 		session.close();
 		return themelist;
 	}
