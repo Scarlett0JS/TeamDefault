@@ -1,7 +1,7 @@
 $(window).on('load', function () {
     load('#morecontents', '4');
     $("#more-wrap .more").on("click", function () {
-        load('#morecontents', '4', '#more-wrap');
+        load('#morecontents', '4');
     })
 });
 
@@ -13,7 +13,7 @@ function load(id, cnt, btn) {
         theme_total_cnt = cnt;
     } else {
         theme_total_cnt = theme_length;
-        $('.button').hide()
+        $('.more').hide()
     }
     $(theme_list + ":lt(" + theme_total_cnt + ")").addClass("active");
 }
