@@ -64,14 +64,12 @@
                                     <!-- 슬라이더 애니메이션 넣기 -->
                                     <div class="slider-btns">
                                         <!--Hero form -->
-                                        <form action="#" class="search-box">
+                                        <form action="${cpath}/ThemeSearch.do" class="search-box" method="post">
                                             <div class="input-form">
-                                                <input type="text" placeholder="Search">
-                                                <!-- icon search -->
+                                                <input type="text" id="ThemeSearch" name="ThemeSearch" placeholder="Search">
                                                 <div class="search-form">
-                                                    <button><i class="ti-search"></i></button>
+                                                    <button type="submit" name="submit"><i class="ti-search"></i></button>
                                                 </div>
-                                                <!-- icon search -->
                                                 <div class="world-form">
                                                     <i class="fas fa-globe"></i>
                                                 </div>

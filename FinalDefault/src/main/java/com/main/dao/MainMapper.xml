@@ -17,33 +17,6 @@
 		DELETE FROM D_USER du WHERE USER_ID = #{user_id}
 	</delete>
 	
-	<!-- 오류 처리 -->
-	<update id="DisableBoard">
-		ALTER TABLE D_BOARD DISABLE CONSTRAINT FK_D_BOARD_USER_ID_D_USER_USER
-	</update>
-	
-	<update id="EnableBoard">
-		ALTER TABLE D_BOARD ENABLE CONSTRAINT FK_D_BOARD_USER_ID_D_USER_USER
-	</update>
-	
-	<update id="DisableComment">
-		ALTER TABLE D_COMMENT DISABLE CONSTRAINT FK_D_COMMENT_USER_ID_D_USER_US
-	</update>
-	
-	<update id="EnableComment">
-		ALTER TABLE D_COMMENT ENABLE CONSTRAINT FK_D_COMMENT_USER_ID_D_USER_US
-	</update>
-	
-	<!--  아이디 FK 제약조건 처리
-	<update id="DisableUserFavs">
-		ALTER TABLE D_USER_FAVS DISABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER
-	</update>
-	
-	<update id="EnableUserFavs">
-		ALTER TABLE D_USER_FAVS ENABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER
-	</update>
-	-->
-	
 	<select id="UserSelect" parameterType="String" resultType="com.theme.entity.User">
 		SELECT * FROM D_USER du WHERE USER_ID = #{user_id}
 	</select>
@@ -209,4 +182,62 @@
 		SELECT count(*) FROM D_THEME dt WHERE THEME_FONT = 'JetBrains Mono'
 	</select>
 	
+	<select id="searchThemeName" parameterType="String" resultType="com.theme.entity.Theme">
+		SELECT 	
+			dt2.THEME_SEQ, dt2.THEME_NAME, dt2.THEME_LANG, dt2.THEME_FONT, dt2.THEME_IKES,
+			dt2.THEME_COL1, dt2.THEME_COL2, dt2.THEME_COL3, dt2.THEME_COL4, dt2.THEME_COL5,
+			dt2.THEME_PRODUCER, dt2.THEME_FILEPATH, dt2.THEME_URL, dt2.THEME_ICON, dt2.THEME_INSTALLCNT
+		FROM (
+			SELECT rownum AS rnum, dt.*
+			FROM (
+				SELECT * 
+				FROM D_THEME dt 
+				WHERE LOWER(THEME_NAME) LIKE #{keyword} 
+				AND THEME_LANG = 'Python' 
+				AND THEME_FONT = 'JetBrains Mono'
+				ORDER BY THEME_INSTALLCNT DESC) dt
+				<![CDATA[WHERE rownum <= 8) dt2]]>
+		WHERE dt2.rnum >= 1	
+	</select>
+	
+	<!-- 오류 처리  -->
+	<!-- Board Constraint -->
+	<update id="DisableBoard">
+		ALTER TABLE D_BOARD DISABLE CONSTRAINT FK_D_BOARD_USER_ID_D_USER_USER
+	</update>
+	
+	<update id="EnableBoard">
+		ALTER TABLE D_BOARD ENABLE CONSTRAINT FK_D_BOARD_USER_ID_D_USER_USER
+	</update>
+	
+	<!-- Comment Constraint -->
+	<update id="DisableComment">
+		ALTER TABLE D_COMMENT DISABLE CONSTRAINT FK_D_COMMENT_USER_ID_D_USER_US
+	</update>
+	
+	<update id="EnableComment">
+		ALTER TABLE D_COMMENT ENABLE CONSTRAINT FK_D_COMMENT_USER_ID_D_USER_US
+	</update>
+	
+	<update id="DisableBoardComment">
+		ALTER TABLE D_COMMENT DISABLE CONSTRAINT FK_D_COMMENT_P_SEQ_D_BOARD_D_S
+	</update>
+	
+	<update id="EnableBoardComment">
+		ALTER TABLE D_COMMENT ENABLE CONSTRAINT FK_D_COMMENT_P_SEQ_D_BOARD_D_S
+	</update>
+	
+	<!--  아이디 FK 제약조건 처리
+	<update id="DisableUserFavs">
+		ALTER TABLE D_USER_FAVS DISABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER
+	</update>
+	
+	<update id="EnableUserFavs">
+		ALTER TABLE D_USER_FAVS ENABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER
+	</update>
+	-->
+	
+	<update id="">
+		
+	</update>
 </mapper>

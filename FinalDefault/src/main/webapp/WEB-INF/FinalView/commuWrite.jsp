@@ -32,11 +32,15 @@
                 focus: true,
                 lang: 'ko-KR'
             });
+            
+            if ("${InputError.InputError}" == "nullInput") {
+				alert("Please enter everything")	
+			}
         });
 
         function Load_community() {
             alert("Changes will not be saved")
-            location.href = "${cpath}/UserLangBoardList.do?lang=" + "${lang}"
+            location.href = "${cpath}/UserLangBoardList.do?lang=" + "${lang}" + "&page=1"
         }
     </script>
 </head>

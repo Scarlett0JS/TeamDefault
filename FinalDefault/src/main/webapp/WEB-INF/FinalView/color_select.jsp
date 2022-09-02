@@ -80,7 +80,6 @@ pageContext.setAttribute("newLineChar", "\n");
 						.getElementById(beforeColor).className.replace(
 						" activered", "");
 			}
-
 			//선택한 색상 표시 기능
 			document.getElementById(target.id).className += " activered";
 			beforeColor = target.id;
@@ -92,15 +91,20 @@ pageContext.setAttribute("newLineChar", "\n");
 	}
 
 	function colorsubmit() {
-		let selection = "";
-		for (i = 0; i <= 4; i++) {
-			selection += String(i + 1)
-					+ "="
-					+ $($('.service-icon-five')[i]).css('background-color')
-							.slice(4, -1) + "&"
-		}
-		selection += "lang=" + $("#plan option:selected").val()
-		location.href = "${cpath}/ColorSelectedFromUser.do?" + selection
+		if(num == 5){
+            let selection = "";
+            for (i = 0; i <= 4; i++) {
+                selection += String(i + 1)
+                        + "="
+                        + $($('.service-icon-five')[i]).css('background-color')
+                                .slice(4, -1) + "&"
+            }
+            selection += "lang=" + $("#plan option:selected").val()
+            location.href = "${cpath}/ColorSelectedFromUser.do?" + selection
+        }else{
+            alert('Please select all colors')
+            location.href = "${cpath}/ColorSelect.do"
+        }
 	}
 </script>
 </head>

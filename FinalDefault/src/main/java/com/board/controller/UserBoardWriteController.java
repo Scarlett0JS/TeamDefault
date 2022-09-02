@@ -1,6 +1,7 @@
 package com.board.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,11 +22,23 @@ public class UserBoardWriteController implements Controller {
 		String writer = request.getParameter("Writer");
 		String lang = request.getParameter("Lang");
 		
-		Board vo = new Board(title, content, writer, lang);
-		MainMyBatisDAO dao = new MainMyBatisDAO();
-		dao.BoardInsert(vo);
+		if (title.length() == 0 || content.length() == 0) {
+			
+			HashMap<String, String> errMap = new HashMap<String, String>();
+			errMap.put("InputError", "nullInput");
+			request.setAttribute("InputError", errMap);
+			request.setAttribute("lang", lang);
+			return "commuWrite";
+			
+		} else {
+			
+			Board vo = new Board(title, content, writer, lang);
+			MainMyBatisDAO dao = new MainMyBatisDAO();
+			dao.BoardInsert(vo);
+			
+			return "redirect:/UserLangBoardList.do?lang=" + lang + "&" + "page=1";
+		}
 		
-		return "redirect:/UserLangBoardList.do?lang=" + lang + "&" + "page=1";
 	}
 
 }

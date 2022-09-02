@@ -217,6 +217,7 @@ public class MainMyBatisDAO {
 		session.update("DisableBoard");
 		session.update("DisableComment");
 		//session.update("DisableUserFavs");
+		session.update("DisableBoardComment");
 		session.commit();
 		session.close();
 	}
@@ -226,6 +227,7 @@ public class MainMyBatisDAO {
 		session.update("EnableBoard");
 		session.update("EnableComment");
 		//session.update("EnableUserFavs");
+		session.update("EnableBoardComment");
 		session.commit();
 		session.close();
 	}
@@ -233,17 +235,8 @@ public class MainMyBatisDAO {
 	
 	// Theme
 	public List<Theme> allThemeList(int inputpage) {
-		SqlSession session = null;
-		List<Theme> themelist = null;
-		
-		try {
-			session = sqlSessionFactory.openSession();
-			themelist = session.selectList("allThemeList", inputpage);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Theme> themelist = session.selectList("allThemeList", inputpage);
 		session.close();
 		return themelist;
 	}
@@ -267,5 +260,12 @@ public class MainMyBatisDAO {
 		int allpage = session.selectOne("allThemeCount");
 		session.close();
 		return allpage;
+	}
+
+	public List<Theme> searchThemeName(String keyword) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Theme> themeVo = session.selectList("searchThemeName", keyword);
+		session.close();
+		return themeVo;
 	}
 }

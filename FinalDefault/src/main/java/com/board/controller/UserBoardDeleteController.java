@@ -18,7 +18,9 @@ public class UserBoardDeleteController implements Controller {
 		int num = Integer.parseInt(request.getParameter("num"));
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
+		dao.Disable();
 		dao.BoardDelete(num);
+		dao.Enable();
 		
 		return null;
 	}

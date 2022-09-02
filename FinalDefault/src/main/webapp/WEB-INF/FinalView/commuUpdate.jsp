@@ -36,7 +36,7 @@
 
         function Load_community() {
             alert("Changes will not be saved")
-            location.href = "${cpath}/UserLangBoardList.do?lang=" + "${board.d_category}"
+            location.href = "${cpath}/UserLangBoardList.do?lang=" + "${board.d_category}" + "&page=1"
         }
     </script>
 </head>
@@ -51,9 +51,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Title</span>
                     </div>
-                    <input type="hidden" id="board_num" name="board_num" value=${ board.d_seq }> <input type="hidden"
-                        id="Writer" name="Writer" value=${ sessionScope.userVo.user_id }> <input type="text"
-                        class="form-control" id="summerTitle" name="summerTitle" value=${ board.d_title }>
+                    <input type="hidden" id="board_num" name="board_num" value=${ board.d_seq }> 
+                    <input type="hidden" id="Writer" name="Writer" value=${ sessionScope.userVo.user_id }> <input type="text"
+                        class="form-control" id="summerTitle" name="summerTitle" value="${ board.d_title }">
                 </div>
                 <textarea id="summernote" name="summernote"> ${ board.d_content } </textarea>
                 <br>

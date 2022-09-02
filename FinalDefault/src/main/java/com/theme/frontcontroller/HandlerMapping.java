@@ -25,6 +25,7 @@ import com.main.controller.ErrorController;
 import com.main.controller.IndexController;
 import com.theme.controller.ThemeAllListController;
 import com.theme.controller.ThemeDetailController;
+import com.theme.controller.ThemeSearchController;
 import com.user.controller.UserDeleteController;
 import com.user.controller.UserDetailController;
 import com.user.controller.UserLoginController;
@@ -87,6 +88,7 @@ public class HandlerMapping {
 		// Themes
 		mappings.put("/ThemeAllList.do", new ThemeAllListController());
 		mappings.put("/ThemeDetail.do", new ThemeDetailController());
+		mappings.put("/ThemeSearch.do", new ThemeSearchController());
 	}
 	
 	public Controller getController(String command) {

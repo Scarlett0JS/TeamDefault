@@ -39,7 +39,7 @@
                     "num": num
                 },
                 success: function () {
-                    location.href = "${cpath}/UserBoardForm.do"
+                    location.href = "${cpath}/UserBoardList.do?page=" + "1"
                 },
                 error: function () {
                     alert("Error")
