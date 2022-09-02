@@ -68,8 +68,7 @@
 
         function CommentHtml(data) {
             let html = ""
-            $
-                .each(
+            $.each(
                     data,
                     function (idx, obj) {
                         let commentData = JSON.stringify({
@@ -145,20 +144,19 @@
 
         function updatePostLike() {
             let board_num = "${vo.d_seq}"
-            var count = parseInt("${vo.d_like}")
-            let heart = document.querySelector("#heart")
-            $.ajax({
+                $.ajax({
                 url: "${cpath}/UserBoardLikeUpdate.do",
                 type: "post",
                 data: { "board_num": board_num },
                 success: function () {
-                    location.href = "${cpath}/UserBoardView.do?num=" + "${vo.d_seq}"
+                    let text = $("#heartcount").html()
+                    $("#heartcount").html(text*1+1)
                 },
                 error: function () {
                     alert("Error")
                 }
             })
-        }
+        } 
         
         function Load_List(){
         	location.href = "${cpath}/UserLangBoardList.do?lang=" + "${vo.d_category}" + "&page=1"
@@ -194,9 +192,9 @@
                             <button onclick="javascript:deletePost('${vo.d_seq}')">Delete</button>
                         </c:if>
                     </c:if>
-                    <button type="button" class="btn-commuview-heart" id="heart">
-                        <img src="./assets/img/icon/heart.png" width="32px" onclick="javascript:updatePostLike()">
-                        ${vo.d_like}
+					<button type="button" class="btn-commuview-heart" id="heart">
+                        <span><img src="./assets/img/icon/heart.png" width="32px" onclick="javascript:updatePostLike()"></span>
+                      <span id ="heartcount">${vo.d_like}</span>
                     </button>
                 </div>
                 <br>

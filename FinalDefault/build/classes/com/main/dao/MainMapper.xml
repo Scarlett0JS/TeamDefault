@@ -33,6 +33,15 @@
 		SELECT * FROM D_BOARD WHERE USER_ID = #{user_id}
 	</select>
 	
+	<insert id="KakaoRegister" parameterType="com.theme.entity.User">
+		Insert into D_USER (user_id, user_pw, user_nick)
+		values (#{user_id}, #{user_pw}, #{user_nick})
+	</insert>
+	
+	<select id="userCheck" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) FROM D_USER WHERE USER_ID = #{user_id}
+	</select>
+	
 	<!-- Board -->
 	<select id="allBoardList" resultType="com.theme.entity.Board">
 		SELECT 
@@ -200,6 +209,28 @@
 		WHERE dt2.rnum >= 1	
 	</select>
 	
+	<update id="ThemeUpdateLikeplus">
+		UPDATE D_THEME SET THEME_IKES = THEME_IKES +1 WHERE THEME_SEQ = #{theme_seq}
+	</update>
+	
+	<update id="ThemeUpdateLikeminus">
+		UPDATE D_THEME SET THEME_IKES = THEME_IKES -1 WHERE THEME_SEQ = #{theme_seq}
+	</update>
+	
+	<!-- UserFavs -->
+	<select id="selectUserFavs" parameterType="com.theme.entity.User_Favs" resultType="Integer">
+		SELECT count(*) FROM D_USER_FAVS duf WHERE USER_ID = #{user_id} AND THEME_SEQ = #{theme_seq}
+	</select>
+	
+	<insert id="InsertUserFavs" parameterType="com.theme.entity.User_Favs">
+		INSERT INTO D_USER_FAVS (UF_SEQ, THEME_SEQ, USER_ID)
+		VALUES (D_USER_FAVS_SEQ.nextval, #{theme_seq}, #{user_id})
+	</insert>
+	
+	<delete id="DeleteUserFavs" parameterType="com.theme.entity.User_Favs">
+		DELETE FROM D_USER_FAVS WHERE THEME_SEQ = #{theme_seq} AND USER_ID = #{user_id}
+	</delete>
+	
 	<!-- 오류 처리  -->
 	<!-- Board Constraint -->
 	<update id="DisableBoard">
@@ -237,7 +268,4 @@
 	</update>
 	-->
 	
-	<update id="">
-		
-	</update>
 </mapper>

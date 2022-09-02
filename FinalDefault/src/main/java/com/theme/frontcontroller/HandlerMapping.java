@@ -25,7 +25,10 @@ import com.main.controller.ErrorController;
 import com.main.controller.IndexController;
 import com.theme.controller.ThemeAllListController;
 import com.theme.controller.ThemeDetailController;
+import com.theme.controller.ThemeLikeCheckController;
+import com.theme.controller.ThemeLikeUpdateController;
 import com.theme.controller.ThemeSearchController;
+import com.user.controller.KakaoLoginRegisterController;
 import com.user.controller.UserDeleteController;
 import com.user.controller.UserDetailController;
 import com.user.controller.UserLoginController;
@@ -58,6 +61,7 @@ public class HandlerMapping {
 		mappings.put("/UserNickUpdate.do", new UserNickUpdateController());
 		mappings.put("/UserPwUpdate.do", new UserPwUpdateController());
 		mappings.put("/UserPostedList.do", new UserPostedListController());
+		mappings.put("/KakaoLoginRegister.do", new KakaoLoginRegisterController());
 
 		// Board
 		mappings.put("/UserBoardList.do", new UserBoardListController());
@@ -89,6 +93,8 @@ public class HandlerMapping {
 		mappings.put("/ThemeAllList.do", new ThemeAllListController());
 		mappings.put("/ThemeDetail.do", new ThemeDetailController());
 		mappings.put("/ThemeSearch.do", new ThemeSearchController());
+		mappings.put("/ThemeLikeUpdate.do", new ThemeLikeUpdateController());
+		mappings.put("/ThemeLikeCheck.do", new ThemeLikeCheckController());
 	}
 	
 	public Controller getController(String command) {

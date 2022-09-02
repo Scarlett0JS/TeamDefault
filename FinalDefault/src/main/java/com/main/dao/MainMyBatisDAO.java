@@ -16,6 +16,7 @@ import com.theme.entity.Extension;
 import com.theme.entity.LangPage;
 import com.theme.entity.Theme;
 import com.theme.entity.User;
+import com.theme.entity.User_Favs;
 
 public class MainMyBatisDAO {
 	private static SqlSessionFactory sqlSessionFactory;
@@ -78,6 +79,20 @@ public class MainMyBatisDAO {
 		List<Board> dto = session.selectList("UserPostedselect", user_id);
 		session.close();
 		return dto;
+	}
+	
+	public void KakaoRegister(User user) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("KakaoRegister", user);			
+		session.commit();
+		session.close();
+	}
+	
+	public int userCheck(String user_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int flag = session.selectOne("userCheck", user_id);
+		session.close();
+		return flag;
 	}
 	
 	// Board
@@ -232,7 +247,6 @@ public class MainMyBatisDAO {
 		session.close();
 	}
 
-	
 	// Theme
 	public List<Theme> allThemeList(int inputpage) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -268,4 +282,42 @@ public class MainMyBatisDAO {
 		session.close();
 		return themeVo;
 	}
+	
+	public void ThemeUpdateLikeplus(int theme_seq) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("ThemeUpdateLikeplus", theme_seq);
+		session.commit();
+		session.close();
+	}
+	
+	public void ThemeUpdateLikeminus(int theme_seq) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("ThemeUpdateLikeminus", theme_seq);
+		session.commit();
+		session.close();
+	}
+
+	// UserFavs
+	public int selectUserFavs(User_Favs uf) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int flag = session.selectOne("selectUserFavs", uf);
+		session.close();
+		return flag;
+	}
+
+	public void InsertUserFavs(User_Favs uf) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("InsertUserFavs", uf);
+		session.commit();
+		session.close();
+	}
+
+	public void DeleteUserFavs(User_Favs uf) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("DeleteUserFavs", uf);
+		session.commit();
+		session.close();
+	}
+
+
 }

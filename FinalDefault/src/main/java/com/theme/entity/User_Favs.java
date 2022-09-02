@@ -17,6 +17,10 @@ public class User_Favs {
 		this.user_id = user_id;
 		this.reg_date = reg_date;
 	}
+	
+	public User_Favs(int theme_seq, String user_id) {
+		this(0, theme_seq, user_id, null);
+	}
 
 	public int getUf_seq() {
 		return uf_seq;
