@@ -170,15 +170,15 @@
                 html += "<div class='row'>"
                 html += "<i class='mdi mdi-account icon-sm'></i>"
                 html += "<div class='col-md-1'>"
-                html += "<span class='about-item-name'>" + String(idx + 1) + "</span></div>"
+                html += "<span class='about-item-name post-right'>" + String(idx + 1) + "</span></div>"
                 html += "<div class='col-md-6'>"
                 html += "<span class='about-item-name'><a href='javascript:Load_boardView(" + obj.d_seq + ")' class='post-a'>" + obj.d_title + "</a></span></div>"
                 html += "<div class='col-md-3'>"
                 html += "<span class='about-item-name'>" + obj.d_date.split(" ")[0] + "</span></div>"
                 html += "<div class='col-md-1'>"
-                html += "<span class='about-item-name'>" + obj.d_cnt + "</span></div>"
+                html += "<span class='about-item-name post-right'>" + obj.d_cnt + "</span></div>"
                 html += "<div class='col-md-1'>"
-                html += "<span class='about-item-name'>" + obj.d_like + "</span></div></div></li>"
+                html += "<span class='about-item-name post-right'>" + obj.d_like + "</span></div></div></li>"
             })
             $("#UserPostedArea").html(html)
             $("#userprof").css("display", "none")
@@ -257,7 +257,7 @@
 								<li class="about-items">
 									<div class="row">
 										<i class="mdi mdi-account icon-sm "></i>
-										<div class="col-md-1"><span class="about-item-name">No. </span></div>
+										<div class="col-md-1"><span class="about-item-name post-right">No. </span></div>
 										<div class="col-md-6"><span class="about-item-name">Title </span></div>
 										<div class="col-md-3"><span class="about-item-name">Date </span></div>
 										<div class="col-md-1"><span class="about-item-name">Hits </span></div>
