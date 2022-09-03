@@ -99,7 +99,7 @@ p {
 	color: #777;
 	margin: 5px 0px;
 	background-color: #F1F2F3;
-	border-radius: 5px;
+/* 	border-radius: 5px; */
 }
 
 .profile-card ul.profile-info-list {
@@ -340,8 +340,8 @@ ul.post-sort {
 }
 
 .row {
-    margin-right: -40px;
-    margin-left: -40px;
+    margin-right: -20px;
+    margin-left: -20px;
 }
 
 .card-body {
