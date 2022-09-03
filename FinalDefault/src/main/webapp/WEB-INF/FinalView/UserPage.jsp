@@ -27,8 +27,6 @@
             } else {
                 Load_UserDetail()
             }
-            
-            console.log("${themeVo}")
         })
 
         function Load_UserDetail() {
@@ -59,6 +57,7 @@
             $("#UserDetailArea").html(html)
            	$("#userpost").css("display", "none")
             $("#UserPostedArea").css("display", "none")
+            $("#usertheme").css("display", "none")
             
             $("#userprof").css("display", "block")
             $("#UserDetailArea").css("display", "block")
@@ -173,6 +172,7 @@
             $("#UserPostedArea").html(html)
             $("#userprof").css("display", "none")
             $("#UserDetailArea").css("display", "none")
+			$("#usertheme").css("display", "none")
 
             $("#userpost").css("display", "block")
             $("#UserPostedArea").css("display", "block")

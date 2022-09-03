@@ -108,7 +108,21 @@
                             </div>
                             <div class="cat-cap">
                                 <h5><a href="#">d</a></h5>
-                                <p>내용</p>
+                                <p>여기는 컬러를 선택해서 테마를 추천받는</p>
+                                <button class='btn-e' onclick="javascript:Load_ColorSelect()">Color Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-cat">
+                            <div class="cat-icon">
+                                <img src="" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="#">d</a></h5>
+                                <p>여기는 파일을 선택해서 테마를 추천받는</p>
                                 <button class='btn-e' onclick="javascript:Load_ColorSelect()">Color Select</button>
                             </div>
                         </div>

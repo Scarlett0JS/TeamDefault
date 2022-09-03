@@ -2,133 +2,217 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>App landing</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Community</title>
+
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/slicknav.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./assets/css/boardstyles.css">
+    <link rel="stylesheet" href="./assets/css/slick.css">
     <link rel="stylesheet" href="./assets/css/my.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
-            if ("${loginError.loginError}" == "checkInput") {
-                alert("check email or password")
-            } else if ("${loginError.loginError}" == "nullInput") {
-                alert("Please enter everything")
-            }
-            let emailInput = $("input[name='userEmail']")
-            emailInput.focus()
+            Load_Comment("${vo.d_seq}")
         })
 
-        function Load_Main() {
-            location.href = "${cpath}/index.do"
-        }
-
-        function Load_RegisterForm() {
-            location.href = "${cpath}/UserRegisterForm.do"
-        }
-
-        // 2. 카카오 초기화
-        Kakao.init('20a7072a5eb081fde8df915647d48ba3');
-        console.log(Kakao.isInitialized()); // 초기화 판단여부
-
-        // 3. 데모버전으로 들어가서 카카오로그인 코드를 확인.
-        function loginWithKakao() {
-            Kakao.Auth.login({
-                success: function (authObj) {
-                    console.log(authObj); // access토큰 값
-                    Kakao.Auth.setAccessToken(authObj.access_token); // access토큰값 저장
-
-                    getInfo();
+        function deletePost(num) {
+            $.ajax({
+                url: "${cpath}/UserBoardDelete.do",
+                type: "get",
+                data: {
+                    "num": num
                 },
-                fail: function (err) {
-                    console.log(err);
+                success: function () {
+                    location.href = "${cpath}/UserBoardList.do?page=" + "1"
+                },
+                error: function () {
+                    alert("Error")
                 }
-            });
-        }
-
-        // 4. 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
-        function getInfo() {
-            let id = "";
-            let email = "";
-            let nickname = "";
-            Kakao.API.request({
-                url: '/v2/user/me',
-                success: function (res) {
-                    console.log(res);
-                    // 식별ID, 이메일, 닉네임
-                    id = res.id;
-                    email = res.kakao_account.email;
-                    nickname = res.kakao_account.profile.nickname;
-                    console.log(typeof (id, email, nickname));
-                    kakaoRegister(id, email, nickname);
-                },
-                fail: function (error) {
-                    alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
-                }
-            });
-        }
-
-        /* function kakaoLogout() {
-            Kakao.API.request({
-                url: '/v1/user/unlink',
-                success: function (res) {
-                    alert('success: ' + JSON.stringify(res))
-                    console.log('success')
-                },
-                fail: function (err) {
-                    alert('fail: ' + JSON.stringify(err))
-                    console.log('fail')
-                },
             })
-        } */
+        }
 
-        function kakaoRegister(id, email, nickname) {
-            if (!email) {
-                email = String(id)
+        function updatePost(num) {
+            location.href = "${cpath}/UserBoardUpdateForm.do?board_num=" + num
+        }
+
+        function Load_Comment(board_num) {
+            $.ajax({
+                url: "${cpath}/CommentList.do",
+                type: "get",
+                data: {
+                    "board_num": board_num
+                },
+                dataType: "json",
+                success: CommentHtml,
+                error: function () {
+                    alert("Error")
+                }
+            })
+        }
+
+        function CommentHtml(data) {
+            let html = ""
+            $.each(
+                data,
+                function (idx, obj) {
+                    let commentData = JSON.stringify({
+                        cmt_seqs: obj.cmt_seq,
+                        user_ids: obj.user_id
+                    })
+                    html += "<div class='d-flex'>"
+                    html += "<div class='flex-shrink-0'>"
+                    html += "<img class='rounded-circle' src='https://dummyimage.com/50x50/ced4da/6c757d.jpg'>"
+                    html += "</div>"
+                    html += "<div class='ms-3'>"
+                    html += "<div clss='fw-bold'>" + obj.user_nick + "</div>"
+                    html += obj.cmt_content
+                    html += "</div>"
+                    html += "<div style='text-align: right; background-color: transparent;''>"
+                    html += "<button class='btn' onclick='DeleteComment(" + commentData + ")'>Delete</button>"
+                    html += "</div>"
+                    html += "</div>"
+                    html += "</div>"
+                    html += "<br>"
+                })
+            $("#commentCard").html(html)
+        }
+
+        function InsertComment(board_num, user_id) {
+            if ("${!empty sessionScope.userVo }" == "true") {
+                let textval = $("#commentVal").val()
+                $.ajax({
+                    url: "${cpath}/CommentInsert.do",
+                    type: "post",
+                    data: {
+                        "comment": textval,
+                        "board_num": board_num,
+                        "user_id": user_id
+                    },
+                    success: function () {
+                        location.href = "${cpath}/UserBoardView.do?num=" + "${vo.d_seq}"
+                    },
+                    error: function () {
+                        alert("Error")
+                    }
+                })
+            } else {
+                alert("Please Login")
+                location.href = "${cpath}/UserLoginForm.do"
             }
-            location.href = "${cpath}/KakaoLoginRegister.do?id=" + String(id) + "&email=" + String(email) + "&nickname=" + String(nickname)
+        }
+
+        function DeleteComment(commentData) {
+            if ("${!empty sessionScope.userVo }" == "true") {
+                if ("${sessionScope.userVo.user_id}" == commentData.user_ids) {
+                    $.ajax({
+                        url: "${cpath}/CommentDelete.do",
+                        type: "post",
+                        data: {
+                            "comment_num": commentData.cmt_seqs
+                        },
+                        success: function () {
+                            location.href = "${cpath}/UserBoardView.do?num=" + "${vo.d_seq}"
+                        },
+                        error: function () {
+                            alert("Error")
+                        }
+                    })
+                } else {
+                    alert("You don't have permission")
+                }
+            } else {
+                alert("Please Login")
+                location.href = "${cpath}/UserLoginForm.do"
+            }
+        }
+
+        function updatePostLike() {
+            let board_num = "${vo.d_seq}"
+            $.ajax({
+                url: "${cpath}/UserBoardLikeUpdate.do",
+                type: "post",
+                data: { "board_num": board_num },
+                success: function () {
+                    let text = $("#heartcount").html()
+                    $("#heartcount").html(text * 1 + 1)
+                },
+                error: function () {
+                    alert("Error")
+                }
+            })
+        }
+
+        function Load_List() {
+            location.href = "${cpath}/UserLangBoardList.do?lang=" + "${vo.d_category}" + "&page=1"
         }
     </script>
+
 </head>
 
 <body>
-    <main class="login-body slider-bg">
-        <div class="login-form">
-            <div class="logo-login">
-                <a href="javascript:Load_Main()"><img src="assets/img/my_img/User.png" alt=""></a>
+    <jsp:include page="../header/header2.jsp" />
+    <div class="container mt-5">
+        <div class="row">
+            <div>
+                <!-- Content section -->
+                <article>
+                    <br class="mb-4">
+                    <h1 class="fw-bolder mb-1">${ vo.d_title }</h1>
+                    <br>
+                    <div class="text-muted fst-italic mb-2">${ fn:split(vo.d_date, " ")[0] }
+                        &nbsp&nbsp&nbsp ${ vo.user_id }</div>
+                    <br>
+                    <section class="mb-5">
+                        <p class="fs-5 mb-4">${ fn:replace(vo.d_content, newLineChar, "<br />") }</p>
+                    </section>
+                </article>
+                <div>
+                </div>
+                <div style="text-align: right; background-color: transparent;">
+                    <button onclick="javascript:Load_List()">List</button>
+                    <c:if test="${!empty sessionScope.userVo }">
+                        <c:if test="${ sessionScope.userVo.user_id.equals(vo.user_id)}">
+                            <button onclick="javascript:updatePost('${vo.d_seq}')">Update</button>
+                            <button onclick="javascript:deletePost('${vo.d_seq}')">Delete</button>
+                        </c:if>
+                    </c:if>
+                    <button type="button" class="btn-commuview-heart" id="heart">
+                        <span><img src="./assets/img/icon/heart.png" width="32px"
+                                onclick="javascript:updatePostLike()"></span>
+                        <span id="heartcount">${vo.d_like}</span>
+                    </button>
+                </div>
+                <br>
+                <!-- Comments section-->
+                <section class="mb-5">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <textarea class="form-control" rows="3" id="commentVal"
+                                placeholder="Join the discussion and leave a comment!"></textarea>
+                            <div style="text-align: right; background-color: transparent;">
+                                <button class='btn'
+                                    onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
+                            </div>
+                            <div id="commentCard"></div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <form class="form-default" id="frm-login" action="${cpath}/UserLogin.do" method="POST">
-                <h2>Login</h2>
-                <div class="form-input">
-                    <label for="name">Email</label> <input type="email" name="userEmail" id="userEmail"
-                        placeholder="Email">
-                </div>
-                <div class="form-input">
-                    <label for="name">Password</label> <input type="password" name="userPw" id="userPw"
-                        placeholder="Password">
-                </div>
-                <div class="form-input pt-30">
-                    <input type="submit" name="submit" value="login">
-                </div>
-            </form>
-            <!-- social api button -->
-            <div class="">
-                <a id="custom-login-btn" href="javascript:loginWithKakao()"> <img
-                        src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="222" />
-                </a>
-                <button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
-
-            </div>
-            <!-- Forget Password -->
-            <!-- <a href="#" class="forget">Forget Password</a> -->
-            <p class="mem">Not a member?</p>
-            <a href="javascript:Load_RegisterForm()" class="registration">Registration</a>
         </div>
-    </main>
-    <script src="./assets/js/bootstrap.min.js"></script>
+    </div>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

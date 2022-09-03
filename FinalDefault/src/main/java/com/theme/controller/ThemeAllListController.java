@@ -31,13 +31,6 @@ public class ThemeAllListController implements Controller {
 		
 		List<Theme> themeVo = dao.allThemeList(16*page - 15);
 		
-//		for (Theme theme : themeVo) {
-//			System.out.print(theme.getTheme_name() + " ");
-//			System.out.print(theme.getTheme_lang() + " ");
-//			System.out.print(theme.getTheme_font() + " ");
-//			System.out.println(theme.getTheme_likes());
-//		}
-		
 		request.setAttribute("paging", paging);
 		request.setAttribute("themeVo", themeVo);
 		

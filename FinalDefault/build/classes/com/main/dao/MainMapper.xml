@@ -158,7 +158,7 @@
 	<!-- Theme -->
 	<select id="allThemeList" resultType="com.theme.entity.Theme">
 		SELECT
-			dt2.THEME_SEQ, dt2.THEME_NAME, dt2.THEME_LANG, dt2.THEME_FONT, dt2.THEME_IKES,
+			dt2.THEME_SEQ, dt2.THEME_NAME, dt2.THEME_LANG, dt2.THEME_FONT, dt2.THEME_LIKES,
 			dt2.THEME_COL1,dt2.THEME_COL2,dt2.THEME_COL3 ,dt2.THEME_COL4,dt2.THEME_COL5,
 			dt2.THEME_PRODUCER,dt2.THEME_FILEPATH,dt2.THEME_URL,dt2.THEME_ICON,dt2.THEME_INSTALLCNT
 		FROM
@@ -194,7 +194,7 @@
 	
 	<select id="searchThemeName" parameterType="String" resultType="com.theme.entity.Theme">
 		SELECT 	
-			dt2.THEME_SEQ, dt2.THEME_NAME, dt2.THEME_LANG, dt2.THEME_FONT, dt2.THEME_IKES,
+			dt2.THEME_SEQ, dt2.THEME_NAME, dt2.THEME_LANG, dt2.THEME_FONT, dt2.THEME_LIKES,
 			dt2.THEME_COL1, dt2.THEME_COL2, dt2.THEME_COL3, dt2.THEME_COL4, dt2.THEME_COL5,
 			dt2.THEME_PRODUCER, dt2.THEME_FILEPATH, dt2.THEME_URL, dt2.THEME_ICON, dt2.THEME_INSTALLCNT
 		FROM (
@@ -211,16 +211,16 @@
 	</select>
 	
 	<update id="ThemeUpdateLikeplus">
-		UPDATE D_THEME SET THEME_IKES = THEME_IKES +1 WHERE THEME_SEQ = #{theme_seq}
+		UPDATE D_THEME SET THEME_LIKES = THEME_LIKES+1 WHERE THEME_SEQ = #{theme_seq}
 	</update>
 	
 	<update id="ThemeUpdateLikeminus">
-		UPDATE D_THEME SET THEME_IKES = THEME_IKES -1 WHERE THEME_SEQ = #{theme_seq}
+		UPDATE D_THEME SET THEME_LIKES = THEME_LIKES-1 WHERE THEME_SEQ = #{theme_seq}
 	</update>
 	
 	<!-- UserFavs -->
 	<select id="selectUserFavs" parameterType="com.theme.entity.User_Favs" resultType="Integer">
-		SELECT count(*) FROM D_USER_FAVS duf WHERE USER_ID = #{user_id} AND THEME_SEQ = #{theme_seq}
+		SELECT count(*) FROM D_USER_FAVS WHERE USER_ID = #{user_id} AND THEME_SEQ = #{theme_seq}
 	</select>
 	
 	<insert id="InsertUserFavs" parameterType="com.theme.entity.User_Favs">

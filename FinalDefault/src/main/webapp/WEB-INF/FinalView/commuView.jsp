@@ -105,7 +105,7 @@
                         "user_id": user_id
                     },
                     success: function () {
-                        location.href = "${cpath}/UserBoardView.do?num=" + "${vo.d_seq}"
+                    	Load_Comment("${vo.d_seq}")
                     },
                     error: function () {
                         alert("Error")
@@ -127,7 +127,7 @@
                             "comment_num": commentData.cmt_seqs
                         },
                         success: function () {
-                            location.href = "${cpath}/UserBoardView.do?num=" + "${vo.d_seq}"
+                        	Load_Comment("${vo.d_seq}")
                         },
                         error: function () {
                             alert("Error")
