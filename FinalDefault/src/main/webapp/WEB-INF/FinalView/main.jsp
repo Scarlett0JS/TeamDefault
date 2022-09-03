@@ -33,6 +33,7 @@
 		function Load_ThemeDetail(theme_seq){
 			location.href = "${cpath}/ThemeDetail.do?seq=" + String(theme_seq)
 		}
+		
     </script>
 
 </head>
@@ -123,7 +124,12 @@
                             <div class="cat-cap">
                                 <h5><a href="#">d</a></h5>
                                 <p>여기는 파일을 선택해서 테마를 추천받는</p>
-                                <button class='btn-e' onclick="javascript:Load_ColorSelect()">Color Select</button>
+                                <button class='btn-e' onclick="document.fileForm.userinputImg.click()">File Select</button>
+                                <button class='btn-e' onclick="document.fileForm.imgSubmit">Submit</button>
+                                <form action="${cpath}/ImageSelectFromUser.do" id="fileForm" name="fileForm" method="POST" enctype="multipart/form-data">
+                                	<input id="userinputImg" name="userinputImg" type="file" accept=".jpg, .jpeg, .png" style="display:none">
+                                	<input id="imgSubmit" name="imgSubmit" type="submit" style="display:none">
+                            	</form>
                             </div>
                         </div>
                     </div>

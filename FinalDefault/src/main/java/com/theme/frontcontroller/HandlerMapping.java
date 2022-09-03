@@ -17,6 +17,7 @@ import com.board.controller.UserLangBoardListController;
 import com.color.controller.ColerListController;
 import com.color.controller.ColorSelectController;
 import com.color.controller.ColorSelectedFromUserController;
+import com.color.controller.ImageSelectFromUserController;
 import com.comment.controller.CommentDeleteController;
 import com.comment.controller.CommentInsertController;
 import com.comment.controller.CommentListController;
@@ -83,6 +84,7 @@ public class HandlerMapping {
 		mappings.put("/ColorAllList.do", new ColerListController());
 		mappings.put("/ColorSelect.do", new ColorSelectController());
 		mappings.put("/ColorSelectedFromUser.do", new ColorSelectedFromUserController());
+		mappings.put("/ImageSelectFromUser.do", new ImageSelectFromUserController());
 		
 		// Admin
 		mappings.put("/UserList.do", new UserListController());
