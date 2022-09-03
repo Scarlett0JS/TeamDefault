@@ -75,13 +75,13 @@
 								<div class="main-menu-my d-none-my d-lg-block-my">
 									<nav>
 										<ul id="navigation-my">
-											<li><a href="javascript:Load_Community()">All</a></li>
-											<li><a href="${cpath}/UserLangBoardList.do?lang=Python&page=1">Python</a></li>
-											<li><a href="${cpath}/UserLangBoardList.do?lang=Java&page=1">Java</a></li>
-											<li><a href="${cpath}/UserLangBoardList.do?lang=Html&page=1">Html</a></li>
-											<li><a href="${cpath}/UserLangBoardList.do?lang=JavaScript&page=1">JavaScript</a>
+											<li><a class="none-ul" href="javascript:Load_Community()">All</a></li>
+											<li><a class="none-ul" href="${cpath}/UserLangBoardList.do?lang=Python&page=1">Python</a></li>
+											<li><a class="none-ul" href="${cpath}/UserLangBoardList.do?lang=Java&page=1">Java</a></li>
+											<li><a class="none-ul" href="${cpath}/UserLangBoardList.do?lang=Html&page=1">Html</a></li>
+											<li><a class="none-ul" href="${cpath}/UserLangBoardList.do?lang=JavaScript&page=1">JavaScript</a>
 											</li>
-											<li><a href="javascript:Load_Theme()">Theme</a></li>
+											<li><a class="none-ul" href="javascript:Load_Theme()">Theme</a></li>
 											<c:if test="${empty sessionScope.userVo}">
 												<li class="button-header-my margin-left-my "><a
 													href="javascript:Load_RegisterForm()" class="btn-my">Register</a>

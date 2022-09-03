@@ -244,6 +244,9 @@ a:hover {
   text-decoration: underline !important;
 }
 
+.none-ul:hover{
+	text-decoration: none !important;
+}
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
