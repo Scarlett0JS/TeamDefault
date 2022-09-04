@@ -12,14 +12,6 @@ def dbConnection():
     cursor = connection.cursor()
     return cursor, connection
 
-def test():
-    cur, connection = dbConnection()
-    for row in cur.execute("select * from d_board"):
-        print(row)
-    
-    cur.close()
-    connection.close()
-
 def InsertColorMap():
     with open("Colormap/Color_dimension.json", 'r', encoding="utf-8") as f:
         colordata = json.load(f)
@@ -121,8 +113,7 @@ def reInsertColorMap(jsonPath):
     print("Insert Complete")
     
 if __name__ == "__main__":
-    # allExtension("../Crawilng/allExtension.json")
-    # otherExtension("../Crawilng/otherExtension.json")
-    # InsertTheme()
+    allExtension(os.path.join(r"C:\eGovFrame-4.0.0\First_Project\PyScript\Crawilng", "allExtension.json"))
+    otherExtension(os.path.join(r"C:\eGovFrame-4.0.0\First_Project\PyScript\Crawilng", "otherExtension.json"))
     reInsertColorMap(os.path.join(r'C:\eGovFrame-4.0.0\First_Project\PyScript\Colormap', 'reColor_dimension.json'))
     print("Done")

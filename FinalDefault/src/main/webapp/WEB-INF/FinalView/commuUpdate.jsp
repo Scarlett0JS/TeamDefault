@@ -35,8 +35,12 @@
         })
 
         function Load_community() {
-            alert("Changes will not be saved")
-            location.href = "${cpath}/UserLangBoardList.do?lang=" + "${board.d_category}" + "&page=1"
+        	let check = confirm("Changes will not be saved")
+            if (check==true) {
+	            location.href = "${cpath}/UserLangBoardList.do?lang=" + "${board.d_category}" + "&page=1"				
+			} else {
+				return
+			}
         }
     </script>
 </head>

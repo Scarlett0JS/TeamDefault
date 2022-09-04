@@ -19,7 +19,16 @@ public class UserDeleteController implements Controller {
 		User user = (User)request.getSession().getAttribute("userVo");
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
+		
+		dao.Disable();
+		
+		// User 관련 info 전부 삭제
+		dao.UserPostDelete(user.getUser_id());
+		dao.UserCommentDelete(user.getUser_id());
+		dao.UserFavsThemeDelete(user.getUser_id());
 		dao.UserDelete(user.getUser_id());
+		
+		dao.Enable();
 		
 		return null;
 	}

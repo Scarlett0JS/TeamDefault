@@ -102,6 +102,27 @@ public class MainMyBatisDAO {
 		return themeVo;
 	}
 	
+	public void UserPostDelete(String user_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("UserPostDelete", user_id);
+		session.commit();
+		session.close();
+	}
+	
+	public void UserCommentDelete(String user_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("UserCommentDelete", user_id);
+		session.commit();
+		session.close();
+	}
+
+	public void UserFavsThemeDelete(String user_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("UserFavsThemeDelete", user_id);
+		session.commit();
+		session.close();
+	}
+	
 	// Board
 	public List<Board> allBoardList(int inputpage) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -238,9 +259,8 @@ public class MainMyBatisDAO {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.update("DisableBoard");
 		session.update("DisableComment");
-		//session.update("DisableUserFavs");
+		session.update("DisableUserFavs");
 		session.update("DisableBoardComment");
-		session.commit();
 		session.close();
 	}
 	
@@ -248,7 +268,7 @@ public class MainMyBatisDAO {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.update("EnableBoard");
 		session.update("EnableComment");
-		//session.update("EnableUserFavs");
+		session.update("EnableUserFavs");
 		session.update("EnableBoardComment");
 		session.commit();
 		session.close();
@@ -325,8 +345,6 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
-
-
 
 
 }

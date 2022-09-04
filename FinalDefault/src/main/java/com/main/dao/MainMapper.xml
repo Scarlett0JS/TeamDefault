@@ -42,6 +42,18 @@
 		SELECT COUNT(*) FROM D_USER WHERE USER_ID = #{user_id}
 	</select>
 	
+	<delete id="UserPostDelete" parameterType="String">
+		DELETE FROM D_BOARD db WHERE USER_ID = #{user_id}
+	</delete>
+	
+	<delete id="UserCommentDelete" parameterType="String">
+		DELETE FROM D_COMMENT dc  WHERE USER_ID = #{user_id}
+	</delete>
+	
+	<delete id="UserFavsThemeDelete" parameterType="String">
+		DELETE FROM D_USER_FAVS duf WHERE USER_ID = #{user_id}
+	</delete>
+	
 	<!-- Board -->
 	<select id="allBoardList" resultType="com.theme.entity.Board">
 		SELECT 
@@ -238,8 +250,7 @@
 		WHERE dt.THEME_SEQ = uf.THEME_SEQ
 	</select>
 	
-	<!-- 오류 처리  -->
-	<!-- Board Constraint -->
+	<!-- Constraints  -->
 	<update id="DisableBoard">
 		ALTER TABLE D_BOARD DISABLE CONSTRAINT FK_D_BOARD_USER_ID_D_USER_USER
 	</update>
@@ -248,7 +259,6 @@
 		ALTER TABLE D_BOARD ENABLE CONSTRAINT FK_D_BOARD_USER_ID_D_USER_USER
 	</update>
 	
-	<!-- Comment Constraint -->
 	<update id="DisableComment">
 		ALTER TABLE D_COMMENT DISABLE CONSTRAINT FK_D_COMMENT_USER_ID_D_USER_US
 	</update>
@@ -265,14 +275,12 @@
 		ALTER TABLE D_COMMENT ENABLE CONSTRAINT FK_D_COMMENT_P_SEQ_D_BOARD_D_S
 	</update>
 	
-	<!--  아이디 FK 제약조건 처리
 	<update id="DisableUserFavs">
-		ALTER TABLE D_USER_FAVS DISABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER
+		ALTER TABLE D_USER_FAVS DISABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER_
 	</update>
 	
 	<update id="EnableUserFavs">
-		ALTER TABLE D_USER_FAVS ENABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER
+		ALTER TABLE D_USER_FAVS ENABLE CONSTRAINT FK_D_USER_FAVS_USER_ID_D_USER_
 	</update>
-	-->
 	
 </mapper>

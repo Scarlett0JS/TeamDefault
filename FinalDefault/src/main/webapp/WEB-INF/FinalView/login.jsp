@@ -102,7 +102,7 @@
     <main class="login-body slider-bg">
         <div class="login-form">
             <div class="logo-login">
-                <a href="javascript:Load_Main()"><img src="assets/img/my_img/User.png" alt=""></a>
+                <a href="javascript:Load_Main()"><img src="./assets/img/logo/exLogo.png" alt=""></a>
             </div>
             <form class="form-default" id="frm-login" action="${cpath}/UserLogin.do" method="POST">
                 <h2>Login</h2>

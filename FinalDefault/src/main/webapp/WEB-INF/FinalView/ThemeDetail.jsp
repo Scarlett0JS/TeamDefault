@@ -51,7 +51,7 @@
 		})
     	
         function Load_LanguageImg(lang) {
-	        let destPath = "./assets/img/reFinal_ThemeImg/ThemeImg_Concat/"
+	        let destPath = "/projectImg/reFinal_ThemeImg/ThemeImg_Concat/"
             let imgtag = document.getElementById("ThemeImg")
             let temp = imgtag.src.split("/")
             let imgLi = temp[temp.length - 1].split("%20").join(" ").split(".")[0].split("_")
@@ -59,7 +59,7 @@
         }
 
         function Load_FontImg(font) {
-	        let destPath = "./assets/img/reFinal_ThemeImg/ThemeImg_Concat/"
+	        let destPath = "/projectImg/reFinal_ThemeImg/ThemeImg_Concat/"
             let imgtag = document.getElementById("ThemeImg")
             let temp = imgtag.src.split("/")
             let imgLi = temp[temp.length - 1].split("%20").join(" ").split(".")[0].split("_")
@@ -100,7 +100,7 @@
                     <!-- pt-100 pb-30 -->
                     <div class="col-sm-5 right">
                         <img id="ThemeImg"
-                            src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${themeVo.theme_filepath }" alt=""
+                            src="/projectImg/reFinal_ThemeImg/ThemeImg_Concat/${themeVo.theme_filepath }" alt=""
                             class="mb-0 center rounded detail-main-img">
                     </div>
                     <div class="col-sm-5 pl-0">

@@ -115,7 +115,7 @@
             $(".table").html(html)
         }
         function check(user_id){
-        	var check= confirm("정말 삭제하시겠습니까?");
+        	var check= confirm("All information will be deleted, Are you sure you want to delete it?");
         	if(check==true){
         		goDel(user_id);
         	}

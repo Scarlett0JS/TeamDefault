@@ -78,7 +78,7 @@
 											<li><a href="javascript:Load_Theme()">Theme</a></li>
 											<c:if test="${!empty sessionScope.userVo}">
 												<c:if
-													test="${sessionScope.userVo.user_id.equals('admin@gjaischool.com')}">
+													test="${sessionScope.userVo.user_type.equals('Admin')}">
 													<li><a href="javascript:Load_Admin()">Admin</a></li>
 												</c:if>
 											</c:if>

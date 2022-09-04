@@ -49,7 +49,7 @@
           <c:forEach var="themeData" items="${ Recommand }">
             <div class="col">
               <div class="card-li mb-4 shadow-sm">
-                <img class="card-li-img-top rounded" src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${themeData.theme_filepath }" alt="">
+                <img class="card-li-img-top rounded" src="/projectImg/reFinal_ThemeImg/ThemeImg_Concat/${themeData.theme_filepath }" alt="">
                 <div class="card-li-body">
                   <p class="themeName-li"><a href="javascript:Load_ThemeDetail(${ themeData.theme_seq })">${themeData.theme_name} | ${themeData.theme_lang}</a></p>
                   <p id="theme-by-li">${themeData.theme_producer}

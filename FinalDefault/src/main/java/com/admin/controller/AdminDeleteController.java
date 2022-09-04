@@ -19,8 +19,15 @@ public class AdminDeleteController implements Controller {
 		
 		String user_id = request.getParameter("user_id");
 		dao.Disable();
+		
+		// User 관련 info 전부 삭제
+		dao.UserPostDelete(user_id);
+		dao.UserCommentDelete(user_id);
+		dao.UserFavsThemeDelete(user_id);
 		dao.UserDelete(user_id);
+		
 		dao.Enable();
+		
 		return null;
 	}
 
