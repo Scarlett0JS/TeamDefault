@@ -48,7 +48,6 @@
         }
     </script>
 </head>
-
 <body>
     <div class="container my-5 py-5">
         <h2>Write Yours</h2>

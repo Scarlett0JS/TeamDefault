@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> App landing</title>
+    <title>Default</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 

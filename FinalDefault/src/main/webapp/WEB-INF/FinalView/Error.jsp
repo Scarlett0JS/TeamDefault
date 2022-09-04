@@ -13,6 +13,14 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
+<script type="text/javascript">
+	$(window).load(function(){
+		alert("Contact Team Default")
+		location.href = "https://www.youtube.com/watch?v=J6CsfHMsmx0"
+	})
+</script>
+
 <body>
 	<div class="container">
 		<div class="panel panel-default">
@@ -20,9 +28,10 @@
 			<div class="panel-body">
 				<blockquote>
 					<h1>This is Error page</h1>
+					<h1>Contact Team Default</h1>
 				</blockquote>
 			</div>
-			<div class="panel-footer">Spring 특화 A</div>
+			<div class="panel-footer">Team Default</div>
 		</div>
 	</div>
 </body>

@@ -28,12 +28,14 @@ public class ImageSelectFromUserController implements Controller {
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String savePath = "C:\\projectImg\\userImg";
+		String savePath = "C:\\eGovFrame-4.0.0\\First_Project\\projectImg\\userImg";
 		int maxSize = 1024*1024*5;
 		
 		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
 		
 		String lang = multi.getParameter("Language");
+//		String filename = multi.getFilesystemName("userinputImg");
+//		String originalFileName = multi.getOriginalFileName("userinputImg");
 		
 		String domain = "http://127.0.0.1:5000/ImgRecommend" + "?lang=" + lang;
 		

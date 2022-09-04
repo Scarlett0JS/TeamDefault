@@ -14,7 +14,7 @@ def userRgb(requestCol):
     return sorted([tuple(map(int, i.split(','))) for i in requestCol], key= lambda x:(x[0], x[1], x[2]))
 
 def userImg():
-    destPath = r"C:\projectImg\userImg"
+    destPath = r"C:\\eGovFrame-4.0.0\\First_Project\\projectImg\\userImg"
     return [os.path.join(destPath, i) for i in os.listdir(destPath) if i.split(".")[-1] in ["jpg", "jpeg", "png"]][-1]
 
 def dbConnection():

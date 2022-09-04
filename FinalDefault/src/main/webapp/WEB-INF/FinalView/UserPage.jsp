@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Profile Settings</title>
+<title>Default</title>
 
 <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="./assets/css/slicknav.css">
@@ -50,17 +50,17 @@
             html += "<span class='about-item-name col-2'>Name :</span>"
             html += "<span class='about-item-detail col-8' id='userNickArea'>" + data.user_nick + "</span>"
             if (data.user_id.indexOf("@") == -1) {
-	            html += "<a class='about-item-edit col-1' id='userNickHref'>Edit</a></li>"				
+	            html += "<a id='userNickHref'>Edit</a></li>"				
 			} else {
-	            html += "<a href='javascript:EditUserNickForm()' class='about-item-edit col-1' id='userNickHref'>Edit</a></li>"
+	            html += "<a href='javascript:EditUserNickForm()' id='userNickHref'>Edit</a></li>"
 			}
             html += "<li class='about-items row'>"
             html += "<span class='about-item-name col-2'>Password :</span>"
             html += "<span class='about-item-detail col-8' id='userPwArea'>" + star + "</span>"
             if (data.user_id.indexOf("@") == -1) {
-	            html += "<a class='about-item-edit col-1' id='userPwHref'>Edit</a></li>"				
+	            html += "<a id='userPwHref'>Edit</a></li>"				
 			} else {
-	            html += "<a href='javascript:EditUserPwForm()' class='about-item-edit col-1' id='userPwHref'>Edit</a></li>"				
+	            html += "<a href='javascript:EditUserPwForm()' id='userPwHref'>Edit</a></li>"				
 			}
             $("#UserDetailArea").html(html)
            	$("#userpost").css("display", "none")
@@ -121,16 +121,21 @@
         }
 
         function DeleteFromUser() {
-            $.ajax({
-                url: "${cpath}/UserDelete.do",
-                type: "get",
-                success: function () {
-                    location.href = "${cpath}/UserLogout.do"
-                },
-                error: function () {
-                    alert("Error")
-                }
-            })
+        	let check = confirm("All information will be deleted, Are you sure you want to delete it?")
+			if (check=true) {
+	        	$.ajax({
+	                url: "${cpath}/UserDelete.do",
+	                type: "get",
+	                success: function () {
+	                    location.href = "${cpath}/UserLogout.do"
+	                },
+	                error: function () {
+	                    alert("Error")
+	                }
+	            })
+			} else {
+				return
+			}
         }
 
         function Load_Mypage() {
