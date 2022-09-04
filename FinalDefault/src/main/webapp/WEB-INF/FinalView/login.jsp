@@ -123,8 +123,6 @@
                 <a id="custom-login-btn" href="javascript:loginWithKakao()"> <img
                         src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="222" />
                 </a>
-                <button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
-
             </div>
             <!-- Forget Password -->
             <!-- <a href="#" class="forget">Forget Password</a> -->
