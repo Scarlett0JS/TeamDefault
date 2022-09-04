@@ -26,23 +26,21 @@
 <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
 
 <script type="text/javascript">
-    	$(document).ready(function () {
-    		$("#userinputImg").on('change',function(){
-    			var fileName = $("#userinputImg").val()
-    			$("#inputlabel").html(fileName);
-    		})
-        })
-        
-        function Load_ColorSelect() {
-            location.href = "${cpath}/ColorSelect.do"
-        }
-        
-		function Load_ThemeDetail(theme_seq){
-			location.href = "${cpath}/ThemeDetail.do?seq=" + String(theme_seq)
-		}
-		
+	$(document).ready(function() {
+		$("#userinputImg").on('change', function() {
+			var fileName = $("#userinputImg").val()
+			$("#inputlabel").html(fileName);
+		})
+	})
 
-    </script>
+	function Load_ColorSelect() {
+		location.href = "${cpath}/ColorSelect.do"
+	}
+
+	function Load_ThemeDetail(theme_seq) {
+		location.href = "${cpath}/ThemeDetail.do?seq=" + String(theme_seq)
+	}
+</script>
 
 </head>
 
@@ -100,7 +98,7 @@
 				<div class="row justify-content-center">
 					<div class="col-xl-12">
 						<div class="section-tittle text-center mb-105">
-							<h2>How to use</h2>
+							<h2>Select Colors</h2>
 						</div>
 					</div>
 				</div>
@@ -112,7 +110,7 @@
 							</div>
 							<div class="cat-cap">
 								<h5>
-									<a href="#">d</a>
+									<a href="#"></a>
 								</h5>
 								<p>여기는 컬러를 선택해서 테마를 추천받는</p>
 								<button class='btn-e' onclick="javascript:Load_ColorSelect()">Color
@@ -129,9 +127,9 @@
 							</div>
 							<div class="cat-cap">
 								<h5>
-									<a href="#">d</a>
+									<a href="#">Upload a Image you like!</a>
 								</h5>
-								<p>여기는 파일을 선택해서 테마를 추천받는</p>
+								<p class="font-m">Select a Programming language</p>
 								<form action="${cpath}/ImageSelectFromUser.do" id="fileForm"
 									name="fileForm" method="POST" enctype="multipart/form-data">
 									<input id="userinputImg" name="userinputImg" type="file"
@@ -146,10 +144,10 @@
 								</form>
 								<br>
 								<button class='btn-e' id="imgButton"
-									onclick="document.fileForm.userinputImg.click()">File
-									Select</button>
+									onclick="document.fileForm.userinputImg.click()">Select
+									your Image</button>
 								<br>
-								<p id="inputlabel">None File</p>
+								<p id="inputlabel">No Images</p>
 								<button class='btn-e'
 									onclick="document.fileForm.imgSubmit.click()">Submit</button>
 							</div>
@@ -200,7 +198,6 @@
 				</div>
 			</section>
 		</div>
-		<!-- 🥕 -->
 		<div class="extension">
 			<div role="main" class="container">
 				<div class="row">
@@ -251,7 +248,6 @@
 			</div>
 		</div>
 	</main>
-	<!-- 🥕 -->
 	<footer>
 		<div class="footer-wrappr " data-background="">
 			<div class="footer-area footer-padding ">
