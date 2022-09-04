@@ -6,8 +6,8 @@
 
 .slider-area .hero__img img {
     position: relative;
-    width: 500px;
-    height: 1100px;
+    width: 600px;
+    height: auto;
     right: -63px;
 }
 
@@ -950,4 +950,23 @@ form.search-box .input-form .search-form i {
     height: 340px;
 }
 
+.moving-main-img {
+    width: 500px;
+    height: 700px;
+    /* padding-left: 50px; */
+    margin: 0px auto;
+    overflow: hidden;
+    background: url('../img/my_img/main_img.png') 0 center / 500px repeat-y;
+    animation: movebg 10s linear infinite;
+    opacity: 0.9;
+}
 
+@keyframes movebg {
+    100% {background-position: 0px;}
+    0% {background-position: 0px -700px;}
+}
+
+.f-right {
+    float: right;
+    margin-left: 10px;
+}

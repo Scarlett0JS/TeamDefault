@@ -1283,3 +1283,18 @@ form.search-box .input-form .search-form i {
 .mb-5{
 	margin-bottom: 5px;
 }
+
+.moving-main-img {
+    width: 500px;
+    height: 850px;
+    margin: 0px auto;
+    overflow: hidden;
+    background: url('../img/my_img/main_img.png') 0 center / 500px repeat-y;
+    animation: movebg 10s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes movebg {
+    100% {background-position: 0px;}
+    0% {background-position: 0px -700px;}
+}
