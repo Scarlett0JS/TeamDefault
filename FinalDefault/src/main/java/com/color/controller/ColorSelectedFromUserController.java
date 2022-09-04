@@ -46,7 +46,6 @@ public class ColorSelectedFromUserController implements Controller {
 			System.out.println("응답메세지 : " + http.getResponseMessage());
 			
 			if(resCode == HttpURLConnection.HTTP_OK) {
-				//  성공
 				InputStream input = http.getInputStream();
 				
 				BufferedReader reader = new BufferedReader(new InputStreamReader(input));

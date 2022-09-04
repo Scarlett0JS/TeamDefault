@@ -1,13 +1,21 @@
+from configparser import Interpolation
 from flask import Flask # 플라스크 클래스 임포트
 from flask import request, redirect
+from sklearn.cluster import KMeans
 import scipy.spatial.distance as distance 
 import cx_Oracle
 import numpy as np
+import cv2
+import os
 
 app = Flask(__name__) # 내장변수 name을 이용해 서버를 구동시키는 객체 생성
 
 def userRgb(requestCol):
     return sorted([tuple(map(int, i.split(','))) for i in requestCol], key= lambda x:(x[0], x[1], x[2]))
+
+def userImg():
+    destPath = r"C:\projectImg\userImg"
+    return [os.path.join(destPath, i) for i in os.listdir(destPath) if i.split(".")[-1] in ["jpg", "jpeg", "png"]][-1]
 
 def dbConnection():
     dsn = cx_Oracle.makedsn("project-db-stu.ddns.net", 1524, service_name = "XE")
@@ -19,7 +27,7 @@ def ThemeRgb(lang):
     cur, conn = dbConnection()
     resultLi = []
     
-    sql = f"SELECT THEME_SEQ, THEME_COL1 , THEME_COL2 , THEME_COL3 , THEME_COL4 , THEME_COL5 FROM D_THEME dt WHERE THEME_FONT = 'JetBrains Mono' AND THEME_LANG = '{lang}' ORDER BY THEME_INSTALLCNT"
+    sql = f"SELECT THEME_SEQ, THEME_COL1 , THEME_COL2 , THEME_COL3 , THEME_COL4 , THEME_COL5 FROM D_THEME dt WHERE THEME_FONT = 'JetBrains Mono' AND THEME_LANG = '{lang}' ORDER BY THEME_INSTALLCNT DESC"
         
     for row in cur.execute(sql):
         resultLi.append((str(row[0]),[tuple(map(int, i.split(","))) for i in row[1:]]))
@@ -41,15 +49,58 @@ def calDistance(requestForm):
     result = sorted(resultLi, key=lambda x:x[1])
     return ":".join([i[0] for i in result[:8]])
 
+def ImgToTheme(lang):
+    imgpath = userImg()
+    Img = cv2.imread(imgpath)
+    Imgrgb = cv2.cvtColor(Img, cv2.COLOR_BGR2RGB)
+    h, w, c = Imgrgb.shape
+    
+    if h > 600 or w > 800:
+        if h > 600 and w > 800:
+            Imgrgb = cv2.resize(Imgrgb, dsize=(800, 600), interpolation=cv2.INTER_AREA)
+        elif h > 600:
+            Imgrgb = cv2.resize(Imgrgb, dsize=(w, 600), interpolation=cv2.INTER_AREA)
+        elif w > 800:
+            Imgrgb = cv2.resize(Imgrgb, dsize=(800, h), interpolation=cv2.INTER_AREA)
+            
+    imgrgb_pixel = Imgrgb.reshape((-1, 3))
+    imgKm = KMeans(n_clusters=5).fit(imgrgb_pixel)
+    centers = imgKm.cluster_centers_
+    
+    themeExtract = ThemeRgb(lang)
+    
+    resultLi = []
+    
+    for theme in themeExtract:
+        resultLi.append((theme[0], np.mean([min([distance.pdist(np.array([tc, uc])).min() for tc in theme[1]]) for uc in centers])))
+    
+    result = sorted(resultLi, key=lambda x:x[1])
+    
+    os.remove(imgpath)
+    
+    return ":".join([i[0] for i in result[:8]])
+
 @app.route("/ColorRecommend", methods=["GET",'POST'])
 def ColorRecommend() :
     if request.method == 'POST' :
         # display(request.form)
-        return "Error?";
+        return "Error";
     else :
+        print(request.args['ColorData'])
         recommedTheme = calDistance(request.args['ColorData'])
         print(recommedTheme)
         return recommedTheme
+
+@app.route("/ImgRecommend", methods=["GET", "POST"])
+def ImgRecommend():
+    if request.method == 'POST':
+        print(request.form)
+        return "Error"
+    else:
+        print(request.args)
+        recommendTheme = ImgToTheme(request.args['lang'])
+        print(recommendTheme)
+        return recommendTheme
 
 if __name__ == "__main__" :
     app.run()

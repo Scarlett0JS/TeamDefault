@@ -26,6 +26,13 @@
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
 
     <script type="text/javascript">
+    	$(document).ready(function () {
+    		$("#userinputImg").on('change',function(){
+    			var fileName = $("#userinputImg").val()
+    			$("#inputlabel").html(fileName);
+    		})
+        })
+        
         function Load_ColorSelect() {
             location.href = "${cpath}/ColorSelect.do"
         }
@@ -34,6 +41,7 @@
 			location.href = "${cpath}/ThemeDetail.do?seq=" + String(theme_seq)
 		}
 		
+
     </script>
 
 </head>
@@ -124,12 +132,19 @@
                             <div class="cat-cap">
                                 <h5><a href="#">d</a></h5>
                                 <p>여기는 파일을 선택해서 테마를 추천받는</p>
-                                <button class='btn-e' onclick="document.fileForm.userinputImg.click()">File Select</button>
-                                <button class='btn-e' onclick="document.fileForm.imgSubmit">Submit</button>
                                 <form action="${cpath}/ImageSelectFromUser.do" id="fileForm" name="fileForm" method="POST" enctype="multipart/form-data">
                                 	<input id="userinputImg" name="userinputImg" type="file" accept=".jpg, .jpeg, .png" style="display:none">
+                                	<select name="Language" id="Language" class="btn-lang">
+										<option value="Python" class="python blue left" selected>Python</option>
+										<option value="Java" class="java red left">Java</option>
+										<option value="HTML" class="html orange left">Html</option>
+										<option value="JavaScript" class="js yellow left">Javascript</option>
+									</select>
                                 	<input id="imgSubmit" name="imgSubmit" type="submit" style="display:none">
-                            	</form>
+                            	</form><br>
+                                <button class='btn-e' id="imgButton" onclick="document.fileForm.userinputImg.click()">File Select</button><br>
+                                <p id="inputlabel"> None File </p>
+                                <button class='btn-e' onclick="document.fileForm.imgSubmit.click()">Submit</button>
                             </div>
                         </div>
                     </div>
