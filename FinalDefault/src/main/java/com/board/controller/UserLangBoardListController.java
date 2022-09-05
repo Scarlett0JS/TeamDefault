@@ -21,16 +21,17 @@ public class UserLangBoardListController implements Controller {
 		
 		String lang = request.getParameter("lang");
 		int page = Integer.parseInt(request.getParameter("page"));
-		
 		page = page <= 0 ? 1 : page;
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
 		int totalAriticleCount = dao.LangBoardCount(lang);
 		
-		LangPage lp = new LangPage(lang, page);
+		Paging paging = new Paging(page, totalAriticleCount, 20);
+		LangPage lp = new LangPage(lang, 20*page-19);		
+		
 		List<Board> boardList = dao.LangBoardList(lp);
 		
-		Paging paging = new Paging(page, totalAriticleCount, 20);
+		System.out.println(paging.getStart());
 		
 		request.setAttribute("lang", lang);
 		request.setAttribute("paging", paging);

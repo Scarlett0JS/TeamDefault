@@ -1,14 +1,12 @@
 package com.board.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
 import com.main.controller.Controller;
 import com.main.dao.MainMyBatisDAO;
 import com.theme.entity.Board;
@@ -25,8 +23,8 @@ public class UserBoardListController implements Controller {
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();		
 		int totalArticleCount = dao.allBoardCount();
-		List<Board> boardList = dao.allBoardList(20*page - 19);
 		Paging paging = new Paging(page, totalArticleCount, 20);
+		List<Board> boardList = dao.allBoardList(20*page - 19);
 		
 		request.setAttribute("paging", paging);
 		request.setAttribute("boardList", boardList);

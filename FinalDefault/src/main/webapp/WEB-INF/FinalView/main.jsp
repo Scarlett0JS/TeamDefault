@@ -57,9 +57,7 @@
                         <div class="row align-items-center justify-content-between">
                             <div class="col-xl-5 col-lg-5 col-md-9 ">
                                 <div class="hero__caption">
-                                    <span data-animation="fadeInLeft" data-delay=".3s">Best
-                                        Domain & hosting service provider</span>
-                                    <h1 data-animation="fadeInLeft" data-delay=".6s ">Find Fabulous Themes with Just a click</h1>
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s ">Find Fabulous Themes with Just a Click</h1>
                                     <p data-animation="fadeInLeft" data-delay=".8s">Color themes from the Marketplace let you modify the colors in Visual Studio Code's user interface to suit your preferences and work environment.
                                     </p>
                                     <!-- Slider btn -->

@@ -32,14 +32,16 @@ public class Paging {
 		if (totalAticleCount%aticleCountPerPage!=0) {
 			totalPagingCount+=1;
 		}
-		if(page > 2 && page < totalPagingCount-1) {;
+		
+		
+		if(page > 2 && page < totalPagingCount-1) {
 			this.start = page - 2;
 			this.end = page + 2;
 		}else if(page <= 2) {
 			this.start = 1;
 			this.end = totalPagingCount >= 5 ? 5 : totalPagingCount;
 		}else if(page >= totalPagingCount - 1) {
-			this.start = totalPagingCount-4;
+			this.start = totalPagingCount-4 < 0 ? 1 : totalPagingCount-4;
 			this.end = totalPagingCount;
 		}
 	}

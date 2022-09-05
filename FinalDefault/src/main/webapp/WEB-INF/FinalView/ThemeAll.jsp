@@ -67,13 +67,13 @@
 	                    <li class="page-item"><a class="page-link" href="${cpath}/ThemeAllList.do?page=${page}">${ page }</a></li>
                     </c:forEach>
                     <li class="page-item">
-                    	<c:if test="${ paging.curpage+5 < paging.totalPagingCount }">
+                    	<c:if test="${ paging.curpage+2 < paging.totalPagingCount }">
 	                        <a class="page-link" href="${cpath}/ThemeAllList.do?page=${paging.curpage+5}" aria-label="Next">
 	                            <span aria-hidden="true">&raquo;</span>
 	                            <span class="sr-only">Next</span>
 	                        </a>
                         </c:if>
-                        <c:if test="${ paging.curpage+5 >= paging.totalPagingCount }">
+                        <c:if test="${ paging.curpage+2 >= paging.totalPagingCount }">
 	                        <a class="page-link" aria-label="Next">
 	                            <span aria-hidden="true">&raquo;</span>
 	                            <span class="sr-only">Next</span>

@@ -68,7 +68,7 @@
 				FROM D_BOARD
 				ORDER BY D_CNT DESC
 				) db
-			<![CDATA[WHERE rownum <= #{inputpage} + 20) db2]]>
+			<![CDATA[WHERE rownum <= #{inputpage} + 19) db2]]>
 		WHERE db2.rnum >= #{inputpage}
 	</select>
 	
@@ -94,7 +94,7 @@
 				WHERE D_CATEGORY = #{lang}
 				ORDER BY D_CNT DESC
 				) db
-			<![CDATA[WHERE rownum <= #{inputpage} + 20) db2]]>
+			<![CDATA[WHERE rownum <= #{inputpage} + 19) db2]]>
 		WHERE db2.rnum >= #{inputpage}
 	</select>
 	

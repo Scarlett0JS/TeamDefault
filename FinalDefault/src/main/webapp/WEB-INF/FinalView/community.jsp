@@ -83,15 +83,15 @@
                 <c:forEach var="page" begin="${paging.start}" end="${ paging.end }">
                     <li class="page-item"><a class="page-link" href="${cpath}/UserBoardList.do?page=${page}">${ page }</a></li>
                 </c:forEach>
-                <c:if test="${ paging.curpage+5 < paging.totalPagingCount }">
+                <c:if test="${ paging.curpage+2 < paging.totalPagingCount }">
                     <li class="page-item">
-                        <a class="page-link" href="${cpath}/UserBoardList.do?page=${page+5}" aria-label="Next"><span
+                        <a class="page-link" href="${cpath}/UserBoardList.do?page=${paging.curpage+5}" aria-label="Next"><span
                                 aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Next</span>
                         </a>
                     </li>
                 </c:if>
-                <c:if test="${ paging.curpage+5 >= paging.totalPagingCount }">
+                <c:if test="${ paging.curpage+2 >= paging.totalPagingCount }">
                     <li class="page-item">
                         <a class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Next</span>

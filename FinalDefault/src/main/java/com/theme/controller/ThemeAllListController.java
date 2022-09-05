@@ -19,16 +19,11 @@ public class ThemeAllListController implements Controller {
 			throws ServletException, IOException {
 		
 		int page = Integer.parseInt(request.getParameter("page"));
+		page = page <= 0 ? 1 : page;
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
-		
-		if (page <= 0) {
-			page = 1;
-		}
-		
 		int totalArticleCount = dao.allThemeCount();
 		Paging paging = new Paging(page, totalArticleCount, 16);
-		
 		List<Theme> themeVo = dao.allThemeList(16*page - 15);
 		
 		request.setAttribute("paging", paging);

@@ -76,22 +76,22 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
                 <li class="page-item">
-                    <a class="page-link" href="${cpath}/UserBoardList.do?lang=${lang}&page=${page-5}" aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+                    <a class="page-link" href="${cpath}/UserLangBoardList.do?lang=${lang}&page=${page-5}" aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Previous</span>
                     </a>
                 </li>
                 <c:forEach var="page" begin="${paging.start}" end="${ paging.end }">
-                	<li class="page-item"><a class="page-link" href="${cpath}/UserBoardList.do?lang=${lang}&page=${page}">${ page }</a></li>
+                	<li class="page-item"><a class="page-link" href="${cpath}/UserLangBoardList.do?lang=${lang}&page=${page}">${ page }</a></li>
                 </c:forEach>
-                <c:if test="${ paging.curpage+5 < paging.totalPagingCount }">
+                <c:if test="${ paging.curpage+2 < paging.totalPagingCount }">
                     <li class="page-item">
-                        <a class="page-link" href="${cpath}/UserBoardList.do?lang=${lang}&page=${page+5}" aria-label="Next"><span
+                        <a class="page-link" href="${cpath}/UserLangBoardList.do?lang=${lang}&page=${paging.curpage+5}" aria-label="Next"><span
                                 aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Next</span>
                         </a>
                     </li>
                 </c:if>
-                <c:if test="${ paging.curpage+5 >= paging.totalPagingCount }">
+                <c:if test="${ paging.curpage+2 >= paging.totalPagingCount }">
                     <li class="page-item">
                         <a class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Next</span>
