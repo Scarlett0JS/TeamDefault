@@ -59,7 +59,7 @@ div.activered {
   height: 90px;
   padding: 40px;
   border-radius: 100%;
-  border: 2px solid rgb(236, 234, 230); /*동그라미 테두리 두께!*/
+  border: 5px solid rgb(236, 234, 230); /*동그라미 테두리 두께!*/
   margin: 10px 10px 10px 10px;
   cursor: pointer;
 }
