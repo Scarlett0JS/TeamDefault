@@ -1485,3 +1485,12 @@ form.search-box .input-form .search-form i {
 .cat-cap-image{
     margin-left: 100px;
 }
+
+.container-footer {
+	width: 100%;
+	padding-top: 0;
+	padding-right: 1px;
+	padding-left: 1px;
+	margin-right: auto;
+	margin-left: auto
+}

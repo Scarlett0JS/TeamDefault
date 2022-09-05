@@ -13,9 +13,11 @@ app = Flask(__name__) # 내장변수 name을 이용해 서버를 구동시키는
 def userRgb(requestCol):
     return sorted([tuple(map(int, i.split(','))) for i in requestCol], key= lambda x:(x[0], x[1], x[2]))
 
-def userImg():
+def userImg(img):
     destPath = r"C:\\eGovFrame-4.0.0\\First_Project\\projectImg\\userImg"
-    return [os.path.join(destPath, i) for i in os.listdir(destPath) if i.split(".")[-1] in ["jpg", "jpeg", "png"]][-1]
+    for i in os.listdir(destPath):
+        if i == img:
+            return os.path.join(destPath, i)
 
 def dbConnection():
     dsn = cx_Oracle.makedsn("project-db-stu.ddns.net", 1524, service_name = "XE")
@@ -49,8 +51,8 @@ def calDistance(requestForm):
     result = sorted(resultLi, key=lambda x:x[1])
     return ":".join([i[0] for i in result[:8]])
 
-def ImgToTheme(lang):
-    imgpath = userImg()
+def ImgToTheme(lang, img):
+    imgpath = userImg(img)
     Img = cv2.imread(imgpath)
     Imgrgb = cv2.cvtColor(Img, cv2.COLOR_BGR2RGB)
     h, w, c = Imgrgb.shape
@@ -98,7 +100,7 @@ def ImgRecommend():
         return "Error"
     else:
         print(request.args)
-        recommendTheme = ImgToTheme(request.args['lang'])
+        recommendTheme = ImgToTheme(request.args['lang'], request.args['userImg'])
         print(recommendTheme)
         return recommendTheme
 
