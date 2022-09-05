@@ -140,7 +140,7 @@ pageContext.setAttribute("newLineChar", "\n");
 				</div>
 			</div>
 			<div class="col-md-2 col-sm-6 center">
-				<div class="pt-3 pb-10">
+				<div class="pt-re pb-10">
 					<select name="plan" id="plan" class="btn-lang">
 						<option value="Python" class="python blue left" selected>Python</option>
 						<option value="Java" class="java red left">Java</option>
