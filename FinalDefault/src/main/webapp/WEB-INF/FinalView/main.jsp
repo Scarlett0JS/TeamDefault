@@ -59,11 +59,8 @@
                                 <div class="hero__caption">
                                     <span data-animation="fadeInLeft" data-delay=".3s">Best
                                         Domain & hosting service provider</span>
-                                    <h1 data-animation="fadeInLeft" data-delay=".6s ">It only
-                                        takes 5 minutes to get your theme</h1>
-                                    <p data-animation="fadeInLeft" data-delay=".8s">Supercharge
-                                        your WordPress hosting with detailed website analytics,
-                                        marketing tools, security, and data backups all in one place.
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s ">Find Fabulous Themes with Just a click</h1>
+                                    <p data-animation="fadeInLeft" data-delay=".8s">Color themes from the Marketplace let you modify the colors in Visual Studio Code's user interface to suit your preferences and work environment.
                                     </p>
                                     <!-- Slider btn -->
                                     <!-- 슬라이더 애니메이션 넣기 -->
