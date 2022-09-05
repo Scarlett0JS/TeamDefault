@@ -123,15 +123,15 @@
 				</div>
 			</form>
 			<!-- social api button -->
-			<div class="kakao_login img">
+			<div class="kakao_login img center">
 				<a id="custom-login-btn" href="javascript:loginWithKakao()"> <img
 					src="./assets/img/my_img/kakao_login_small.png" width="222" />
 				</a>
+			</div>
 				<!-- Forget Password -->
 				<!-- <a href="#" class="forget">Forget Password</a> -->
 				<p class="mem">Not a member?</p>
 				<a href="javascript:Load_RegisterForm()" class="registration">Registration</a>
-			</div>
 		</div>
 	</main>
 	<script src="./assets/js/bootstrap.min.js"></script>
