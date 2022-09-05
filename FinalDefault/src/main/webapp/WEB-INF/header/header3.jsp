@@ -70,9 +70,9 @@
 								<div class="main-menu-my d-none-my d-lg-block-my">
 									<nav>
 										<ul id="navigation-my">
-											<li><a href="javascript:Load_Main()">Home</a></li>
-											<li><a href="javascript:Load_Community()">Community</a></li>
-											<li><a href="javascript:Load_Theme()">Theme</a></li>
+											<li><a class="none-ul" href="javascript:Load_Main()">Home</a></li>
+											<li><a class="none-ul" href="javascript:Load_Community()">Community</a></li>
+											<li><a class="none-ul" href="javascript:Load_Theme()">Theme</a></li>
 											<c:if test="${empty sessionScope.userVo}">
 												<li class="button-header-my margin-left-my "><a
 													href="javascript:Load_RegisterForm()" class="btn-my">Register</a>
