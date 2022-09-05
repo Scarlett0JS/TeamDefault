@@ -33,16 +33,17 @@
 	}
 
 	function Load_MyPage() {
-		location.href = "${cpath}/UserMypageForm.do?user_id="+ "${sessionScope.userVo.user_id}"
+		location.href = "${cpath}/UserMypageForm.do?user_id="
+				+ "${sessionScope.userVo.user_id}"
 	}
 
 	function Load_Community() {
 		location.href = "${cpath}/UserBoardList.do?page=" + "1"
 	}
-	
-    function Load_Theme(){
-    	location.href = "${cpath}/ThemeAllList.do?page=" + "1"
-    }
+
+	function Load_Theme() {
+		location.href = "${cpath}/ThemeAllList.do?page=" + "1"
+	}
 </script>
 </head>
 <div id="preloader-active-my">
@@ -75,11 +76,16 @@
 								<div class="main-menu-my d-none-my d-lg-block-my">
 									<nav>
 										<ul id="navigation-my">
-											<li><a class="none-ul" href="javascript:Load_Community()">All</a></li>
-											<li><a class="none-ul" href="${cpath}/UserLangBoardList.do?lang=Python&page=1">Python</a></li>
-											<li><a class="none-ul" href="${cpath}/UserLangBoardList.do?lang=Java&page=1">Java</a></li>
-											<li><a class="none-ul" href="${cpath}/UserLangBoardList.do?lang=Html&page=1">Html</a></li>
-											<li><a class="none-ul" href="${cpath}/UserLangBoardList.do?lang=JavaScript&page=1">JavaScript</a>
+											<li><a class="none-ul"
+												href="javascript:Load_Community()">All</a></li>
+											<li><a class="none-ul"
+												href="${cpath}/UserLangBoardList.do?lang=Python&page=1">Python</a></li>
+											<li><a class="none-ul"
+												href="${cpath}/UserLangBoardList.do?lang=Java&page=1">Java</a></li>
+											<li><a class="none-ul"
+												href="${cpath}/UserLangBoardList.do?lang=Html&page=1">Html</a></li>
+											<li><a class="none-ul"
+												href="${cpath}/UserLangBoardList.do?lang=JavaScript&page=1">JavaScript</a>
 											</li>
 											<li><a class="none-ul" href="javascript:Load_Theme()">Theme</a></li>
 											<c:if test="${empty sessionScope.userVo}">
@@ -87,7 +93,8 @@
 													href="javascript:Load_RegisterForm()" class="btn-my">Register</a>
 												</li>
 												<li class="button-header-my"><a
-													href="javascript:Load_LoginForm()" class="btn-my">Log In</a></li>
+													href="javascript:Load_LoginForm()" class="btn-my">Log
+														In</a></li>
 											</c:if>
 											<c:if test="${!empty sessionScope.userVo}">
 												<li class="button-header-my margin-left-my "><a

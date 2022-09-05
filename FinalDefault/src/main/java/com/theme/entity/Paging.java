@@ -41,7 +41,7 @@ public class Paging {
 			this.start = 1;
 			this.end = totalPagingCount >= 5 ? 5 : totalPagingCount;
 		}else if(page >= totalPagingCount - 1) {
-			this.start = totalPagingCount-4 < 0 ? 1 : totalPagingCount-4;
+			this.start = totalPagingCount-4 <= 0 ? 1 : totalPagingCount-4;
 			this.end = totalPagingCount;
 		}
 	}

@@ -46,7 +46,7 @@
         <form class="form-default" id="frm-register" action="${cpath}/UserRegister.do" method="POST">
             <div class="login-form">
                 <div class="logo-login">
-                    <a href="javascript:Load_Main()"><img src="./assets/img/logo/exLogo.png" alt=""></a>
+                    <a href="javascript:Load_Main()"><img src="./assets/img/logo/logo1-4_w.png" alt=""></a>
                 </div>
                 <h2>Registration Here</h2>
                 <div class="form-input">
