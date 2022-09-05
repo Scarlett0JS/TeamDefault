@@ -28,11 +28,6 @@
 
 <script type="text/javascript">
         $(document).ready(function () {
-        	if ("${ImgError.ImgError}" == "NullImg") {
-				alert("Input img and Submit!!")
-				location.herf = "${cpath}/index.do"
-			}
-        	
             $("#userinputImg").on('change', function () {
                 var fileName = $("#userinputImg").val()
                 $("#inputlabel").html(fileName);
@@ -273,10 +268,13 @@
 							<div class="col-xl-12">
 								<div class="footer-copy-right text-center">
 									<div class="footer-social mt-50">
-										<a href="https://www.instagram.com/js_scarlett1010"><i class="fab fa-instagram"></i></a>
-										<a><i class="fab fa-slack-hash"></i></a> 
-										<a href="https://github.com/PringlesHair/First_Project"><i class="fab fa-github"></i></a>
-										<a href="https://www.youtube.com/watch?v=YaVduWu2sqU"><i class="fab fa-youtube"></i></a>			
+										<a href="https://www.instagram.com/js_scarlett1010"><i
+											class="fab fa-instagram"></i></a> <a><i
+											class="fab fa-slack-hash"></i></a> <a
+											href="https://github.com/PringlesHair/First_Project"><i
+											class="fab fa-github"></i></a> <a
+											href="https://www.youtube.com/watch?v=YaVduWu2sqU"><i
+											class="fab fa-youtube"></i></a>
 									</div>
 									<p class="mt-50">
 										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

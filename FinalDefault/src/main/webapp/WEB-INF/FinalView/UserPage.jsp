@@ -263,7 +263,7 @@
 												<c:forEach var="theme" items="${themeVo}">
 													<div class="col-md-6 morecontents">
 														<div class="card mb-4 shadow-sm rounded-20">
-															<img class="card-img-top rounded-r" src="./assets/img/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath}" alt="">
+															<img class="card-img-top rounded-r" src="/projectImg/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath}" alt="">
 															<div class="card-body">
 																<p class="card-text"> 
 																	<a class="post-a" href="javascript:Load_ThemeDetail(${theme.theme_seq})"> ${ theme.theme_name } </a></p>

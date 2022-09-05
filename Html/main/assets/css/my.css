@@ -973,7 +973,7 @@ form.search-box .input-form .search-form i {
     margin: 0px auto;
     overflow: hidden;
     background: url('../img/my_img/main_img.png') 0 center / 500px repeat-y;
-    animation: movebg 10s alternate-reverse infinite;
+    animation: movebg 10s alternate infinite;
     opacity: 0.9;
 }
 

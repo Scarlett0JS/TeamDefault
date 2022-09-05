@@ -218,7 +218,6 @@ a.bg-light:focus, a.bg-light:hover, button.bg-light:focus, button.bg-light:hover
 	height: 80px;
 }
 
-/* ???????????????????????????? */
 .icon2 {
 	width: 90px;
 	height: 70px;
@@ -1487,7 +1486,7 @@ form.search-box .input-form .search-form i {
 }
 
 .container-footer {
-	width: 100%;
+	width: 80%;
 	padding-top: 0;
 	padding-right: 1px;
 	padding-left: 1px;

@@ -92,7 +92,7 @@
 				SELECT *
 				FROM D_BOARD
 				WHERE D_CATEGORY = #{lang}
-				ORDER BY D_CNT DESC
+				ORDER BY D_DATE DESC
 				) db
 			<![CDATA[WHERE rownum <= #{inputpage} + 19) db2]]>
 		WHERE db2.rnum >= #{inputpage}
