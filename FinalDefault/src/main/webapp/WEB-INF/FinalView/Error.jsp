@@ -14,6 +14,8 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
+<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+
 <script type="text/javascript">
 	$(window).load(function(){
 		alert("Contact Team Default")

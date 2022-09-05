@@ -1428,3 +1428,57 @@ form.search-box .input-form .search-form i {
 .login-form .registration:hover {
     color: #fff
 }
+
+.colorRecomm{
+	width: 900px;
+	height: 500px;
+}
+
+.cat-cap h3 {
+    color: #a077ff;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    margin-top: 170px;
+    line-height: 1.5
+}
+
+.cat-cap {
+    margin-left: 100px;
+}
+
+.image-h5-1{
+    color: #a077ff;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    margin-top: 130px;
+    line-height: 1.5
+}
+
+.image-p-2{
+	font-style: italic;
+	font-size: small;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    line-height: 1.5
+}
+
+.image-p-3{
+	font-style: italic;
+	font-size: small;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    margin-top: 10px;
+    line-height: 1.5
+}
+
+.cat-cap-image{
+    margin-left: 100px;
+}
