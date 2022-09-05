@@ -105,7 +105,7 @@
 		<div class="login-form">
 			<div class="logo-login">
 				<a href="javascript:Load_Main()"><img
-					src="assets/img/logo/exLogo.png" alt=""></a>
+					src="./assets/img/logo/logo1-4_w.png" alt=""></a>
 			</div>
 			<form class="form-default" id="frm-login"
 				action="${cpath}/UserLogin.do" method="POST">

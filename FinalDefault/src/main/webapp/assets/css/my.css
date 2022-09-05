@@ -1336,8 +1336,6 @@ form.search-box .input-form .search-form i {
 }
 
 .login-form .logo-login img {
-    width: 99px;
-    height: 95px;
     position: absolute;
     top: -57px;
     left: 0;
@@ -1346,6 +1344,11 @@ form.search-box .input-form .search-form i {
     border: 15px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.7);
     border-radius: 50%
+}
+
+.logo img{
+	width: 160px;
+	height: 45px; 
 }
 
 .login-form h2 {

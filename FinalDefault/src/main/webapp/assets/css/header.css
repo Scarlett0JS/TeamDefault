@@ -660,21 +660,14 @@ ul{
     position: relative !important
 }
 
-/* .pere-text-my img{
-    width: 90px;
-    height: 90px;
-} */
-
 .a {
 	text-decoration: none
 }
 
 .logo img{
-	width: 60px;
-	height: 60px;
+	width: 160px;
+	height: 45px; 
 }
-
-
 
 
 
