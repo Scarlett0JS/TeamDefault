@@ -50,17 +50,17 @@
             html += "<span class='about-item-name col-2'>Name :</span>"
             html += "<span class='about-item-detail col-8' id='userNickArea'>" + data.user_nick + "</span>"
             if (data.user_id.indexOf("@") == -1) {
-	            html += "<a id='userNickHref'>Edit</a></li>"				
+	            html += "<a class='about-item-edit' id='userNickHref'>Edit</a></li>"				
 			} else {
-	            html += "<a href='javascript:EditUserNickForm()' id='userNickHref'>Edit</a></li>"
+	            html += "<a href='javascript:EditUserNickForm()' class='about-item-edit' id='userNickHref'>Edit</a></li>"
 			}
             html += "<li class='about-items row'>"
             html += "<span class='about-item-name col-2'>Password :</span>"
             html += "<span class='about-item-detail col-8' id='userPwArea'>" + star + "</span>"
             if (data.user_id.indexOf("@") == -1) {
-	            html += "<a id='userPwHref'>Edit</a></li>"				
+	            html += "<a class='about-item-edit' id='userPwHref'>Edit</a></li>"				
 			} else {
-	            html += "<a href='javascript:EditUserPwForm()' id='userPwHref'>Edit</a></li>"				
+	            html += "<a href='javascript:EditUserPwForm()' class='about-item-edit' id='userPwHref'>Edit</a></li>"				
 			}
             $("#UserDetailArea").html(html)
            	$("#userpost").css("display", "none")
@@ -259,7 +259,7 @@
 								<div id="contents">
 									<div id="morecontents" class="main">
 										<div class="container margin-top-30">
-											<div class="row">
+											<div class="row margin-20">
 												<c:forEach var="theme" items="${themeVo}">
 													<div class="col-md-6 morecontents">
 														<div class="card mb-4 shadow-sm rounded-20">

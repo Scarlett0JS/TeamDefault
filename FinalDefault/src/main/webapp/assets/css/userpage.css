@@ -340,8 +340,8 @@ ul.post-sort {
 }
 
 .row {
-    margin-right: -20px;
-    margin-left: -20px;
+    margin-right: -40px;
+    margin-left: -40px;
 }
 
 .card-body {
@@ -356,4 +356,9 @@ ul.post-sort {
 
 .post-tcolor{
 	color: #76838f;	
+}
+
+.margin-20{
+	margin-right: -20px !important;
+    margin-left: -20px !important;
 }
