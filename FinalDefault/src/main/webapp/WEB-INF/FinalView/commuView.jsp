@@ -77,13 +77,13 @@
                         })
                         html += "<div class='d-flex'>"
                         html += "<div class='flex-shrink-0'>"
-                        html += "<img class='rounded-circle' src='https://dummyimage.com/50x50/ced4da/6c757d.jpg'>"
+                        html += "<img class='rounded-circle' style='width: 50px;' src='./assets/img/my_img/User.png'>"
                         html += "</div>"
                         html += "<div class='ms-3'>"
                         html += "<div clss='fw-bold'>" + obj.user_nick + "</div>"
                         html += obj.cmt_content
                         html += "</div>"
-                        html += "<div style='text-align: right; background-color: transparent;''>"
+                        html += "<div style='text-align: right; width: 100%; background-color: transparent;''>"
                         html += "<button class='btn' onclick='DeleteComment(" + commentData + ")'>Delete</button>"
                         html += "</div>"
                         html += "</div>"
