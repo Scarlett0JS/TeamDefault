@@ -210,6 +210,11 @@ a.about-item-edit {
     border-radius: 30px !important
 }
 
+.rounded-r {
+    border-top-left-radius: 1.25rem !important;
+    border-top-right-radius: 1.25rem !important;
+}
+
 .rounded-top-15{
     border-top-left-radius: 15px 15px;
     border-top-right-radius: 15px 15px;
