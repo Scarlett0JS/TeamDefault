@@ -259,7 +259,7 @@
 								<div id="contents">
 									<div id="morecontents" class="main">
 										<div class="container margin-top-30">
-											<div class="row">
+											<div class="row margin-20">
 												<c:forEach var="theme" items="${themeVo}">
 													<div class="col-md-6 morecontents">
 														<div class="card mb-4 shadow-sm rounded-20">
