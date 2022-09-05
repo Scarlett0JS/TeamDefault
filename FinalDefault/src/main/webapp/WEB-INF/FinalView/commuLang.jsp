@@ -49,20 +49,20 @@
                     <table class="table">
                         <thead>
                             <tr class="community-a">
-                                <th>Writer</th>
-                                <th>Tilte</th>
-                                <th>Date</th>
-                                <th>hits</th>
+                                <th class="col-3">Writer</th>
+                                <th class="col-4">Tilte</th>
+                                <th class="col-3">Date</th>
+                                <th class="col-2">hits</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="board" items="${ boardList }">
                                 <tr class="community-a">
-                                    <td>${ board.user_id }</td>
-                                    <td><a href="${cpath}/UserBoardView.do?num=${board.d_seq}">${ board.d_title }</a>
+                                    <td class="col-3">${ board.user_id }</td>
+                                    <td class="col-4"><a href="${cpath}/UserBoardView.do?num=${board.d_seq}">${ board.d_title }</a>
                                     </td>
-                                    <td>${ fn:split(board.d_date, " ")[0] }</td>
-                                    <td>${ board.d_cnt }</td>
+                                    <td class="col-3">${ fn:split(board.d_date, " ")[0] }</td>
+                                    <td class="col-2">${ board.d_cnt }</td>
                                 </tr>
                             </c:forEach>
                         </tbody>
