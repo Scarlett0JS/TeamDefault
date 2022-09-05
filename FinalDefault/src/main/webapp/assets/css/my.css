@@ -757,7 +757,7 @@ form.search-box .input-form .search-form i {
     border-radius: 1rem; 
 } */
 #back-top {
-	background: rgba(98, 154, 221, 1);
+	background: #a077ff;
 	height: 50px;
 	width: 50px;
 	right: 31px;
@@ -769,7 +769,7 @@ form.search-box .input-form .search-form i {
 	border-radius: 50%;
 	line-height: 48px;
 	border: 2px solid transparent;
-	box-shadow: 0 0 10px 3px rgba(141, 27, 190, 1) 63%;
+	box-shadow: 0 0 10px 3px #fff 63%;
 }
 
 @media ( max-width : 575px) {
