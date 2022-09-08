@@ -36,11 +36,11 @@
             location.href = "${cpath}/UserRegisterForm.do"
         }
 
-        // 2. 카카오 초기화
+        // 카카오 초기화
         Kakao.init('20a7072a5eb081fde8df915647d48ba3');
         console.log(Kakao.isInitialized()); // 초기화 판단여부
 
-        // 3. 데모버전으로 들어가서 카카오로그인 코드를 확인.
+        // 데모버전으로 들어가서 카카오로그인 코드를 확인.
         function loginWithKakao() {
             Kakao.Auth.login({
                 success: function (authObj) {
@@ -55,7 +55,7 @@
             });
         }
 
-        // 4. 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
+        // 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
         function getInfo() {
             let id = "";
             let email = "";
@@ -76,20 +76,6 @@
                 }
             });
         }
-
-        /* function kakaoLogout() {
-            Kakao.API.request({
-                url: '/v1/user/unlink',
-                success: function (res) {
-                    alert('success: ' + JSON.stringify(res))
-                    console.log('success')
-                },
-                fail: function (err) {
-                    alert('fail: ' + JSON.stringify(err))
-                    console.log('fail')
-                },
-            })
-        } */
 
         function kakaoRegister(id, email, nickname) {
             if (!email) {

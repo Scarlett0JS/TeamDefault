@@ -44,7 +44,8 @@ pageContext.setAttribute("newLineChar", "\n");
 			}
 		})
 	}
-
+	
+	// DB에서 데이터를 가져와 색상 팔레트 생성
 	function loadColor(data) {
 		var tag = ""
 		$.each(data, function(idx, obj) {
@@ -65,7 +66,7 @@ pageContext.setAttribute("newLineChar", "\n");
 
 	function colorSet(target) {
 		var beforeColor;
-		if (num == 5) {
+		if (num == 5) { // 색상 5가지만 선택 가능하게 제한
 			$('.service-icon-five').attr("id", "");
 			$('div').removeClass('activered');
 		} else {
@@ -74,13 +75,14 @@ pageContext.setAttribute("newLineChar", "\n");
 			$($('.service-icon-five').get()[num]).attr("id", "");
 			num++;
 			$($('.service-icon-five').get()[num]).attr("id", "tt");
-			document.getElementById(target.id).className += " cdisabled";
+			document.getElementById(target.id).className += " cdisabled"; // 이미 선택한 색상 클릭 금지
 			if (beforeColor != undefined && beforeColor != null) { // 다중선택 안 되게 해주는 조건
 				document.getElementById(beforeColor).className = document
 						.getElementById(beforeColor).className.replace(
 						" activered", "");
 			}
-			//선택한 색상 표시 기능
+			
+			//선택한 색상 테두리 표시 기능
 			document.getElementById(target.id).className += " activered";
 			beforeColor = target.id;
 		}
