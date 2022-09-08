@@ -2,12 +2,14 @@ package com.color.controller;
 
 import java.io.BufferedReader;
 import java.io.File;
+//import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,11 +40,15 @@ public class ImageSelectFromUserController implements Controller {
 		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
 		
 		String lang = multi.getParameter("Language");
-		String filename = multi.getFilesystemName("userinputImg");
+		
+		// FileName Encoding
+		String filename_origin = multi.getFilesystemName("userinputImg");
+		String filename_rename = URLEncoder.encode(filename_origin, "UTF-8");
+		
 //		String originalFileName = multi.getOriginalFileName("userinputImg");
 		
-		if (filename != null) {
-			String domain = "http://127.0.0.1:5000/ImgRecommend?lang=" + lang + "&userImg=" + filename;
+		if (filename_rename != null) {
+			String domain = "http://127.0.0.1:5000/ImgRecommend?lang=" + lang + "&userImg=" + filename_rename;
 
 			try {
 				URL u = new URL(domain);
@@ -86,9 +92,7 @@ public class ImageSelectFromUserController implements Controller {
 			errMap.put("ImgError", "NullImg");
 			request.setAttribute("ImgError", errMap);
 			return "main";
-		}
-		
-		
+		}		
 	}
 
 }

@@ -51,9 +51,18 @@ def calDistance(requestForm):
     result = sorted(resultLi, key=lambda x:x[1])
     return ":".join([i[0] for i in result[:8]])
 
+def imread(filename, flags=cv2.IMREAD_COLOR, dtype=np.uint8):
+    try:
+        n = np.fromfile(filename, dtype)
+        img = cv2.imdecode(n, flags)
+        return img
+    except Exception as e:
+        print(e)
+        return None
+
 def ImgToTheme(lang, img):
     imgpath = userImg(img)
-    Img = cv2.imread(imgpath)
+    Img = imread(imgpath)
     Imgrgb = cv2.cvtColor(Img, cv2.COLOR_BGR2RGB)
     h, w, c = Imgrgb.shape
     
