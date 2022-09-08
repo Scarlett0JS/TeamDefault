@@ -1,5 +1,19 @@
 # Vscode Theme Recommendation Site
 --------------
+## 프로젝트 소개
+* 프로젝트명: 
+* 
+--------------
+## 프로젝트 기간
+* 
+--------------
+## 주요기능
+* 
+--------------
+## E-R Diaram
+![erd]()
+--------------
+
 
 Vscode 테마 추천 서비스 제공 웹사이트 구성
 
@@ -37,7 +51,7 @@ Vscode 테마 추천 서비스 제공 웹사이트 구성
 ### Eclipse Setting
 > - gitignore 설정
 >   - Eclipse -> window -> preference -> team -> ignored resources
->   - add pattern
+>   - add **pattern**
 >       - .project
 >       - .settings/
 >       - target/
