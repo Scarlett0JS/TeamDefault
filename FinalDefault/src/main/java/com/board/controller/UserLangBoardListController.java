@@ -31,8 +31,6 @@ public class UserLangBoardListController implements Controller {
 		
 		List<Board> boardList = dao.LangBoardList(lp);
 		
-		System.out.println(paging.getStart());
-		
 		request.setAttribute("lang", lang);
 		request.setAttribute("paging", paging);
 		request.setAttribute("boardList", boardList);

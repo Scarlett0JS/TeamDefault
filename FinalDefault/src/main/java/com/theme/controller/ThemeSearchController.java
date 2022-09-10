@@ -17,7 +17,7 @@ public class ThemeSearchController implements Controller {
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String keyword = request.getParameter("ThemeSearch");
+		String keyword = request.getParameter("ThemeSearch").toLowerCase();
 
 		if (keyword == null) {
 			return "redirect:/index.do";

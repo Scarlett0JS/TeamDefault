@@ -1,4 +1,3 @@
-from configparser import Interpolation
 from flask import Flask # 플라스크 클래스 임포트
 from flask import request, redirect
 from sklearn.cluster import KMeans
