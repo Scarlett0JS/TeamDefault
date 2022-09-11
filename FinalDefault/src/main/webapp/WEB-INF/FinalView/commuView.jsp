@@ -126,7 +126,6 @@ pageContext.setAttribute("newLineChar", "\n");
 	}
 
 	function DeleteComment(commentData) {
-
 		if ("${!empty sessionScope.userVo }" == "true") {
 			if ("${sessionScope.userVo.user_id}" == commentData.user_ids) {
 				let check = confirm("Are you sure you want to delete it?")
