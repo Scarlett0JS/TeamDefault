@@ -17,7 +17,7 @@
 
 <details>
 
-<summary>색상 기반 테마 추천</summary>
+<summary>⭐색상 기반 테마 추천</summary>
 
 <!-- summary 아래 한칸 공백 두어야함 -->
 <img src=""  alt="여기에 메인 화면 입력"/>
@@ -27,12 +27,13 @@
 - 유저는 메인페이지에서 Color Select 버튼을 통해 색상 선택 화면으로 이동할 수 있음.
 - 색상 선택 페이지에서 5개의 선호 컬러 및 자신의 주 사용 언어를 선택하고 버튼을 클릭하면 해당 색상과 유사한 색상을 가진 테마 8개를 추천 받을 수 있음
 - 추천 받은 페이지에서 테마 이름을 클릭하면 테마 상세보기 페이지로 이동함
+- https://www.notion.so/1acc4fa14ba64faab8cace798c2adc7b#d7f451a54e1c4109941fea1c60223ee2
   
 </details>
 
 <details>
 
-<summary>이미지 기반 테마 추천</summary>
+<summary>⭐이미지 기반 테마 추천</summary>
 
 <!-- summary 아래 한칸 공백 두어야함 -->
 <img src=""  alt="여기에 메인 화면 입력"/>
@@ -42,7 +43,7 @@
 - 유저는 메인페이지에서 Select image 버튼을 통해 로컬에 저장된 자신이 좋아하는 이미지를 선택할 수 있음.
 - 이미지 선택 후 자신의 주 사용 언어를 선택하고 버튼을 클릭하면 이미지 내부에 주요 색상 5종과 유사한 색상을 가진 테마 8개를 추천 받을 수 있음.
 - 추천 받은 페이지에서 테마 이름을 클릭하면 테마 상세보기 페이지로 이동함.
-  
+- https://www.notion.so/1acc4fa14ba64faab8cace798c2adc7b#708cb75f000e4659b4ff3330be8a3e50
 </details>
 
 
