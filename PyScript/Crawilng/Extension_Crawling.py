@@ -1,4 +1,3 @@
-from fileinput import filename
 from selenium import webdriver as wb
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
