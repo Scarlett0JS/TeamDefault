@@ -151,7 +151,6 @@ pageContext.setAttribute("newLineChar", "\n");
 			alert("Please Login")
 			location.href = "${cpath}/UserLoginForm.do"
 		}
-
 	}
 
 	function updatePostLike() {
