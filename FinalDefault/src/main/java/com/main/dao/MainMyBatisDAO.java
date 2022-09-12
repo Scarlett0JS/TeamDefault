@@ -223,6 +223,13 @@ public class MainMyBatisDAO {
 		session.close();
 	}
 	
+	public void BoardCommentDelete(int num) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("BoardCommentDelete", num);
+		session.commit();
+		session.close();
+	}
+	
 	// Extension
 	public List<Extension> allExtension() {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -345,6 +352,7 @@ public class MainMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+
 
 
 }

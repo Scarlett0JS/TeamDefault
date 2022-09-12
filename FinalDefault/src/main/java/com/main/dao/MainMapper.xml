@@ -143,6 +143,10 @@
 	<delete id="CommentDelete" parameterType="com.theme.entity.Comment">
 		DELETE FROM D_COMMENT dc WHERE CMT_SEQ = #{cmt_seq}
 	</delete>
+	
+	<delete id="BoardCommentDelete" parameterType="int">
+		DELETE FROM D_COMMENT dc WHERE P_SEQ = #{num}
+	</delete>
 
 	<!-- Extension -->
 	<select id="allExtension" resultType="com.theme.entity.Extension">

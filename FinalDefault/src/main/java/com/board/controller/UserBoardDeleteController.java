@@ -19,6 +19,7 @@ public class UserBoardDeleteController implements Controller {
 		
 		MainMyBatisDAO dao = new MainMyBatisDAO();
 		dao.Disable();
+		dao.BoardCommentDelete(num);
 		dao.BoardDelete(num);
 		dao.Enable();
 		
