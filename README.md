@@ -277,11 +277,11 @@
 <table>
   <tr>
     <!-- 정충근 -->
-    <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
+    <td align="center"><img src="ReadMeImg/정충근.png" width="100" height="100"/></td>
     <!-- 안지수 -->
-    <td align="center"><img src="ReadMeImg/안지수.png" width="100" height="100" style="border-radius:50%"/></td>
+    <td align="center"><img src="ReadMeImg/안지수.png" width="100" height="100"/></td>
     <!-- 강성훈 -->
-    <td align="center"><img src="ReadMeImg/강성훈.png" width="100" height="100" style="border-radius:50%"/></td>
+    <td align="center"><img src="ReadMeImg/강성훈.png" width="100" height="100"/></td>
     <!-- 양서현 -->
     <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
     <!-- 김은지 -->
@@ -299,17 +299,17 @@
   </tr>
   <tr>
     <!-- 정충근 -->
-    <td align="center"><b>Frontend</b></td>
+    <td align="center"><b>• 기능개발 총괄</b></td>
     <!-- 안지수 -->
-    <td align="center"><b>Frontend</b></td>
+    <td align="center"><b>• 화면개발 총괄</b></td>
     <!-- 강성훈 -->
-    <td align="center"><b>Backend</b></td>
+    <td align="center"><b>• DB설계 및 관리</b></td>
     <!-- 양서현 -->
-    <td align="center"><b>Backend</b></td>
+    <td align="center"><b>• 화면개발 서브 <br> • 기능개발 서브</b></td>
     <!-- 김은지 -->
-    <td align="center"><b>Deep Learning</b></td>
+    <td align="center"><b>• 화면개발 서브 <br> • 기능개발 서브</b></td>
     <!-- 김화영 -->
-    <td align="center"><b>Deep Learning</b></td>
+    <td align="center"><b>• 화면개발 서브 <br> • 기능개발 서브</b></td>
   </tr>
   <tr>
     <!-- 정충근 -->
