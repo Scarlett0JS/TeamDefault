@@ -283,7 +283,7 @@
     <!-- 강성훈 -->
     <td align="center"><img src="ReadMeImg/강성훈.png" width="100" height="100"/></td>
     <!-- 양서현 -->
-    <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
+    <td align="center"><img src="ReadMeImg/양서현.png" width="100" height="100"/></td>
     <!-- 김은지 -->
     <td align="center"><img src="ReadMeImg/김은지.png" width="100" height="100"/></td>
     <!-- 김화영 -->
