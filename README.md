@@ -263,7 +263,7 @@
 <br>
 
 ## 📌 서비스 흐름도
-![서비스 흐름도]()
+<img src="ReadMeImg/서비스흐름도.png">
 <br>
 
 ## 📌 E-R Diagram
