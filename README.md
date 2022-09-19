@@ -236,7 +236,7 @@
         <td>
             <img src="https://img.shields.io/badge/Anaconda-44A833?style=for-the-badge&logo=Anaconda&logoColor=white" style="border-radius:15px"/>        
             <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=Selenium&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" style="border-radius:15px"/>
+            <img src="https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" wstyle="border-radius:15px"/>
             <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=NumPy&logoColor=white" style="border-radius:15px"/>
             <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" style="border-radius:15px"/>
             <img src="https://img.shields.io/badge/Scikit learn-F7931E?style=for-the-badge&logo=Scikit-learn&logoColor=white" style="border-radius:15px"/>
