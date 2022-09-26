@@ -108,10 +108,13 @@ class exApp:
         self.toJson(NewJsonPath, Json_data)
     
     # Extension Crawling
-    def CrawlExtension(self, JsonPath, FolderPath, destUrl):
+    def CrawlExtension(self, JsonPath, destUrl):
         url = destUrl
         destJson = {}
-        self.browser = wb.Chrome('chromedriver.exe', options=self.options)
+        
+        service = Service(ChromeDriverManager(path="Driver").install())
+        self.browser = wb.Chrome(service=service, options=self.options)
+        
         self.browser.implicitly_wait(5)
         self.browser.get(url)
         time.sleep(3)
@@ -153,7 +156,7 @@ class exApp:
 if __name__ == "__main__":
     crawlApp = exApp()
     
-    crawlApp.CrawlInstallCnt("../macro/reFinal_ThemeInfoImg.json")
+    # crawlApp.CrawlInstallCnt("../macro/reFinal_ThemeInfoImg.json")
     
     # needsLi = ["all", "otheres"]
     # folderLi = []
@@ -163,11 +166,11 @@ if __name__ == "__main__":
     #         os.mkdir(folderPath)
     #     folderLi.append(folderPath)
     
-    # urlLi = ["https://marketplace.visualstudio.com/search?target=VSCode&category=All%20categories&sortBy=Installs",
-    #          "https://marketplace.visualstudio.com/search?target=VSCode&category=Other&sortBy=Installs"]
+    urlLi = ["https://marketplace.visualstudio.com/search?target=VSCode&category=All%20categories&sortBy=Installs",
+             "https://marketplace.visualstudio.com/search?target=VSCode&category=Other&sortBy=Installs"]
     
-    # jsonNameLi = ["allExtension.json", "otherExtension.json"]
+    jsonNameLi = ["allExtension.json", "otherExtension.json"]
     
-    # for url, folder, jsonName in zip(urlLi, folderLi, jsonNameLi):
-    #     crawlApp.CrawlExtension(jsonName, folder, url)
+    for url, jsonName in zip(urlLi, jsonNameLi):
+        crawlApp.CrawlExtension(jsonName, url)
     

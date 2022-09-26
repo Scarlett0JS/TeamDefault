@@ -3,7 +3,7 @@ import os
 import json
 import cx_Oracle
 import pandas as pd
-
+from urllib import parse
 from pprint import pprint
 
 def dbConnection():
@@ -77,7 +77,7 @@ def InsertTheme(jsonPath):
         insertLi.append(tuple([idx,
                                data['name'], # themename
                                data['imgpath'].split(".")[0].split("_")[2], # themelang
-                               data['imgpath'].split(".")[0].split("_")[3], # themefont
+                               parse.unquote(data['imgpath'].split(".")[0].split("_")[3]), # themefont
                                *data['rgbVal'], # themergb
                                data['info'], # themeproducer
                                data['imgpath'], # themeimgpath
