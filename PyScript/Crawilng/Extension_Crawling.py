@@ -2,7 +2,10 @@ from selenium import webdriver as wb
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from urllib.request import urlretrieve
+from tqdm import tqdm
 import time
 import json
 import os
@@ -14,14 +17,15 @@ class exApp:
         self.options.add_argument("--disable-blink-features=AutomationControlled")
         self.options.add_experimental_option("excludeSwitches", ["enable-automation"])
         self.options.add_experimental_option('useAutomationExtension', False)
-        self.browser = wb.Chrome('chromedriver.exe', options=self.options)
-        self.browser.implicitly_wait(5)
         self.dest_dict = {}
-        self.InstallCntLi = []
+        self.InstallCnt = {}
+        self.ThemeIcon = {}
         self.idx = 1
     
     # Nope
     def startApp(self, extentionLi, dest_folder):
+        self.browser = wb.Chrome('chromedriver.exe', options=self.options)
+        self.browser.implicitly_wait(5)
         url = "https://marketplace.visualstudio.com/search?target=VSCode&category=All%20categories&sortBy=Installs"
         self.browser.get(url)
         time.sleep(3)
@@ -54,36 +58,61 @@ class exApp:
             time.sleep(3)
         
         self.toJson("popluar_Extention.json", self.dest_dict)
+        
+    def findInstallCnt(self, idx):
+        installElement = f'//*[@id="section-banner"]/div/table/tbody/tr/td[2]/div/div[1]/div[{idx}]/span'
+        if idx == 5:
+            InstallCnt = 0
+            IconUrl = "https://azemoh.gallerycdn.vsassets.io/extensions/azemoh/one-monokai/0.5.0/1602835241556/Microsoft.VisualStudio.Services.Icons.Default"
+            return InstallCnt, IconUrl
+        else:    
+            try:
+                InstallCnt = int(self.browser.find_element(By.XPATH, installElement).text.strip().split(" ")[0].replace(",", ""))
+                IconUrl = self.browser.find_element(By.XPATH, '//*[@id="vss_2"]/img').get_attribute("src")
+                return InstallCnt, IconUrl
+            except:
+                return self.findInstallCnt(idx+1)
     
     # Theme Install Conunt Crawilng
-    def CrawlInstallCnt(self, TextPath, JsonPath):
-        with open(TextPath, 'r', encoding="utf-8") as f:
-            data = ["https://marketplace.visualstudio.com/items?itemName=" + i.strip().split(":")[1] for i in f.readlines()]
+    def CrawlInstallCnt(self, JsonPath):
+        with open(JsonPath, 'r', encoding="utf-8") as f:
+            jsonData = json.load(f)            
         
-        for url in data:
+        urlData = set([i['url'] for i in jsonData])
+        
+        for url in tqdm(urlData):
+            
+            service = Service(ChromeDriverManager(path="Driver").install())
+            self.browser = wb.Chrome(service=service, options=self.options)
+            
+            self.browser.implicitly_wait(5)
             self.browser.get(url)
             time.sleep(2)
-            
-            try:
-                InstallCnt = self.browser.find_element(By.XPATH, '//*[@id="section-banner"]/div/table/tbody/tr/td[2]/div/div[1]/div[2]/span').text.strip()
-                self.InstallCntLi.append(InstallCnt)
-            except:
-                self.InstallCntLi.append("")
+                      
+            InstallCnt, IconUrl = self.findInstallCnt(1)
+            self.InstallCnt[url] = InstallCnt
+            self.ThemeIcon[url] = IconUrl
             
             self.browser.close()
             time.sleep(1)
         
         Json_data = self.openJson(JsonPath)
         
-        for idx, val in enumerate(Json_data):
-            val["InstallCnt"] = self.InstallCntLi[idx]
+        for data in Json_data:
+            data["InstallCnt"] = self.InstallCnt[data['url']]
+            data["Iconurl"] = self.ThemeIcon[data['url']]
         
-        self.toJson(JsonPath, Json_data)
+        destJsonPath = os.path.split(JsonPath)
+        NewJsonPath = os.path.join(destJsonPath[0], destJsonPath[1].split(".")[0] + "Crawl" + ".json")
+        
+        self.toJson(NewJsonPath, Json_data)
     
     # Extension Crawling
     def CrawlExtension(self, JsonPath, FolderPath, destUrl):
         url = destUrl
         destJson = {}
+        self.browser = wb.Chrome('chromedriver.exe', options=self.options)
+        self.browser.implicitly_wait(5)
         self.browser.get(url)
         time.sleep(3)
         
@@ -116,7 +145,7 @@ class exApp:
             f.close()
     
     def openJson(self, JsonPath):
-        with open(JsonPath, 'w', encoding="utf-8") as f:
+        with open(JsonPath, 'r', encoding="utf-8") as f:
             Json_data = json.load(f)
             f.close()
         return Json_data
@@ -124,22 +153,21 @@ class exApp:
 if __name__ == "__main__":
     crawlApp = exApp()
     
-    # crawlApp.CrawlInstallCnt("./macro/test.txt" "./macro/Final.json")
+    crawlApp.CrawlInstallCnt("../macro/reFinal_ThemeInfoImg.json")
     
-    needsLi = ["all", "otheres"]
-    folderLi = []
-    for folder in needsLi:
-        folderPath = os.path.join(os.getcwd(), folder)
-        if not os.path.exists(folderPath):
-            os.mkdir(folderPath)
-        folderLi.append(folderPath)
+    # needsLi = ["all", "otheres"]
+    # folderLi = []
+    # for folder in needsLi:
+    #     folderPath = os.path.join(os.getcwd(), folder)
+    #     if not os.path.exists(folderPath):
+    #         os.mkdir(folderPath)
+    #     folderLi.append(folderPath)
     
-    urlLi = ["https://marketplace.visualstudio.com/search?target=VSCode&category=All%20categories&sortBy=Installs",
-             "https://marketplace.visualstudio.com/search?target=VSCode&category=Other&sortBy=Installs"]
+    # urlLi = ["https://marketplace.visualstudio.com/search?target=VSCode&category=All%20categories&sortBy=Installs",
+    #          "https://marketplace.visualstudio.com/search?target=VSCode&category=Other&sortBy=Installs"]
     
-    jsonNameLi = ["allExtension.json", "otherExtension.json"]
+    # jsonNameLi = ["allExtension.json", "otherExtension.json"]
     
-    for url, folder, jsonName in zip(urlLi, folderLi, jsonNameLi):
-        crawlApp.CrawlExtension(jsonName, folder, url)
+    # for url, folder, jsonName in zip(urlLi, folderLi, jsonNameLi):
+    #     crawlApp.CrawlExtension(jsonName, folder, url)
     
-        
