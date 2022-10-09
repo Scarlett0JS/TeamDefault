@@ -1493,3 +1493,17 @@ form.search-box .input-form .search-form i {
 	margin-right: auto;
 	margin-left: auto
 }
+
+.cmt-c{
+	text-align: right;
+	width: 20%;
+	background-color: transparent;
+}
+
+.cmt-img{
+	width: 50px;
+}
+
+
+
+

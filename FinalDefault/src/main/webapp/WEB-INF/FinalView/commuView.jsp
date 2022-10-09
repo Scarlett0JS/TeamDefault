@@ -77,13 +77,13 @@
                     })
                     html += "<div class='d-flex'>"
                     html += "<div class='flex-shrink-0'>"
-                    html += "<img class='rounded-circle' style='width: 50px;' src='./assets/img/my_img/User.png'>"
+                    html += "<img class='rounded-circle cmt-img' src='./assets/img/my_img/User.png'>"
                     html += "</div>"
                     html += "<div class='ms-3'>"
                     html += "<div clss='fw-bold'>" + obj.user_nick + "</div>"
                     html += obj.cmt_content
                     html += "</div>"
-                    html += "<div style='text-align: right; width: 80%; background-color: transparent;'>"
+                    html += "<div class='cmt-c'>"
                     html += "<button class='btn' onclick='DeleteComment(" + commentData + ")'>Delete</button>"
                     html += "</div>"
                     html += "</div>"
@@ -151,7 +151,7 @@
                 url: "${cpath}/UserBoardLikeUpdate.do",
                 type: "post",
                 data: {
-                    "board_num": board_num
+                    "board_num": board_num 
                 },
                 success: function () {
                     let text = $("#heartcount").html()
@@ -213,7 +213,7 @@
                                 <button class='btn'
                                     onclick="javascript:InsertComment('${vo.d_seq}', '${sessionScope.userVo.user_id}')">comment</button>
                             </div>
-                            <div id="commentCard"></div>
+                            <div id="commentCard"></div>  
                         </div>
                     </div>
                 </section>

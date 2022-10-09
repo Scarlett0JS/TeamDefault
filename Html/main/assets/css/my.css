@@ -986,3 +986,7 @@ form.search-box .input-form .search-form i {
     float: right;
     margin-left: 10px;
 }
+
+.nick-left{
+    text-align: left;
+}
