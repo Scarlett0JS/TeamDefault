@@ -41,7 +41,7 @@
                     <c:forEach var="theme" items="${themeVo}" varStatus="cnt">
                         <div class="col">
                             <div class="card-li mb-4 shadow-sm">
-                                <img class="card-li-img-top rounded" src="/projectImg/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath }" alt="">
+                                <img class="card-li-img-top rounded" src="/projectImg/reFinal_ThemeImg/ThemeImg_Concat_F/${theme.theme_filepath }" alt="">
                                 <div class="card-li-body">
                                     <p class="themeName-li"><a href="javascript:Load_ThemeDetail(${ theme.theme_seq })">${theme.theme_name}</a></p>
                                     <p id="theme-by-li">${theme.theme_producer}

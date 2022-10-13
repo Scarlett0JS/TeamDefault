@@ -1,11 +1,13 @@
 from sklearn.cluster import KMeans
 from PIL import Image
 from tqdm import tqdm
+from urllib import parse
+from copy import deepcopy
 import matplotlib.pyplot as plt
 import numpy as np
-import itertools
 import cv2
 import shutil
+import string
 import json
 import os
 
@@ -100,25 +102,60 @@ def imgConcat(concatFolder, cropFolder, extractFolder):
         cv2.imwrite(os.path.join(concatFolder, crop), addv)
     
     print("imgConcat done")
+    
+def final_process(jsonPath, imgPath):
+    with open(jsonPath, 'r', encoding='utf-8') as f:
+        JsonData = json.load(f)
+    
+    for theme in tqdm(JsonData):
+        newName = createName(theme['imgpath'])
+        checkedName = checkFile(newName, 1, imgPath)
+        
+        os.rename(os.path.join(imgPath, theme['imgpath']), os.path.join(imgPath, checkedName))
+        theme['imgpath'] = checkedName
+    
+    tmpPath = os.path.split(jsonPath)
+    last_jsonName = os.path.splitext(tmpPath[-1])[0] + "_F.json"
+    
+    with open(os.path.join(tmpPath[0], last_jsonName), 'w', encoding='utf-8') as f2:
+        json.dump(JsonData, f2, ensure_ascii=False)
+    
+
+def createName(names_origin):
+    names = deepcopy(names_origin)    
+    filenames = os.path.splitext(names)[0].split("_")
+    
+    themeName = parse.unquote(filenames[0]).translate(str.maketrans('', '', string.punctuation))
+    producer = parse.unquote(filenames[1]).translate(str.maketrans('', '', string.punctuation))
+
+    return "_".join([themeName, producer, filenames[2], parse.unquote(filenames[3])]) + ".png"
+
+def checkFile(filename, p, imgPath):
+    if filename not in os.listdir(imgPath):
+        return filename
+    else:
+        newName = os.path.splitext(filename)[0] + str(p) + '.png'
+        return checkFile(newName, p+1, imgPath)
 
 if __name__ == "__main__":
     pyscriptPath = r"C:\Users\aischool\Desktop\First_Project-main\PyScript"
     
     # # 최종 저장될 이미지 폴더
-    dest_path = os.path.join(pyscriptPath, 'reFinal_ThemeImg')
-    if not os.path.exists(dest_path):
-        os.mkdir(dest_path)
+    # dest_path = os.path.join(pyscriptPath, 'reFinal_ThemeImg')
+    # if not os.path.exists(dest_path):
+    #     os.mkdir(dest_path)
     
     # # 이미지 폴더 내부 (origin, crop, prepro, extract, concat)
-    folderLi = makeNeedFolder(dest_path)
-    for folder in folderLi:
-        shutilImg(pyscriptPath, folder, os.path.join(pyscriptPath, 'macro', 'reFinal_ThemeInfoImgCrawl.json'))
-    # shutil.rmtree(os.path.join(os.getcwd(), 'macro', 'ThemeImg')) # macro 돌린 파일은 삭제
+    # folderLi = makeNeedFolder(dest_path)
+    # for folder in folderLi:
+    #     shutilImg(pyscriptPath, folder, os.path.join(pyscriptPath, 'macro', 'reFinal_ThemeInfoImgCrawl.json'))
+    # # shutil.rmtree(os.path.join(os.getcwd(), 'macro', 'ThemeImg')) # macro 돌린 파일은 삭제
     
     # # 테마 이미지에서 컬러 추출하기
-    extractThemeColor(os.path.join(pyscriptPath, 'macro', 'reFinal_ThemeInfoImgCrawl.json'), folderLi[2], folderLi[3]) 
+    # extractThemeColor(os.path.join(pyscriptPath, 'macro', 'reFinal_ThemeInfoImgCrawl.json'), folderLi[2], folderLi[3]) 
     
     # # 테마 크롭 이미지와 추출한 컬러 합치기
-    imgConcat(folderLi[-1], folderLi[1], folderLi[3])
+    # imgConcat(folderLi[-1], folderLi[1], folderLi[3])
     
+    final_process(os.path.join(pyscriptPath, 'macro', 'reFinal_ThemeInfoImgCrawlextract.json'), os.path.join(pyscriptPath, 'reFinal_ThemeImg', 'ThemeImg_Concat'))
     

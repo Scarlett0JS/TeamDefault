@@ -73,17 +73,18 @@ def InsertTheme(jsonPath):
     sql = "Insert into D_THEME (THEME_SEQ, THEME_NAME, THEME_LANG, THEME_FONT, THEME_COL1, THEME_COL2, THEME_COL3, THEME_COL4, THEME_COL5, THEME_PRODUCER, THEME_FILEPATH, THEME_URL, THEME_ICON, THEME_INSTALLCNT) values(:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14)"
     
     insertLi = []
+    
     for idx, data in enumerate(jsonData):
-        insertLi.append(tuple([idx,
-                               data['name'], # themename
-                               data['imgpath'].split(".")[0].split("_")[2], # themelang
-                               parse.unquote(data['imgpath'].split(".")[0].split("_")[3]), # themefont
+        insertLi.append(tuple([idx, # THEME_SEQ
+                               data['name'], # THEME_NAME
+                               os.path.splitext(data['imgpath'])[0].split("_")[2], # THEME_LANG
+                               os.path.splitext(data['imgpath'])[0].split("_")[3], # THEME_FONT
                                *data['rgbVal'], # themergb
-                               data['info'], # themeproducer
-                               data['imgpath'], # themeimgpath
-                               data['url'], # themeurl
-                               data['Iconurl'], # themeicon
-                               data['InstallCnt'] # themeinstallcount
+                               data['info'], # THEME_PRODUCER
+                               data['imgpath'], # THEME_FILEPATH
+                               data['url'], # THEME_URL
+                               data['Iconurl'], # THEME_ICON
+                               data['InstallCnt'] # THEME_INSTALLCNT
                                ]))
     
     cur, conn = dbConnection()
@@ -113,7 +114,8 @@ def reInsertColorMap(jsonPath):
     print("Insert Complete")
     
 if __name__ == "__main__":
-    allExtension(os.path.join(r"C:\eGovFrame-4.0.0\First_Project\PyScript\Crawilng", "allExtension.json"))
-    otherExtension(os.path.join(r"C:\eGovFrame-4.0.0\First_Project\PyScript\Crawilng", "otherExtension.json"))
-    reInsertColorMap(os.path.join(r'C:\eGovFrame-4.0.0\First_Project\PyScript\Colormap', 'reColor_dimension.json'))
+    # allExtension(os.path.join(r"C:\eGovFrame-4.0.0\First_Project\PyScript\Crawilng", "allExtension.json"))
+    # otherExtension(os.path.join(r"C:\eGovFrame-4.0.0\First_Project\PyScript\Crawilng", "otherExtension.json"))
+    # reInsertColorMap(os.path.join(r'C:\eGovFrame-4.0.0\First_Project\PyScript\Colormap', 'reColor_dimension.json'))
+    InsertTheme(os.path.join(r'C:\eGovFrame-4.0.0\First_Project\PyScript', 'reFinal_ThemeInfoImgCrawlextract_F.json'))
     print("Done")

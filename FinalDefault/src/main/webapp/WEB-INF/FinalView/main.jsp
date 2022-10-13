@@ -183,12 +183,11 @@
 									<div class="col-md-4">
 										<div class="card mb-4 shadow-sm">
 											<img class="card-img-top rounded"
-												src="/projectImg/reFinal_ThemeImg/ThemeImg_Concat/${theme.theme_filepath }"
-												alt="">
+												src="/projectImg/reFinal_ThemeImg/ThemeImg_Concat_F/${theme.theme_filepath}"
+												alt="fuck">
 											<div class="card-body">
 												<p class="card-text">
-													<a href="javascript:Load_ThemeDetail(${theme.theme_seq })">
-														${ theme.theme_name } </a>
+													<a href="javascript:Load_ThemeDetail(${theme.theme_seq })">${ theme.theme_name } </a>
 												</p>
 												<div
 													class="d-flex justify-content-between align-items-center">
