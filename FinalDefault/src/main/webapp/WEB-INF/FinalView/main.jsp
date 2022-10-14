@@ -272,7 +272,7 @@
 											class="fab fa-slack-hash"></i></a> <a
 											href="https://github.com/PringlesHair/First_Project"><i
 											class="fab fa-github"></i></a> <a
-											href="https://www.youtube.com/watch?v=YaVduWu2sqU"><i
+											href="https://www.youtube.com/watch?v=RN_3gnuGoNQ"><i
 											class="fab fa-youtube"></i></a>
 									</div>
 									<p class="mt-50">
