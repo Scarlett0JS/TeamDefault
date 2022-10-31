@@ -54,7 +54,7 @@
 	        let destPath = "/projectImg/reFinal_ThemeImg/ThemeImg_Concat_F/"
             let imgtag = document.getElementById("ThemeImg")
             let temp = imgtag.src.split("/")
-            let imgLi = temp[temp.length - 1].split("%20").join(" ").split(".")[0].split("_")
+            let imgLi = temp[temp.length - 1].split(".")[0].split("_")
             imgtag.src = destPath + [imgLi[0], imgLi[1], lang, imgLi[3]].join("_") + ".png"
         }
 

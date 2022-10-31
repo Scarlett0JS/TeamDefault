@@ -134,7 +134,7 @@ def checkFile(filename, p, imgPath):
     if filename not in os.listdir(imgPath):
         return filename
     else:
-        newName = os.path.splitext(filename)[0] + str(p) + '.png'
+        newName = os.path.splitext(filename)[0] + "_" + str(p) + '.png'
         return checkFile(newName, p+1, imgPath)
 
 if __name__ == "__main__":
