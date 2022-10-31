@@ -19,7 +19,7 @@
 <script type="text/javascript">
 	$(window).load(function(){
 		alert("Contact Team Default")
-		location.href = "https://www.youtube.com/watch?v=zDbduLgm7EI"
+		location.href = "https://youtu.be/RN_3gnuGoNQ"
 	})
 </script>
 

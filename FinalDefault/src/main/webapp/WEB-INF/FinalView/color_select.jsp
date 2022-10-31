@@ -159,7 +159,7 @@ pageContext.setAttribute("newLineChar", "\n");
 		<div class="pt-3rem pb-10 center">
 			<button type="button" class="btn-color-s"
 				onclick="javascript:colorsubmit()">
-				COLOR SELECTION
+				Recommend
 			</button>
 		</div>
 	</div>
