@@ -96,7 +96,6 @@
 												<li class="button-header"><a href="javascript:LogOut()"
 													class="btn">Log Out</a></li>
 											</c:if>
-
 										</ul>
 									</nav>
 								</div>
