@@ -1,21 +1,23 @@
+
+## 프로젝트 목적
+- React vite / TS + Node.js 활용
+- 작년 진행했던 프로젝트 프론트단 리펙토링
+
+<br>
+
 # 🥕 팀명 : Default
 <a href="https://www.notion.so/Default-3e84e0b0b9a04020aa7122b01318cb5b"><img src="ReadMeImg/메인.gif" alt="main.gif" width="540" height="300" style="border-radius:15px"/></a>
 
-[Please visit our Notion page](https://www.notion.so/Default-3e84e0b0b9a04020aa7122b01318cb5b)
 
-
-## 👀 서비스 소개
-* 서비스명:
-  *  Vscode 테마 추천 서비스
-* 서비스설명:
-  *  사용자가 선호하는 컬러와 이미지를 입력 받아 해당 컬러 및 이미지 내부 컬러와 유사한 컬러를 가지는 Vscode 테마 추천 서비스 
 <br>
 
 ## 📅 프로젝트 기간
-- 2022.08.16 ~ 2022.09.07 (3주)
+- 23.10.16 ~ 진행중
+
+
 <br>
 
-## ⭐ 주요 기능
+## ⭐ 주요 기능 (수정 예정)
 
 ### [🎥 시연 영상](https://youtu.be/RN_3gnuGoNQ)
 
@@ -184,145 +186,42 @@
     <tr>
         <td>사용언어</td>
         <td>
-            <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white" style="border-radius:15px">
-            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" style="border-radius:15px"/>
         </td>
     </tr>
         <tr>
         <td>프론트앤드</td>
         <td>
-            <img src="https://img.shields.io/badge/BootStrap-7952B3?style=for-the-badge&logo=BootStrap&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" style="border-radius:15px"/>
         </td>
     </tr>
     <tr>
         <td>백앤드</td>
         <td>
-            <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white" style="border-radius:15px"/> 
-            <img src="https://img.shields.io/badge/Jsp-007396?style=for-the-badge&logo=java&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/Ajax-007396?style=for-the-badge&logo=java&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/jstl-007396?style=for-the-badge&logo=java&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/MyBatis-007396?style=for-the-badge&logo=java&logoColor=white" style="border-radius:15px"/>
         </td>
     </tr>
     <tr>
         <td>서버환경</td>
         <td>
-            <img src="https://img.shields.io/badge/Apache Tomcat-D22128?style=for-the-badge&logo=Apache Tomcat&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white" style="border-radius:15px"/>
         </td>
     </tr>
     <tr>
         <td>개발도구</td>
         <td>
-            <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=VisualStudioCode&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/dbeaver-003B57?style=for-the-badge&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/sql developer-003B57?style=for-the-badge&logoColor=white" style="border-radius:15px"/>
         </td>
     </tr>
     <tr>
         <td>데이터베이스</td>
         <td>
-            <img src="https://img.shields.io/badge/Oracle 11g-F80000?style=for-the-badge&logo=Oracle&logoColor=white" style="border-radius:15px"/>
         </td>
     </tr>
     <tr>
         <td>라이브러리</td>
         <td>
-            <img src="https://img.shields.io/badge/Anaconda-44A833?style=for-the-badge&logo=Anaconda&logoColor=white" style="border-radius:15px"/>        
-            <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=Selenium&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" wstyle="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=NumPy&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/Scikit learn-F7931E?style=for-the-badge&logo=Scikit-learn&logoColor=white" style="border-radius:15px"/>
         </td>
     </tr>
     <tr>
         <td>협업도구</td>
         <td>
-            <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" style="border-radius:15px"/>
         </td>
     </tr>
     
-</table>
-
-
-<br>
-
-## 📌 시스템 아키텍처(구조) 예시 
-<img src="ReadMeImg/systemA.png" alt="E-R Diagram" style="border-radius:15px"/>
-<br>
-
-## 📌 서비스 흐름도
-<img src="ReadMeImg/서비스흐름도.png">
-<br>
-
-## 📌 E-R Diagram
-<img src="ReadMeImg/default_erd.png" alt="E-R Diagram" style="border-radius:15px"/>
-<br>
-
-<!-- ## 🖥 화면 구성 -->
-<!-- 시연영상 잘라서  -->
-
-## 👨‍👩‍👦‍👦 팀원 역할
-<table>
-  <tr>
-    <!-- 정충근 -->
-    <td align="center"><img src="ReadMeImg/정충근.png" width="100" height="100"/></td>
-    <!-- 안지수 -->
-    <td align="center"><img src="ReadMeImg/안지수.png" width="100" height="100"/></td>
-    <!-- 강성훈 -->
-    <td align="center"><img src="ReadMeImg/강성훈.png" width="100" height="100"/></td>
-    <!-- 양서현 -->
-    <td align="center"><img src="ReadMeImg/양서현.png" width="100" height="100"/></td>
-    <!-- 김은지 -->
-    <td align="center"><img src="ReadMeImg/김은지.png" width="100" height="100"/></td>
-    <!-- 김화영 -->
-    <td align="center"><img src="ReadMeImg/김화영.png" width="100" height="100"/></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>정충근</strong></td>
-    <td align="center"><strong>안지수</strong></td>
-    <td align="center"><strong>강성훈</strong></td>
-    <td align="center"><strong>양서현</strong></td>
-    <td align="center"><strong>김은지</strong></td>
-    <td align="center"><strong>김화영</strong></td>
-  </tr>
-  <tr>
-    <!-- 정충근 -->
-    <td align="center"><b>• 기능개발 총괄</b></td>
-    <!-- 안지수 -->
-    <td align="center"><b>• 화면개발 총괄</b></td>
-    <!-- 강성훈 -->
-    <td align="center"><b>• DB설계 및 관리</b></td>
-    <!-- 양서현 -->
-    <td align="center"><b>• 화면개발 서브 <br> • 기능개발 서브</b></td>
-    <!-- 김은지 -->
-    <td align="center"><b>• 화면개발 서브 <br> • 기능개발 서브</b></td>
-    <!-- 김화영 -->
-    <td align="center"><b>• 화면개발 서브 <br> • 기능개발 서브</b></td>
-  </tr>
-  <tr>
-    <!-- 정충근 -->
-    <td align="center"><a href="https://github.com/PringlesHair" target='_blank'>github</a></td>
-    <!-- 안지수 -->
-    <td align="center"><a href="https://github.com/Scarlett0JS" target='_blank'>github</a></td>
-    <!-- 강성훈 -->
-    <td align="center"><a href="https://github.com/tmxjvm5" target='_blank'>github</a></td>
-    <!-- 양서현 -->
-    <td align="center"><a href="https://github.com/pyth1007" target='_blank'>github</a></td>
-    <!-- 김은지 -->
-    <td align="center"><a href="https://github.com/eunji78" target='_blank'>github</a></td>
-    <!-- 김화영 -->
-    <td align="center"><a href="https://github.com/dotoritoring" target='_blank'>github</a></td>
-  </tr>
 </table>
