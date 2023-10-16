@@ -3,8 +3,10 @@
 - React vite / TS + Node.js 활용
 - 작년 진행했던 프로젝트 프론트단 리펙토링
 
-- Branch 구조
- <br>
+<br>
+
+<b>Branch 구조</b>
+<br>
   main = 메인
  <br>
   fe-dev = 클라이언트
