@@ -1,12 +1,15 @@
 // import { useState } from 'react'
+import Button from "./components/Buttons/Button";
 
 function App() {
-
   return (
     <>
-     <h1>Initial settings</h1>
+      <Button
+        label={"Login"}
+        size={"large"}
+      ></Button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
