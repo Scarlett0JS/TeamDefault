@@ -1,10 +1,20 @@
 import styled, { css } from "styled-components";
 
 interface ButtonProps {
-  label: string;
   onClick?: () => void;
   size: "small" | "medium" | "large";
+  label: string;
 }
+
+const Button: React.FC<ButtonProps> = ({ label, onClick, size }) => {
+  return (
+    <StyledButton size={size} onClick={onClick} label={label}>
+      {label}
+    </StyledButton>
+  );
+};
+
+export default Button;
 
 const StyledButton = styled.button<ButtonProps>`
   /* 공통 스타일 */
@@ -26,8 +36,8 @@ const StyledButton = styled.button<ButtonProps>`
         rgba(255, 159, 238, 1) 0%,
         rgba(208, 149, 236, 1) 81%
       );
-      color: "white";
-      border: transparent;
+      color: white;
+      border-color: transparent;
 
       &:hover {
         background-color: var(--color-gray-01);
@@ -53,8 +63,8 @@ const StyledButton = styled.button<ButtonProps>`
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
     `}
-
-  ${(props) =>
+  
+    ${(props) =>
     props.size === "large" &&
     css`
       width: 17.1rem;
@@ -78,13 +88,3 @@ const StyledButton = styled.button<ButtonProps>`
       }
     `}
 `;
-
-const Button: React.FC<ButtonProps> = ({ label, onClick, size }) => {
-  return (
-    <StyledButton size={size} onClick={onClick}>
-      {label}
-    </StyledButton>
-  );
-};
-
-export default Button;

@@ -6,7 +6,7 @@ function App() {
     <>
       <Button
         label={"Login"}
-        size={"large"}
+        size={"small"}
       ></Button>
     </>
   );
